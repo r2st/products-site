@@ -1,0 +1,30 @@
+# products.aiknol.com — static file server.
+#
+# Deliberately a separate compose project from /opt/knol: adding the site here
+# means the shared knol stack (and every other aiknol.com host it terminates)
+# is never recreated to publish this one. knol-caddy reaches this container by
+# name over the shared network; no port is published to the host.
+
+services:
+  products-site:
+    image: caddy:2-alpine
+    container_name: products-site
+    restart: unless-stopped
+    mem_limit: 64m
+    cpus: "0.25"
+    volumes:
+      - ./public:/srv:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - knol
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/robots.txt"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+networks:
+  knol:
+    external: true
+    name: knol_knol
