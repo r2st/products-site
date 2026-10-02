@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Apprend Technologies — products.aiknol.com
+   DoAide — doaide.com
    A precision-instrument catalogue. Near-black canvas, hairline grid,
    nine products each holding one hue of a single spectrum.
    ========================================================================== */
@@ -10,7 +10,7 @@
 
 :root {
   /* Surfaces — cool-cast near-black, four steps of elevation */
-  --ink-000: #06070a;
+  --ink-000: #0a0a0b;
   --ink-050: #090b11;
   --ink-100: #0d0f16;
   --ink-200: #12141d;
@@ -48,9 +48,9 @@
   );
 
   /* Fonts */
-  --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
-  --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   /* Rhythm */
   --gutter: clamp(1.25rem, 4vw, 3rem);
