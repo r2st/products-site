@@ -1,0 +1,125 @@
+{
+  "pulse": {
+    "name": "Pulse",
+    "fullName": "DoAide Pulse",
+    "tagline": "AI newsletters, on autopilot.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📰", "title": "Smart Curation" },
+      { "icon": "✍️", "title": "AI Writing" },
+      { "icon": "📊", "title": "Analytics" },
+      { "icon": "🚀", "title": "Auto Send" }
+    ]
+  },
+  "desk": {
+    "name": "Desk",
+    "fullName": "DoAide Desk",
+    "tagline": "All your conversations, one inbox.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "💬", "title": "Unified Inbox" },
+      { "icon": "🤖", "title": "AI Replies" },
+      { "icon": "📱", "title": "All Channels" },
+      { "icon": "📈", "title": "Insights" }
+    ]
+  },
+  "realty": {
+    "name": "Realty",
+    "fullName": "DoAide Realty",
+    "tagline": "Close deals faster with AI.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🏠", "title": "Property Match" },
+      { "icon": "💬", "title": "WhatsApp CRM" },
+      { "icon": "🔔", "title": "Smart Alerts" },
+      { "icon": "📋", "title": "Lead Tracking" }
+    ]
+  },
+  "med": {
+    "name": "Med",
+    "fullName": "DoAide Med",
+    "tagline": "Clinical decisions, AI-powered.",
+    "accentColor": "#34D399",
+    "accentColorDark": "#059669",
+    "features": [
+      { "icon": "🩺", "title": "Diagnosis AI" },
+      { "icon": "💊", "title": "Drug Safety" },
+      { "icon": "📋", "title": "Guidelines" },
+      { "icon": "🔬", "title": "Evidence-based" }
+    ]
+  },
+  "gst": {
+    "name": "GST",
+    "fullName": "DoAide GST",
+    "tagline": "GST compliance, on autopilot.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📄", "title": "Auto Filing" },
+      { "icon": "🔄", "title": "Reconciliation" },
+      { "icon": "💰", "title": "ITC Tracking" },
+      { "icon": "⏰", "title": "Deadline Alerts" }
+    ]
+  },
+  "reach": {
+    "name": "Reach",
+    "fullName": "DoAide Reach",
+    "tagline": "Outreach that actually works.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📧", "title": "Smart Emails" },
+      { "icon": "🎯", "title": "Targeting" },
+      { "icon": "📊", "title": "Campaign AI" },
+      { "icon": "🔄", "title": "Auto Follow-up" }
+    ]
+  },
+  "jobs": {
+    "name": "AutoApply",
+    "fullName": "DoAide AutoApply",
+    "tagline": "Apply to jobs while you sleep.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🎯", "title": "Smart Matching" },
+      { "icon": "⚡", "title": "Auto Apply" },
+      { "icon": "📧", "title": "Email Outreach" },
+      { "icon": "📊", "title": "Pipeline" }
+    ]
+  },
+  "n409": {
+    "name": "409A",
+    "fullName": "DoAide 409A",
+    "tagline": "409A valuations, simplified.",
+    "accentColor": "#818CF8",
+    "accentColorDark": "#6366F1",
+    "features": [
+      { "icon": "📊", "title": "AI Valuation" },
+      { "icon": "✅", "title": "Compliance" },
+      { "icon": "⚡", "title": "24hr Reports" },
+      { "icon": "🔗", "title": "Cap Table" }
+    ]
+  },
+  "trade": {
+    "name": "Trade",
+    "fullName": "DoAide Trade",
+    "tagline": "Smarter trades, automated.",
+    "accentColor": "#34D399",
+    "accentColorDark": "#059669",
+    "features": [
+      { "icon": "📈", "title": "Market AI" },
+      { "icon": "💼", "title": "Portfolio" },
+      { "icon": "🔔", "title": "Signals" },
+      { "icon": "🛡️", "title": "Risk Mgmt" }
+    ]
+  },
+  "cortex": {
+    "name": "Cortex",
+    "fullName": "DoAide Cortex",
+    "tagline": "Agent memory, always on.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🧠", "title": "Agent Memory" },
+      { "icon": "🔗", "title": "Knowledge Graph" },
+      { "icon": "🔍", "title": "Smart Recall" },
+      { "icon": "⚡", "title": "Auto-Learn" }
+    ]
+  }
+}

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoAide — Digital Robots for Modern Business</title>
+    <meta name="description" content="DoAide builds AI-powered digital robots that help businesses work smarter. 409A valuations, GST compliance, job applications, client management, newsletters, real estate CRM, clinical decision support, and autonomous equity trading.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cline x1='16' y1='6' x2='16' y2='2' stroke='%23F0B429' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='1.5' r='1.5' fill='%23F0B429'/%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Ccircle cx='11.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Ccircle cx='21.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Cpath d='M12 19Q16 22 20 19' stroke='%230A0A0B' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3Crect x='1' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3Crect x='27' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3C/svg%3E">
+    <!-- Open Graph -->
+    <meta property="og:title" content="DoAide — Digital Robots for Modern Business">
+    <meta property="og:description" content="AI-powered digital robots for 409A valuations, GST compliance, job applications, client management, newsletters, real estate CRM, clinical decisions, and trading.">
+    <meta property="og:url" content="https://doaide.com">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://doaide.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DoAide — Digital Robots for Modern Business">
+    <meta name="twitter:description" content="AI-powered digital robots that help businesses work smarter.">
+
+    <!-- Umami Analytics -->
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DoAide",
+      "url": "https://doaide.com",
+      "description": "DoAide builds AI-powered digital robots that help businesses work smarter.",
+      "foundingDate": "2025",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Apprend Technologies"
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Schibsted Grotesk', sans-serif; color: #E5E7EB; background: #0A0A0B; overflow-x: hidden; }
+
+        /* === Hero === */
+        .hero {
+            min-height: 55vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 80px 20px 50px;
+            position: relative;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 600px 400px at 50% 40%, rgba(240,180,41,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            animation: heroGlow 4s ease-in-out infinite;
+        }
+        @keyframes heroGlow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        .hero-robot {
+            width: 140px; height: auto; margin-bottom: 32px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px rgba(240,180,41,0.3));
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px); }
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif; font-size: 4.5rem; font-weight: 400;
+            color: #fff; letter-spacing: -1px; margin-bottom: 16px;
+            animation: fadeUp 1s ease-out 0.3s both;
+        }
+        .hero h1 span { color: #F0B429; }
+        .hero p {
+            color: rgba(255,255,255,0.4); max-width: 400px;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem;
+            line-height: 1.6;
+            animation: fadeUp 1s ease-out 0.6s both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Section Label === */
+        .section-label {
+            text-align: center; margin-bottom: 40px;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+            color: rgba(255,255,255,0.2); letter-spacing: 3px; text-transform: uppercase;
+        }
+
+        /* === Products Grid === */
+        .products {
+            max-width: 1000px; margin: 0 auto 80px; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+        }
+        .card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 24px; padding: 40px 32px;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(4px);
+            position: relative; overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(240,180,41,0.06) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.4s;
+        }
+        .card::after {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent 0%, rgba(240,180,41,0.05) 10%, transparent 20%);
+            opacity: 0; transition: opacity 0.6s;
+            animation: cardSweep 6s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes cardSweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .card:hover::before { opacity: 1; }
+        .card:hover::after { opacity: 1; }
+        .card:hover {
+            border-color: rgba(240,180,41,0.3);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 80px rgba(240,180,41,0.08);
+        }
+
+        .card-icon {
+            width: 100px; height: 100px; margin-bottom: 24px;
+            position: relative;
+        }
+        .card-icon svg {
+            width: 100%; height: 100%;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover .card-icon svg { transform: scale(1.15) rotate(3deg); }
+
+        .card h3 {
+            font-family: 'Instrument Serif', serif; font-size: 1.6rem; font-weight: 400;
+            color: #fff; margin-bottom: 8px;
+            transition: transform 0.3s;
+        }
+        .card:hover h3 { transform: scale(1.05); }
+        .card h3 em { font-style: italic; color: #F0B429; }
+        .card .tagline {
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+            color: rgba(255,255,255,0.35); letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        .card:hover .tagline { color: rgba(255,255,255,0.55); }
+
+        /* Shine effect on hover */
+        .card .shine {
+            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(240,180,41,0.04), transparent);
+            transition: none; pointer-events: none;
+        }
+        .card:hover .shine {
+            animation: shine 0.8s ease-out;
+        }
+        @keyframes shine {
+            from { left: -100%; }
+            to { left: 200%; }
+        }
+
+        /* === Particles === */
+        .particles {
+            position: fixed; inset: 0; pointer-events: none; z-index: -1;
+        }
+        .particle {
+            position: absolute; width: 2px; height: 2px; background: #F0B429;
+            border-radius: 50%; opacity: 0;
+            animation: drift linear infinite;
+        }
+        @keyframes drift {
+            0% { opacity: 0; transform: translateY(100vh) scale(0); }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.15; }
+            100% { opacity: 0; transform: translateY(-20px) scale(1); }
+        }
+
+        /* === Floating orbs === */
+        .orb {
+            position: fixed; border-radius: 50%; pointer-events: none; z-index: -1;
+            filter: blur(80px); opacity: 0.03;
+        }
+        .orb-1 { width: 400px; height: 400px; background: #F0B429; top: 20%; left: -10%; animation: orbFloat1 12s ease-in-out infinite; }
+        .orb-2 { width: 300px; height: 300px; background: #F7CC5F; bottom: 10%; right: -5%; animation: orbFloat2 15s ease-in-out infinite; }
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(60px, -40px); }
+        }
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, 30px); }
+        }
+
+        /* === Footer === */
+        footer {
+            text-align: center; padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
+        }
+        footer a { color: #F0B429; text-decoration: none; }
+        .footer-products {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px;
+            margin-bottom: 20px;
+        }
+        .footer-products a {
+            color: rgba(255,255,255,0.35); text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+            letter-spacing: 0.5px; transition: color 0.3s;
+        }
+        .footer-products a:hover { color: #F0B429; }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 3rem; }
+            .products { grid-template-columns: 1fr; }
+            .hero-robot { width: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="hero">
+        <svg class="hero-robot" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0B429"/><stop offset="100%" stop-color="#D4A017"/></linearGradient></defs>
+            <line x1="200" y1="45" x2="200" y2="20" stroke="#F0B429" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="200" cy="14" r="10" fill="#F0B429"/><circle cx="200" cy="14" r="5" fill="#F7CC5F"/>
+            <rect x="110" y="50" width="180" height="140" rx="35" fill="url(#hg)"/>
+            <rect x="130" y="68" width="140" height="105" rx="25" fill="#D4A017" opacity="0.4"/>
+            <ellipse cx="165" cy="115" rx="18" ry="20" fill="#0A0A0B"/><ellipse cx="235" cy="115" rx="18" ry="20" fill="#0A0A0B"/>
+            <circle cx="170" cy="113" r="8" fill="#F7CC5F"/><circle cx="240" cy="113" r="8" fill="#F7CC5F"/>
+            <circle cx="174" cy="109" r="3" fill="white" opacity="0.7"/><circle cx="244" cy="109" r="3" fill="white" opacity="0.7"/>
+            <path d="M170 155Q200 178 230 155" stroke="#0A0A0B" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="92" y="95" width="22" height="45" rx="8" fill="#D4A017"/><rect x="286" y="95" width="22" height="45" rx="8" fill="#D4A017"/>
+            <rect x="175" y="190" width="50" height="14" rx="5" fill="#D4A017"/>
+            <rect x="145" y="204" width="110" height="55" rx="18" fill="url(#hg)"/>
+            <circle cx="200" cy="228" r="7" fill="#0A0A0B"/><circle cx="200" cy="228" r="3.5" fill="#0A0A0B"/>
+            <path d="M145 218Q118 223 113 240Q108 257 120 262" stroke="#D4A017" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="120" cy="265" r="7" fill="#D4A017"/>
+            <path d="M255 218Q282 223 287 240Q292 257 280 262" stroke="#D4A017" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="280" cy="265" r="7" fill="#D4A017"/>
+        </svg>
+        <h1>Do<span>Aide</span></h1>
+        <p>digital robots for modern business</p>
+    </div>
+
+    <div class="section-label">our products</div>
+
+    <div class="products">
+        <!-- N409 Valuation -->
+        <a href="https://409.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="62" width="14" height="28" rx="3" fill="#F0B429" opacity="0.25"/>
+                    <rect x="30" y="48" width="14" height="42" rx="3" fill="#F0B429" opacity="0.4"/>
+                    <rect x="50" y="34" width="14" height="56" rx="3" fill="#F0B429" opacity="0.6"/>
+                    <rect x="70" y="18" width="14" height="72" rx="3" fill="#F0B429" opacity="0.85"/>
+                    <path d="M17 58 L37 44 L57 30 L77 14" stroke="#F7CC5F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 4">
+                        <animate attributeName="stroke-dashoffset" from="36" to="0" dur="2.5s" repeatCount="indefinite"/>
+                    </path>
+                    <circle cx="77" cy="14" r="4" fill="#F7CC5F">
+                        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="88" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#F0B429" opacity="0.5">$</text>
+                </svg>
+            </div>
+            <h3>DoAide <em>409A</em></h3>
+            <div class="tagline">AI-powered 409A valuations</div>
+        </a>
+
+        <!-- GSTBot -->
+        <a href="https://gst.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 10h56v70l-8-5-8 5-8-5-8 5-8-5-8 5-8-5z" fill="none" stroke="#F0B429" stroke-width="2.5" stroke-linejoin="round"/>
+                    <line x1="32" y1="28" x2="68" y2="28" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
+                    <line x1="32" y1="38" x2="60" y2="38" stroke="#F0B429" stroke-width="2" opacity="0.35"/>
+                    <line x1="32" y1="48" x2="54" y2="48" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
+                    <text x="50" y="68" font-family="'Schibsted Grotesk', sans-serif" font-size="18" fill="#F0B429" font-weight="700" text-anchor="middle">&#x20B9;</text>
+                    <line x1="22" y1="30" x2="78" y2="30" stroke="#F7CC5F" stroke-width="1" opacity="0.4">
+                        <animate attributeName="y1" values="20;70;20" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="y2" values="20;70;20" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
+                    </line>
+                    <circle cx="68" cy="18" r="3.5" fill="#F0B429" opacity="0.3"/>
+                    <circle cx="68" cy="18" r="1.5" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>DoAide <em>GST</em></h3>
+            <div class="tagline">AI-powered GST compliance for Indian businesses</div>
+        </a>
+
+        <!-- DoAide AutoApply -->
+        <a href="https://job.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="14" y="34" width="72" height="52" rx="8" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+                    <rect x="34" y="18" width="32" height="20" rx="5" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+                    <line x1="14" y1="50" x2="86" y2="50" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <circle cx="50" cy="58" r="12" fill="#F0B429" opacity="0.15">
+                        <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.1;0.2;0.1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <path d="M44 58l4 4 9-10" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g opacity="0.4">
+                        <path d="M72 28 L82 22 L78 30 Z" fill="#F0B429">
+                            <animateTransform attributeName="transform" type="translate" values="0,0; 6,-4; 0,0" dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                    <g opacity="0.25">
+                        <path d="M18 42 L10 36 L14 44 Z" fill="#F0B429">
+                            <animateTransform attributeName="transform" type="translate" values="0,0; -4,-3; 0,0" dur="3s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <h3>DoAide <em>AutoApply</em></h3>
+            <div class="tagline">Auto-apply to jobs with AI</div>
+        </a>
+
+        <!-- DoAide Desk (GoSumo) -->
+        <a href="https://desk.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="20" width="50" height="34" rx="10" fill="#F0B429" opacity="0.15"/>
+                    <rect x="42" y="42" width="50" height="34" rx="10" fill="#F0B429" opacity="0.25"/>
+                    <circle cx="24" cy="35" r="3" fill="#F0B429" opacity="0.5">
+                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="34" cy="35" r="3" fill="#F0B429" opacity="0.5">
+                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="44" cy="35" r="3" fill="#F0B429" opacity="0.5">
+                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+                    </circle>
+                    <path d="M58 58l5 5 10-12" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="24" cy="86" r="4" fill="#F0B429" opacity="0.12"/>
+                    <circle cx="38" cy="86" r="4" fill="#F0B429" opacity="0.2"/>
+                    <circle cx="52" cy="86" r="4" fill="#F0B429" opacity="0.3"/>
+                    <circle cx="66" cy="86" r="4" fill="#F0B429" opacity="0.4"/>
+                    <circle cx="80" cy="86" r="4" fill="#F0B429" opacity="0.5"/>
+                </svg>
+            </div>
+            <h3>DoAide <em>Desk</em></h3>
+            <div class="tagline">AI-powered client management across every channel</div>
+        </a>
+
+        <!-- DoAide Pulse -->
+        <a href="https://pulse.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Newspaper / newsletter -->
+                    <rect x="12" y="15" width="56" height="70" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+                    <rect x="68" y="25" width="20" height="60" rx="6" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
+                    <!-- Headline -->
+                    <rect x="20" y="24" width="40" height="5" rx="2" fill="#F0B429" opacity="0.6"/>
+                    <rect x="20" y="34" width="32" height="3" rx="1.5" fill="#F0B429" opacity="0.3"/>
+                    <rect x="20" y="42" width="28" height="3" rx="1.5" fill="#F0B429" opacity="0.2"/>
+                    <!-- Image placeholder -->
+                    <rect x="20" y="52" width="40" height="22" rx="4" fill="#F0B429" opacity="0.1">
+                        <animate attributeName="opacity" values="0.08;0.15;0.08" dur="3s" repeatCount="indefinite"/>
+                    </rect>
+                    <!-- AI sparkle -->
+                    <g opacity="0.6">
+                        <path d="M52 58 L54 54 L56 58 L54 62Z" fill="#F7CC5F">
+                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                            <animateTransform attributeName="transform" type="rotate" values="0 54 58;180 54 58;360 54 58" dur="4s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                    <!-- Send arrow -->
+                    <g opacity="0.5">
+                        <path d="M72 40 L82 35 L80 45 Z" fill="#F0B429">
+                            <animateTransform attributeName="transform" type="translate" values="0,0; 4,-3; 0,0" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                    <!-- Stacked lines on right column -->
+                    <line x1="72" y1="35" x2="84" y2="35" stroke="#F0B429" stroke-width="1.5" opacity="0.25"/>
+                    <line x1="72" y1="42" x2="82" y2="42" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="72" y1="49" x2="80" y2="49" stroke="#F0B429" stroke-width="1.5" opacity="0.15"/>
+                </svg>
+            </div>
+            <h3>DoAide <em>Pulse</em></h3>
+            <div class="tagline">AI-powered newsletters that write themselves</div>
+        </a>
+
+        <!-- HomeNex -->
+        <a href="https://realty.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- House outline -->
+                    <path d="M50 15 L15 45 L20 45 L20 80 L80 80 L80 45 L85 45 Z" fill="none" stroke="#F0B429" stroke-width="2.5" stroke-linejoin="round"/>
+                    <!-- Door -->
+                    <rect x="40" y="55" width="20" height="25" rx="2" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
+                    <circle cx="56" cy="68" r="1.5" fill="#F7CC5F" opacity="0.6"/>
+                    <!-- Window left -->
+                    <rect x="26" y="50" width="12" height="12" rx="1" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="32" y1="50" x2="32" y2="62" stroke="#F0B429" stroke-width="1" opacity="0.3"/>
+                    <line x1="26" y1="56" x2="38" y2="56" stroke="#F0B429" stroke-width="1" opacity="0.3"/>
+                    <!-- Window right -->
+                    <rect x="62" y="50" width="12" height="12" rx="1" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="68" y1="50" x2="68" y2="62" stroke="#F0B429" stroke-width="1" opacity="0.3"/>
+                    <line x1="62" y1="56" x2="74" y2="56" stroke="#F0B429" stroke-width="1" opacity="0.3"/>
+                    <!-- AI sparkle -->
+                    <circle cx="72" cy="30" r="4" fill="#F0B429" opacity="0.15">
+                        <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="72" cy="30" r="1.5" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>DoAide <em>Realty</em></h3>
+            <div class="tagline">WhatsApp-native CRM for real estate agents</div>
+        </a>
+
+        <!-- Documedic -->
+        <a href="https://med.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Stethoscope / medical cross -->
+                    <rect x="38" y="14" width="24" height="24" rx="4" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+                    <line x1="50" y1="18" x2="50" y2="34" stroke="#F0B429" stroke-width="2.5"/>
+                    <line x1="42" y1="26" x2="58" y2="26" stroke="#F0B429" stroke-width="2.5"/>
+                    <!-- Clipboard body -->
+                    <rect x="22" y="28" width="56" height="60" rx="8" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
+                    <!-- AI analysis lines -->
+                    <line x1="30" y1="48" x2="55" y2="48" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
+                    <line x1="30" y1="56" x2="50" y2="56" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
+                    <line x1="30" y1="64" x2="45" y2="64" stroke="#F0B429" stroke-width="2" opacity="0.2"/>
+                    <!-- Heartbeat line -->
+                    <path d="M28 75 L38 75 L42 65 L46 82 L50 70 L54 75 L72 75" stroke="#F7CC5F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <animate attributeName="stroke-dashoffset" from="80" to="0" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="stroke-dasharray" values="0 80;40 40;80 0" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- Pulsing dot -->
+                    <circle cx="68" cy="48" r="5" fill="#F0B429" opacity="0.15">
+                        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.1;0.25;0.1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="68" cy="48" r="2" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>DoAide <em>Med</em></h3>
+            <div class="tagline">AI clinical decision support for clinicians</div>
+        </a>
+
+        <!-- USTradingBot -->
+        <a href="https://trade.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Candlestick chart -->
+                    <line x1="20" y1="70" x2="20" y2="30" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
+                    <rect x="15" y="40" width="10" height="20" rx="1" fill="#F0B429" opacity="0.6"/>
+                    <line x1="38" y1="75" x2="38" y2="25" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
+                    <rect x="33" y="30" width="10" height="25" rx="1" fill="#F7CC5F" opacity="0.7"/>
+                    <line x1="56" y1="65" x2="56" y2="20" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
+                    <rect x="51" y="35" width="10" height="18" rx="1" fill="#F0B429" opacity="0.5"/>
+                    <line x1="74" y1="70" x2="74" y2="15" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
+                    <rect x="69" y="22" width="10" height="28" rx="1" fill="#F7CC5F" opacity="0.8"/>
+                    <!-- Trend line -->
+                    <path d="M15 60 Q35 35 55 42 T85 20" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round">
+                        <animate attributeName="stroke-dashoffset" from="120" to="0" dur="2.5s" repeatCount="indefinite"/>
+                        <animate attributeName="stroke-dasharray" values="0 120;60 60;120 0" dur="2.5s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- AI pulse -->
+                    <circle cx="82" cy="22" r="5" fill="#F0B429" opacity="0.15">
+                        <animate attributeName="r" values="4;7;4" dur="1.8s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="82" cy="22" r="2" fill="#F7CC5F" opacity="0.6">
+                        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>DoAide <em>Trade</em></h3>
+            <div class="tagline">AI-powered autonomous equity trading system</div>
+        </a>
+
+        <!-- DoAide Reach -->
+        <a href="https://reach.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Email envelope -->
+                    <rect x="12" y="25" width="56" height="40" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+                    <path d="M12 28 L40 50 L68 28" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                    <!-- Broadcast waves -->
+                    <path d="M72 45 Q80 45 80 38" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3">
+                        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M72 45 Q86 45 86 32" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.2">
+                        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M72 45 Q92 45 92 26" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.15">
+                        <animate attributeName="opacity" values="0.05;0.3;0.05" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                    </path>
+                    <!-- Target/bullseye -->
+                    <circle cx="40" cy="78" r="12" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <circle cx="40" cy="78" r="7" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.3"/>
+                    <circle cx="40" cy="78" r="2.5" fill="#F7CC5F" opacity="0.6">
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Send arrows -->
+                    <g opacity="0.4">
+                        <path d="M62 72 L72 66 L68 76 Z" fill="#F0B429">
+                            <animateTransform attributeName="transform" type="translate" values="0,0; 5,-4; 0,0" dur="2.5s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <h3>DoAide <em>Reach</em></h3>
+            <div class="tagline">AI-powered outreach that actually works</div>
+        </a>
+
+        <!-- DoAide Cortex -->
+        <a href="https://cortex.doaide.com" class="card">
+            <div class="shine"></div>
+            <div class="card-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Neural network nodes -->
+                    <!-- Connections -->
+                    <line x1="30" y1="25" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="70" y1="25" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="20" y1="50" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="80" y1="50" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="30" y1="75" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <line x1="70" y1="75" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
+                    <!-- Outer connections -->
+                    <line x1="30" y1="25" x2="20" y2="50" stroke="#F0B429" stroke-width="1" opacity="0.15"/>
+                    <line x1="70" y1="25" x2="80" y2="50" stroke="#F0B429" stroke-width="1" opacity="0.15"/>
+                    <line x1="20" y1="50" x2="30" y2="75" stroke="#F0B429" stroke-width="1" opacity="0.15"/>
+                    <line x1="80" y1="50" x2="70" y2="75" stroke="#F0B429" stroke-width="1" opacity="0.15"/>
+                    <line x1="30" y1="25" x2="70" y2="25" stroke="#F0B429" stroke-width="1" opacity="0.1"/>
+                    <line x1="30" y1="75" x2="70" y2="75" stroke="#F0B429" stroke-width="1" opacity="0.1"/>
+                    <!-- Signal pulses along connections -->
+                    <circle r="2" fill="#F7CC5F" opacity="0.6">
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M30,25 L50,45"/>
+                        <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle r="2" fill="#F7CC5F" opacity="0.6">
+                        <animateMotion dur="2.5s" repeatCount="indefinite" path="M70,75 L50,45"/>
+                        <animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle r="2" fill="#F7CC5F" opacity="0.6">
+                        <animateMotion dur="3s" repeatCount="indefinite" path="M80,50 L50,45"/>
+                        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Brain outline -->
+                    <path d="M50 15 C35 15 22 22 22 35 C22 42 26 48 32 52 C28 56 26 62 28 68 C30 76 38 82 50 85 C62 82 70 76 72 68 C74 62 72 56 68 52 C74 48 78 42 78 35 C78 22 65 15 50 15Z" fill="none" stroke="#F0B429" stroke-width="2.5" opacity="0.35"/>
+                    <!-- Central node (brain core) -->
+                    <circle cx="50" cy="45" r="8" fill="#F0B429" opacity="0.2">
+                        <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.15;0.3;0.15" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="50" cy="45" r="4" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Outer nodes -->
+                    <circle cx="30" cy="25" r="5" fill="#F0B429" opacity="0.4"/>
+                    <circle cx="70" cy="25" r="5" fill="#F0B429" opacity="0.4"/>
+                    <circle cx="20" cy="50" r="4" fill="#F0B429" opacity="0.3"/>
+                    <circle cx="80" cy="50" r="4" fill="#F0B429" opacity="0.3"/>
+                    <circle cx="30" cy="75" r="5" fill="#F0B429" opacity="0.4"/>
+                    <circle cx="70" cy="75" r="5" fill="#F0B429" opacity="0.4"/>
+                    <!-- Inner glows on nodes -->
+                    <circle cx="30" cy="25" r="2" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="70" cy="25" r="2" fill="#F7CC5F" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="20" cy="50" r="1.5" fill="#F7CC5F" opacity="0.4">
+                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="80" cy="50" r="1.5" fill="#F7CC5F" opacity="0.4">
+                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <h3>DoAide <em>Cortex</em></h3>
+            <div class="tagline">AI-powered agent memory &amp; knowledge management</div>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-products">
+            <a href="https://desk.doaide.com">Desk</a>
+            <a href="https://job.doaide.com">Jobs</a>
+            <a href="https://409.doaide.com">409</a>
+            <a href="https://gst.doaide.com">GST</a>
+            <a href="https://pulse.doaide.com">Pulse</a>
+            <a href="https://med.doaide.com">Med</a>
+            <a href="https://realty.doaide.com">Realty</a>
+            <a href="https://reach.doaide.com">Reach</a>
+            <a href="https://trade.doaide.com">Trade</a>
+            <a href="https://cortex.doaide.com">Cortex</a>
+        </div>
+        <p>&copy; 2026 DoAide &mdash; Applied AI for serious work</p>
+    </footer>
+
+    <script>
+        // Particles
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 35; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (10 + Math.random() * 15) + 's';
+            p.style.animationDelay = Math.random() * 12 + 's';
+            p.style.width = p.style.height = (1 + Math.random() * 2.5) + 'px';
+            container.appendChild(p);
+        }
+
+        // Card entrance animation with stagger
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px) scale(0.95)';
+            card.style.transition = `opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.12}s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.12}s`;
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, { threshold: 0.1 });
+        cards.forEach(c => observer.observe(c));
+
+        // Tilt effect on mouse move
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-8px) scale(1.02) perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
