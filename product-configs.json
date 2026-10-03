@@ -157,5 +157,65 @@
       { "icon": "💰", "title": "Financial Model" },
       { "icon": "✅", "title": "Readiness Check" }
     ]
+  },
+  "salary": {
+    "name": "Salary",
+    "fullName": "DoAide Salary",
+    "tagline": "Know your real take-home, instantly.",
+    "accentColor": "#2dd4bf",
+    "features": [
+      { "icon": "💰", "title": "Take-Home Calc" },
+      { "icon": "⚖️", "title": "Tax Regimes" },
+      { "icon": "🏠", "title": "HRA Optimizer" },
+      { "icon": "📊", "title": "CTC Breakdown" }
+    ]
+  },
+  "resume": {
+    "name": "Resume",
+    "fullName": "DoAide Resume",
+    "tagline": "AI resumes that get past the filters.",
+    "accentColor": "#f0b429",
+    "features": [
+      { "icon": "✍️", "title": "AI Writer" },
+      { "icon": "🎯", "title": "ATS Ready" },
+      { "icon": "📄", "title": "Multi-Format" },
+      { "icon": "📧", "title": "Cover Letters" }
+    ]
+  },
+  "fincalc": {
+    "name": "FinCalc",
+    "fullName": "DoAide FinCalc",
+    "tagline": "Every money question, one calculator.",
+    "accentColor": "#fb7185",
+    "features": [
+      { "icon": "🏦", "title": "EMI Calculator" },
+      { "icon": "📈", "title": "SIP Returns" },
+      { "icon": "💎", "title": "FD/RD Planner" },
+      { "icon": "🔄", "title": "Loan Compare" }
+    ]
+  },
+  "qr": {
+    "name": "QR",
+    "fullName": "DoAide QR",
+    "tagline": "QR codes that look like yours.",
+    "accentColor": "#a78bfa",
+    "features": [
+      { "icon": "📱", "title": "Custom QR" },
+      { "icon": "🎨", "title": "Logo Embed" },
+      { "icon": "📦", "title": "Batch Generate" },
+      { "icon": "📊", "title": "Scan Analytics" }
+    ]
+  },
+  "convert": {
+    "name": "Convert",
+    "fullName": "DoAide Convert",
+    "tagline": "Convert anything to anything.",
+    "accentColor": "#38bdf8",
+    "features": [
+      { "icon": "📄", "title": "PDF Tools" },
+      { "icon": "🖼️", "title": "Image Convert" },
+      { "icon": "📎", "title": "Doc Merge" },
+      { "icon": "⚡", "title": "Batch Process" }
+    ]
   }
 }
