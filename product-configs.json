@@ -121,5 +121,29 @@
       { "icon": "🔍", "title": "Smart Recall" },
       { "icon": "⚡", "title": "Auto-Learn" }
     ]
+  },
+  "bizname": {
+    "name": "BizName",
+    "fullName": "DoAide BizName",
+    "tagline": "Business names that are ready to register.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "✨", "title": "AI Names" },
+      { "icon": "🌐", "title": "Domain Check" },
+      { "icon": "@", "title": "Social Handles" },
+      { "icon": "🏷️", "title": "Brand Score" }
+    ]
+  },
+  "comply": {
+    "name": "Comply",
+    "fullName": "DoAide Comply",
+    "tagline": "Never miss a compliance deadline.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📅", "title": "Filing Calendar" },
+      { "icon": "⚖️", "title": "Penalty Info" },
+      { "icon": "⏰", "title": "Reminders" },
+      { "icon": "🇮🇳", "title": "GST·TDS·ROC" }
+    ]
   }
 }

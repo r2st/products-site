@@ -44,6 +44,8 @@ const DOAIDE_PRODUCTS = [
   { name: 'Reach', url: 'https://reach.doaide.com', desc: 'Outreach' },
   { name: 'Trade', url: 'https://trade.doaide.com', desc: 'Trading' },
   { name: 'Cortex', url: 'https://cortex.doaide.com', desc: 'Agent Memory' },
+  { name: 'BizName', url: 'https://bizname.doaide.com', desc: 'Business Names' },
+  { name: 'Comply', url: 'https://comply.doaide.com', desc: 'Compliance Calendar' },
 ];
 
 // Robot face SVG (head only, no body)
