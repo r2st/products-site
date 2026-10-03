@@ -145,5 +145,17 @@
       { "icon": "⏰", "title": "Reminders" },
       { "icon": "🇮🇳", "title": "GST·TDS·ROC" }
     ]
+  },
+  "pitch": {
+    "name": "PitchCraft",
+    "fullName": "DoAide PitchCraft",
+    "tagline": "AI pitch decks and fundraising toolkit.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🎯", "title": "Pitch Decks" },
+      { "icon": "📊", "title": "Valuation" },
+      { "icon": "💰", "title": "Financial Model" },
+      { "icon": "✅", "title": "Readiness Check" }
+    ]
   }
 }
