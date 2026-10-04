@@ -1408,6 +1408,11 @@ h1, h2, h3, h4 {
   .rv { opacity: 1; transform: none; }
 }
 
+/* Ad containers */
+.doaide-ad { position: relative; z-index: 2; }
+.doaide-ad ins { background: transparent; }
+@media print { .doaide-ad { display: none; } }
+
 @media print {
   .field, .grain, .header, .band, .pn { display: none; }
   body { background: #fff; color: #000; }
