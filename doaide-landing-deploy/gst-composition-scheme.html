@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Composition Scheme Calculator &amp; Eligibility Checker — DoAide</title>
+    <meta name="description" content="Free GST Composition Scheme calculator. Check eligibility based on turnover, compare tax liability between Composition and Regular schemes, and understand pros and cons of each option.">
+    <meta name="keywords" content="GST composition scheme calculator, composition scheme eligibility, composition vs regular GST, GST composition scheme turnover limit, composition scheme tax rate">
+    <meta name="author" content="DoAide by Apprend Technologies">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://doaide.com/gst-composition-scheme.html">
+
+    <meta property="og:title" content="GST Composition Scheme Calculator &amp; Eligibility Checker — DoAide">
+    <meta property="og:description" content="Free GST Composition Scheme calculator. Check eligibility based on turnover, compare tax liability between Composition and Regular schemes, and understand pros and cons of each option.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://doaide.com/gst-composition-scheme.html">
+    <meta property="og:site_name" content="DoAide">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GST Composition Scheme Calculator &amp; Eligibility Checker — DoAide">
+    <meta name="twitter:description" content="Free GST Composition Scheme calculator. Check eligibility based on turnover, compare tax liability between Composition and Regular schemes, and understand pros and cons of each option.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cline x1='16' y1='6' x2='16' y2='2' stroke='%23F0B429' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='1.5' r='1.5' fill='%23F0B429'/%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Ccircle cx='11.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Ccircle cx='21.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Cpath d='M12 19Q16 22 20 19' stroke='%230A0A0B' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3Crect x='1' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3Crect x='27' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3C/svg%3E">
+
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://doaide.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "GST Tools",
+                "item": "https://gst.doaide.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Composition Scheme Calculator",
+                "item": "https://doaide.com/gst-composition-scheme.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GST Composition Scheme Calculator",
+        "url": "https://doaide.com/gst-composition-scheme.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "DoAide",
+            "url": "https://doaide.com"
+        }
+    }
+    </script>
+
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the GST Composition Scheme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The GST Composition Scheme is a simplified tax scheme under GST for small taxpayers with turnover below specified limits. Instead of charging and collecting GST at normal rates, composition dealers pay tax at a flat, lower rate on their turnover. They file simpler returns (CMP-08 quarterly and GSTR-4 annually) and issue a Bill of Supply instead of a Tax Invoice, making compliance easier and less expensive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the turnover limit for the Composition Scheme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The turnover limit for the GST Composition Scheme is Rs 1.5 crore per annum for manufacturers, traders, and restaurants serving non-alcoholic food. For service providers, the limit is Rs 50 lakh per annum. For businesses in special category states (Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, and Uttarakhand), the limit for goods-based businesses is Rs 75 lakh."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the tax rates under the Composition Scheme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tax rates under the Composition Scheme are: 1% (0.5% CGST + 0.5% SGST) for manufacturers and traders, 5% (2.5% CGST + 2.5% SGST) for restaurants serving non-alcoholic food, and 6% (3% CGST + 3% SGST) for service providers. These rates are applied on the total turnover and are significantly lower than regular GST rates of 5%, 12%, 18%, or 28%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can a composition dealer claim Input Tax Credit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, a composition dealer cannot claim Input Tax Credit (ITC) on purchases. This is one of the key trade-offs of the scheme. Since composition dealers pay tax at a flat rate on turnover and do not collect tax from customers, they cannot set off the GST paid on their inputs against their tax liability. All GST paid on purchases becomes a cost to the business."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who cannot opt for the Composition Scheme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The following persons cannot opt for the Composition Scheme: those making inter-state outward supplies of goods, suppliers of goods through e-commerce operators, manufacturers of ice cream, pan masala, or tobacco products, suppliers of non-taxable goods, casual taxable persons, non-resident taxable persons, and businesses exceeding the prescribed turnover limits."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How to switch from Composition to Regular scheme?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To switch from Composition to Regular scheme, file Form GST CMP-04 on the GST portal. This can be done voluntarily or is mandatory when the taxpayer's turnover exceeds the composition limit, starts making inter-state supplies, or begins supplying through e-commerce. After switching, the taxpayer must file Form ITC-01 within 30 days to claim ITC on inputs held in stock and inputs in semi-finished or finished goods on the date of switch."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Schibsted Grotesk', sans-serif;
+            color: #E5E7EB;
+            background: #0A0A0B;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 11, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 24px;
+            color: #F0B429;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #F0B429;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 24px 0;
+        }
+
+        .breadcrumb ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .breadcrumb li + li::before {
+            content: '>';
+            color: #4B5563;
+            margin-right: 4px;
+        }
+
+        .breadcrumb a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #F0B429;
+        }
+
+        .breadcrumb .current {
+            color: #E5E7EB;
+        }
+
+        /* Page Header */
+        .page-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px 32px;
+        }
+
+        .page-header h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .page-header h1 span {
+            color: #F0B429;
+        }
+
+        .page-header .subtitle {
+            color: #9CA3AF;
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 720px;
+        }
+
+        /* Main Content */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .content h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin: 56px 0 20px;
+        }
+
+        .content h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin: 32px 0 12px;
+        }
+
+        .content p {
+            color: #9CA3AF;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .content ul, .content ol {
+            color: #9CA3AF;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            padding-left: 24px;
+            font-size: 15px;
+        }
+
+        .content li {
+            margin-bottom: 6px;
+        }
+
+        .content strong {
+            color: #E5E7EB;
+            font-weight: 600;
+        }
+
+        .content a {
+            color: #F0B429;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .content a:hover {
+            color: #F7CC5F;
+        }
+
+        /* Calculator Card */
+        .calculator-card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 40px;
+        }
+
+        .calculator-card h2 {
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            color: #9CA3AF;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-select, .form-input {
+            width: 100%;
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            color: #E5E7EB;
+            font-family: 'Schibsted Grotesk', sans-serif;
+            font-size: 15px;
+            padding: 12px 16px;
+            transition: border-color 0.2s;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: #101012;
+            color: #E5E7EB;
+        }
+
+        .form-select:focus, .form-input:focus {
+            border-color: #F0B429;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-prefix {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 15px;
+            pointer-events: none;
+        }
+
+        .input-wrapper .form-input {
+            padding-left: 36px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #E5E7EB;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked {
+            border-color: #F0B429;
+            background: #F0B429;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 4px;
+            height: 8px;
+            border: solid #0A0A0B;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Schibsted Grotesk', sans-serif;
+        }
+
+        .btn-primary {
+            background: #F0B429;
+            color: #0A0A0B;
+        }
+
+        .btn-primary:hover {
+            background: #F7CC5F;
+            color: #0A0A0B;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: #E5E7EB;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 14px 24px;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /* Results */
+        .results-card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .results-card.visible {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .results-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.35rem;
+            color: #FFFFFF;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .result-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+
+        .result-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 15px;
+            color: #E5E7EB;
+            font-weight: 600;
+        }
+
+        .result-row.total {
+            border-top: 2px solid rgba(240, 180, 41, 0.3);
+            margin-top: 8px;
+            padding-top: 16px;
+        }
+
+        .result-row.total .result-label {
+            color: #F0B429;
+            font-weight: 600;
+        }
+
+        .result-row.total .result-value {
+            color: #F0B429;
+            font-size: 18px;
+        }
+
+        .result-note {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(240, 180, 41, 0.08);
+            border: 1px solid rgba(240, 180, 41, 0.15);
+            border-radius: 10px;
+            font-size: 13px;
+            color: #F0B429;
+            font-family: 'IBM Plex Mono', monospace;
+            line-height: 1.6;
+        }
+
+        .eligibility-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .eligibility-badge.eligible {
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            color: #22C55E;
+        }
+
+        .eligibility-badge.not-eligible {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #EF4444;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .comparison-card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 24px;
+        }
+
+        .comparison-card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .savings-badge.savings {
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            color: #22C55E;
+        }
+
+        .savings-badge.extra-cost {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #EF4444;
+        }
+
+        /* Pros & Cons */
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0 32px;
+        }
+
+        .pros-card, .cons-card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .pros-card h3, .cons-card h3 {
+            margin-top: 0;
+        }
+
+        .pros-card ul, .cons-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pros-card li, .cons-card li {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .pros-card li::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            color: #22C55E;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .cons-card li::before {
+            content: '-';
+            position: absolute;
+            left: 2px;
+            color: #EF4444;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 20px 0 32px;
+        }
+
+        .info-card {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+        }
+
+        /* Reference Table */
+        .ref-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .ref-table thead {
+            background: rgba(240, 180, 41, 0.08);
+        }
+
+        .ref-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            color: #F0B429;
+            text-align: left;
+            padding: 14px 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .ref-table td {
+            padding: 12px 16px;
+            color: #9CA3AF;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.5;
+        }
+
+        .ref-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .rate-badge {
+            display: inline-block;
+            background: rgba(240, 180, 41, 0.12);
+            color: #F0B429;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 48px 28px;
+            text-align: center;
+            margin: 56px 0 32px;
+        }
+
+        .cta-section h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            max-width: 560px;
+            margin: 0 auto 24px;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 56px;
+        }
+
+        .faq-item {
+            background: rgba(16, 16, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #F3F4F6;
+            font-family: 'Schibsted Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 22px;
+            color: #F0B429;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 24px 20px;
+            color: #9CA3AF;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #F0B429;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #F7CC5F;
+        }
+
+        .footer-copy {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            color: #4B5563;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            body {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .page-header {
+                padding: 32px 18px 24px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 0 18px 48px;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .calculator-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .results-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 36px 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ref-table th, .ref-table td {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .result-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .result-row.total {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .faq-question {
+                font-size: 15px;
+                padding: 16px 18px;
+            }
+
+            .faq-answer {
+                padding: 0 18px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="https://doaide.com" class="nav-logo">DoAide</a>
+            <div class="nav-links">
+                <a href="https://doaide.com">Home</a>
+                <a href="https://gst.doaide.com">GST Tools</a>
+                <a href="/blog-gst-filing-dates.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="https://doaide.com">Home</a></li>
+            <li><a href="https://gst.doaide.com">GST Tools</a></li>
+            <li><span class="current">Composition Scheme Calculator</span></li>
+        </ol>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>GST Composition Scheme <span>Calculator</span></h1>
+        <p class="subtitle">Check your eligibility for the GST Composition Scheme, compare tax liability between Composition and Regular schemes, and understand the pros, cons, and applicable rates for your business type.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <!-- Tool 1: Eligibility Checker -->
+        <div class="calculator-card">
+            <h2>Check Eligibility</h2>
+
+            <div class="form-group">
+                <label for="elig-business-type">Business Type</label>
+                <select id="elig-business-type" class="form-select" aria-label="Select business type">
+                    <option value="" disabled selected>Select your business type</option>
+                    <option value="manufacturer">Manufacturer</option>
+                    <option value="trader">Trader (goods)</option>
+                    <option value="restaurant">Restaurant (non-alcohol)</option>
+                    <option value="service">Service Provider</option>
+                    <option value="mixed">Mixed (goods + services)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="elig-turnover">Annual Turnover</label>
+                <div class="input-wrapper">
+                    <span class="input-prefix">&#8377;</span>
+                    <input type="number" id="elig-turnover" class="form-input" placeholder="Enter annual turnover" min="0" step="1" aria-label="Annual turnover in rupees">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="elig-state">State / UT</label>
+                <select id="elig-state" class="form-select" aria-label="Select state or union territory">
+                    <option value="" disabled selected>Select your state</option>
+                    <option value="regular">Andhra Pradesh</option>
+                    <option value="special">Arunachal Pradesh</option>
+                    <option value="regular">Assam</option>
+                    <option value="regular">Bihar</option>
+                    <option value="regular">Chhattisgarh</option>
+                    <option value="regular">Goa</option>
+                    <option value="regular">Gujarat</option>
+                    <option value="regular">Haryana</option>
+                    <option value="regular">Himachal Pradesh</option>
+                    <option value="regular">Jharkhand</option>
+                    <option value="regular">Karnataka</option>
+                    <option value="regular">Kerala</option>
+                    <option value="regular">Madhya Pradesh</option>
+                    <option value="regular">Maharashtra</option>
+                    <option value="special">Manipur</option>
+                    <option value="special">Meghalaya</option>
+                    <option value="special">Mizoram</option>
+                    <option value="special">Nagaland</option>
+                    <option value="regular">Odisha</option>
+                    <option value="regular">Punjab</option>
+                    <option value="regular">Rajasthan</option>
+                    <option value="special">Sikkim</option>
+                    <option value="regular">Tamil Nadu</option>
+                    <option value="regular">Telangana</option>
+                    <option value="special">Tripura</option>
+                    <option value="special">Uttarakhand</option>
+                    <option value="regular">Uttar Pradesh</option>
+                    <option value="regular">West Bengal</option>
+                    <option value="regular">Andaman &amp; Nicobar Islands</option>
+                    <option value="regular">Chandigarh</option>
+                    <option value="regular">Dadra &amp; Nagar Haveli and Daman &amp; Diu</option>
+                    <option value="regular">Delhi</option>
+                    <option value="regular">Jammu &amp; Kashmir</option>
+                    <option value="regular">Ladakh</option>
+                    <option value="regular">Lakshadweep</option>
+                    <option value="regular">Puducherry</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Additional Checks</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-interstate">
+                        Do you make inter-state supplies?
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-ecommerce">
+                        Do you supply through e-commerce operators?
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-restricted">
+                        Are you a manufacturer of ice cream, pan masala, or tobacco?
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-nontaxable">
+                        Do you supply non-taxable goods?
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-calculate" onclick="checkEligibility()">Check Eligibility</button>
+
+            <div id="eligibility-result" class="results-card">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Tool 2: Tax Comparison Calculator -->
+        <div class="calculator-card">
+            <h2>Tax Comparison Calculator</h2>
+
+            <div class="form-group">
+                <label for="comp-monthly-turnover">Monthly Turnover</label>
+                <div class="input-wrapper">
+                    <span class="input-prefix">&#8377;</span>
+                    <input type="number" id="comp-monthly-turnover" class="form-input" placeholder="Enter monthly turnover" min="0" step="1" aria-label="Monthly turnover in rupees">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comp-monthly-purchases">Monthly Purchases (with GST)</label>
+                <div class="input-wrapper">
+                    <span class="input-prefix">&#8377;</span>
+                    <input type="number" id="comp-monthly-purchases" class="form-input" placeholder="Enter monthly purchases with GST" min="0" step="1" aria-label="Monthly purchases with GST in rupees">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comp-business-type">Business Type</label>
+                <select id="comp-business-type" class="form-select" aria-label="Select business type for comparison">
+                    <option value="" disabled selected>Select your business type</option>
+                    <option value="manufacturer">Manufacturer</option>
+                    <option value="trader">Trader (goods)</option>
+                    <option value="restaurant">Restaurant (non-alcohol)</option>
+                    <option value="service">Service Provider</option>
+                    <option value="mixed">Mixed (goods + services)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comp-gst-rate">Average GST Rate on Purchases</label>
+                <select id="comp-gst-rate" class="form-select" aria-label="Select average GST rate on purchases">
+                    <option value="5">5%</option>
+                    <option value="12">12%</option>
+                    <option value="18" selected>18%</option>
+                    <option value="28">28%</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary btn-calculate" onclick="compareTax()">Compare</button>
+
+            <div id="comparison-result" class="results-card">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Pros & Cons -->
+        <h2>Pros &amp; Cons of the Composition Scheme</h2>
+        <div class="pros-cons-grid">
+            <div class="pros-card">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>Lower tax rates (1% / 5% / 6%) compared to regular GST rates</li>
+                    <li>Simplified compliance — only quarterly returns (CMP-08)</li>
+                    <li>No detailed invoicing required (Bill of Supply instead of Tax Invoice)</li>
+                    <li>Less accounting burden and lower compliance costs</li>
+                    <li>Suitable for small businesses with local customers</li>
+                </ul>
+            </div>
+            <div class="cons-card">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li>Cannot collect tax from customers — tax is paid out of margins</li>
+                    <li>No Input Tax Credit (ITC) available on purchases</li>
+                    <li>Cannot make inter-state sales of goods</li>
+                    <li>Cannot supply goods through e-commerce operators</li>
+                    <li>Limited to specific turnover thresholds</li>
+                    <li>Not available for certain goods (ice cream, pan masala, tobacco)</li>
+                    <li>Must file CMP-08 quarterly + GSTR-4 annually</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Info Section -->
+        <h2>Understanding the Composition Scheme</h2>
+
+        <h3>What is the Composition Scheme?</h3>
+        <p>The GST Composition Scheme, introduced under <strong>Section 10 of the CGST Act, 2017</strong>, is an alternative method of tax payment designed for small taxpayers. Instead of paying GST at standard rates and maintaining detailed records, eligible businesses can opt to pay a flat percentage of their turnover as tax. This significantly reduces the compliance burden in terms of filing returns, maintaining accounts, and issuing invoices.</p>
+
+        <h3>Composition Tax Rates</h3>
+        <div class="ref-table-wrapper">
+            <table class="ref-table">
+                <thead>
+                    <tr>
+                        <th>Business Type</th>
+                        <th>CGST</th>
+                        <th>SGST / UTGST</th>
+                        <th>Total Rate</th>
+                        <th>Turnover Limit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Manufacturer</td>
+                        <td><span class="rate-badge">0.5%</span></td>
+                        <td><span class="rate-badge">0.5%</span></td>
+                        <td><span class="rate-badge">1%</span></td>
+                        <td>&#8377;1.5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>Trader (goods)</td>
+                        <td><span class="rate-badge">0.5%</span></td>
+                        <td><span class="rate-badge">0.5%</span></td>
+                        <td><span class="rate-badge">1%</span></td>
+                        <td>&#8377;1.5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>Restaurant (non-alcohol)</td>
+                        <td><span class="rate-badge">2.5%</span></td>
+                        <td><span class="rate-badge">2.5%</span></td>
+                        <td><span class="rate-badge">5%</span></td>
+                        <td>&#8377;1.5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>Service Provider</td>
+                        <td><span class="rate-badge">3%</span></td>
+                        <td><span class="rate-badge">3%</span></td>
+                        <td><span class="rate-badge">6%</span></td>
+                        <td>&#8377;50 Lakh</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Filing Requirements</h3>
+        <p>Composition dealers are required to file the following returns:</p>
+        <ul>
+            <li><strong>CMP-08</strong> — Quarterly statement-cum-challan, due by the 18th of the month following each quarter. This is a self-assessed statement of tax liability.</li>
+            <li><strong>GSTR-4</strong> — Annual return, due by 30th April of the following financial year. This summarises the quarterly statements and includes details of inward supplies on which tax is payable under reverse charge.</li>
+        </ul>
+
+        <h3>How to Opt In</h3>
+        <p>Existing taxpayers can opt for the Composition Scheme by filing <strong>Form GST CMP-02</strong> on the GST portal before the commencement of the financial year (typically by 31st March). New registrants can opt at the time of registration by selecting the composition option in <strong>Form GST REG-01</strong>.</p>
+
+        <h3>Mandatory Exit Conditions</h3>
+        <p>A composition dealer must mandatorily exit the scheme and switch to the regular scheme if:</p>
+        <ul>
+            <li>Aggregate turnover exceeds the prescribed limit during the financial year</li>
+            <li>The dealer starts making inter-state outward supplies of goods</li>
+            <li>The dealer starts supplying goods through e-commerce operators</li>
+            <li>The dealer starts manufacturing ice cream, pan masala, or tobacco products</li>
+        </ul>
+        <p>Upon exit, <strong>Form GST CMP-04</strong> must be filed within 7 days of the event triggering the exit, and <strong>Form ITC-01</strong> must be filed within 30 days to claim ITC on inputs held in stock.</p>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the GST Composition Scheme?</button>
+                <div class="faq-answer">The GST Composition Scheme is a simplified tax scheme under GST for small taxpayers with turnover below specified limits. Instead of charging and collecting GST at normal rates, composition dealers pay tax at a flat, lower rate on their turnover. They file simpler returns (CMP-08 quarterly and GSTR-4 annually) and issue a Bill of Supply instead of a Tax Invoice, making compliance easier and less expensive.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the turnover limit for the Composition Scheme?</button>
+                <div class="faq-answer">The turnover limit for the GST Composition Scheme is Rs 1.5 crore per annum for manufacturers, traders, and restaurants serving non-alcoholic food. For service providers, the limit is Rs 50 lakh per annum. For businesses in special category states (Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, and Uttarakhand), the limit for goods-based businesses is Rs 75 lakh.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What are the tax rates under the Composition Scheme?</button>
+                <div class="faq-answer">The tax rates under the Composition Scheme are: 1% (0.5% CGST + 0.5% SGST) for manufacturers and traders, 5% (2.5% CGST + 2.5% SGST) for restaurants serving non-alcoholic food, and 6% (3% CGST + 3% SGST) for service providers. These rates are applied on the total turnover and are significantly lower than regular GST rates of 5%, 12%, 18%, or 28%.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can a composition dealer claim Input Tax Credit?</button>
+                <div class="faq-answer">No, a composition dealer cannot claim Input Tax Credit (ITC) on purchases. This is one of the key trade-offs of the scheme. Since composition dealers pay tax at a flat rate on turnover and do not collect tax from customers, they cannot set off the GST paid on their inputs against their tax liability. All GST paid on purchases becomes a cost to the business.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Who cannot opt for the Composition Scheme?</button>
+                <div class="faq-answer">The following persons cannot opt for the Composition Scheme: those making inter-state outward supplies of goods, suppliers of goods through e-commerce operators, manufacturers of ice cream, pan masala, or tobacco products, suppliers of non-taxable goods, casual taxable persons, non-resident taxable persons, and businesses exceeding the prescribed turnover limits.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How to switch from Composition to Regular scheme?</button>
+                <div class="faq-answer">To switch from Composition to Regular scheme, file Form GST CMP-04 on the GST portal. This can be done voluntarily or is mandatory when the taxpayer's turnover exceeds the composition limit, starts making inter-state supplies, or begins supplying through e-commerce. After switching, the taxpayer must file Form ITC-01 within 30 days to claim ITC on inputs held in stock and inputs in semi-finished or finished goods on the date of switch.</div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Simplify Your <span style="color:#F0B429">GST Compliance</span></h2>
+            <p>Whether you choose Composition or Regular scheme, DoAide helps you stay compliant with automated GST filing, GSTIN validation, and more.</p>
+            <div class="cta-buttons">
+                <a href="https://gst.doaide.com" class="btn btn-primary">Explore GST Tools</a>
+                <a href="https://doaide.com" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://doaide.com">Home</a>
+                <a href="https://gst.doaide.com">GST Tools</a>
+                <a href="https://gst.doaide.com/#calculator">GST Calculator</a>
+                <a href="https://gst.doaide.com/#gstin-lookup">GSTIN Lookup</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 DoAide &middot; Apprend Technologies</p>
+        </div>
+    </footer>
+
+    <script>
+        function formatINR(num) {
+            return new Intl.NumberFormat('en-IN', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(num);
+        }
+
+        function getCompositionRate(businessType) {
+            switch (businessType) {
+                case 'manufacturer': return 1;
+                case 'trader': return 1;
+                case 'restaurant': return 5;
+                case 'service': return 6;
+                case 'mixed': return 6;
+                default: return 0;
+            }
+        }
+
+        function getTurnoverLimit(businessType, stateType) {
+            if (businessType === 'service') {
+                return 5000000; // 50 lakh for all states
+            }
+            if (stateType === 'special') {
+                return 7500000; // 75 lakh for special states
+            }
+            return 15000000; // 1.5 Cr for regular states
+        }
+
+        function formatLimit(amount) {
+            if (amount >= 10000000) {
+                return '₹' + (amount / 10000000) + ' Cr';
+            }
+            return '₹' + (amount / 100000) + ' Lakh';
+        }
+
+        function checkEligibility() {
+            var businessType = document.getElementById('elig-business-type').value;
+            var turnover = parseFloat(document.getElementById('elig-turnover').value) || 0;
+            var stateEl = document.getElementById('elig-state');
+            var stateType = stateEl.options[stateEl.selectedIndex] ? stateEl.options[stateEl.selectedIndex].value : '';
+
+            var interstate = document.getElementById('check-interstate').checked;
+            var ecommerce = document.getElementById('check-ecommerce').checked;
+            var restricted = document.getElementById('check-restricted').checked;
+            var nontaxable = document.getElementById('check-nontaxable').checked;
+
+            var resultDiv = document.getElementById('eligibility-result');
+
+            if (!businessType) {
+                resultDiv.innerHTML = '<div class="result-note">Please select a business type.</div>';
+                resultDiv.classList.add('visible');
+                return;
+            }
+            if (!stateType) {
+                resultDiv.innerHTML = '<div class="result-note">Please select a state.</div>';
+                resultDiv.classList.add('visible');
+                return;
+            }
+            if (turnover <= 0) {
+                resultDiv.innerHTML = '<div class="result-note">Please enter a valid annual turnover.</div>';
+                resultDiv.classList.add('visible');
+                return;
+            }
+
+            var limit = getTurnoverLimit(businessType, stateType);
+            var rate = getCompositionRate(businessType);
+            var eligible = true;
+            var reasons = [];
+
+            if (turnover > limit) {
+                eligible = false;
+                reasons.push('Annual turnover (₹' + formatINR(turnover) + ') exceeds the limit of ' + formatLimit(limit));
+            }
+
+            if (interstate) {
+                eligible = false;
+                reasons.push('Inter-state supplies are not allowed under the Composition Scheme');
+            }
+
+            if (ecommerce) {
+                eligible = false;
+                reasons.push('Supply through e-commerce operators is not allowed under the Composition Scheme');
+            }
+
+            if (restricted) {
+                eligible = false;
+                reasons.push('Manufacturers of ice cream, pan masala, or tobacco cannot opt for the Composition Scheme');
+            }
+
+            if (nontaxable) {
+                eligible = false;
+                reasons.push('Suppliers of non-taxable goods cannot opt for the Composition Scheme');
+            }
+
+            var html = '';
+            if (eligible) {
+                html += '<div class="eligibility-badge eligible"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(34,197,94,0.15)"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Eligible for Composition Scheme</div>';
+                html += '<div class="result-row"><span class="result-label">Applicable Rate</span><span class="result-value">' + rate + '%</span></div>';
+                html += '<div class="result-row"><span class="result-label">CGST</span><span class="result-value">' + (rate / 2) + '%</span></div>';
+                html += '<div class="result-row"><span class="result-label">SGST / UTGST</span><span class="result-value">' + (rate / 2) + '%</span></div>';
+                html += '<div class="result-row"><span class="result-label">Turnover Limit</span><span class="result-value">' + formatLimit(limit) + '</span></div>';
+                html += '<div class="result-note">You are eligible to opt for the Composition Scheme. File Form GST CMP-02 before the start of the financial year to enroll.</div>';
+            } else {
+                html += '<div class="eligibility-badge not-eligible"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="rgba(239,68,68,0.15)"/><path d="M6 6l6 6M12 6l-6 6" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round"/></svg> Not Eligible for Composition Scheme</div>';
+                html += '<div style="margin-bottom:12px;">';
+                for (var i = 0; i < reasons.length; i++) {
+                    html += '<div class="result-row"><span class="result-label" style="color:#EF4444;">' + reasons[i] + '</span></div>';
+                }
+                html += '</div>';
+                html += '<div class="result-row"><span class="result-label">Turnover Limit (if otherwise eligible)</span><span class="result-value">' + formatLimit(limit) + '</span></div>';
+                html += '<div class="result-row"><span class="result-label">Composition Rate (if eligible)</span><span class="result-value">' + rate + '%</span></div>';
+                html += '<div class="result-note">You are not eligible for the Composition Scheme. You must register under the Regular GST scheme where you can charge tax at standard rates and claim Input Tax Credit.</div>';
+            }
+
+            resultDiv.innerHTML = html;
+            resultDiv.classList.remove('visible');
+            void resultDiv.offsetWidth;
+            resultDiv.classList.add('visible');
+        }
+
+        function compareTax() {
+            var monthlyTurnover = parseFloat(document.getElementById('comp-monthly-turnover').value) || 0;
+            var monthlyPurchases = parseFloat(document.getElementById('comp-monthly-purchases').value) || 0;
+            var businessType = document.getElementById('comp-business-type').value;
+            var purchaseGSTRate = parseFloat(document.getElementById('comp-gst-rate').value) || 18;
+
+            var resultDiv = document.getElementById('comparison-result');
+
+            if (!businessType) {
+                resultDiv.innerHTML = '<div class="result-note">Please select a business type.</div>';
+                resultDiv.classList.add('visible');
+                return;
+            }
+            if (monthlyTurnover <= 0) {
+                resultDiv.innerHTML = '<div class="result-note">Please enter a valid monthly turnover.</div>';
+                resultDiv.classList.add('visible');
+                return;
+            }
+
+            var compRate = getCompositionRate(businessType);
+            var regularSalesRate = 18; // default rate for output
+
+            // Composition calculations
+            var compQuarterlyTax = (monthlyTurnover * 3) * (compRate / 100);
+            var compAnnualTax = monthlyTurnover * 12 * (compRate / 100);
+            var compITC = 0;
+            var compNetAnnualCost = compAnnualTax;
+
+            // Regular calculations
+            var monthlyOutputTax = monthlyTurnover * (regularSalesRate / 100);
+            var monthlyITC = monthlyPurchases * (purchaseGSTRate / (100 + purchaseGSTRate));
+            var monthlyNetTax = Math.max(0, monthlyOutputTax - monthlyITC);
+            var annualOutputTax = monthlyOutputTax * 12;
+            var annualITC = monthlyITC * 12;
+            var regularAnnualTax = monthlyNetTax * 12;
+
+            var diff = compAnnualTax - regularAnnualTax;
+            var isSaving = diff < 0;
+
+            var html = '<div class="comparison-grid">';
+
+            // Composition card
+            html += '<div class="comparison-card">';
+            html += '<h3>Composition Scheme</h3>';
+            html += '<div class="result-row"><span class="result-label">Tax Rate</span><span class="result-value">' + compRate + '%</span></div>';
+            html += '<div class="result-row"><span class="result-label">Quarterly Tax</span><span class="result-value">₹' + formatINR(compQuarterlyTax) + '</span></div>';
+            html += '<div class="result-row"><span class="result-label">Annual Tax</span><span class="result-value">₹' + formatINR(compAnnualTax) + '</span></div>';
+            html += '<div class="result-row"><span class="result-label">ITC Available</span><span class="result-value">₹0.00 (not available)</span></div>';
+            html += '<div class="result-row total"><span class="result-label">Net Annual Cost</span><span class="result-value">₹' + formatINR(compNetAnnualCost) + '</span></div>';
+            html += '</div>';
+
+            // Regular card
+            html += '<div class="comparison-card">';
+            html += '<h3>Regular Scheme</h3>';
+            html += '<div class="result-row"><span class="result-label">Output Tax Rate</span><span class="result-value">' + regularSalesRate + '%</span></div>';
+            html += '<div class="result-row"><span class="result-label">Annual Output Tax</span><span class="result-value">₹' + formatINR(annualOutputTax) + '</span></div>';
+            html += '<div class="result-row"><span class="result-label">Annual ITC</span><span class="result-value">₹' + formatINR(annualITC) + '</span></div>';
+            html += '<div class="result-row"><span class="result-label">Net Tax (Output - ITC)</span><span class="result-value">₹' + formatINR(regularAnnualTax) + '</span></div>';
+            html += '<div class="result-row total"><span class="result-label">Net Annual Tax</span><span class="result-value">₹' + formatINR(regularAnnualTax) + '</span></div>';
+            html += '<div style="margin-top:8px; font-size:12px; color:#6B7280; font-family:IBM Plex Mono, monospace;">Note: Regular scheme involves higher compliance costs (monthly returns, detailed invoices).</div>';
+            html += '</div>';
+
+            html += '</div>';
+
+            // Savings badge
+            if (isSaving) {
+                html += '<div style="text-align:center; margin-top:20px;"><span class="savings-badge savings">Composition Scheme saves you ₹' + formatINR(Math.abs(diff)) + ' / year in taxes</span></div>';
+            } else if (diff > 0) {
+                html += '<div style="text-align:center; margin-top:20px;"><span class="savings-badge extra-cost">Composition Scheme costs you ₹' + formatINR(diff) + ' / year more in taxes</span></div>';
+            } else {
+                html += '<div style="text-align:center; margin-top:20px;"><span class="savings-badge savings">Both schemes result in the same annual tax liability</span></div>';
+            }
+
+            html += '<div class="result-note" style="margin-top:16px;">This comparison considers only the tax liability. Under the Composition Scheme, you also save on compliance costs (less frequent filings, simpler record-keeping), but lose the ability to collect tax from customers or claim ITC on purchases.</div>';
+
+            resultDiv.innerHTML = html;
+            resultDiv.classList.remove('visible');
+            void resultDiv.offsetWidth;
+            resultDiv.classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>
