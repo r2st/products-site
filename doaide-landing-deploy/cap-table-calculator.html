@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Cap Table Calculator — Startup Equity & Dilution Calculator | DoAide</title>
+    <meta name="description" content="Free cap table calculator for startups. Model founder equity, investor ownership, option pools, and dilution from new funding rounds. Understand how each round affects your ownership.">
+    <meta name="keywords" content="cap table calculator, capitalization table, startup equity calculator, dilution calculator, option pool calculator, founder equity, investor ownership, Series A dilution">
+    <link rel="canonical" href="https://doaide.com/cap-table-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:title" content="Free Cap Table Calculator — Startup Equity & Dilution">
+    <meta property="og:description" content="Model founder equity, investor ownership, option pools, and dilution from new rounds. Free, no login required.">
+    <meta property="og:url" content="https://doaide.com/cap-table-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Cap Table Calculator",
+      "url": "https://doaide.com/cap-table-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free cap table calculator for startups. Model equity ownership, option pools, and dilution from funding rounds.",
+      "provider": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is a cap table?","acceptedAnswer":{"@type":"Answer","text":"A capitalization table (cap table) is a spreadsheet or document that lists all of a company's equity ownership — who owns what percentage, including founders, investors, employees with stock options, and anyone else holding equity. It tracks shares outstanding, option pools, convertible notes, SAFEs, and how ownership changes with each funding round."}},
+        {"@type":"Question","name":"How does dilution work in startup funding?","acceptedAnswer":{"@type":"Answer","text":"Dilution occurs when new shares are created (typically for investors or option pools), reducing existing shareholders' ownership percentage. For example, if a founder owns 50% of 1M shares (500K shares) and 250K new shares are issued to an investor, the total becomes 1.25M shares and the founder's ownership drops to 40% — even though they still hold the same 500K shares. Dilution is normal and expected in venture-backed startups."}},
+        {"@type":"Question","name":"What is a typical option pool size?","acceptedAnswer":{"@type":"Answer","text":"Option pools typically range from 10% to 20% of fully diluted shares. Early-stage companies often start with 10-15%, expanding to 15-20% as they grow and need to attract senior talent. Investors usually require the option pool to be created or topped up before their investment (pre-money), meaning existing shareholders bear the dilution rather than the new investors."}},
+        {"@type":"Question","name":"How does a cap table affect 409A valuations?","acceptedAnswer":{"@type":"Answer","text":"The cap table is a critical input to a 409A valuation. The valuation appraiser uses the cap table to understand the company's equity structure — the number and classes of shares, liquidation preferences, conversion rights, and option pool size. These factors determine how enterprise value is allocated between preferred and common stock, directly affecting the fair market value per common share used to price stock options."}}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Schibsted Grotesk',sans-serif;color:#E5E7EB;background:#0A0A0B;overflow-x:hidden;line-height:1.6}
+        a{color:#F0B429;text-decoration:none}a:hover{text-decoration:underline}
+        .nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:20px 24px}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;text-decoration:none}.nav-logo:hover{text-decoration:none}
+        .nav-logo svg{width:32px;height:32px}
+        .nav-links{display:flex;gap:24px;align-items:center}
+        .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;text-decoration:none;transition:color 0.3s}.nav-links a:hover{color:#F0B429;text-decoration:none}
+        .nav-cta{background:#F0B429;color:#0A0A0B;padding:8px 20px;border-radius:8px;font-weight:600;font-size:0.8rem;transition:all 0.3s}.nav-cta:hover{background:#F7CC5F;text-decoration:none}
+        .hero{text-align:center;padding:60px 24px 40px;position:relative}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 60%,rgba(240,180,41,0.06) 0%,transparent 70%);pointer-events:none}
+        .hero h1{font-family:'Instrument Serif',serif;font-size:3rem;font-weight:400;color:#fff;margin-bottom:12px}.hero h1 span{color:#F0B429}
+        .hero p{color:rgba(255,255,255,0.45);max-width:600px;margin:0 auto;font-size:0.95rem}
+        .badge-free{display:inline-block;background:rgba(240,180,41,0.1);border:1px solid rgba(240,180,41,0.25);color:#F0B429;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+        .calc-container{max-width:1000px;margin:0 auto 60px;padding:0 24px}
+        .calc-card{background:rgba(16,16,18,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px;backdrop-filter:blur(4px)}
+        .section-title{font-family:'Instrument Serif',serif;font-size:1.3rem;color:#fff;margin:0 0 16px;font-weight:400}
+        .section-title span{color:#F0B429}
+        .stakeholder-rows{margin-bottom:24px}
+        .stakeholder-row{display:grid;grid-template-columns:1fr 120px 40px;gap:12px;align-items:center;margin-bottom:10px}
+        .stakeholder-row input{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s}
+        .stakeholder-row input:focus{border-color:rgba(240,180,41,0.5)}
+        .stakeholder-row input::placeholder{color:rgba(255,255,255,0.2)}
+        .remove-btn{background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:rgba(255,255,255,0.3);cursor:pointer;padding:8px;font-size:1.1rem;transition:all 0.3s;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+        .remove-btn:hover{border-color:rgba(251,113,133,0.5);color:#fb7185}
+        .add-btn{background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.15);border-radius:10px;color:rgba(255,255,255,0.4);cursor:pointer;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;width:100%;transition:all 0.3s;text-align:center}
+        .add-btn:hover{border-color:rgba(240,180,41,0.3);color:#F0B429}
+        .divider{height:1px;background:rgba(255,255,255,0.06);margin:28px 0}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;margin-bottom:6px;text-transform:uppercase}
+        .form-group input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;outline:none;transition:border-color 0.3s}
+        .form-group input:focus{border-color:rgba(240,180,41,0.5)}
+        .form-hint{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:4px;font-family:'IBM Plex Mono',monospace}
+        .inline-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .calc-btn{width:100%;background:#F0B429;color:#0A0A0B;border:none;padding:14px 24px;border-radius:12px;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;margin-top:8px}
+        .calc-btn:hover{background:#F7CC5F;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,0.2)}
+        .results{display:none;margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}.results.show{display:block}
+        .results h3{font-family:'Instrument Serif',serif;font-size:1.5rem;color:#fff;margin-bottom:20px}
+        .cap-table{width:100%;border-collapse:collapse}
+        .cap-table th,.cap-table td{padding:12px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem}
+        .cap-table th{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.5px;position:sticky;top:0;background:#0A0A0B}
+        .cap-table td{color:rgba(255,255,255,0.6)}
+        .cap-table tr:hover td{color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.02)}
+        .cap-table .pct{font-weight:600;color:#F0B429}
+        .cap-table .total-row td{border-top:2px solid rgba(240,180,41,0.3);font-weight:700;color:#fff}
+        .bar-chart{margin-top:24px}
+        .bar-row{display:flex;align-items:center;margin-bottom:8px;gap:12px}
+        .bar-label{width:140px;font-size:0.82rem;color:rgba(255,255,255,0.5);text-align:right;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .bar-track{flex:1;height:28px;background:rgba(255,255,255,0.03);border-radius:6px;overflow:hidden;position:relative}
+        .bar-fill{height:100%;border-radius:6px;transition:width 0.6s ease;display:flex;align-items:center;padding:0 10px;font-size:0.75rem;font-weight:600;color:#0A0A0B;min-width:40px}
+        .bar-pct{width:60px;font-size:0.82rem;color:rgba(255,255,255,0.5);font-family:'IBM Plex Mono',monospace}
+        .dilution-section{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06)}
+        .dilution-section h3{font-family:'Instrument Serif',serif;font-size:1.3rem;color:#fff;margin-bottom:16px;font-weight:400}
+        .dilution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+        .dilution-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:16px;text-align:center}
+        .dilution-box .dlabel{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+        .dilution-box .dval{font-family:'Instrument Serif',serif;font-size:1.6rem;color:#F0B429}
+        .dilution-box .dsub{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:4px}
+        .result-note{margin-top:20px;padding:16px;background:rgba(240,180,41,0.05);border:1px solid rgba(240,180,41,0.15);border-radius:12px;font-size:0.82rem;color:rgba(255,255,255,0.5)}
+        .result-cta{display:inline-block;margin-top:20px;background:#F0B429;color:#0A0A0B;padding:12px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s}.result-cta:hover{background:#F7CC5F;text-decoration:none;transform:translateY(-2px)}
+        .content{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .content h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin:48px 0 16px;font-weight:400}
+        .content h3{font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;margin:32px 0 12px;font-weight:400}
+        .content p{color:rgba(255,255,255,0.55);margin-bottom:16px;font-size:0.95rem;line-height:1.7}
+        .content ul,.content ol{color:rgba(255,255,255,0.55);margin:0 0 16px 20px;font-size:0.95rem;line-height:1.8}
+        .faq{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .faq h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin-bottom:24px;text-align:center;font-weight:400}
+        .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+        .faq-q{font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem}.faq-q::after{content:'+';color:#F0B429;font-size:1.4rem;transition:transform 0.3s}.faq-q.open::after{transform:rotate(45deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s;color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.7}.faq-a.open{max-height:500px;padding-top:12px}
+        footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,0.07);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.25)}
+        footer a{color:#F0B429;text-decoration:none}
+        .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px}
+        .footer-links a{color:rgba(255,255,255,0.35);font-size:0.7rem;letter-spacing:0.5px;transition:color 0.3s}.footer-links a:hover{color:#F0B429}
+        @media(max-width:700px){.inline-grid{grid-template-columns:1fr}.dilution-grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}.nav-links{display:none}.stakeholder-row{grid-template-columns:1fr 100px 36px}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://doaide.com" class="nav-logo">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="6" width="22" height="17" rx="5" fill="#F0B429"/><ellipse cx="11" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><ellipse cx="21" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><circle cx="11.5" cy="12.5" r="1" fill="#F7CC5F"/><circle cx="21.5" cy="12.5" r="1" fill="#F7CC5F"/><path d="M12 19Q16 22 20 19" stroke="#0A0A0B" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+            DoAide
+        </a>
+        <div class="nav-links">
+            <a href="https://doaide.com">Home</a>
+            <a href="https://doaide.com/409a-valuation-calculator.html">409A Calculator</a>
+            <a href="https://doaide.com/stock-option-tax-calculator.html">Option Tax Calculator</a>
+            <a href="https://n409.doaide.com" class="nav-cta">Get Full 409A Valuation</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge-free">Free Tool — No Login Required</div>
+        <h1>Cap Table <span>Calculator</span></h1>
+        <p>Model your startup's equity structure. Add founders, investors, and option pools to see ownership percentages and dilution from new funding rounds.</p>
+    </section>
+
+    <div class="calc-container">
+        <div class="calc-card">
+            <div class="section-title">Founders & <span>Existing Shareholders</span></div>
+            <div class="stakeholder-rows" id="founderRows">
+                <div class="stakeholder-row">
+                    <input type="text" placeholder="Founder name" value="Founder 1">
+                    <input type="number" placeholder="Shares" value="5000000">
+                    <button class="remove-btn" onclick="removeRow(this)" title="Remove">&times;</button>
+                </div>
+                <div class="stakeholder-row">
+                    <input type="text" placeholder="Founder name" value="Founder 2">
+                    <input type="number" placeholder="Shares" value="3000000">
+                    <button class="remove-btn" onclick="removeRow(this)" title="Remove">&times;</button>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addFounder()">+ Add Shareholder</button>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Option <span>Pool</span></div>
+            <div class="inline-grid">
+                <div class="form-group">
+                    <label>Option Pool Shares</label>
+                    <input type="number" id="optionPool" placeholder="e.g. 1500000" value="1500000">
+                    <div class="form-hint">Total shares reserved for employee option pool</div>
+                </div>
+                <div class="form-group">
+                    <label>Options Granted (Exercised/Vested)</label>
+                    <input type="number" id="optionsGranted" placeholder="e.g. 500000" value="500000">
+                    <div class="form-hint">Options already granted to employees</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">New Funding <span>Round</span> (Optional)</div>
+            <div class="inline-grid">
+                <div class="form-group">
+                    <label>Investment Amount ($)</label>
+                    <input type="number" id="investAmount" placeholder="e.g. 5000000">
+                    <div class="form-hint">Amount being raised in this round</div>
+                </div>
+                <div class="form-group">
+                    <label>Pre-Money Valuation ($)</label>
+                    <input type="number" id="preMoney" placeholder="e.g. 20000000">
+                    <div class="form-hint">Company valuation before the investment</div>
+                </div>
+            </div>
+            <div class="inline-grid">
+                <div class="form-group">
+                    <label>New Option Pool Top-Up (%)</label>
+                    <input type="number" id="newPoolPct" placeholder="e.g. 5" step="0.1" value="0">
+                    <div class="form-hint">Additional option pool % created pre-money (0 if none)</div>
+                </div>
+                <div class="form-group">
+                    <label>Round Name</label>
+                    <input type="text" id="roundName" placeholder="e.g. Series A" value="Series A">
+                </div>
+            </div>
+
+            <button class="calc-btn" onclick="buildCapTable()">Build Cap Table</button>
+
+            <div class="results" id="results">
+                <h3>Cap Table</h3>
+                <div id="preRoundSection"></div>
+                <div id="postRoundSection"></div>
+                <div id="chartSection"></div>
+                <div class="result-note">
+                    <strong>Disclaimer:</strong> This is a simplified cap table model for educational purposes. Real cap tables must account for liquidation preferences, anti-dilution provisions, convertible notes, SAFEs, warrant coverage, and other complex terms. Consult a startup attorney for your actual cap table.
+                </div>
+                <div style="text-align:center;margin-top:24px">
+                    <a href="https://n409.doaide.com" class="result-cta">Get a Professional 409A Valuation →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content">
+        <h2>What Is a Cap Table?</h2>
+        <p>A capitalization table — commonly called a <strong style="color:#F0B429">cap table</strong> — is the definitive record of a company's equity ownership. It lists every shareholder, the number and type of shares they hold, and their ownership percentage on a fully diluted basis.</p>
+        <p>For startups, the cap table is one of the most important financial documents. It determines how much of the company each founder, investor, and employee owns, and how that ownership changes with each new funding round, option grant, or equity event.</p>
+
+        <h2>Understanding Dilution</h2>
+        <p>Dilution is the reduction in existing shareholders' ownership percentage when new shares are issued. It's the most important concept in startup equity, and it happens every time a company raises capital or creates new option pool shares.</p>
+        <p>There are two types of dilution to understand:</p>
+        <ul>
+            <li><strong>Percentage dilution:</strong> Your ownership percentage decreases because total shares outstanding increase. If you owned 50% of 1M shares and 500K new shares are issued, you now own 33.3% of 1.5M shares.</li>
+            <li><strong>Value dilution:</strong> Less common and more concerning — this happens when new shares are issued at a price below the current fair market value (a "down round"), actually reducing the value of your existing shares.</li>
+        </ul>
+        <p>In a well-functioning startup, percentage dilution is normal and healthy. Even though your percentage shrinks, the value per share increases with each funding round, so the total value of your stake grows. A smaller slice of a much bigger pie is worth more.</p>
+
+        <h3>The Option Pool Shuffle</h3>
+        <p>One of the most impactful (and least understood) dilution events is the "option pool shuffle." Investors typically require the company to create or top up an employee stock option pool <em>before</em> their investment — meaning the option pool expansion dilutes existing shareholders but not the new investor.</p>
+        <p>For example, if an investor wants to own 20% of the company post-money, and also requires a 15% option pool, the founders bear the full dilution of both the investment <em>and</em> the option pool. This is why the pre-money valuation isn't always what it seems — it includes the option pool dilution.</p>
+
+        <h2>Key Cap Table Terms</h2>
+        <ul>
+            <li><strong>Fully diluted shares:</strong> Total shares including all outstanding shares, option pool (granted and ungranted), warrants, and convertible securities as if all were exercised/converted</li>
+            <li><strong>Pre-money valuation:</strong> What the company is worth before new investment capital comes in</li>
+            <li><strong>Post-money valuation:</strong> Pre-money valuation + the investment amount</li>
+            <li><strong>Price per share:</strong> Pre-money valuation ÷ fully diluted pre-money shares</li>
+            <li><strong>Liquidation preference:</strong> The amount investors get paid back before common shareholders in an exit event (typically 1x their investment)</li>
+            <li><strong>Pro rata rights:</strong> An investor's right to maintain their ownership percentage in future rounds by investing proportionally</li>
+        </ul>
+
+        <h2>How Cap Tables Affect 409A Valuations</h2>
+        <p>Your cap table is a critical input to the 409A valuation process. The independent appraiser needs to understand the full equity structure — number of share classes, liquidation preferences, participation rights, anti-dilution provisions, and option pool size — to properly allocate enterprise value between preferred and common stock.</p>
+        <p>A complex cap table with multiple preferred series, each with different liquidation preferences and participation rights, typically results in a larger discount between preferred and common stock value. This means a lower 409A valuation for common stock, which benefits employees by giving them a lower strike price on their options.</p>
+
+        <div style="text-align:center;margin:40px 0">
+            <a href="https://n409.doaide.com" class="result-cta">Get Your 409A Valuation Done Right →</a>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is a cap table?</div>
+            <div class="faq-a">A capitalization table (cap table) is a document that lists all equity ownership in a company — who owns what percentage, including founders, investors, employees with stock options, and anyone else holding equity. It tracks shares outstanding, option pools, convertible notes, SAFEs, and how ownership changes with each funding round.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How does dilution work in startup funding?</div>
+            <div class="faq-a">Dilution occurs when new shares are created (typically for investors or option pools), reducing existing shareholders' ownership percentage. For example, if a founder owns 50% of 1M shares (500K shares) and 250K new shares are issued to an investor, the total becomes 1.25M shares and the founder's ownership drops to 40% — even though they still hold the same 500K shares.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is a typical option pool size?</div>
+            <div class="faq-a">Option pools typically range from 10% to 20% of fully diluted shares. Early-stage companies often start with 10-15%, expanding to 15-20% as they grow and need to attract senior talent. Investors usually require the option pool to be created or topped up before their investment (pre-money), meaning existing shareholders bear the dilution.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How does a cap table affect 409A valuations?</div>
+            <div class="faq-a">The cap table is a critical input to a 409A valuation. The appraiser uses it to understand the company's equity structure — share classes, liquidation preferences, conversion rights, and option pool size. These determine how enterprise value is allocated between preferred and common stock, directly affecting the fair market value per common share used to price stock options.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is the option pool shuffle?</div>
+            <div class="faq-a">The "option pool shuffle" is when investors require the company to create or expand the employee option pool before their investment round closes. This means the option pool dilution is borne by existing shareholders (founders) rather than the new investors. It effectively lowers the true pre-money valuation for founders, even though the stated pre-money valuation seems higher.</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://doaide.com">DoAide Home</a>
+            <a href="https://n409.doaide.com">409A Valuations</a>
+            <a href="https://doaide.com/409a-valuation-calculator.html">409A Valuation Calculator</a>
+            <a href="https://doaide.com/stock-option-tax-calculator.html">Stock Option Tax Calculator</a>
+        </div>
+        <p>&copy; 2026 <a href="https://doaide.com">DoAide</a> — Digital Robots for Modern Business</p>
+    </footer>
+
+    <script>
+    var colors=['#F0B429','#2dd4bf','#fb7185','#a78bfa','#38bdf8','#4ade80','#f472b6','#fb923c','#818cf8','#facc15'];
+
+    function addFounder(){
+        var rows=document.getElementById('founderRows');
+        var div=document.createElement('div');
+        div.className='stakeholder-row';
+        div.innerHTML='<input type="text" placeholder="Shareholder name"><input type="number" placeholder="Shares"><button class="remove-btn" onclick="removeRow(this)" title="Remove">&times;</button>';
+        rows.appendChild(div);
+    }
+    function removeRow(btn){
+        var rows=document.getElementById('founderRows');
+        if(rows.children.length>1)btn.parentNode.remove();
+    }
+
+    function buildCapTable(){
+        var rows=document.getElementById('founderRows').children;
+        var founders=[];
+        for(var i=0;i<rows.length;i++){
+            var inputs=rows[i].querySelectorAll('input');
+            var name=inputs[0].value||'Shareholder '+(i+1);
+            var shares=parseFloat(inputs[1].value)||0;
+            if(shares>0)founders.push({name:name,shares:shares,type:'Common'});
+        }
+        if(founders.length===0){alert('Please add at least one shareholder with shares.');return}
+
+        var optionPool=parseFloat(document.getElementById('optionPool').value)||0;
+        var optionsGranted=parseFloat(document.getElementById('optionsGranted').value)||0;
+        var investAmount=parseFloat(document.getElementById('investAmount').value)||0;
+        var preMoney=parseFloat(document.getElementById('preMoney').value)||0;
+        var newPoolPct=parseFloat(document.getElementById('newPoolPct').value)||0;
+        var roundName=document.getElementById('roundName').value||'New Round';
+
+        // Pre-round cap table
+        var preTotal=0;
+        founders.forEach(function(f){preTotal+=f.shares});
+        preTotal+=optionPool;
+
+        var preHtml='<h3 style="font-family:\'Instrument Serif\',serif;font-size:1.2rem;color:#fff;margin-bottom:12px">Pre-Round Cap Table</h3>';
+        preHtml+='<table class="cap-table"><thead><tr><th>Stakeholder</th><th>Type</th><th>Shares</th><th>Ownership %</th></tr></thead><tbody>';
+        founders.forEach(function(f){
+            var pct=(f.shares/preTotal*100).toFixed(2);
+            preHtml+='<tr><td>'+f.name+'</td><td>'+f.type+'</td><td>'+formatNum(f.shares)+'</td><td class="pct">'+pct+'%</td></tr>';
+        });
+        if(optionsGranted>0){
+            preHtml+='<tr><td>Granted Options</td><td>Option Pool</td><td>'+formatNum(optionsGranted)+'</td><td class="pct">'+(optionsGranted/preTotal*100).toFixed(2)+'%</td></tr>';
+        }
+        var ungranted=optionPool-optionsGranted;
+        if(ungranted>0){
+            preHtml+='<tr><td>Ungranted Options</td><td>Option Pool</td><td>'+formatNum(ungranted)+'</td><td class="pct">'+(ungranted/preTotal*100).toFixed(2)+'%</td></tr>';
+        }
+        preHtml+='<tr class="total-row"><td>Total</td><td></td><td>'+formatNum(preTotal)+'</td><td>100.00%</td></tr>';
+        preHtml+='</tbody></table>';
+        document.getElementById('preRoundSection').innerHTML=preHtml;
+
+        // Post-round (if investment provided)
+        if(investAmount>0&&preMoney>0){
+            // New option pool top-up (pre-money)
+            var newPoolShares=0;
+            if(newPoolPct>0){
+                newPoolShares=Math.round(preTotal*newPoolPct/(100-newPoolPct));
+            }
+            var preMoneyShares=preTotal+newPoolShares;
+            var pps=preMoney/preMoneyShares;
+            var newInvestorShares=Math.round(investAmount/pps);
+            var postTotal=preMoneyShares+newInvestorShares;
+            var postMoney=preMoney+investAmount;
+
+            var postHtml='<div class="dilution-section"><h3>Post-'+roundName+' Cap Table</h3>';
+            postHtml+='<div class="dilution-grid">';
+            postHtml+='<div class="dilution-box"><div class="dlabel">Post-Money Valuation</div><div class="dval">$'+formatNum(postMoney)+'</div></div>';
+            postHtml+='<div class="dilution-box"><div class="dlabel">Price Per Share</div><div class="dval">$'+pps.toFixed(4)+'</div></div>';
+            postHtml+='<div class="dilution-box"><div class="dlabel">New Shares Issued</div><div class="dval">'+formatNum(newInvestorShares)+'</div></div>';
+            postHtml+='</div>';
+
+            postHtml+='<table class="cap-table"><thead><tr><th>Stakeholder</th><th>Type</th><th>Shares</th><th>Ownership %</th><th>Dilution</th></tr></thead><tbody>';
+            var chartData=[];
+            founders.forEach(function(f){
+                var prePct=f.shares/preTotal*100;
+                var postPct=f.shares/postTotal*100;
+                var dilution=prePct-postPct;
+                postHtml+='<tr><td>'+f.name+'</td><td>Common</td><td>'+formatNum(f.shares)+'</td><td class="pct">'+postPct.toFixed(2)+'%</td><td style="color:#fb7185">-'+dilution.toFixed(2)+'%</td></tr>';
+                chartData.push({name:f.name,pct:postPct});
+            });
+            var totalPool=optionPool+newPoolShares;
+            if(optionsGranted>0){
+                var gPct=optionsGranted/postTotal*100;
+                postHtml+='<tr><td>Granted Options</td><td>Option Pool</td><td>'+formatNum(optionsGranted)+'</td><td class="pct">'+gPct.toFixed(2)+'%</td><td style="color:#fb7185">-'+(optionsGranted/preTotal*100-gPct).toFixed(2)+'%</td></tr>';
+                chartData.push({name:'Granted Options',pct:gPct});
+            }
+            var totalUngranted=ungranted+newPoolShares;
+            if(totalUngranted>0){
+                var uPct=totalUngranted/postTotal*100;
+                postHtml+='<tr><td>Ungranted Options'+(newPoolShares>0?' (incl. top-up)':'')+'</td><td>Option Pool</td><td>'+formatNum(totalUngranted)+'</td><td class="pct">'+uPct.toFixed(2)+'%</td><td></td></tr>';
+                chartData.push({name:'Ungranted Options',pct:uPct});
+            }
+            var invPct=newInvestorShares/postTotal*100;
+            postHtml+='<tr><td>'+roundName+' Investor</td><td>Preferred</td><td>'+formatNum(newInvestorShares)+'</td><td class="pct">'+invPct.toFixed(2)+'%</td><td style="color:#2dd4bf">New</td></tr>';
+            chartData.push({name:roundName+' Investor',pct:invPct});
+            postHtml+='<tr class="total-row"><td>Total</td><td></td><td>'+formatNum(postTotal)+'</td><td>100.00%</td><td></td></tr>';
+            postHtml+='</tbody></table></div>';
+            document.getElementById('postRoundSection').innerHTML=postHtml;
+
+            // Bar chart
+            var chartHtml='<div class="bar-chart" style="margin-top:24px">';
+            chartData.forEach(function(d,i){
+                var c=colors[i%colors.length];
+                chartHtml+='<div class="bar-row"><div class="bar-label">'+d.name+'</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.max(d.pct,2)+'%;background:'+c+'">'+d.pct.toFixed(1)+'%</div></div></div>';
+            });
+            chartHtml+='</div>';
+            document.getElementById('chartSection').innerHTML=chartHtml;
+        }else{
+            // No round — just show bar chart for pre-round
+            var chartData=[];
+            founders.forEach(function(f){chartData.push({name:f.name,pct:f.shares/preTotal*100})});
+            if(optionsGranted>0)chartData.push({name:'Granted Options',pct:optionsGranted/preTotal*100});
+            if(ungranted>0)chartData.push({name:'Ungranted Options',pct:ungranted/preTotal*100});
+            var chartHtml='<div class="bar-chart" style="margin-top:24px">';
+            chartData.forEach(function(d,i){
+                var c=colors[i%colors.length];
+                chartHtml+='<div class="bar-row"><div class="bar-label">'+d.name+'</div><div class="bar-track"><div class="bar-fill" style="width:'+Math.max(d.pct,2)+'%;background:'+c+'">'+d.pct.toFixed(1)+'%</div></div></div>';
+            });
+            chartHtml+='</div>';
+            document.getElementById('chartSection').innerHTML=chartHtml;
+            document.getElementById('postRoundSection').innerHTML='';
+        }
+
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function formatNum(n){return Math.round(n).toLocaleString('en-US')}
+    function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open')}
+    </script>
+</body>
+</html>
