@@ -1,228 +1,515 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free AI Resume Builder | Resume Maker No Login - DoAide Resume</title>
-<meta name="description" content="Build a professional, ATS-optimized resume in minutes with DoAide's free AI resume builder. No login required. AI writes your bullet points, checks ATS score, and exports to PDF.">
-<meta name="theme-color" content="#0a0a0b">
-<link rel="canonical" href="https://doaide.com/resume.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%230a0a0b%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%232dd4bf%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23f0b429%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23fb7185%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%23a78bfa%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%2338bdf8%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%234ade80%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23f472b6%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23fb923c%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23818cf8%22%2F%3E%3C%2Fsvg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ATS Resume Scorer — Check Your Resume Score | DoAide</title>
+<meta name="description" content="Free ATS Resume Scorer: Paste your resume and job description to get an instant ATS compatibility score out of 100. Get actionable tips to beat applicant tracking systems.">
+<meta name="keywords" content="ATS resume checker, resume score, ATS friendly resume, resume keyword checker, ATS compatibility, resume scanner, applicant tracking system, resume optimizer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://resume.doaide.com/">
+<meta property="og:title" content="Free ATS Resume Scorer — Check Your Resume Score | DoAide">
+<meta property="og:description" content="Paste your resume and job description to instantly check ATS compatibility. Get a score out of 100 with actionable improvement tips.">
+<meta property="og:url" content="https://resume.doaide.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DoAide">
-<meta property="og:title" content="Free AI Resume Builder | No Login Resume Maker - DoAide">
-<meta property="og:description" content="AI-powered resume builder. ATS-optimized templates, AI-written bullet points, cover letter generator. Free, no login.">
-<meta property="og:url" content="https://doaide.com/resume.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/styles.css">
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
-<style>:root{--accent:var(--p3)}</style>
+<meta name="twitter:title" content="Free ATS Resume Scorer — Check Your Resume Score | DoAide">
+<meta name="twitter:description" content="Paste your resume and job description to instantly check ATS compatibility. Score out of 100 with improvement tips.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Resume","applicationCategory":"LifestyleApplication","operatingSystem":"Web","url":"https://resume.doaide.com","description":"Free AI resume builder with ATS optimization. Create professional resumes and cover letters without login.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"5200"}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free ATS Resume Scorer",
+  "description": "Paste your resume and job description to get an instant ATS compatibility score with keyword analysis and actionable suggestions.",
+  "url": "https://resume.doaide.com/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is DoAide Resume Builder really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoAide Resume is a free AI resume builder. You can create, edit, and download your resume as a PDF without paying anything. There is no premium tier required for core features like AI writing, ATS checking, or PDF export."}},
-{"@type":"Question","name":"Do I need to sign up to create a resume?","acceptedAnswer":{"@type":"Answer","text":"No. DoAide Resume is a resume maker no login required. Open the tool, enter your information, and download your resume. No email, no password, no account needed."}},
-{"@type":"Question","name":"Will my resume pass ATS screening?","acceptedAnswer":{"@type":"Answer","text":"DoAide Resume uses ATS-friendly templates with proper heading structure, standard section names, and clean formatting that applicant tracking systems can parse. The built-in ATS score checker flags issues before you submit."}},
-{"@type":"Question","name":"What resume formats are available?","acceptedAnswer":{"@type":"Answer","text":"You can download your resume as a PDF (recommended for most applications), or as a Word document for further editing. Multiple professional templates are available for different industries and career levels."}},
-{"@type":"Question","name":"Can DoAide write my cover letter too?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoAide Resume includes an AI cover letter generator. Paste the job description, and the AI writes a tailored cover letter that matches your resume content to the specific role requirements."}}
-]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an ATS (Applicant Tracking System)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ATS is software used by employers to collect, sort, scan, and rank job applications. Over 98% of Fortune 500 companies use an ATS. It parses your resume for relevant keywords, skills, experience, and education before a human ever sees it. If your resume isn't ATS-friendly, it may be filtered out regardless of your qualifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this ATS resume scorer work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scorer analyzes your resume against the job description by checking keyword matches, section completeness (experience, education, skills), formatting compatibility, and content depth. It runs entirely in your browser — your resume data is never uploaded to any server, ensuring complete privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What score do I need to pass an ATS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most ATS systems rank candidates by relevance. Generally, a match rate of 70% or higher gives you a good chance of being seen by a recruiter. Aim for 80%+ to maximize your chances. Our scorer helps you identify exactly which keywords and sections to improve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my resume data safe with this tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely. This tool runs 100% in your browser using JavaScript. Your resume and job description text are never sent to any server. No data is stored, logged, or transmitted. You can verify this by checking the network tab in your browser's developer tools."
+      }
+    }
+  ]
+}
 </script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+header{border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent2)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}
+nav a:hover{color:var(--text)}
+
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--accent2),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:1.05rem;max-width:650px;margin:0 auto}
+.privacy-badge{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:6px 14px;margin-top:16px;font-size:.8rem;color:var(--green)}
+
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+@media(max-width:768px){.input-grid{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.card h2{font-size:1.05rem;margin-bottom:12px;color:var(--accent2)}
+.card textarea{width:100%;min-height:220px;padding:14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.9rem;font-family:inherit;resize:vertical;outline:none;line-height:1.5}
+.card textarea:focus{border-color:var(--accent)}
+.card textarea::placeholder{color:#555}
+.char-count{font-size:.75rem;color:var(--text2);text-align:right;margin-top:4px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:background .2s;width:100%;max-width:400px;margin:0 auto;display:block}
+.btn:hover{background:var(--accent2)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.results{display:none;margin-top:32px}
+.results.active{display:block}
+
+.score-header{text-align:center;margin-bottom:32px}
+.score-ring{position:relative;width:160px;height:160px;margin:0 auto 16px}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .bg{fill:none;stroke:var(--surface2);stroke-width:10}
+.score-ring .fg{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.score-number{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.5rem;font-weight:800}
+.score-label{font-size:.9rem;color:var(--text2)}
+
+.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center}
+.score-card .sc-val{font-size:1.5rem;font-weight:700;margin-bottom:4px}
+.score-card .sc-label{font-size:.8rem;color:var(--text2)}
+
+.detail-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.detail-section h3{font-size:1.05rem;margin-bottom:14px;color:var(--accent2)}
+
+.keyword-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.kw-tag{padding:5px 12px;border-radius:6px;font-size:.8rem;font-weight:500}
+.kw-found{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.kw-missing{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+
+.suggestion{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.875rem}
+.suggestion:last-child{border-bottom:none}
+.suggestion .icon{flex-shrink:0;width:20px;text-align:center}
+.suggestion .text{color:var(--text2)}
+.suggestion .text strong{color:var(--text)}
+
+.section-check{display:flex;justify-content:space-between;padding:8px 0;font-size:.875rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.section-check:last-child{border-bottom:none}
+.section-check .status{font-weight:600}
+.found{color:var(--green)}
+.missing{color:var(--red)}
+
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.5rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.15rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:12px}
+.content-section ul{color:var(--text2);margin:8px 0 16px 20px}
+.content-section li{margin-bottom:6px}
+
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.5rem;font-weight:700;margin-bottom:20px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2)}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 20px 16px;color:var(--text2);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.8rem}
+footer a{color:var(--text2)}
+</style>
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="resume-doaide-com"></script>
 </head>
 <body>
-<div class="field" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-<a class="skip" href="#main">Skip to content</a>
-<header class="header">
-  <div class="wrap header__bar">
-    <a class="mark" href="/" aria-label="DoAide — home"><svg class="mark__grid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="3" cy="3" r="2.6" fill="#2dd4bf" opacity=".92"/><circle cx="12" cy="3" r="2.6" fill="#f0b429" opacity=".92"/><circle cx="21" cy="3" r="2.6" fill="#fb7185" opacity=".92"/><circle cx="3" cy="12" r="2.6" fill="#a78bfa" opacity=".92"/><circle cx="12" cy="12" r="2.6" fill="#38bdf8" opacity=".92"/><circle cx="21" cy="12" r="2.6" fill="#4ade80" opacity=".92"/><circle cx="3" cy="21" r="2.6" fill="#f472b6" opacity=".92"/><circle cx="12" cy="21" r="2.6" fill="#fb923c" opacity=".92"/><circle cx="21" cy="21" r="2.6" fill="#818cf8" opacity=".92"/></svg><span class="mark__word">DoAide</span></a>
-    <button class="burger" data-burger type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
-    <nav class="nav" id="site-nav" data-nav aria-label="Primary">
-      <div class="menu">
-        <button class="menu__btn" data-menu-btn type="button" aria-expanded="false" aria-controls="menu-panel">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="menu__panel" id="menu-panel" data-menu-panel>
-        <a class="menu__item" href="/gstbot.html" style="--accent:var(--p2)"><span class="menu__dot"></span>DoAide GST</a>
-        <a class="menu__item" href="/n409.html" style="--accent:var(--p9)"><span class="menu__dot"></span>DoAide 409A</a>
-        <a class="menu__item" href="/invoicer.html" style="--accent:var(--p2)"><span class="menu__dot"></span>DoAide Invoicer</a>
-        <a class="menu__item" href="/resume.html" style="--accent:var(--p3)"><span class="menu__dot"></span>DoAide Resume</a>
-        <a class="menu__item" href="/salary.html" style="--accent:var(--p1)"><span class="menu__dot"></span>DoAide Salary</a>
-        <a class="menu__item" href="/qr.html" style="--accent:var(--p4)"><span class="menu__dot"></span>DoAide QR</a>
-        <a class="menu__item" href="/convert.html" style="--accent:var(--p5)"><span class="menu__dot"></span>DoAide Convert</a>
-        <a class="menu__item" href="/bizname.html" style="--accent:var(--p8)"><span class="menu__dot"></span>DoAide BizName</a>
-        </div>
-      </div>
-      <a class="nav__link" href="/#products">Catalogue</a>
-      <a class="nav__link" href="/#company">Company</a>
-      <a class="nav__cta" href="https://doaide.com" target="_blank" rel="noopener">doaide.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-    </nav>
-  </div>
+<header>
+<div class="container header-inner">
+<div class="logo">Do<span>Aide</span> Resume Scorer</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://salary.doaide.com">Salary Calculator</a>
+</nav>
+</div>
 </header>
 
-<main id="main">
+<main class="container">
+<section class="hero">
+<h1>Free ATS Resume Scorer</h1>
+<p>Paste your job description and resume to get an instant ATS compatibility score. Find missing keywords, check section completeness, and get actionable tips to pass applicant tracking systems.</p>
+<div class="privacy-badge">🔒 100% Private — runs in your browser, nothing uploaded</div>
+</section>
 
-  <div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Catalogue</a><span>/</span><span>DoAide Resume</span></nav></div>
+<div class="input-grid">
+<div class="card">
+<h2>📋 Job Description</h2>
+<textarea id="jd" placeholder="Paste the full job description here...&#10;&#10;Include: job title, responsibilities, required skills, qualifications, nice-to-haves, etc."></textarea>
+<div class="char-count"><span id="jd-count">0</span> characters</div>
+</div>
+<div class="card">
+<h2>📄 Your Resume</h2>
+<textarea id="resume" placeholder="Paste your resume text here...&#10;&#10;Copy-paste from your resume document. Include all sections: summary, experience, education, skills, certifications, etc."></textarea>
+<div class="char-count"><span id="resume-count">0</span> characters</div>
+</div>
+</div>
 
-  <section class="phero">
-    <div class="wrap phero__grid">
-      <div class="load">
-        <div class="phero__badge">
-          <span class="phero__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <span class="pill pill--live"><span class="pill__dot"></span>Live</span>
-          <span class="pill">Career tools</span>
-        </div>
-        <h1 class="display phero__name">Free AI Resume Builder &mdash; No Login, No Hassle</h1>
-        <p class="phero__tag">AI resumes that get past the filters.</p>
-        <p class="lede" style="max-width:54ch">DoAide Resume is a free AI resume generator that builds professional, ATS-optimized resumes in minutes. The AI writes your bullet points from job descriptions, checks your ATS compatibility score, and exports a clean PDF — all without requiring you to create an account. A resume maker no login that actually produces resumes worth submitting.</p>
-        <div class="phero__actions">
-          <a class="btn btn--accent" href="https://resume.doaide.com" target="_blank" rel="noopener">Build Your Resume Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-          <a class="btn btn--ghost" href="#features">See Features <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M12 5v13m5-5-5 5-5-5"/></svg></a>
-        </div>
-      </div>
-      <div class="load">
-        <div class="spec">
-          <div class="spec__head">Specification</div>
-          <div class="spec__row"><span class="spec__k">Category</span><span class="spec__v">Career &amp; job search tools</span></div>
-          <div class="spec__row"><span class="spec__k">Built for</span><span class="spec__v">Job seekers, students, career changers</span></div>
-          <div class="spec__row"><span class="spec__k">AI features</span><span class="spec__v">Bullet point writer, ATS checker, cover letters</span></div>
-          <div class="spec__row"><span class="spec__k">Price</span><span class="spec__v">Free — no login required</span></div>
-          <div class="spec__row"><span class="spec__k">Address</span><span class="spec__v"><a href="https://resume.doaide.com" target="_blank" rel="noopener" style="color:var(--accent)">resume.doaide.com</a></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<button class="btn" id="score-btn" onclick="scoreResume()">Score My Resume</button>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">About</p><h2 class="h2 rv" style="margin-top:1rem">Why you need a free AI resume builder.</h2></div></div>
-      <div style="max-width:52rem;display:grid;gap:1.5rem">
-        <p class="rv" style="color:var(--text-2);line-height:1.8">The job market runs on resumes, and most resumes never reach a human. Applicant Tracking Systems (ATS) filter out 75% of applications before a recruiter sees them. If your resume uses the wrong format, missing keywords, or non-standard section headings, it gets rejected automatically — regardless of your qualifications. A free AI resume builder that understands ATS requirements is not a luxury; it is the difference between your application being read and being discarded.</p>
+<section class="results" id="results">
+<div class="score-header">
+<div class="score-ring">
+<svg viewBox="0 0 160 160" width="160" height="160">
+<circle class="bg" cx="80" cy="80" r="70"/>
+<circle class="fg" id="score-circle" cx="80" cy="80" r="70" stroke-dasharray="440" stroke-dashoffset="440"/>
+</svg>
+<div class="score-number" id="total-score">0</div>
+</div>
+<div class="score-label" id="score-verdict"></div>
+</div>
 
-        <h3 class="rv" style="color:var(--text);font-size:1.15rem">How AI makes your resume better</h3>
-        <p class="rv" style="color:var(--text-2);line-height:1.8">Writing effective resume bullet points is hard. You need to quantify achievements, use action verbs, match the job description's language, and keep everything concise. DoAide Resume's AI does this for you — describe what you did in plain language, and the AI rewrites it as a professional, impact-focused bullet point. It also analyzes the job description you are applying to and suggests keywords to include, increasing your chances of passing ATS screening.</p>
+<div class="score-grid" id="score-cards"></div>
 
-        <h3 class="rv" style="color:var(--text);font-size:1.15rem">ATS optimization built in</h3>
-        <p class="rv" style="color:var(--text-2);line-height:1.8">Every template in DoAide Resume is designed to be ATS-friendly. That means proper heading structure (Experience, Education, Skills — not creative alternatives), clean formatting without tables or columns that confuse parsers, and standard fonts. The built-in ATS score checker analyzes your resume against the job description and flags issues: missing keywords, formatting problems, and sections that need attention. You see the score before you submit, not after you get rejected.</p>
+<div class="detail-section">
+<h3>🔑 Keyword Analysis</h3>
+<p style="font-size:.85rem;color:var(--text2);margin-bottom:12px" id="kw-summary"></p>
+<div class="keyword-grid" id="keyword-tags"></div>
+</div>
 
-        <h3 class="rv" style="color:var(--text);font-size:1.15rem">No login, no account, no friction</h3>
-        <p class="rv" style="color:var(--text-2);line-height:1.8">Most resume builders require an account, and many lock PDF export behind a paywall after you have spent an hour entering your information. DoAide Resume does not. It is a resume maker no login — open the tool, enter your details, and download the finished resume. There is no trial that expires, no watermark on the free version, and no bait-and-switch where the download button asks for a credit card.</p>
+<div class="detail-section">
+<h3>📑 Section Detection</h3>
+<div id="section-checks"></div>
+</div>
 
-        <h3 class="rv" style="color:var(--text);font-size:1.15rem">Cover letters that match your resume</h3>
-        <p class="rv" style="color:var(--text-2);line-height:1.8">A strong application includes a cover letter that connects your experience to the specific role. DoAide Resume includes an AI cover letter generator: paste the job description, and the AI writes a tailored cover letter that references your resume content and addresses the role's requirements. No more staring at a blank page trying to write an opening paragraph.</p>
+<div class="detail-section">
+<h3>💡 Improvement Suggestions</h3>
+<div id="suggestions"></div>
+</div>
+</section>
 
-        <h3 class="rv" style="color:var(--text);font-size:1.15rem">Who should use DoAide Resume</h3>
-        <p class="rv" style="color:var(--text-2);line-height:1.8">DoAide Resume is for anyone applying to jobs — recent graduates building their first resume, experienced professionals updating theirs, career changers who need to reframe their experience, and anyone who wants a polished, ATS-optimized document without paying for Canva Pro, Zety, or Resume.io. If you are searching for a free AI resume builder or an AI resume generator free of charge, DoAide Resume delivers a professional result without the price tag.</p>
-      </div>
-    </div>
-  </section>
+<section class="content-section">
+<h2>What is an ATS and Why Does It Matter?</h2>
+<p>An <strong>Applicant Tracking System (ATS)</strong> is software used by employers to manage the hiring process. Over 98% of Fortune 500 companies and 75% of all employers use some form of ATS. These systems automatically scan, parse, and rank resumes before a human recruiter ever sees them.</p>
+<p>If your resume isn't optimized for ATS, it could be filtered out before reaching a hiring manager — even if you're perfectly qualified for the role. Understanding how ATS works is the first step to getting more interviews.</p>
 
-  <section class="section" id="features">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">Capabilities</p><h2 class="h2 rv" style="margin-top:1rem">What it does.</h2></div></div>
-      <div class="trio" data-stagger="60">
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>AI Content Writer</h3><p>Describe your experience in plain language. The AI rewrites it as professional, impact-focused bullet points with action verbs and quantified achievements.</p></article>
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>ATS Score Checker</h3><p>Paste a job description and see your ATS compatibility score. Flags missing keywords, formatting issues, and sections that need attention.</p></article>
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>Professional Templates</h3><p>Clean, modern templates designed to be ATS-friendly. Proper heading structure, standard fonts, and formatting that parsers can read.</p></article>
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>Cover Letter Generator</h3><p>AI writes a tailored cover letter from the job description and your resume content. Specific to the role, not generic.</p></article>
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>PDF &amp; Word Export</h3><p>Download your resume as a polished PDF ready to submit, or as a Word document for further editing. No watermarks, no restrictions.</p></article>
-      <article class="tile rv"><div class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg></div><h3>No Account Required</h3><p>Open the tool, build your resume, download it. No signup, no email verification, no trial expiration. A true resume maker no login.</p></article>
-      </div>
-    </div>
-  </section>
+<h3>How ATS Systems Parse Your Resume</h3>
+<p>ATS software extracts text from your resume and looks for specific information: contact details, work experience, education, skills, and certifications. It then compares these against the job description to calculate a relevance score. Resumes that score above a threshold get forwarded to recruiters.</p>
 
-  <section class="section section--tight">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">Workflow</p><h2 class="h2 rv" style="margin-top:1rem">How it works.</h2></div></div>
-      <div class="steps" data-stagger="70">
-      <article class="step rv"><span class="step__n">Step 01</span><h3>Enter your details</h3><p>Add your contact info, work experience, education, and skills. Or import an existing resume to get started faster.</p></article>
-      <article class="step rv"><span class="step__n">Step 02</span><h3>AI enhances your content</h3><p>The AI rewrites your bullet points for impact, suggests missing skills, and optimizes language for ATS compatibility.</p></article>
-      <article class="step rv"><span class="step__n">Step 03</span><h3>Check your ATS score</h3><p>Paste the target job description and see how your resume scores. Fix flagged issues before submitting.</p></article>
-      <article class="step rv"><span class="step__n">Step 04</span><h3>Download and apply</h3><p>Export as PDF or Word. Generate a matching cover letter. Apply with confidence that your resume will be read.</p></article>
-      </div>
-    </div>
-  </section>
+<h3>Key Factors ATS Systems Evaluate</h3>
+<ul>
+<li><strong>Keyword matching:</strong> The most critical factor. ATS looks for exact and related keywords from the job description in your resume — job titles, technical skills, tools, certifications, and industry terms.</li>
+<li><strong>Section headers:</strong> Standard sections like "Experience," "Education," "Skills" help ATS parse your resume correctly. Creative headers like "My Journey" can confuse parsers.</li>
+<li><strong>Formatting:</strong> Simple, clean formatting works best. Avoid tables, columns, headers/footers, images, and graphics — most ATS can't read these.</li>
+<li><strong>File format:</strong> Submit .docx or .pdf unless specified otherwise. Plain text (.txt) is the safest but loses formatting.</li>
+<li><strong>Chronological order:</strong> List your most recent experience first. ATS and recruiters both prefer reverse-chronological format.</li>
+</ul>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">Detail</p><h2 class="h2 rv" style="margin-top:1rem">What&rsquo;s inside.</h2></div></div>
-      <div class="inside" data-stagger="45">
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Action verb suggestions</strong> — AI replaces weak verbs with impactful alternatives</span></div>
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Keyword matching</strong> — job description analyzed for missing skills and terms</span></div>
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Multiple templates</strong> — professional, modern, and minimal designs</span></div>
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Skills section builder</strong> — categorized technical and soft skills</span></div>
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Education formatting</strong> — degrees, certifications, and coursework properly structured</span></div>
-      <div class="inside__row rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="m4 12 5 5 11-11"/></svg><span><strong>Real-time preview</strong> — see your resume update as you type</span></div>
-      </div>
-    </div>
-  </section>
+<h3>Tips to Beat the ATS</h3>
+<ul>
+<li><strong>Mirror the job description:</strong> Use the exact phrases and terminology from the posting. If they say "project management," don't just write "managed projects."</li>
+<li><strong>Include a skills section:</strong> List both hard skills (Python, SQL, Figma) and soft skills (leadership, communication) that match the job.</li>
+<li><strong>Quantify achievements:</strong> Use numbers — "Increased revenue by 35%" or "Managed team of 12" — to stand out to both ATS and recruiters.</li>
+<li><strong>Spell out acronyms:</strong> Write "Search Engine Optimization (SEO)" so ATS catches both forms.</li>
+<li><strong>Use standard job titles:</strong> If your actual title was creative (e.g., "Growth Ninja"), add the standard equivalent in parentheses.</li>
+<li><strong>Tailor for each application:</strong> One-size-fits-all resumes score lower. Customize keywords for each job.</li>
+</ul>
 
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">FAQ</p><h2 class="h2 rv" style="margin-top:1rem">Frequently asked questions.</h2></div></div>
-      <div style="display:grid;gap:1.5rem;max-width:52rem">
-        <details class="rv" style="border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;background:var(--ink-100)"><summary style="cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center">Is DoAide Resume Builder really free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" style="flex-shrink:0;margin-left:1rem;transition:transform .2s"><path d="m6 9 6 6 6-6"/></svg></summary><p style="margin-top:1rem;color:var(--text-2);line-height:1.7">Yes. DoAide Resume is a free AI resume builder. Create, edit, and download your resume as PDF without paying anything. No premium tier needed for AI writing, ATS checking, or PDF export.</p></details>
-        <details class="rv" style="border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;background:var(--ink-100)"><summary style="cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center">Do I need to sign up to create a resume?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" style="flex-shrink:0;margin-left:1rem;transition:transform .2s"><path d="m6 9 6 6 6-6"/></svg></summary><p style="margin-top:1rem;color:var(--text-2);line-height:1.7">No. DoAide Resume is a resume maker no login required. Open the tool, enter your information, and download your resume. No email, no password, no account needed.</p></details>
-        <details class="rv" style="border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;background:var(--ink-100)"><summary style="cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center">Will my resume pass ATS screening?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" style="flex-shrink:0;margin-left:1rem;transition:transform .2s"><path d="m6 9 6 6 6-6"/></svg></summary><p style="margin-top:1rem;color:var(--text-2);line-height:1.7">DoAide Resume uses ATS-friendly templates with proper heading structure, standard section names, and clean formatting that applicant tracking systems can parse. The ATS score checker flags issues before you submit.</p></details>
-        <details class="rv" style="border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;background:var(--ink-100)"><summary style="cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center">What resume formats are available?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" style="flex-shrink:0;margin-left:1rem;transition:transform .2s"><path d="m6 9 6 6 6-6"/></svg></summary><p style="margin-top:1rem;color:var(--text-2);line-height:1.7">Download as PDF (recommended for most applications) or Word document for further editing. Multiple professional templates available for different industries and career levels.</p></details>
-        <details class="rv" style="border:1px solid var(--line);border-radius:var(--radius);padding:1.25rem 1.5rem;background:var(--ink-100)"><summary style="cursor:pointer;font-weight:600;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center">Can DoAide write my cover letter too?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" style="flex-shrink:0;margin-left:1rem;transition:transform .2s"><path d="m6 9 6 6 6-6"/></svg></summary><p style="margin-top:1rem;color:var(--text-2);line-height:1.7">Yes. Paste the job description and the AI writes a tailored cover letter matching your resume content to the specific role requirements. No more blank-page paralysis.</p></details>
-      </div>
-    </div>
-  </section>
+<h3>Common ATS Resume Mistakes</h3>
+<p>Avoid these pitfalls that cause ATS to misread or reject resumes: using images or icons for contact info, putting key information in headers or footers (ATS often skips these), using uncommon fonts, embedding text in graphics, and having no clear section structure. Stick to standard fonts, clean layouts, and plain text content for the best results.</p>
+</section>
 
-  <section class="section section--tight">
-    <div class="wrap"><div class="band rv">
-      <p class="eyebrow eyebrow--plain" style="justify-content:center">Career tools</p>
-      <h2 class="h2" style="margin-top:1rem">Build your resume &mdash; free, no login.</h2>
-      <p class="lede">AI-powered resume builder with ATS optimization. Professional templates, instant PDF download, zero cost.</p>
-      <div class="band__actions">
-        <a class="btn btn--accent" href="https://resume.doaide.com" target="_blank" rel="noopener">Build Your Resume Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-        <a class="btn btn--ghost" href="/#products">All products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
-      </div>
-    </div></div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="wrap">
-      <div class="section__head"><div><p class="eyebrow rv">More from DoAide</p><h2 class="h2 rv" style="margin-top:1rem">Related tools.</h2></div></div>
-      <div class="trio" data-stagger="60">
-        <a href="/salary.html" class="tile rv" style="text-decoration:none;color:inherit"><div class="tile__icon"><span class="menu__dot" style="--accent:var(--p1)"></span></div><h3>DoAide Salary</h3><p>CTC to in-hand salary calculator for India. Compare tax regimes and know your real take-home pay.</p></a>
-        <a href="/convert.html" class="tile rv" style="text-decoration:none;color:inherit"><div class="tile__icon"><span class="menu__dot" style="--accent:var(--p5)"></span></div><h3>DoAide Convert</h3><p>Free file converter. PDF to Word, image conversion, document merge — all formats supported.</p></a>
-        <a href="/bizname.html" class="tile rv" style="text-decoration:none;color:inherit"><div class="tile__icon"><span class="menu__dot" style="--accent:var(--p8)"></span></div><h3>DoAide BizName</h3><p>AI business name generator with domain and social handle availability checking.</p></a>
-      </div>
-    </div>
-  </section>
-
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is an ATS (Applicant Tracking System)?</div>
+<div class="faq-a">An ATS is software used by employers to collect, sort, scan, and rank job applications. Over 98% of Fortune 500 companies use an ATS. It parses your resume for relevant keywords, skills, and experience before a human ever sees it. If your resume isn't ATS-friendly, it may be filtered out regardless of your qualifications.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How does this ATS resume scorer work?</div>
+<div class="faq-a">Our scorer analyzes your resume against the job description by checking keyword matches, section completeness (experience, education, skills), formatting signals, and content depth. It runs entirely in your browser — your resume data is never uploaded to any server, ensuring complete privacy.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What score do I need to pass an ATS?</div>
+<div class="faq-a">Most ATS systems rank candidates by relevance. A match rate of 70% or higher generally gives you a good chance of being seen by a recruiter. Aim for 80%+ to maximize your chances. Our scorer identifies exactly which keywords and sections to improve.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Is my resume data safe with this tool?</div>
+<div class="faq-a">Yes, completely. This tool runs 100% in your browser using JavaScript. Your resume and job description text are never sent to any server — no data is stored, logged, or transmitted. You can verify by checking the network tab in your browser's developer tools.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What file format is best for ATS?</div>
+<div class="faq-a">Most modern ATS can parse both .docx and .pdf files well. When in doubt, use .docx — it has the highest compatibility across ATS systems. Avoid .jpg, .png, or heavily designed PDF files. This tool works with pasted text from any format.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Should I use the exact keywords from the job description?</div>
+<div class="faq-a">Yes! ATS primarily does keyword matching. Use the exact terms from the job posting wherever they genuinely apply to you. Include both the full term and common abbreviations (e.g., "Search Engine Optimization (SEO)"). Don't stuff keywords — they should appear naturally in context.</div>
+</div>
+</section>
 </main>
 
-<footer class="footer" id="company">
-  <div class="wrap">
-    <div class="footer__grid">
-      <div>
-        <a class="mark" href="/" aria-label="DoAide — home"><svg class="mark__grid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="3" cy="3" r="2.6" fill="#2dd4bf" opacity=".92"/><circle cx="12" cy="3" r="2.6" fill="#f0b429" opacity=".92"/><circle cx="21" cy="3" r="2.6" fill="#fb7185" opacity=".92"/><circle cx="3" cy="12" r="2.6" fill="#a78bfa" opacity=".92"/><circle cx="12" cy="12" r="2.6" fill="#38bdf8" opacity=".92"/><circle cx="21" cy="12" r="2.6" fill="#4ade80" opacity=".92"/><circle cx="3" cy="21" r="2.6" fill="#f472b6" opacity=".92"/><circle cx="12" cy="21" r="2.6" fill="#fb923c" opacity=".92"/><circle cx="21" cy="21" r="2.6" fill="#818cf8" opacity=".92"/></svg><span class="mark__word">DoAide</span></a>
-        <p class="footer__blurb">Applied-AI products for the operational work that keeps a business running — valuation, compliance, career tools, financial planning and the conversations in between.</p>
-      </div>
-      <div><h4>Products</h4><ul>
-        <li><a href="/gstbot.html"><span class="menu__dot" style="--accent:var(--p2)"></span>DoAide GST</a></li>
-        <li><a href="/n409.html"><span class="menu__dot" style="--accent:var(--p9)"></span>DoAide 409A</a></li>
-        <li><a href="/invoicer.html"><span class="menu__dot" style="--accent:var(--p2)"></span>DoAide Invoicer</a></li>
-        <li><a href="/resume.html"><span class="menu__dot" style="--accent:var(--p3)"></span>DoAide Resume</a></li>
-        <li><a href="/salary.html"><span class="menu__dot" style="--accent:var(--p1)"></span>DoAide Salary</a></li>
-        <li><a href="/qr.html"><span class="menu__dot" style="--accent:var(--p4)"></span>DoAide QR</a></li>
-        <li><a href="/convert.html"><span class="menu__dot" style="--accent:var(--p5)"></span>DoAide Convert</a></li>
-        <li><a href="/bizname.html"><span class="menu__dot" style="--accent:var(--p8)"></span>DoAide BizName</a></li>
-      </ul></div>
-      <div><h4>Company</h4><ul>
-        <li><a href="/#products">Catalogue</a></li>
-        <li><a href="/#principles">How we build</a></li>
-        <li><a href="https://doaide.com" target="_blank" rel="noopener">doaide.com</a></li>
-      </ul></div>
-    </div>
-    <div class="footer__bottom"><span>&copy; 2026 DoAide</span><span><a href="https://doaide.com" target="_blank" rel="noopener">doaide.com</a></span></div>
-  </div>
+<footer>
+<div class="container">
+<p>© 2026 <a href="https://doaide.com">DoAide</a> — Free tools to simplify your work. <a href="https://salary.doaide.com">Salary Calculator</a></p>
+</div>
 </footer>
-<script src="/main.js" defer></script>
+
+<script>
+document.getElementById('jd').addEventListener('input',e=>{document.getElementById('jd-count').textContent=e.target.value.length});
+document.getElementById('resume').addEventListener('input',e=>{document.getElementById('resume-count').textContent=e.target.value.length});
+
+function scoreResume(){
+  const jd=document.getElementById('jd').value.trim();
+  const resume=document.getElementById('resume').value.trim();
+  if(!jd||!resume){alert('Please paste both the job description and your resume.');return}
+  if(jd.length<50){alert('Job description seems too short. Paste the full job posting for best results.');return}
+  if(resume.length<100){alert('Resume seems too short. Paste your complete resume text.');return}
+
+  const jdLower=jd.toLowerCase();
+  const resumeLower=resume.toLowerCase();
+
+  // 1. Extract keywords from JD
+  const keywords=extractKeywords(jd);
+  const foundKw=[];
+  const missingKw=[];
+  keywords.forEach(kw=>{
+    if(resumeLower.includes(kw.toLowerCase()))foundKw.push(kw);
+    else missingKw.push(kw);
+  });
+  const kwScore=keywords.length?Math.round(foundKw.length/keywords.length*100):0;
+
+  // 2. Section detection
+  const sections=[
+    {name:'Contact Info',patterns:[/email|phone|linkedin|github|portfolio|@|\d{10}/i],weight:1},
+    {name:'Summary / Objective',patterns:[/summary|objective|profile|about me|professional summary/i],weight:1},
+    {name:'Work Experience',patterns:[/experience|employment|work history|professional experience/i],weight:1.5},
+    {name:'Education',patterns:[/education|degree|university|college|bachelor|master|phd|b\.?tech|m\.?tech|b\.?e\b|m\.?e\b|mba/i],weight:1},
+    {name:'Skills',patterns:[/skills|technical skills|core competencies|technologies|tools/i],weight:1.5},
+    {name:'Certifications',patterns:[/certif|license|accredit|credential/i],weight:0.5},
+    {name:'Projects',patterns:[/projects|portfolio|key projects/i],weight:0.5}
+  ];
+  let sectionScore=0,sectionTotal=0;
+  const sectionResults=[];
+  sections.forEach(s=>{
+    const found=s.patterns.some(p=>p.test(resume));
+    sectionResults.push({name:s.name,found});
+    sectionTotal+=s.weight;
+    if(found)sectionScore+=s.weight;
+  });
+  const secPct=Math.round(sectionScore/sectionTotal*100);
+
+  // 3. Formatting & content quality
+  let formatScore=0;
+  const formatChecks=[];
+  // Word count
+  const wordCount=resume.split(/\s+/).filter(w=>w.length>0).length;
+  if(wordCount>=300&&wordCount<=1200){formatScore+=15;formatChecks.push({pass:true,msg:'Resume length is good ('+wordCount+' words)'})}
+  else if(wordCount<300){formatChecks.push({pass:false,msg:'Resume is too short ('+wordCount+' words). Aim for 300-1200 words.'})}
+  else{formatChecks.push({pass:false,msg:'Resume may be too long ('+wordCount+' words). Keep it concise — 300-1200 words ideal.'})}
+
+  // Quantified achievements
+  const numbers=resume.match(/\d+[%+]|\$[\d,]+|\d+\s*(years?|months?|people|team|clients|users|projects)/gi)||[];
+  if(numbers.length>=3){formatScore+=15;formatChecks.push({pass:true,msg:'Good use of quantified achievements ('+numbers.length+' found)'})}
+  else{formatChecks.push({pass:false,msg:'Add more quantified achievements (numbers, percentages, dollar amounts). Found only '+numbers.length+'.'})}
+
+  // Action verbs
+  const actionVerbs=['managed','led','developed','created','implemented','designed','improved','increased','decreased','achieved','delivered','built','launched','optimized','reduced','generated','established','streamlined','coordinated','collaborated','executed','negotiated','analyzed','supervised','trained','mentored','initiated','resolved','spearheaded','transformed','automated','orchestrated'];
+  const usedVerbs=actionVerbs.filter(v=>resumeLower.includes(v));
+  if(usedVerbs.length>=5){formatScore+=10;formatChecks.push({pass:true,msg:'Strong action verbs used ('+usedVerbs.length+' found)'})}
+  else{formatChecks.push({pass:false,msg:'Use more action verbs to describe achievements. Found only '+usedVerbs.length+'. Try: managed, developed, implemented, improved, delivered.'})}
+
+  // Email/phone check
+  const hasContact=(/[\w.-]+@[\w.-]+\.\w+/.test(resume))||(/\d{10}/.test(resume.replace(/[\s-()]/g,'')));
+  if(hasContact){formatScore+=10;formatChecks.push({pass:true,msg:'Contact information detected'})}
+  else{formatChecks.push({pass:false,msg:'No email or phone number detected. Include contact info at the top.'})}
+
+  const fmtPct=Math.min(formatScore*2,100);
+
+  // 4. JD relevance — check job title match
+  let relevanceScore=0;
+  const jdTitle=extractJobTitle(jd);
+  if(jdTitle&&resumeLower.includes(jdTitle.toLowerCase())){relevanceScore+=30}
+  // Check years of experience alignment
+  const jdYears=jd.match(/(\d+)\+?\s*years?/i);
+  const resYears=resume.match(/(\d+)\+?\s*years?/gi);
+  if(jdYears&&resYears){relevanceScore+=20}
+  else if(jdYears&&!resYears){formatChecks.push({pass:false,msg:'Job requires '+jdYears[0]+' but no years of experience mentioned in resume.'})}
+  // Industry terms overlap
+  const jdBigrams=getNgrams(jdLower,2);
+  const resBigrams=getNgrams(resumeLower,2);
+  const bigramOverlap=jdBigrams.filter(b=>resBigrams.includes(b)).length;
+  relevanceScore+=Math.min(bigramOverlap*2,50);
+  const relPct=Math.min(relevanceScore,100);
+
+  // Overall score (weighted)
+  const overall=Math.round(kwScore*0.40+secPct*0.20+fmtPct*0.15+relPct*0.25);
+
+  // Render results
+  displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,sectionResults,formatChecks,jdTitle);
+}
+
+function extractKeywords(jd){
+  const stop=new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','as','is','was','are','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','must','about','above','after','again','all','also','am','any','because','before','between','both','but','during','each','few','further','get','got','here','how','if','into','it','its','just','know','let','like','make','more','most','much','no','nor','not','now','only','other','our','out','over','own','same','she','so','some','still','such','take','than','that','their','them','then','there','these','they','this','those','through','too','under','until','up','very','want','way','we','well','what','when','where','which','while','who','whom','why','work','working','you','your','able','across','along','already','among','another','around','away','back','based','become','best','better','big','come','day','different','even','every','experience','find','first','give','go','good','great','help','high','include','keep','last','long','look','made','many','may','new','next','old','one','part','people','place','point','provide','right','run','say','see','seem','show','small','start','state','thing','think','time','turn','two','use','used','using','want','way','well','within','without','year','years']);
+  const words=jd.toLowerCase().replace(/[^a-z0-9\s\-\+\#\.\/]/g,' ').split(/\s+/).filter(w=>w.length>2&&!stop.has(w));
+
+  // Get word frequency
+  const freq={};
+  words.forEach(w=>{
+    const normalized=w.replace(/[^a-z0-9\+\#]/g,'');
+    if(normalized.length>2)freq[normalized]=(freq[normalized]||0)+1;
+  });
+
+  // Also extract multi-word phrases (bigrams)
+  const text=jd.toLowerCase();
+  const skillPatterns=[
+    /(?:proficien(?:t|cy)|experience|knowledge|skilled?|expertise|familiar(?:ity)?)\s+(?:in|with)\s+([\w\s\-\+\#\.\/]+?)(?:\.|,|;|\n|and\s)/gi,
+    /(?:required|preferred|must have|nice to have|looking for)[:\s]+([\w\s\-\+\#\.,\/]+?)(?:\n|$)/gi
+  ];
+
+  // Get top keywords sorted by frequency
+  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,40).map(e=>e[0]);
+
+  // Also get common technical terms and skill phrases
+  const techTerms=['python','java','javascript','typescript','react','angular','vue','node','sql','nosql','aws','azure','gcp','docker','kubernetes','git','ci/cd','agile','scrum','machine learning','deep learning','ai','data science','api','rest','graphql','mongodb','postgresql','mysql','redis','elasticsearch','kafka','spark','hadoop','tableau','power bi','excel','figma','sketch','photoshop','jira','confluence','salesforce','sap','html','css','sass','webpack','jenkins','terraform','ansible','linux','devops','microservices','cloud','blockchain','nlp','computer vision','tensorflow','pytorch','pandas','numpy','r','scala','golang','go','rust','swift','kotlin','flutter','react native','ios','android','c++','c#','.net','spring','django','flask','fastapi','laravel','php','ruby','rails','perl','matlab','sas','spss','project management','product management','business analysis','data analysis','data engineering','etl','data warehouse','bi','crm','erp','ux','ui','design thinking','leadership','communication','problem solving','critical thinking','teamwork','collaboration'];
+
+  const foundTech=techTerms.filter(t=>jd.toLowerCase().includes(t));
+
+  // Combine and deduplicate
+  const combined=new Set([...sorted.slice(0,25),...foundTech]);
+  return [...combined].slice(0,35);
+}
+
+function extractJobTitle(jd){
+  const lines=jd.split('\n').filter(l=>l.trim());
+  // First non-empty line is often the title
+  const first=lines[0]?.trim();
+  if(first&&first.length<80)return first;
+  // Look for "Job Title:" or "Position:" patterns
+  const titleMatch=jd.match(/(?:job\s*title|position|role)\s*[:\-]\s*(.+?)(?:\n|$)/i);
+  if(titleMatch)return titleMatch[1].trim();
+  return '';
+}
+
+function getNgrams(text,n){
+  const words=text.replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(w=>w.length>2);
+  const ngrams=[];
+  for(let i=0;i<=words.length-n;i++){
+    ngrams.push(words.slice(i,i+n).join(' '));
+  }
+  return ngrams;
+}
+
+function displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,sectionResults,formatChecks,jdTitle){
+  document.getElementById('results').classList.add('active');
+
+  // Score ring
+  const circle=document.getElementById('score-circle');
+  const circumference=2*Math.PI*70;
+  circle.setAttribute('stroke-dasharray',circumference);
+  const color=overall>=80?'var(--green)':overall>=60?'var(--orange)':'var(--red)';
+  circle.style.stroke=color;
+  setTimeout(()=>{circle.setAttribute('stroke-dashoffset',circumference-(overall/100)*circumference)},100);
+  const scoreEl=document.getElementById('total-score');
+  scoreEl.style.color=color;
+  animateNumber(scoreEl,0,overall,800);
+
+  const verdict=overall>=80?'Excellent! Your resume is well-optimized for ATS.':overall>=60?'Good, but there\'s room for improvement.':overall>=40?'Needs work. Several areas need attention to pass ATS screening.':'Significant optimization needed to pass ATS filters.';
+  document.getElementById('score-verdict').textContent=verdict;
+
+  // Score cards
+  document.getElementById('score-cards').innerHTML=[
+    {label:'Keyword Match',val:kwScore+'%',color:kwScore>=70?'var(--green)':kwScore>=50?'var(--orange)':'var(--red)'},
+    {label:'Section Completeness',val:secPct+'%',color:secPct>=70?'var(--green)':secPct>=50?'var(--orange)':'var(--red)'},
+    {label:'Content Quality',val:fmtPct+'%',color:fmtPct>=60?'var(--green)':fmtPct>=40?'var(--orange)':'var(--red)'},
+    {label:'JD Relevance',val:relPct+'%',color:relPct>=60?'var(--green)':relPct>=40?'var(--orange)':'var(--red)'}
+  ].map(c=>`<div class="score-card"><div class="sc-val" style="color:${c.color}">${c.val}</div><div class="sc-label">${c.label}</div></div>`).join('');
+
+  // Keywords
+  document.getElementById('kw-summary').textContent=`${foundKw.length} of ${foundKw.length+missingKw.length} keywords found in your resume (${kwScore}% match rate)`;
+  document.getElementById('keyword-tags').innerHTML=
+    foundKw.map(k=>`<span class="kw-tag kw-found">✓ ${k}</span>`).join('')+
+    missingKw.map(k=>`<span class="kw-tag kw-missing">✗ ${k}</span>`).join('');
+
+  // Sections
+  document.getElementById('section-checks').innerHTML=sectionResults.map(s=>`
+    <div class="section-check">
+      <span>${s.name}</span>
+      <span class="status ${s.found?'found':'missing'}">${s.found?'✓ Found':'✗ Missing'}</span>
+    </div>`).join('');
+
+  // Suggestions
+  const suggestions=[];
+  if(missingKw.length>0){
+    const top5=missingKw.slice(0,5).join(', ');
+    suggestions.push({icon:'🔑',text:`<strong>Add missing keywords:</strong> Include these terms naturally in your resume: ${top5}`});
+  }
+  if(jdTitle&&!document.getElementById('resume').value.toLowerCase().includes(jdTitle.toLowerCase())){
+    suggestions.push({icon:'💼',text:`<strong>Match the job title:</strong> Include "${jdTitle}" in your resume summary or experience section.`});
+  }
+  formatChecks.filter(c=>!c.pass).forEach(c=>{
+    suggestions.push({icon:'📝',text:c.msg});
+  });
+  sectionResults.filter(s=>!s.found).forEach(s=>{
+    suggestions.push({icon:'📑',text:`<strong>Add ${s.name} section:</strong> ATS looks for a clearly labeled "${s.name}" section in your resume.`});
+  });
+  if(kwScore>=80&&secPct>=80){
+    suggestions.push({icon:'⭐',text:'<strong>Great job!</strong> Your resume is well-aligned with this job description. Consider fine-tuning the order of your bullet points to lead with the most relevant experience.'});
+  }
+
+  document.getElementById('suggestions').innerHTML=suggestions.map(s=>`
+    <div class="suggestion">
+      <span class="icon">${s.icon}</span>
+      <span class="text">${s.text}</span>
+    </div>`).join('');
+
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function animateNumber(el,from,to,duration){
+  const start=performance.now();
+  function step(now){
+    const progress=Math.min((now-start)/duration,1);
+    el.textContent=Math.round(from+(to-from)*progress);
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+</script>
 </body>
 </html>
