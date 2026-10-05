@@ -172,4 +172,35 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- EMI Calculator (calc.doaide.com) -->
+  <url>
+    <loc>https://calc.doaide.com/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- JSON Formatter (tools.doaide.com) -->
+  <url>
+    <loc>https://tools.doaide.com/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EMI Calculator on main domain -->
+  <url>
+    <loc>https://doaide.com/emi-calculator.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- JSON Formatter on main domain -->
+  <url>
+    <loc>https://doaide.com/json-formatter.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

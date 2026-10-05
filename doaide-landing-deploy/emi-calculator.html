@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator India — Home Loan, Car Loan, Personal Loan EMI | DoAide</title>
+<meta name="description" content="Free online EMI calculator for India. Calculate monthly EMI, total interest &amp; amortization schedule for home loan, car loan &amp; personal loan instantly.">
+<meta name="keywords" content="EMI calculator, loan EMI calculator India, home loan calculator, car loan EMI, personal loan EMI calculator, EMI calculator online, loan amortization schedule India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calc.doaide.com/">
+<meta property="og:title" content="EMI Calculator India — Home Loan, Car Loan, Personal Loan EMI">
+<meta property="og:description" content="Free online EMI calculator. Calculate monthly EMI, total interest &amp; amortization schedule for home loan, car loan &amp; personal loan in India.">
+<meta property="og:url" content="https://calc.doaide.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMI Calculator India — Home Loan, Car Loan, Personal Loan EMI">
+<meta name="twitter:description" content="Free online EMI calculator. Calculate monthly EMI, total interest &amp; amortization schedule instantly.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EMI Calculator India",
+  "url": "https://calc.doaide.com/",
+  "description": "Free online EMI calculator for India. Calculate monthly EMI, total interest and amortization schedule for home loan, car loan and personal loan.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "publisher": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is EMI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EMI (Equated Monthly Instalment) is a fixed monthly payment made by a borrower to a lender on a specified date each month. It consists of both principal and interest components." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is EMI calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EMI is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is the principal loan amount, r is the monthly interest rate, and n is the number of monthly instalments." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does prepayment reduce EMI or tenure?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prepayment can reduce either the EMI amount or the loan tenure depending on your bank's policy and your preference. Reducing tenure saves more on total interest paid." }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{border-bottom:1px solid var(--border);padding:16px 0}
+header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}nav a:hover{color:var(--text)}
+
+/* Hero */
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--text2);max-width:600px;margin:0 auto;font-size:1.05rem}
+
+/* Calculator Layout */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.card h2{font-size:1.15rem;margin-bottom:20px;color:var(--text)}
+
+/* Form */
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.85rem;color:var(--text2);margin-bottom:6px;font-weight:500}
+.field input,.field select{width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;outline:none;transition:border .2s}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.tenure-row{display:flex;gap:10px}
+.tenure-row input{flex:1}
+.tenure-row select{width:110px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:var(--accent2)}
+
+/* Results */
+.results{display:none}
+.result-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:500px){.result-cards{grid-template-columns:1fr}}
+.rcard{background:var(--surface2);border-radius:8px;padding:14px;text-align:center}
+.rcard .label{font-size:.78rem;color:var(--text2);margin-bottom:4px}
+.rcard .value{font-size:1.3rem;font-weight:700}
+.rcard .value.emi{color:var(--green)}
+.rcard .value.interest{color:var(--orange)}
+.rcard .value.total{color:var(--accent2)}
+
+/* Chart */
+.chart-wrap{display:flex;align-items:center;justify-content:center;gap:24px;margin:20px 0;flex-wrap:wrap}
+.pie-container{position:relative;width:180px;height:180px}
+.pie-container canvas{width:180px;height:180px}
+.legend{display:flex;flex-direction:column;gap:10px}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:.9rem}
+.legend-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+
+/* Amortization */
+.amort-section{margin-top:24px}
+.amort-section h3{font-size:1rem;margin-bottom:12px}
+.table-wrap{max-height:400px;overflow:auto;border:1px solid var(--border);border-radius:8px}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:.82rem}
+.table-wrap th{position:sticky;top:0;background:var(--surface2);padding:10px 8px;text-align:right;color:var(--text2);font-weight:600;border-bottom:1px solid var(--border)}
+.table-wrap th:first-child{text-align:center}
+.table-wrap td{padding:8px;text-align:right;border-bottom:1px solid var(--border)}
+.table-wrap td:first-child{text-align:center;color:var(--text2)}
+.table-wrap tr:hover td{background:var(--surface2)}
+
+/* Content */
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.4rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.1rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:14px;max-width:800px}
+.content-section ul{color:var(--text2);margin:0 0 14px 20px}
+.content-section li{margin-bottom:6px}
+.formula-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-family:'Courier New',monospace;font-size:.95rem;margin:14px 0;color:var(--accent2);overflow-x:auto}
+
+/* FAQ */
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.4rem;font-weight:700;margin-bottom:20px}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:14px 18px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+.faq-q:hover{background:var(--surface2)}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2);transition:transform .2s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;color:var(--text2);font-size:.9rem}
+.faq-item.open .faq-a{max-height:300px;padding:0 18px 16px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.82rem}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<div class="logo">Do<span>Aide</span> Calc</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://tools.doaide.com">Tools</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+<h1><span>EMI Calculator</span> India</h1>
+<p>Calculate your monthly EMI, total interest payable &amp; view the full amortization schedule for home loans, car loans &amp; personal loans — instantly, for free.</p>
+</div>
+</section>
+
+<section class="container">
+<div class="calc-grid">
+<div class="card">
+<h2>Loan Details</h2>
+<div class="field">
+<label for="amount">Loan Amount (₹)</label>
+<input type="number" id="amount" value="1000000" min="1000" step="1000" placeholder="e.g. 1000000">
+</div>
+<div class="field">
+<label for="rate">Annual Interest Rate (%)</label>
+<input type="number" id="rate" value="8.5" min="0.1" max="50" step="0.1" placeholder="e.g. 8.5">
+</div>
+<div class="field">
+<label for="tenure">Loan Tenure</label>
+<div class="tenure-row">
+<input type="number" id="tenure" value="20" min="1" max="360" placeholder="e.g. 20">
+<select id="tenureType">
+<option value="years">Years</option>
+<option value="months">Months</option>
+</select>
+</div>
+</div>
+<button class="btn" onclick="calculate()">Calculate EMI</button>
+</div>
+
+<div class="card results" id="resultsCard">
+<h2>EMI Breakdown</h2>
+<div class="result-cards">
+<div class="rcard"><div class="label">Monthly EMI</div><div class="value emi" id="emiVal">—</div></div>
+<div class="rcard"><div class="label">Total Interest</div><div class="value interest" id="intVal">—</div></div>
+<div class="rcard"><div class="label">Total Payment</div><div class="value total" id="totalVal">—</div></div>
+</div>
+<div class="chart-wrap">
+<div class="pie-container"><canvas id="pieChart" width="180" height="180"></canvas></div>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div><span id="legPrincipal">Principal: —</span></div>
+<div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div><span id="legInterest">Interest: —</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="results amort-section" id="amortSection">
+<div class="card">
+<h3>Amortization Schedule</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Month</th><th>EMI (₹)</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Balance (₹)</th></tr></thead>
+<tbody id="amortBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<section class="content-section">
+<div class="container">
+<h2>Understanding EMI — Equated Monthly Instalment</h2>
+<p>EMI stands for <strong>Equated Monthly Instalment</strong>. It is the fixed amount you pay to the bank or financial institution each month until the loan is fully repaid. Every EMI payment includes two components: a portion goes toward the <strong>principal</strong> (the original loan amount) and the rest covers the <strong>interest</strong> charged by the lender.</p>
+<p>In the early months of a loan, a larger share of your EMI goes toward interest. As the loan matures, the principal component increases and the interest component decreases. This is known as a <strong>reducing balance method</strong>, which is the standard used by Indian banks.</p>
+
+<h3>EMI Calculation Formula</h3>
+<p>The standard mathematical formula for calculating EMI is:</p>
+<div class="formula-box">EMI = P × r × (1 + r)<sup>n</sup> / ((1 + r)<sup>n</sup> − 1)</div>
+<p>Where <strong>P</strong> = Principal loan amount, <strong>r</strong> = Monthly interest rate (annual rate ÷ 12 ÷ 100), and <strong>n</strong> = Total number of monthly instalments (loan tenure in months).</p>
+
+<h3>Home Loan EMI in India</h3>
+<p>Home loans in India typically range from 15 to 30 years with interest rates between 8% and 10% per annum. Banks like SBI, HDFC, ICICI, and Axis offer competitive rates. Using this EMI calculator, you can compare how different interest rates and tenures affect your monthly outflow and total interest payable over the life of the loan.</p>
+<p>For example, a ₹50,00,000 home loan at 8.5% for 20 years results in a monthly EMI of approximately ₹43,391 and total interest of approximately ₹54,13,840.</p>
+
+<h3>Car Loan EMI in India</h3>
+<p>Car loans usually have shorter tenures of 3 to 7 years and interest rates from 7% to 12%. Since the tenure is shorter, the EMI is higher relative to the loan amount, but total interest paid is significantly less compared to home loans. Most banks in India offer car loans up to 90% of the vehicle's on-road price.</p>
+
+<h3>Personal Loan EMI in India</h3>
+<p>Personal loans are unsecured loans with tenures of 1 to 5 years and interest rates typically between 10% and 24%. Because there is no collateral, lenders charge higher interest. Before taking a personal loan, use this calculator to understand the total cost of borrowing and whether the EMI fits within your monthly budget.</p>
+
+<h3>Tips for Managing Your EMI</h3>
+<ul>
+<li>Keep your total EMI obligations below 40% of your monthly income.</li>
+<li>Compare offers from multiple banks before finalising a loan.</li>
+<li>Consider making part-prepayments when you have surplus funds — this reduces the outstanding principal and saves on interest.</li>
+<li>Choose a shorter tenure if you can afford higher EMIs — the total interest savings can be substantial.</li>
+<li>Check your CIBIL score before applying; a score above 750 can help you negotiate a lower interest rate.</li>
+</ul>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item open">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is EMI?</div>
+<div class="faq-a">EMI (Equated Monthly Instalment) is a fixed monthly payment made by a borrower to a lender on a specified date each month. It consists of both principal and interest components and remains constant throughout the loan tenure.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is EMI calculated?</div>
+<div class="faq-a">EMI is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the principal loan amount, r is the monthly interest rate (annual rate divided by 12 and by 100), and n is the number of monthly instalments.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does prepayment reduce EMI or tenure?</div>
+<div class="faq-a">Prepayment can reduce either the EMI amount or the loan tenure, depending on your bank's policy and your preference. Reducing the tenure typically saves more on total interest paid over the life of the loan.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a good EMI-to-income ratio?</div>
+<div class="faq-a">Financial advisors in India recommend keeping your total EMI obligations below 40% of your net monthly income. This ensures you have enough disposable income for daily expenses and savings.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this calculator accurate for all Indian banks?</div>
+<div class="faq-a">Yes. This calculator uses the standard reducing balance method, which is mandated by the RBI for all banks in India. The EMI figure will match what any bank computes for the same loan amount, rate, and tenure.</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>&copy; 2024 DoAide. Free SEO &amp; productivity tools. <a href="https://doaide.com">doaide.com</a></p>
+</div>
+</footer>
+
+<script>
+function fmt(n){return '₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0});}
+
+function calculate(){
+  const P=parseFloat(document.getElementById('amount').value);
+  const annualRate=parseFloat(document.getElementById('rate').value);
+  const tenureVal=parseInt(document.getElementById('tenure').value);
+  const tenureType=document.getElementById('tenureType').value;
+  if(!P||!annualRate||!tenureVal||P<=0||annualRate<=0||tenureVal<=0){alert('Please enter valid values.');return;}
+  const n=tenureType==='years'?tenureVal*12:tenureVal;
+  const r=annualRate/12/100;
+  const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const totalPayment=emi*n;
+  const totalInterest=totalPayment-P;
+
+  document.getElementById('emiVal').textContent=fmt(emi);
+  document.getElementById('intVal').textContent=fmt(totalInterest);
+  document.getElementById('totalVal').textContent=fmt(totalPayment);
+  document.getElementById('legPrincipal').textContent='Principal: '+fmt(P);
+  document.getElementById('legInterest').textContent='Interest: '+fmt(totalInterest);
+
+  document.getElementById('resultsCard').style.display='block';
+  document.getElementById('amortSection').style.display='block';
+
+  drawPie(P,totalInterest);
+  buildAmort(P,r,n,emi);
+}
+
+function drawPie(principal,interest){
+  const canvas=document.getElementById('pieChart');
+  const ctx=canvas.getContext('2d');
+  const w=180,h=180,cx=w/2,cy=h/2,rad=78;
+  canvas.width=w;canvas.height=h;
+  ctx.clearRect(0,0,w,h);
+  const total=principal+interest;
+  const pAngle=(principal/total)*2*Math.PI;
+  // Principal arc
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,rad,-Math.PI/2,-Math.PI/2+pAngle);ctx.closePath();
+  ctx.fillStyle='#6366f1';ctx.fill();
+  // Interest arc
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,rad,-Math.PI/2+pAngle,-Math.PI/2+2*Math.PI);ctx.closePath();
+  ctx.fillStyle='#f59e0b';ctx.fill();
+  // Center circle
+  ctx.beginPath();ctx.arc(cx,cy,50,0,2*Math.PI);ctx.fillStyle='#131316';ctx.fill();
+  ctx.fillStyle='#e4e4e7';ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  const pct=((principal/total)*100).toFixed(1);
+  ctx.fillText(pct+'%',cx,cy-7);
+  ctx.font='11px sans-serif';ctx.fillStyle='#a1a1aa';ctx.fillText('Principal',cx,cy+9);
+}
+
+function buildAmort(P,r,n,emi){
+  const tbody=document.getElementById('amortBody');
+  let bal=P;let rows='';
+  for(let i=1;i<=n;i++){
+    const intComp=bal*r;
+    const prinComp=emi-intComp;
+    bal-=prinComp;if(bal<0)bal=0;
+    rows+='<tr><td>'+i+'</td><td>'+fmt(emi)+'</td><td>'+fmt(prinComp)+'</td><td>'+fmt(intComp)+'</td><td>'+fmt(bal)+'</td></tr>';
+  }
+  tbody.innerHTML=rows;
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>
