@@ -216,6 +216,20 @@ nav .container {
   justify-content: center;
   font-size: 1.35rem;
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.product-card:hover .card-icon {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 0 16px currentColor;
 }
 
 .card-name {
@@ -382,7 +396,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-gold">&#x2696;&#xFE0F;</div>
+          <div class="card-icon icon-gold"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 8l-2 7h6l-2-7"/><path d="M17 8l-2 7h6l-2-7"/><circle cx="7" cy="15" r="0.5" fill="currentColor"/><circle cx="19" cy="15" r="0.5" fill="currentColor"/></svg></div>
           <div class="card-name">409A</div>
         </div>
         <div class="card-tagline">Automated 409A valuations for startups</div>
@@ -395,7 +409,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-teal">&#x1F4CB;</div>
+          <div class="card-icon icon-teal"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6"/><path d="M9 10h6"/><path d="M9 14h4"/><path d="M15 17l2 2 4-4" stroke-width="2"/></svg></div>
           <div class="card-name">GST</div>
         </div>
         <div class="card-tagline">Indian GST compliance automation</div>
@@ -408,7 +422,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-blue">&#x1F4AC;</div>
+          <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/><path d="M4 17h4l2 3 3-8 2 5h5"/></svg></div>
           <div class="card-name">Desk</div>
         </div>
         <div class="card-tagline">AI customer support agent</div>
@@ -421,20 +435,20 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-purple">&#x1F4E8;</div>
+          <div class="card-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M16 8l2-2 4 4-2 2"/><path d="M12 12l6-6"/><rect x="2" y="6" width="10" height="16" rx="1"/><path d="M5 10h4"/><path d="M5 14h4"/><path d="M5 18h2"/><circle cx="18" cy="18" r="3"/><path d="M18 16v2l1.5 1"/></svg></div>
           <div class="card-name">AutoApply</div>
         </div>
         <div class="card-tagline">AI job application assistant</div>
         <p class="card-desc">Tailors resumes, writes cover letters, and auto-applies to matching positions. Optimized for ATS systems. Tracks application status and follow-ups across all your target companies.</p>
         <div class="card-links">
           <a href="/autoapply.html">Learn more &rarr;</a>
-          <a href="https://autoapply.doaide.com" target="_blank" rel="noopener">autoapply.doaide.com</a>
+          <a href="https://job.doaide.com" target="_blank" rel="noopener">job.doaide.com</a>
         </div>
       </div>
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-green">&#x1F3E0;</div>
+          <div class="card-icon icon-green"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><rect x="9" y="10" width="2" height="2" fill="currentColor" stroke="none"/><rect x="13" y="10" width="2" height="2" fill="currentColor" stroke="none"/></svg></div>
           <div class="card-name">Realty</div>
         </div>
         <div class="card-tagline">AI for real estate operations</div>
@@ -447,7 +461,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-pink">&#x1F4E1;</div>
+          <div class="card-icon icon-pink"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/><path d="M2 20l7-7"/><path d="M22 20l-7-7"/></svg></div>
           <div class="card-name">Pulse</div>
         </div>
         <div class="card-tagline">AI newsletter and content engine</div>
@@ -460,7 +474,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-teal">&#x2695;&#xFE0F;</div>
+          <div class="card-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4v2H8V6a4 4 0 014-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><path d="M12 12v4"/><path d="M10 14h4"/></svg></div>
           <div class="card-name">Med</div>
         </div>
         <div class="card-tagline">Clinical decision support system</div>
@@ -473,7 +487,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-purple">&#x1F9E0;</div>
+          <div class="card-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></div>
           <div class="card-name">Cortex</div>
         </div>
         <div class="card-tagline">AI knowledge management</div>
@@ -486,7 +500,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-green">&#x1F4C8;</div>
+          <div class="card-icon icon-green"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/><path d="M2 20h20"/></svg></div>
           <div class="card-name">Trade</div>
         </div>
         <div class="card-tagline">Algorithmic trading signals and analysis</div>
@@ -499,7 +513,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-gold">&#x1F4B0;</div>
+          <div class="card-icon icon-gold"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><circle cx="16" cy="15" r="2"/><path d="M6 15h4"/></svg></div>
           <div class="card-name">Salary</div>
         </div>
         <div class="card-tagline">Compensation benchmarking and payroll intelligence</div>
@@ -512,7 +526,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-blue">&#x1F4C4;</div>
+          <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h6"/><circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/></svg></div>
           <div class="card-name">Resume</div>
         </div>
         <div class="card-tagline">AI resume and career document builder</div>
@@ -525,7 +539,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-gold">&#x1F5A9;</div>
+          <div class="card-icon icon-gold"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="7" y="5" width="10" height="4" rx="1" fill="currentColor" opacity="0.3"/><circle cx="8.5" cy="12.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="12" cy="12.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="12" cy="15.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="0.8" fill="currentColor" stroke="none"/><circle cx="8.5" cy="18.5" r="0.8" fill="currentColor" stroke="none"/><rect x="11" y="17.7" width="5.5" height="1.6" rx="0.8" fill="currentColor" stroke="none"/></svg></div>
           <div class="card-name">FinCalc</div>
         </div>
         <div class="card-tagline">Financial calculators and modeling</div>
@@ -537,7 +551,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-pink">&#x2B1A;</div>
+          <div class="card-icon icon-pink"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="5" y="5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="17" y="5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="5" y="17" width="2" height="2" fill="currentColor" stroke="none"/><rect x="14" y="14" width="2" height="2" fill="currentColor" stroke="none"/><rect x="18" y="14" width="2" height="2" fill="currentColor" stroke="none"/><rect x="14" y="18" width="2" height="2" fill="currentColor" stroke="none"/><rect x="18" y="18" width="4" height="4" rx="1" fill="currentColor" stroke="none"/></svg></div>
           <div class="card-name">QR</div>
         </div>
         <div class="card-tagline">QR code generator and management platform</div>
@@ -549,7 +563,7 @@ footer .container {
 
       <div class="product-card">
         <div class="card-top">
-          <div class="card-icon icon-blue">&#x1F504;</div>
+          <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
           <div class="card-name">Convert</div>
         </div>
         <div class="card-tagline">Universal file converter</div>
