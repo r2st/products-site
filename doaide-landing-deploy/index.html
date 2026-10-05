@@ -1,873 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoAide — Digital Robots for Modern Business</title>
-    <meta name="description" content="DoAide builds AI-powered digital robots that help businesses work smarter. GST compliance, 409A valuations, contract review, invoicing, payroll, proposals, scheduling, voice agents, inventory, support, analytics, client management, newsletters, clinical decisions, real estate CRM, trading, job applications, and knowledge management.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cline x1='16' y1='6' x2='16' y2='2' stroke='%23F0B429' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='1.5' r='1.5' fill='%23F0B429'/%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Ccircle cx='11.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Ccircle cx='21.5' cy='12.5' r='1' fill='%23F7CC5F'/%3E%3Cpath d='M12 19Q16 22 20 19' stroke='%230A0A0B' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3Crect x='1' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3Crect x='27' y='10' width='4' height='5' rx='2' fill='%23D4A017'/%3E%3C/svg%3E">
-    <!-- Open Graph -->
-    <meta property="og:title" content="DoAide — Digital Robots for Modern Business">
-    <meta property="og:description" content="AI-powered digital robots for GST, 409A, contracts, invoicing, payroll, proposals, scheduling, voice, inventory, support, analytics, CRM, newsletters, clinical decisions, real estate, trading, job applications, and knowledge management.">
-    <meta property="og:url" content="https://doaide.com">
-    <meta property="og:site_name" content="DoAide">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://doaide.com/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DoAide — Digital Robots for Modern Business">
-    <meta name="twitter:description" content="AI-powered digital robots that help businesses work smarter.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoAide — Applied AI products</title>
+<meta name="description" content="DoAide builds applied AI products for back-office operations — tax compliance, valuation, customer support, job applications, clinical decision support, and more.">
+<link rel="canonical" href="https://doaide.com/">
+<meta property="og:title" content="DoAide — Applied AI products">
+<meta property="og:description" content="Serious AI for the unglamorous work. Applied AI products for tax compliance, valuation, customer support, and more.">
+<meta property="og:url" content="https://doaide.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DoAide — Applied AI products">
+<meta name="twitter:description" content="Serious AI for the unglamorous work. Applied AI products for tax compliance, valuation, customer support, and more.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='6' cy='6' r='3' fill='%232dd4bf'/%3E%3Ccircle cx='18' cy='6' r='3' fill='%2338bdf8'/%3E%3Ccircle cx='30' cy='6' r='3' fill='%23a78bfa'/%3E%3Ccircle cx='6' cy='18' r='3' fill='%23f0b429'/%3E%3Ccircle cx='18' cy='18' r='3' fill='%23fb7185'/%3E%3Ccircle cx='30' cy='18' r='3' fill='%234ade80'/%3E%3Ccircle cx='6' cy='30' r='3' fill='%23fb7185'/%3E%3Ccircle cx='18' cy='30' r='3' fill='%23f0b429'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%2338bdf8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DoAide",
+  "url": "https://doaide.com",
+  "description": "Applied AI products for back-office operations — tax compliance, valuation, customer support, job applications, clinical decision support, and more.",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Apprend Technologies"
+  }
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- Umami Analytics -->
-    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #111114;
+  --bg-card-hover: #18181c;
+  --border: #1e1e24;
+  --border-hover: #2a2a32;
+  --text: #edeff5;
+  --text-muted: #9aa1b2;
+  --text-dim: #6b7280;
+  --teal: #2dd4bf;
+  --gold: #f0b429;
+  --pink: #fb7185;
+  --purple: #a78bfa;
+  --blue: #38bdf8;
+  --green: #4ade80;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "DoAide",
-      "url": "https://doaide.com",
-      "description": "DoAide builds AI-powered digital robots that help businesses work smarter.",
-      "foundingDate": "2025",
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Apprend Technologies"
-      },
-      "sameAs": []
-    }
-    </script>
+html { scroll-behavior: smooth; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Schibsted Grotesk', sans-serif; color: #E5E7EB; background: #0A0A0B; overflow-x: hidden; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
-        /* === Hero === */
-        .hero {
-            min-height: 55vh;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; padding: 80px 20px 50px;
-            position: relative;
-        }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse 600px 400px at 50% 40%, rgba(240,180,41,0.08) 0%, transparent 70%);
-            pointer-events: none;
-            animation: heroGlow 4s ease-in-out infinite;
-        }
-        @keyframes heroGlow {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
-        }
-        .hero-robot {
-            width: 140px; height: auto; margin-bottom: 32px;
-            animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 40px rgba(240,180,41,0.3));
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-14px); }
-        }
-        .hero h1 {
-            font-family: 'Instrument Serif', serif; font-size: 4.5rem; font-weight: 400;
-            color: #fff; letter-spacing: -1px; margin-bottom: 16px;
-            animation: fadeUp 1s ease-out 0.3s both;
-        }
-        .hero h1 span { color: #F0B429; }
-        .hero p {
-            color: rgba(255,255,255,0.4); max-width: 400px;
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem;
-            line-height: 1.6;
-            animation: fadeUp 1s ease-out 0.6s both;
-        }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
 
-        /* === Section Label === */
-        .section-label {
-            text-align: center; margin-bottom: 40px;
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
-            color: rgba(255,255,255,0.2); letter-spacing: 3px; text-transform: uppercase;
-        }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
 
-        /* === Products Grid === */
-        .products {
-            max-width: 1240px; margin: 0 auto 80px; padding: 0 24px;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-        }
-        .card {
-            background: rgba(16, 16, 18, 0.8);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 20px; padding: 32px 24px;
-            text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(4px);
-            position: relative; overflow: hidden;
-        }
-        .card::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(240,180,41,0.06) 0%, transparent 60%);
-            opacity: 0; transition: opacity 0.4s;
-        }
-        .card::after {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent 0%, rgba(240,180,41,0.05) 10%, transparent 20%);
-            opacity: 0; transition: opacity 0.6s;
-            animation: cardSweep 6s linear infinite;
-            pointer-events: none;
-        }
-        @keyframes cardSweep {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .card:hover::before { opacity: 1; }
-        .card:hover::after { opacity: 1; }
-        .card:hover {
-            border-color: rgba(240,180,41,0.3);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 80px rgba(240,180,41,0.08);
-        }
+/* Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,11,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
 
-        .card-icon {
-            width: 72px; height: 72px; margin-bottom: 16px;
-            position: relative;
-        }
-        .card-icon svg {
-            width: 100%; height: 100%;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card:hover .card-icon svg { transform: scale(1.15) rotate(3deg); }
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
 
-        .card h3 {
-            font-family: 'Instrument Serif', serif; font-size: 1.35rem; font-weight: 400;
-            color: #fff; margin-bottom: 6px;
-            transition: transform 0.3s;
-        }
-        .card:hover h3 { transform: scale(1.05); }
-        .card h3 em { font-style: italic; color: #F0B429; }
-        .card .tagline {
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-            color: rgba(255,255,255,0.35); letter-spacing: 0.5px;
-            transition: color 0.3s; line-height: 1.4;
-        }
-        .card:hover .tagline { color: rgba(255,255,255,0.55); }
-        .card .badge {
-            position: absolute; top: 12px; right: 12px;
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
-            color: #F0B429; background: rgba(240,180,41,0.1);
-            border: 1px solid rgba(240,180,41,0.2);
-            border-radius: 8px; padding: 2px 8px;
-            letter-spacing: 1px; text-transform: uppercase;
-        }
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
 
-        .card .shine {
-            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(240,180,41,0.04), transparent);
-            transition: none; pointer-events: none;
-        }
-        .card:hover .shine {
-            animation: shine 0.8s ease-out;
-        }
-        @keyframes shine {
-            from { left: -100%; }
-            to { left: 200%; }
-        }
+.nav-links { display: flex; gap: 28px; align-items: center; }
 
-        /* === Particles === */
-        .particles {
-            position: fixed; inset: 0; pointer-events: none; z-index: -1;
-        }
-        .particle {
-            position: absolute; width: 2px; height: 2px; background: #F0B429;
-            border-radius: 50%; opacity: 0;
-            animation: drift linear infinite;
-        }
-        @keyframes drift {
-            0% { opacity: 0; transform: translateY(100vh) scale(0); }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.15; }
-            100% { opacity: 0; transform: translateY(-20px) scale(1); }
-        }
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
 
-        /* === Floating orbs === */
-        .orb {
-            position: fixed; border-radius: 50%; pointer-events: none; z-index: -1;
-            filter: blur(80px); opacity: 0.03;
-        }
-        .orb-1 { width: 400px; height: 400px; background: #F0B429; top: 20%; left: -10%; animation: orbFloat1 12s ease-in-out infinite; }
-        .orb-2 { width: 300px; height: 300px; background: #F7CC5F; bottom: 10%; right: -5%; animation: orbFloat2 15s ease-in-out infinite; }
-        @keyframes orbFloat1 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(60px, -40px); }
-        }
-        @keyframes orbFloat2 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-50px, 30px); }
-        }
+/* Hero */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
 
-        /* === Footer === */
-        footer {
-            text-align: center; padding: 40px 20px;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
-            color: rgba(255,255,255,0.25);
-        }
-        footer a { color: #F0B429; text-decoration: none; }
-        .footer-products {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px;
-            margin-bottom: 20px;
-        }
-        .footer-products a {
-            color: rgba(255,255,255,0.35); text-decoration: none;
-            font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
-            letter-spacing: 0.5px; transition: color 0.3s;
-        }
-        .footer-products a:hover { color: #F0B429; }
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
 
-        @media (max-width: 900px) {
-            .products { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 550px) {
-            .hero h1 { font-size: 3rem; }
-            .products { grid-template-columns: 1fr; }
-            .hero-robot { width: 100px; }
-        }
-    </style>
+.hero .tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  color: var(--teal);
+  margin-bottom: 28px;
+}
+
+.hero .description {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Section headings */
+.section-heading {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-heading .label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Products grid */
+.products { padding: 40px 0 100px; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.card-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.card-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-links {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.card-links a:hover { color: var(--text); }
+
+/* Icon bg colors */
+.icon-teal   { background: rgba(45,212,191,0.12); color: var(--teal); }
+.icon-gold   { background: rgba(240,180,41,0.12); color: var(--gold); }
+.icon-pink   { background: rgba(251,113,133,0.12); color: var(--pink); }
+.icon-purple { background: rgba(167,139,250,0.12); color: var(--purple); }
+.icon-blue   { background: rgba(56,189,248,0.12); color: var(--blue); }
+.icon-green  { background: rgba(74,222,128,0.12); color: var(--green); }
+
+/* How we build */
+.how { padding: 60px 0 100px; }
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.principle {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.principle-number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.principle h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.principle p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.footer-links { display: flex; gap: 24px; }
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 80px 0 60px; }
+  .products-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 18px; }
+  footer .container { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 60px 0 48px; }
+  .products-grid { gap: 14px; }
+  .product-card { padding: 22px; }
+}
+</style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
 
-    <div class="hero">
-        <svg class="hero-robot" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0B429"/><stop offset="100%" stop-color="#D4A017"/></linearGradient></defs>
-            <line x1="200" y1="45" x2="200" y2="20" stroke="#F0B429" stroke-width="6" stroke-linecap="round"/>
-            <circle cx="200" cy="14" r="10" fill="#F0B429"/><circle cx="200" cy="14" r="5" fill="#F7CC5F"/>
-            <rect x="110" y="50" width="180" height="140" rx="35" fill="url(#hg)"/>
-            <rect x="130" y="68" width="140" height="105" rx="25" fill="#D4A017" opacity="0.4"/>
-            <ellipse cx="165" cy="115" rx="18" ry="20" fill="#0A0A0B"/><ellipse cx="235" cy="115" rx="18" ry="20" fill="#0A0A0B"/>
-            <circle cx="170" cy="113" r="8" fill="#F7CC5F"/><circle cx="240" cy="113" r="8" fill="#F7CC5F"/>
-            <circle cx="174" cy="109" r="3" fill="white" opacity="0.7"/><circle cx="244" cy="109" r="3" fill="white" opacity="0.7"/>
-            <path d="M170 155Q200 178 230 155" stroke="#0A0A0B" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <rect x="92" y="95" width="22" height="45" rx="8" fill="#D4A017"/><rect x="286" y="95" width="22" height="45" rx="8" fill="#D4A017"/>
-            <rect x="175" y="190" width="50" height="14" rx="5" fill="#D4A017"/>
-            <rect x="145" y="204" width="110" height="55" rx="18" fill="url(#hg)"/>
-            <circle cx="200" cy="228" r="7" fill="#0A0A0B"/><circle cx="200" cy="228" r="3.5" fill="#0A0A0B"/>
-            <path d="M145 218Q118 223 113 240Q108 257 120 262" stroke="#D4A017" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="120" cy="265" r="7" fill="#D4A017"/>
-            <path d="M255 218Q282 223 287 240Q292 257 280 262" stroke="#D4A017" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="280" cy="265" r="7" fill="#D4A017"/>
-        </svg>
-        <h1>Do<span>Aide</span></h1>
-        <p>digital robots for modern business</p>
+<nav>
+  <div class="container">
+    <a href="/" class="nav-logo">DoAide</a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#how">How we build</a>
+      <a href="mailto:hello@doaide.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>DoAide</h1>
+    <p class="tagline">Serious AI for the unglamorous work</p>
+    <p class="description">DoAide builds applied AI products for back-office operations that businesses actually need but rarely get attention &mdash; tax compliance, valuation, customer support, job applications, clinical decision support, and more.</p>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-heading">
+      <p class="label">Products</p>
+      <h2>What we build</h2>
     </div>
 
-    <div class="section-label">our products</div>
+    <div class="products-grid">
 
-    <div class="products">
-        <!-- 1. DoAide GST -->
-        <a href="https://gst.doaide.com" class="card">
-            <div class="shine"></div>
-            <span class="badge">Free</span>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 10h56v70l-8-5-8 5-8-5-8 5-8-5-8 5-8-5z" fill="none" stroke="#F0B429" stroke-width="2.5" stroke-linejoin="round"/>
-                    <line x1="32" y1="28" x2="68" y2="28" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <line x1="32" y1="38" x2="60" y2="38" stroke="#F0B429" stroke-width="2" opacity="0.35"/>
-                    <line x1="32" y1="48" x2="54" y2="48" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
-                    <text x="50" y="68" font-family="'Schibsted Grotesk', sans-serif" font-size="18" fill="#F0B429" font-weight="700" text-anchor="middle">&#x20B9;</text>
-                    <line x1="22" y1="30" x2="78" y2="30" stroke="#F7CC5F" stroke-width="1" opacity="0.4">
-                        <animate attributeName="y1" values="20;70;20" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="y2" values="20;70;20" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
-                    </line>
-                    <circle cx="68" cy="18" r="3.5" fill="#F0B429" opacity="0.3"/>
-                    <circle cx="68" cy="18" r="1.5" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>GST</em></h3>
-            <div class="tagline">AI-powered GST filing</div>
-        </a>
-
-        <!-- 2. DoAide 409A -->
-        <a href="https://409.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="62" width="14" height="28" rx="3" fill="#F0B429" opacity="0.25"/>
-                    <rect x="30" y="48" width="14" height="42" rx="3" fill="#F0B429" opacity="0.4"/>
-                    <rect x="50" y="34" width="14" height="56" rx="3" fill="#F0B429" opacity="0.6"/>
-                    <rect x="70" y="18" width="14" height="72" rx="3" fill="#F0B429" opacity="0.85"/>
-                    <path d="M17 58 L37 44 L57 30 L77 14" stroke="#F7CC5F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="5 4">
-                        <animate attributeName="stroke-dashoffset" from="36" to="0" dur="2.5s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="77" cy="14" r="4" fill="#F7CC5F">
-                        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="88" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#F0B429" opacity="0.5">$</text>
-                </svg>
-            </div>
-            <h3>DoAide <em>409A</em></h3>
-            <div class="tagline">AI-powered 409A valuations</div>
-        </a>
-
-        <!-- 3. DoAide Contracts -->
-        <a href="https://contracts.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="18" y="10" width="50" height="65" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <rect x="32" y="75" width="50" height="15" rx="4" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <line x1="28" y1="26" x2="58" y2="26" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <line x1="28" y1="34" x2="52" y2="34" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <line x1="28" y1="42" x2="56" y2="42" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
-                    <line x1="28" y1="50" x2="48" y2="50" stroke="#F0B429" stroke-width="2" opacity="0.2"/>
-                    <path d="M40 60 Q50 55 60 62 Q65 65 70 60" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6">
-                        <animate attributeName="stroke-dashoffset" from="40" to="0" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="stroke-dasharray" values="0 40;20 20;40 0" dur="2s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="72" cy="20" r="4" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="72" cy="20" r="1.5" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Contracts</em></h3>
-            <div class="tagline">AI contract review</div>
-        </a>
-
-        <!-- 4. DoAide Invoicer -->
-        <a href="https://invoicer.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="15" width="45" height="60" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="30" y1="30" x2="55" y2="30" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <line x1="30" y1="38" x2="50" y2="38" stroke="#F0B429" stroke-width="2" opacity="0.35"/>
-                    <line x1="30" y1="46" x2="55" y2="46" stroke="#F0B429" stroke-width="1.5" opacity="0.25"/>
-                    <line x1="30" y1="58" x2="55" y2="58" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <text x="48" y="68" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#F0B429" opacity="0.5">&#x20B9;</text>
-                    <path d="M68 35 C75 30 82 35 82 42 C82 52 68 58 68 58 C68 58 54 52 54 42 C54 35 61 30 68 35Z" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <path d="M68 65 L75 72" stroke="#F7CC5F" stroke-width="2.5" fill="none" stroke-linecap="round">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="78" cy="75" r="3" fill="#F0B429" opacity="0.2">
-                        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Invoicer</em></h3>
-            <div class="tagline">WhatsApp invoice processing</div>
-        </a>
-
-        <!-- 5. DoAide Payroll -->
-        <a href="https://payroll.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="35" cy="30" r="12" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <circle cx="35" cy="26" r="5" fill="#F0B429" opacity="0.3"/>
-                    <path d="M20 55 Q20 42 35 42 Q50 42 50 55" stroke="#F0B429" stroke-width="2.5" fill="none"/>
-                    <circle cx="62" cy="34" r="9" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <circle cx="62" cy="31" r="4" fill="#F0B429" opacity="0.2"/>
-                    <path d="M50 52 Q50 43 62 43 Q74 43 74 52" stroke="#F0B429" stroke-width="2" fill="none" opacity="0.5"/>
-                    <rect x="22" y="62" width="56" height="24" rx="5" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <text x="50" y="78" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#F0B429" opacity="0.5" text-anchor="middle">&#x20B9;</text>
-                    <circle cx="72" cy="20" r="3" fill="#F7CC5F" opacity="0.4">
-                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Payroll</em></h3>
-            <div class="tagline">Indian payroll management</div>
-        </a>
-
-        <!-- 6. DoAide Proposals -->
-        <a href="https://proposals.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="15" y="12" width="50" height="65" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="25" y1="28" x2="55" y2="28" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <line x1="25" y1="36" x2="50" y2="36" stroke="#F0B429" stroke-width="2" opacity="0.35"/>
-                    <line x1="25" y1="44" x2="48" y2="44" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
-                    <rect x="25" y="52" width="30" height="16" rx="3" fill="#F0B429" opacity="0.1">
-                        <animate attributeName="opacity" values="0.08;0.15;0.08" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                    <g opacity="0.5">
-                        <path d="M72 28 L82 22 L78 30 Z" fill="#F0B429">
-                            <animateTransform attributeName="transform" type="translate" values="0,0; 5,-4; 0,0" dur="2.5s" repeatCount="indefinite"/>
-                        </path>
-                    </g>
-                    <path d="M68 45 L72 55 L78 50" stroke="#F7CC5F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4">
-                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="75" cy="65" r="4" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Proposals</em></h3>
-            <div class="tagline">AI proposal generator</div>
-        </a>
-
-        <!-- 7. DoAide Scheduler -->
-        <a href="https://scheduler.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="15" y="20" width="60" height="60" rx="8" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="15" y1="36" x2="75" y2="36" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <rect x="28" y="14" width="4" height="12" rx="2" fill="#F0B429" opacity="0.5"/>
-                    <rect x="58" y="14" width="4" height="12" rx="2" fill="#F0B429" opacity="0.5"/>
-                    <rect x="24" y="44" width="10" height="8" rx="2" fill="#F0B429" opacity="0.2"/>
-                    <rect x="40" y="44" width="10" height="8" rx="2" fill="#F0B429" opacity="0.2"/>
-                    <rect x="56" y="44" width="10" height="8" rx="2" fill="#F0B429" opacity="0.2"/>
-                    <rect x="24" y="58" width="10" height="8" rx="2" fill="#F0B429" opacity="0.15"/>
-                    <rect x="40" y="58" width="10" height="8" rx="2" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
-                    </rect>
-                    <rect x="56" y="58" width="10" height="8" rx="2" fill="#F0B429" opacity="0.15"/>
-                    <circle cx="80" cy="22" r="4" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Scheduler</em></h3>
-            <div class="tagline">AI meeting scheduling</div>
-        </a>
-
-        <!-- 8. DoAide Voice -->
-        <a href="https://voice.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="38" y="15" width="24" height="40" rx="12" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="50" y1="55" x2="50" y2="68" stroke="#F0B429" stroke-width="2.5" opacity="0.5"/>
-                    <line x1="38" y1="68" x2="62" y2="68" stroke="#F0B429" stroke-width="2.5" opacity="0.4"/>
-                    <path d="M30 38 Q30 60 50 60 Q70 60 70 38" stroke="#F0B429" stroke-width="2" fill="none" opacity="0.3"/>
-                    <path d="M22 35 Q18 35 18 42" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3">
-                        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="1.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M22 35 Q12 35 12 46" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.2">
-                        <animate attributeName="opacity" values="0.05;0.4;0.05" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M78 35 Q82 35 82 42" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3">
-                        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="1.5s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M78 35 Q88 35 88 46" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.2">
-                        <animate attributeName="opacity" values="0.05;0.4;0.05" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
-                    </path>
-                    <rect x="30" y="78" width="40" height="8" rx="4" fill="#F0B429" opacity="0.1">
-                        <animate attributeName="width" values="20;40;20" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="x" values="40;30;40" dur="2s" repeatCount="indefinite"/>
-                    </rect>
-                </svg>
-            </div>
-            <h3>DoAide <em>Voice</em></h3>
-            <div class="tagline">AI voice agents</div>
-        </a>
-
-        <!-- 9. DoAide Inventory -->
-        <a href="https://inventory.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="15" y="35" width="35" height="30" rx="4" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <rect x="50" y="45" width="35" height="30" rx="4" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <rect x="25" y="20" width="30" height="20" rx="4" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <line x1="32" y1="50" x2="32" y2="56" stroke="#F0B429" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
-                    <line x1="67" y1="60" x2="67" y2="66" stroke="#F0B429" stroke-width="6" stroke-linecap="round" opacity="0.2"/>
-                    <path d="M60 22 L70 18 L80 22 L80 30 L70 34 L60 30Z" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.3">
-                        <animate attributeName="opacity" values="0.15;0.4;0.15" dur="3s" repeatCount="indefinite"/>
-                    </path>
-                    <rect x="20" y="78" width="60" height="6" rx="3" fill="#F0B429" opacity="0.1">
-                        <animate attributeName="width" values="30;60;30" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                </svg>
-            </div>
-            <h3>DoAide <em>Inventory</em></h3>
-            <div class="tagline">Stock management</div>
-        </a>
-
-        <!-- 10. DoAide Support -->
-        <a href="https://support.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 30 Q20 15 50 15 Q80 15 80 30 L80 50 Q80 65 50 65 L40 65 L28 75 L30 62 Q20 58 20 50Z" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <circle cx="35" cy="40" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="50" cy="40" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="65" cy="40" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="70" cy="75" r="10" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <path d="M65 75l3 3 6-7" stroke="#F7CC5F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>Support</em></h3>
-            <div class="tagline">Customer support desk</div>
-        </a>
-
-        <!-- 11. DoAide Analytics -->
-        <a href="https://analytics-app.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="15" width="80" height="55" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="10" y1="28" x2="90" y2="28" stroke="#F0B429" stroke-width="1.5" opacity="0.3"/>
-                    <circle cx="18" cy="22" r="2" fill="#F0B429" opacity="0.3"/>
-                    <circle cx="26" cy="22" r="2" fill="#F0B429" opacity="0.3"/>
-                    <rect x="18" y="34" width="12" height="16" rx="2" fill="#F0B429" opacity="0.3"/>
-                    <rect x="34" y="38" width="12" height="12" rx="2" fill="#F0B429" opacity="0.4"/>
-                    <rect x="50" y="32" width="12" height="18" rx="2" fill="#F0B429" opacity="0.5"/>
-                    <rect x="66" y="36" width="12" height="14" rx="2" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="height" values="10;18;10" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="y" values="40;32;40" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                    <path d="M22 60 L38 58 L54 55 L70 52" stroke="#F7CC5F" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
-                    <rect x="20" y="78" width="60" height="8" rx="4" fill="#F0B429" opacity="0.1"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>Analytics</em></h3>
-            <div class="tagline">Business dashboards</div>
-        </a>
-
-        <!-- 12. DoAide Desk -->
-        <a href="https://desk.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8" y="20" width="50" height="34" rx="10" fill="#F0B429" opacity="0.15"/>
-                    <rect x="42" y="42" width="50" height="34" rx="10" fill="#F0B429" opacity="0.25"/>
-                    <circle cx="24" cy="35" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="34" cy="35" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="44" cy="35" r="3" fill="#F0B429" opacity="0.5">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M58 58l5 5 10-12" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="24" cy="86" r="4" fill="#F0B429" opacity="0.12"/>
-                    <circle cx="38" cy="86" r="4" fill="#F0B429" opacity="0.2"/>
-                    <circle cx="52" cy="86" r="4" fill="#F0B429" opacity="0.3"/>
-                    <circle cx="66" cy="86" r="4" fill="#F0B429" opacity="0.4"/>
-                    <circle cx="80" cy="86" r="4" fill="#F0B429" opacity="0.5"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>Desk</em></h3>
-            <div class="tagline">AI client management</div>
-        </a>
-
-        <!-- 13. DoAide Pulse -->
-        <a href="https://pulse.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="12" y="15" width="56" height="70" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <rect x="68" y="25" width="20" height="60" rx="6" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <rect x="20" y="24" width="40" height="5" rx="2" fill="#F0B429" opacity="0.6"/>
-                    <rect x="20" y="34" width="32" height="3" rx="1.5" fill="#F0B429" opacity="0.3"/>
-                    <rect x="20" y="42" width="28" height="3" rx="1.5" fill="#F0B429" opacity="0.2"/>
-                    <rect x="20" y="52" width="40" height="22" rx="4" fill="#F0B429" opacity="0.1">
-                        <animate attributeName="opacity" values="0.08;0.15;0.08" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                    <g opacity="0.6">
-                        <path d="M52 58 L54 54 L56 58 L54 62Z" fill="#F7CC5F">
-                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-                            <animateTransform attributeName="transform" type="rotate" values="0 54 58;180 54 58;360 54 58" dur="4s" repeatCount="indefinite"/>
-                        </path>
-                    </g>
-                    <g opacity="0.5">
-                        <path d="M72 40 L82 35 L80 45 Z" fill="#F0B429">
-                            <animateTransform attributeName="transform" type="translate" values="0,0; 4,-3; 0,0" dur="2s" repeatCount="indefinite"/>
-                        </path>
-                    </g>
-                </svg>
-            </div>
-            <h3>DoAide <em>Pulse</em></h3>
-            <div class="tagline">AI newsletters</div>
-        </a>
-
-        <!-- 14. DoAide Med -->
-        <a href="https://med.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="38" y="14" width="24" height="24" rx="4" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="50" y1="18" x2="50" y2="34" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="42" y1="26" x2="58" y2="26" stroke="#F0B429" stroke-width="2.5"/>
-                    <rect x="22" y="28" width="56" height="60" rx="8" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <line x1="30" y1="48" x2="55" y2="48" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <line x1="30" y1="56" x2="50" y2="56" stroke="#F0B429" stroke-width="2" opacity="0.25"/>
-                    <path d="M28 75 L38 75 L42 65 L46 82 L50 70 L54 75 L72 75" stroke="#F7CC5F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <animate attributeName="stroke-dashoffset" from="80" to="0" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="stroke-dasharray" values="0 80;40 40;80 0" dur="2s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="68" cy="48" r="5" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Med</em></h3>
-            <div class="tagline">Clinical decision support</div>
-        </a>
-
-        <!-- 15. DoAide Realty -->
-        <a href="https://realty.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 15 L15 45 L20 45 L20 80 L80 80 L80 45 L85 45 Z" fill="none" stroke="#F0B429" stroke-width="2.5" stroke-linejoin="round"/>
-                    <rect x="40" y="55" width="20" height="25" rx="2" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
-                    <circle cx="56" cy="68" r="1.5" fill="#F7CC5F" opacity="0.6"/>
-                    <rect x="26" y="50" width="12" height="12" rx="1" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.4"/>
-                    <rect x="62" y="50" width="12" height="12" rx="1" fill="none" stroke="#F0B429" stroke-width="1.5" opacity="0.4"/>
-                    <circle cx="72" cy="30" r="4" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="72" cy="30" r="1.5" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Realty</em></h3>
-            <div class="tagline">Real estate CRM</div>
-        </a>
-
-        <!-- 16. DoAide Trade -->
-        <a href="https://trade.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="20" y1="70" x2="20" y2="30" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <rect x="15" y="40" width="10" height="20" rx="1" fill="#F0B429" opacity="0.6"/>
-                    <line x1="38" y1="75" x2="38" y2="25" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <rect x="33" y="30" width="10" height="25" rx="1" fill="#F7CC5F" opacity="0.7"/>
-                    <line x1="56" y1="65" x2="56" y2="20" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <rect x="51" y="35" width="10" height="18" rx="1" fill="#F0B429" opacity="0.5"/>
-                    <line x1="74" y1="70" x2="74" y2="15" stroke="#F0B429" stroke-width="2" opacity="0.3"/>
-                    <rect x="69" y="22" width="10" height="28" rx="1" fill="#F7CC5F" opacity="0.8"/>
-                    <path d="M15 60 Q35 35 55 42 T85 20" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round">
-                        <animate attributeName="stroke-dashoffset" from="120" to="0" dur="2.5s" repeatCount="indefinite"/>
-                        <animate attributeName="stroke-dasharray" values="0 120;60 60;120 0" dur="2.5s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="82" cy="22" r="5" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="4;7;4" dur="1.8s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
-            </div>
-            <h3>DoAide <em>Trade</em></h3>
-            <div class="tagline">AI equity trading</div>
-        </a>
-
-        <!-- 17. DoAide AutoApply -->
-        <a href="https://job.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="14" y="34" width="72" height="52" rx="8" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <rect x="34" y="18" width="32" height="20" rx="5" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="14" y1="50" x2="86" y2="50" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <circle cx="50" cy="58" r="12" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M44 58l4 4 9-10" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <g opacity="0.4">
-                        <path d="M72 28 L82 22 L78 30 Z" fill="#F0B429">
-                            <animateTransform attributeName="transform" type="translate" values="0,0; 6,-4; 0,0" dur="2.5s" repeatCount="indefinite"/>
-                        </path>
-                    </g>
-                </svg>
-            </div>
-            <h3>DoAide <em>AutoApply</em></h3>
-            <div class="tagline">AI job applications</div>
-        </a>
-
-        <!-- 18. DoAide Cortex -->
-        <a href="https://cortex.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="30" y1="25" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <line x1="70" y1="25" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <line x1="20" y1="50" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <line x1="80" y1="50" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <line x1="30" y1="75" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <line x1="70" y1="75" x2="50" y2="45" stroke="#F0B429" stroke-width="1.5" opacity="0.2"/>
-                    <circle r="2" fill="#F7CC5F" opacity="0.6">
-                        <animateMotion dur="2s" repeatCount="indefinite" path="M30,25 L50,45"/>
-                        <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle r="2" fill="#F7CC5F" opacity="0.6">
-                        <animateMotion dur="2.5s" repeatCount="indefinite" path="M70,75 L50,45"/>
-                        <animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M50 15 C35 15 22 22 22 35 C22 42 26 48 32 52 C28 56 26 62 28 68 C30 76 38 82 50 85 C62 82 70 76 72 68 C74 62 72 56 68 52 C74 48 78 42 78 35 C78 22 65 15 50 15Z" fill="none" stroke="#F0B429" stroke-width="2.5" opacity="0.35"/>
-                    <circle cx="50" cy="45" r="8" fill="#F0B429" opacity="0.2">
-                        <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="50" cy="45" r="4" fill="#F7CC5F" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="30" cy="25" r="5" fill="#F0B429" opacity="0.4"/>
-                    <circle cx="70" cy="25" r="5" fill="#F0B429" opacity="0.4"/>
-                    <circle cx="20" cy="50" r="4" fill="#F0B429" opacity="0.3"/>
-                    <circle cx="80" cy="50" r="4" fill="#F0B429" opacity="0.3"/>
-                    <circle cx="30" cy="75" r="5" fill="#F0B429" opacity="0.4"/>
-                    <circle cx="70" cy="75" r="5" fill="#F0B429" opacity="0.4"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>Cortex</em></h3>
-            <div class="tagline">Knowledge management</div>
-        </a>
-
-        <!-- 19. DoAide BizName -->
-        <a href="https://bizname.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 18h40l30 30-34 34-36-34z" fill="none" stroke="#F0B429" stroke-width="2.5" stroke-linejoin="round"/>
-                    <circle cx="32" cy="34" r="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="42" y1="56" x2="60" y2="38" stroke="#F0B429" stroke-width="2" opacity="0.4"/>
-                    <circle cx="66" cy="68" r="12" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="10;14;10" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M66 58l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z" fill="#F7CC5F" opacity="0.6"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>BizName</em></h3>
-            <div class="tagline">AI business name generator</div>
-        </a>
-
-        <!-- 20. DoAide Comply -->
-        <a href="https://comply.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="14" y="20" width="72" height="62" rx="8" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="14" y1="40" x2="86" y2="40" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="34" y1="12" x2="34" y2="28" stroke="#F0B429" stroke-width="2.5" stroke-linecap="round"/>
-                    <line x1="66" y1="12" x2="66" y2="28" stroke="#F0B429" stroke-width="2.5" stroke-linecap="round"/>
-                    <circle cx="50" cy="61" r="12" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M43 61l5 5 9-11" stroke="#F0B429" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>Comply</em></h3>
-            <div class="tagline">AI compliance calendar</div>
-        </a>
-
-        <!-- 21. DoAide PitchCraft -->
-        <a href="https://pitch.doaide.com" class="card">
-            <div class="shine"></div>
-            <div class="card-icon">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="18" y="14" width="64" height="48" rx="6" fill="none" stroke="#F0B429" stroke-width="2.5"/>
-                    <line x1="18" y1="26" x2="82" y2="26" stroke="#F0B429" stroke-width="1.5" opacity="0.3"/>
-                    <rect x="26" y="32" width="20" height="4" rx="2" fill="#F0B429" opacity="0.4"/>
-                    <rect x="26" y="40" width="32" height="3" rx="1.5" fill="#F0B429" opacity="0.25"/>
-                    <rect x="26" y="47" width="24" height="3" rx="1.5" fill="#F0B429" opacity="0.25"/>
-                    <circle cx="68" cy="44" r="8" fill="#F0B429" opacity="0.15">
-                        <animate attributeName="r" values="7;10;7" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <path d="M64 44l3 3 6-7" stroke="#F0B429" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M30 70 L50 66 L70 72 L50 82 Z" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.35">
-                        <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
-                    </path>
-                    <circle cx="50" cy="74" r="4" fill="#F7CC5F" opacity="0.5"/>
-                </svg>
-            </div>
-            <h3>DoAide <em>PitchCraft</em></h3>
-            <div class="tagline">AI pitch deck generator</div>
-        </a>
-    </div>
-
-    <footer>
-        <div class="footer-products">
-            <a href="https://gst.doaide.com">GST</a>
-            <a href="https://409.doaide.com">409A</a>
-            <a href="https://contracts.doaide.com">Contracts</a>
-            <a href="https://invoicer.doaide.com">Invoicer</a>
-            <a href="https://payroll.doaide.com">Payroll</a>
-            <a href="https://proposals.doaide.com">Proposals</a>
-            <a href="https://scheduler.doaide.com">Scheduler</a>
-            <a href="https://voice.doaide.com">Voice</a>
-            <a href="https://inventory.doaide.com">Inventory</a>
-            <a href="https://support.doaide.com">Support</a>
-            <a href="https://analytics-app.doaide.com">Analytics</a>
-            <a href="https://desk.doaide.com">Desk</a>
-            <a href="https://pulse.doaide.com">Pulse</a>
-            <a href="https://med.doaide.com">Med</a>
-            <a href="https://realty.doaide.com">Realty</a>
-            <a href="https://trade.doaide.com">Trade</a>
-            <a href="https://job.doaide.com">AutoApply</a>
-            <a href="https://cortex.doaide.com">Cortex</a>
-            <a href="https://bizname.doaide.com">BizName</a>
-            <a href="https://comply.doaide.com">Comply</a>
-            <a href="https://pitch.doaide.com">PitchCraft</a>
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-gold">&#x2696;&#xFE0F;</div>
+          <div class="card-name">409A</div>
         </div>
-        <p>&copy; 2026 DoAide &mdash; Applied AI for serious work</p>
-    </footer>
+        <div class="card-tagline">Automated 409A valuations for startups</div>
+        <p class="card-desc">AI-driven valuation models that replace expensive manual appraisals. Get IRC &sect;409A compliant reports in hours, not weeks. Built for startup founders and CFOs who need defensible valuations without the wait.</p>
+        <div class="card-links">
+          <a href="/409a.html">Learn more &rarr;</a>
+          <a href="https://409a.doaide.com" target="_blank" rel="noopener">409a.doaide.com</a>
+        </div>
+      </div>
 
-    <script>
-        const container = document.getElementById('particles');
-        for (let i = 0; i < 35; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.animationDuration = (10 + Math.random() * 15) + 's';
-            p.style.animationDelay = Math.random() * 12 + 's';
-            p.style.width = p.style.height = (1 + Math.random() * 2.5) + 'px';
-            container.appendChild(p);
-        }
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-teal">&#x1F4CB;</div>
+          <div class="card-name">GST</div>
+        </div>
+        <div class="card-tagline">Indian GST compliance automation</div>
+        <p class="card-desc">Filing, reconciliation, e-invoicing, and ITC tracking powered by AI. End-to-end GST management for businesses of all sizes. Handles GSTR-1, GSTR-3B, and ITC matching automatically.</p>
+        <div class="card-links">
+          <a href="/gst.html">Learn more &rarr;</a>
+          <a href="https://gst.doaide.com" target="_blank" rel="noopener">gst.doaide.com</a>
+        </div>
+      </div>
 
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, i) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(40px) scale(0.95)';
-            card.style.transition = `opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.08}s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.08}s`;
-        });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0) scale(1)';
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-blue">&#x1F4AC;</div>
+          <div class="card-name">Desk</div>
+        </div>
+        <div class="card-tagline">AI customer support agent</div>
+        <p class="card-desc">Handles tickets, resolves issues, and escalates intelligently. Learns from your knowledge base to give accurate answers 24/7. Integrates with your existing helpdesk and CRM tools.</p>
+        <div class="card-links">
+          <a href="/desk.html">Learn more &rarr;</a>
+          <a href="https://desk.doaide.com" target="_blank" rel="noopener">desk.doaide.com</a>
+        </div>
+      </div>
 
-        cards.forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                card.style.transform = `translateY(-8px) scale(1.02) perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-purple">&#x1F4E8;</div>
+          <div class="card-name">AutoApply</div>
+        </div>
+        <div class="card-tagline">AI job application assistant</div>
+        <p class="card-desc">Tailors resumes, writes cover letters, and auto-applies to matching positions. Optimized for ATS systems. Tracks application status and follow-ups across all your target companies.</p>
+        <div class="card-links">
+          <a href="/autoapply.html">Learn more &rarr;</a>
+          <a href="https://autoapply.doaide.com" target="_blank" rel="noopener">autoapply.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-green">&#x1F3E0;</div>
+          <div class="card-name">Realty</div>
+        </div>
+        <div class="card-tagline">AI for real estate operations</div>
+        <p class="card-desc">Lead scoring, property matching, market analysis, and CRM automation for agents and brokerages. Surfaces high-intent buyers and automates the repetitive parts of deal management.</p>
+        <div class="card-links">
+          <a href="/realty.html">Learn more &rarr;</a>
+          <a href="https://realty.doaide.com" target="_blank" rel="noopener">realty.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-pink">&#x1F4E1;</div>
+          <div class="card-name">Pulse</div>
+        </div>
+        <div class="card-tagline">AI newsletter and content engine</div>
+        <p class="card-desc">Curates, writes, and distributes targeted newsletters. Tracks engagement and optimizes for open rates. Turns your domain expertise into a consistent content pipeline without the grind.</p>
+        <div class="card-links">
+          <a href="/pulse.html">Learn more &rarr;</a>
+          <a href="https://pulse.doaide.com" target="_blank" rel="noopener">pulse.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-teal">&#x2695;&#xFE0F;</div>
+          <div class="card-name">Med</div>
+        </div>
+        <div class="card-tagline">Clinical decision support system</div>
+        <p class="card-desc">Evidence-based recommendations, drug interaction checks, and diagnostic assistance for healthcare providers. References current clinical guidelines and flags contraindications in real time.</p>
+        <div class="card-links">
+          <a href="/med.html">Learn more &rarr;</a>
+          <a href="https://med.doaide.com" target="_blank" rel="noopener">med.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-purple">&#x1F9E0;</div>
+          <div class="card-name">Cortex</div>
+        </div>
+        <div class="card-tagline">AI knowledge management</div>
+        <p class="card-desc">Ingests documents, wikis, and data sources to build a searchable organizational brain. Answers questions using your internal knowledge and surfaces relevant context before you ask.</p>
+        <div class="card-links">
+          <a href="/cortex.html">Learn more &rarr;</a>
+          <a href="https://cortex.doaide.com" target="_blank" rel="noopener">cortex.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-green">&#x1F4C8;</div>
+          <div class="card-name">Trade</div>
+        </div>
+        <div class="card-tagline">Algorithmic trading signals and analysis</div>
+        <p class="card-desc">Market pattern recognition, risk assessment, and portfolio optimization powered by ML. Generates actionable trading signals with backtested performance data and risk metrics.</p>
+        <div class="card-links">
+          <a href="/trade.html">Learn more &rarr;</a>
+          <a href="https://trade.doaide.com" target="_blank" rel="noopener">trade.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-gold">&#x1F4B0;</div>
+          <div class="card-name">Salary</div>
+        </div>
+        <div class="card-tagline">Compensation benchmarking and payroll intelligence</div>
+        <p class="card-desc">Market rate analysis, pay equity audits, and salary structuring. Helps HR teams make data-driven compensation decisions and maintain fair, competitive pay bands.</p>
+        <div class="card-links">
+          <a href="/salary.html">Learn more &rarr;</a>
+          <a href="https://salary.doaide.com" target="_blank" rel="noopener">salary.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-blue">&#x1F4C4;</div>
+          <div class="card-name">Resume</div>
+        </div>
+        <div class="card-tagline">AI resume and career document builder</div>
+        <p class="card-desc">ATS-optimized formatting, content suggestions, and multi-format export. Generates tailored resumes that pass automated screening and highlight the right experience for each role.</p>
+        <div class="card-links">
+          <a href="/resume.html">Learn more &rarr;</a>
+          <a href="https://resume.doaide.com" target="_blank" rel="noopener">resume.doaide.com</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-gold">&#x1F5A9;</div>
+          <div class="card-name">FinCalc</div>
+        </div>
+        <div class="card-tagline">Financial calculators and modeling</div>
+        <p class="card-desc">SIP, EMI, tax planning, retirement projections, and business valuation tools. Interactive calculators that handle compound scenarios and export results for financial planning.</p>
+        <div class="card-links">
+          <a href="/fincalc.html">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-pink">&#x2B1A;</div>
+          <div class="card-name">QR</div>
+        </div>
+        <div class="card-tagline">QR code generator and management platform</div>
+        <p class="card-desc">Dynamic QR codes with analytics, custom branding, and bulk generation. Track scans, update destinations without reprinting, and manage codes across campaigns.</p>
+        <div class="card-links">
+          <a href="/qr.html">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-top">
+          <div class="card-icon icon-blue">&#x1F504;</div>
+          <div class="card-name">Convert</div>
+        </div>
+        <div class="card-tagline">Universal file converter</div>
+        <p class="card-desc">PDF, image, document, audio, and video format conversion with batch processing. Fast, private conversions that run without uploading your files to third-party servers.</p>
+        <div class="card-links">
+          <a href="/convert.html">Learn more &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-heading">
+      <p class="label">Philosophy</p>
+      <h2>How we build</h2>
+    </div>
+
+    <div class="principles">
+
+      <div class="principle">
+        <p class="principle-number">01</p>
+        <h3>Domain-first</h3>
+        <p>We pick one unglamorous domain, learn its regulations and workflows deeply, then build AI that actually understands the constraints. No generic wrappers around a language model.</p>
+      </div>
+
+      <div class="principle">
+        <p class="principle-number">02</p>
+        <h3>Accuracy over speed</h3>
+        <p>Our models are tuned for precision. A wrong GST filing or a bad 409A valuation costs more than a slow one. We measure ourselves on error rates, not response times.</p>
+      </div>
+
+      <div class="principle">
+        <p class="principle-number">03</p>
+        <h3>Boring reliability</h3>
+        <p>No flashy demos. Products that work Monday through Friday, handle edge cases, and don't break when the rules change. The best infrastructure is the kind you forget is there.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="footer-copy">&copy; 2025 DoAide &mdash; a product of Apprend Technologies</p>
+    <div class="footer-links">
+      <a href="#products">Products</a>
+      <a href="#how">About</a>
+      <a href="mailto:hello@doaide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

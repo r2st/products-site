@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free GST Invoice Generator — Create Tax Invoices Online | DoAide</title>
+<meta name="description" content="Generate professional GST-compliant tax invoices online for free. Auto-calculate CGST, SGST, IGST. Print or download as PDF. No signup required.">
+<meta name="keywords" content="GST invoice generator, tax invoice, CGST, SGST, IGST, GST billing, free invoice maker, Indian GST">
+<link rel="canonical" href="https://doaide.com/gst-invoice-generator.html">
+<meta property="og:title" content="Free GST Invoice Generator — Create Tax Invoices Online | DoAide">
+<meta property="og:description" content="Generate professional GST-compliant tax invoices online for free. Auto-calculate CGST, SGST, IGST based on place of supply. Print or save as PDF.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doaide.com/gst-invoice-generator.html">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free GST Invoice Generator — Create Tax Invoices Online | DoAide">
+<meta name="twitter:description" content="Generate professional GST-compliant tax invoices online for free. Auto-calculate CGST, SGST, IGST. Print or download as PDF.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GST Invoice Generator",
+  "description": "Generate professional GST-compliant tax invoices online for free. Auto-calculate CGST, SGST, IGST based on place of supply.",
+  "url": "https://doaide.com/gst-invoice-generator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--bg2:#131316;--bg3:#1a1a1f;--border:#2a2a30;--text:#edeff5;--text2:#9a9caa;--accent:#f0b429;--accent2:#e09400;--red:#ef4444;--green:#22c55e;--mono:'IBM Plex Mono',monospace;--body:'Schibsted Grotesk',sans-serif;--heading:'Instrument Serif',serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+.site-header{border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.site-header .logo{font-family:var(--heading);font-size:1.5rem;color:var(--accent);font-weight:400}
+.site-header nav{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.site-header nav a{color:var(--text2);font-size:.9rem;font-weight:500;transition:color .2s}
+.site-header nav a:hover{color:var(--accent);text-decoration:none}
+
+/* Main */
+.main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem}
+h1{font-family:var(--heading);font-size:2.4rem;margin-bottom:.5rem;color:var(--text);font-weight:400}
+h1 span{color:var(--accent)}
+.subtitle{color:var(--text2);margin-bottom:2rem;font-size:1rem}
+
+/* Sections */
+.section-title{font-family:var(--heading);font-size:1.3rem;color:var(--accent);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);font-weight:400}
+
+/* Form grid */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
+.form-panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+.form-row.full{grid-template-columns:1fr}
+label{display:block;font-size:.8rem;color:var(--text2);margin-bottom:.25rem;font-weight:500;text-transform:uppercase;letter-spacing:.03em}
+input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.55rem .75rem;border-radius:6px;font-family:var(--body);font-size:.9rem;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+input[type="number"]{font-family:var(--mono)}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239a9caa'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center}
+textarea{resize:vertical;min-height:70px}
+
+/* Invoice details row */
+.invoice-details{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem}
+.invoice-details .form-row{grid-template-columns:repeat(4,1fr)}
+
+/* Line items table */
+.items-section{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem;overflow-x:auto}
+.items-table{width:100%;border-collapse:collapse;min-width:900px}
+.items-table th{background:var(--bg3);color:var(--text2);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;padding:.6rem .5rem;text-align:left;font-weight:600;white-space:nowrap;border-bottom:1px solid var(--border)}
+.items-table td{padding:.4rem .3rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.items-table input,.items-table select{padding:.45rem .5rem;font-size:.85rem;border-radius:4px}
+.items-table .col-desc{min-width:160px}
+.items-table .col-hsn{width:100px}
+.items-table .col-qty{width:70px}
+.items-table .col-unit{width:85px}
+.items-table .col-rate{width:90px}
+.items-table .col-disc{width:70px}
+.items-table .col-gst{width:80px}
+.items-table .col-taxable{width:100px}
+.items-table .col-amt{width:100px}
+.items-table .col-action{width:40px;text-align:center}
+.items-table .computed{font-family:var(--mono);font-size:.85rem;color:var(--accent);padding:.45rem .5rem;text-align:right}
+.btn-remove{background:none;border:none;color:var(--red);cursor:pointer;font-size:1.1rem;padding:.3rem;border-radius:4px;transition:background .2s}
+.btn-remove:hover{background:rgba(239,68,68,.15)}
+.btn-add{background:none;border:1px dashed var(--border);color:var(--accent);cursor:pointer;font-family:var(--body);font-size:.85rem;padding:.5rem 1.2rem;border-radius:6px;transition:all .2s;margin-top:.75rem}
+.btn-add:hover{border-color:var(--accent);background:rgba(240,180,41,.08)}
+
+/* Summary */
+.summary-section{display:grid;grid-template-columns:1fr 380px;gap:2rem;margin-bottom:2rem}
+.notes-panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.totals-panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.total-row{display:flex;justify-content:space-between;padding:.45rem 0;font-size:.9rem}
+.total-row .lbl{color:var(--text2)}
+.total-row .val{font-family:var(--mono);font-weight:500}
+.total-row.grand{border-top:2px solid var(--accent);margin-top:.5rem;padding-top:.75rem;font-size:1.15rem;font-weight:700}
+.total-row.grand .val{color:var(--accent)}
+.amount-words{font-size:.8rem;color:var(--text2);margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border);font-style:italic}
+
+/* Actions bar */
+.actions-bar{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{font-family:var(--body);font-weight:600;padding:.65rem 1.5rem;border-radius:8px;cursor:pointer;font-size:.9rem;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:#0a0a0b}
+.btn-primary:hover{background:var(--accent2)}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-danger{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25)}
+.btn-danger:hover{background:rgba(239,68,68,.2)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.footer-links a{color:var(--text2);font-size:.85rem}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{color:var(--text2);font-size:.8rem}
+
+/* Responsive */
+@media(max-width:768px){
+  .form-grid{grid-template-columns:1fr}
+  .invoice-details .form-row{grid-template-columns:1fr 1fr}
+  .summary-section{grid-template-columns:1fr}
+  .site-header{padding:1rem}
+  .main-container{padding:1rem}
+  h1{font-size:1.8rem}
+}
+@media(max-width:500px){
+  .form-row{grid-template-columns:1fr}
+  .invoice-details .form-row{grid-template-columns:1fr}
+  .actions-bar{flex-direction:column}
+  .btn{width:100%;justify-content:center}
+}
+
+/* ===== PRINT STYLES ===== */
+@media print{
+  *{color:#000!important;background:#fff!important;border-color:#ccc!important;box-shadow:none!important;text-shadow:none!important}
+  body{font-size:11pt;line-height:1.4}
+  .site-header,.site-footer,.actions-bar,.btn-add,.btn-remove,.no-print{display:none!important}
+  .main-container{max-width:100%;padding:0;margin:0}
+  h1{font-size:18pt;color:#000!important}
+  h1 span{color:#000!important}
+  .subtitle{display:none}
+  .form-grid{gap:1rem}
+  .form-panel,.invoice-details,.items-section,.notes-panel,.totals-panel{border:1px solid #ccc!important;border-radius:4px;padding:1rem;page-break-inside:avoid}
+  .section-title{color:#333!important;border-bottom-color:#ccc!important}
+  input,select,textarea{border:none!important;padding:.2rem 0;background:transparent!important;font-size:10pt}
+  select{appearance:auto;background-image:none!important}
+  .items-table{min-width:auto}
+  .items-table th{background:#f0f0f0!important;font-size:7pt;padding:.4rem .3rem}
+  .items-table td{padding:.3rem .2rem}
+  .items-table input,.items-table select{font-size:9pt}
+  .computed{color:#000!important}
+  .total-row.grand{border-top-color:#000!important}
+  .total-row.grand .val{color:#000!important}
+  .summary-section{grid-template-columns:1fr 1fr}
+  .amount-words{color:#333!important}
+
+  /* Print header */
+  .print-header{display:flex!important;justify-content:space-between;align-items:center;padding-bottom:.75rem;margin-bottom:1rem;border-bottom:2px solid #000}
+  .print-header .print-title{font-family:var(--heading);font-size:20pt;font-weight:400}
+  .print-header .print-label{font-size:9pt;color:#666;text-transform:uppercase;letter-spacing:.1em}
+}
+.print-header{display:none}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <a href="https://doaide.com" class="logo">DoAide</a>
+  <nav>
+    <a href="https://doaide.com/gst-calculator.html">GST Calculator</a>
+    <a href="https://doaide.com/gst-invoice-generator.html">Invoice Generator</a>
+    <a href="https://doaide.com">All Tools</a>
+  </nav>
+</header>
+
+<main class="main-container">
+
+  <!-- Print-only header -->
+  <div class="print-header">
+    <div>
+      <div class="print-title">Tax Invoice</div>
+    </div>
+    <div style="text-align:right">
+      <div class="print-label">Original for Recipient</div>
+    </div>
+  </div>
+
+  <h1>GST <span>Invoice Generator</span></h1>
+  <p class="subtitle">Create GST-compliant tax invoices online. Fill in details, add line items, and print or download as PDF.</p>
+
+  <!-- Seller / Buyer -->
+  <div class="form-grid">
+    <div class="form-panel">
+      <div class="section-title">Seller Details</div>
+      <div class="form-row full"><div><label>Business Name</label><input type="text" id="sellerName" placeholder="Your business name"></div></div>
+      <div class="form-row">
+        <div><label>GSTIN</label><input type="text" id="sellerGstin" placeholder="22AAAAA0000A1Z5" maxlength="15" style="font-family:var(--mono)"></div>
+        <div><label>State</label>
+          <select id="sellerState"></select>
+        </div>
+      </div>
+      <div class="form-row full"><div><label>Address</label><input type="text" id="sellerAddress" placeholder="Street address, City, PIN"></div></div>
+      <div class="form-row">
+        <div><label>Phone</label><input type="tel" id="sellerPhone" placeholder="9876543210"></div>
+        <div><label>Email</label><input type="email" id="sellerEmail" placeholder="you@business.com"></div>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div class="section-title">Buyer Details</div>
+      <div class="form-row full"><div><label>Business Name</label><input type="text" id="buyerName" placeholder="Buyer business name"></div></div>
+      <div class="form-row">
+        <div><label>GSTIN</label><input type="text" id="buyerGstin" placeholder="29BBBBB0000B1Z5" maxlength="15" style="font-family:var(--mono)"></div>
+        <div><label>State</label>
+          <select id="buyerState"></select>
+        </div>
+      </div>
+      <div class="form-row full"><div><label>Address</label><input type="text" id="buyerAddress" placeholder="Street address, City, PIN"></div></div>
+      <div class="form-row">
+        <div><label>Phone</label><input type="tel" id="buyerPhone" placeholder="9876543210"></div>
+        <div><label>Email</label><input type="email" id="buyerEmail" placeholder="buyer@business.com"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Invoice Details -->
+  <div class="invoice-details">
+    <div class="section-title">Invoice Details</div>
+    <div class="form-row">
+      <div><label>Invoice Number</label><input type="text" id="invoiceNumber" style="font-family:var(--mono)"></div>
+      <div><label>Invoice Date</label><input type="date" id="invoiceDate"></div>
+      <div><label>Due Date</label><input type="date" id="dueDate"></div>
+      <div><label>Place of Supply</label><select id="placeOfSupply"></select></div>
+    </div>
+  </div>
+
+  <!-- Line Items -->
+  <div class="items-section">
+    <div class="section-title">Line Items</div>
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="col-desc">Description</th>
+          <th class="col-hsn">HSN/SAC</th>
+          <th class="col-qty">Qty</th>
+          <th class="col-unit">Unit</th>
+          <th class="col-rate">Rate (&curren;)</th>
+          <th class="col-disc">Disc %</th>
+          <th class="col-gst">GST %</th>
+          <th class="col-taxable">Taxable</th>
+          <th class="col-amt">Tax Amt</th>
+          <th class="col-action no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+    <button class="btn-add no-print" onclick="addRow()">+ Add Line Item</button>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-section">
+    <div class="notes-panel">
+      <div class="section-title">Notes / Terms</div>
+      <textarea id="invoiceNotes" placeholder="Payment terms, bank details, or any additional notes..."></textarea>
+    </div>
+    <div class="totals-panel">
+      <div class="section-title">Summary</div>
+      <div class="total-row"><span class="lbl">Subtotal</span><span class="val" id="sumSubtotal">0.00</span></div>
+      <div class="total-row" id="rowCgst"><span class="lbl">Total CGST</span><span class="val" id="sumCgst">0.00</span></div>
+      <div class="total-row" id="rowSgst"><span class="lbl">Total SGST</span><span class="val" id="sumSgst">0.00</span></div>
+      <div class="total-row" id="rowIgst"><span class="lbl">Total IGST</span><span class="val" id="sumIgst">0.00</span></div>
+      <div class="total-row"><span class="lbl">Round Off</span><span class="val" id="sumRoundOff">0.00</span></div>
+      <div class="total-row grand"><span class="lbl">Grand Total</span><span class="val" id="sumGrandTotal">0.00</span></div>
+      <div class="amount-words" id="amountWords"></div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions-bar">
+    <button class="btn btn-primary" onclick="printInvoice()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print Invoice
+    </button>
+    <button class="btn btn-secondary" onclick="downloadPdf()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+      Download PDF
+    </button>
+    <button class="btn btn-danger" onclick="resetForm()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zm6-3l6 6m0-6l-6 6"/></svg>
+      Reset Form
+    </button>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://doaide.com/gst-calculator.html">GST Calculator</a>
+    <a href="https://doaide.com/gst-invoice-generator.html">Invoice Generator</a>
+    <a href="https://doaide.com/hsn-code-finder.html">HSN Code Finder</a>
+    <a href="https://doaide.com">DoAide Home</a>
+  </div>
+  <p class="footer-copy">&copy; 2024 DoAide. Free GST tools for Indian businesses.</p>
+</footer>
+
+<script>
+/* ===== Indian States ===== */
+const STATES = [
+  "","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa",
+  "Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka",
+  "Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya",
+  "Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu",
+  "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal",
+  "Andaman & Nicobar","Chandigarh","Dadra & Nagar Haveli and Daman & Diu","Delhi"
+];
+
+function populateStateSelects(){
+  ['sellerState','buyerState','placeOfSupply'].forEach(id=>{
+    const sel=document.getElementById(id);
+    STATES.forEach(s=>{
+      const o=document.createElement('option');
+      o.value=s;o.textContent=s||'-- Select State --';
+      sel.appendChild(o);
+    });
+  });
+}
+
+/* ===== Invoice number ===== */
+function generateInvoiceNumber(){
+  const d=new Date();
+  const fy=d.getMonth()>=3?d.getFullYear():d.getFullYear()-1;
+  const seq=String(Math.floor(Math.random()*9000)+1000);
+  return 'INV-'+fy+'-'+seq;
+}
+
+/* ===== Init ===== */
+function initForm(){
+  populateStateSelects();
+  document.getElementById('invoiceNumber').value=generateInvoiceNumber();
+  const today=new Date().toISOString().split('T')[0];
+  document.getElementById('invoiceDate').value=today;
+  const due=new Date();due.setDate(due.getDate()+30);
+  document.getElementById('dueDate').value=due.toISOString().split('T')[0];
+  addRow();
+}
+
+/* ===== Line Items ===== */
+let rowId=0;
+function addRow(){
+  rowId++;
+  const tbody=document.getElementById('itemsBody');
+  const tr=document.createElement('tr');
+  tr.id='row-'+rowId;
+  tr.dataset.rid=rowId;
+  tr.innerHTML=`
+    <td style="font-family:var(--mono);color:var(--text2);font-size:.8rem;text-align:center">${tbody.children.length+1}</td>
+    <td class="col-desc"><input type="text" placeholder="Item description" oninput="calc()"></td>
+    <td class="col-hsn"><input type="text" placeholder="HSN" style="font-family:var(--mono)" oninput="calc()"></td>
+    <td class="col-qty"><input type="number" min="0" step="any" value="1" oninput="calc()"></td>
+    <td class="col-unit"><select oninput="calc()"><option>Nos</option><option>Kg</option><option>Ltrs</option><option>Mtr</option><option>Sq.Ft</option></select></td>
+    <td class="col-rate"><input type="number" min="0" step="any" value="0" oninput="calc()"></td>
+    <td class="col-disc"><input type="number" min="0" max="100" step="any" value="0" oninput="calc()"></td>
+    <td class="col-gst"><select oninput="calc()"><option value="0">0%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></td>
+    <td class="computed col-taxable" data-f="taxable">0.00</td>
+    <td class="computed col-amt" data-f="tax">0.00</td>
+    <td class="col-action no-print"><button class="btn-remove" onclick="removeRow(this)" title="Remove">&times;</button></td>
+  `;
+  tbody.appendChild(tr);
+  calc();
+}
+
+function removeRow(btn){
+  const tbody=document.getElementById('itemsBody');
+  if(tbody.children.length<=1) return;
+  btn.closest('tr').remove();
+  // renumber
+  [...tbody.children].forEach((tr,i)=>{tr.children[0].textContent=i+1;});
+  calc();
+}
+
+/* ===== Calculation ===== */
+function isInterState(){
+  const s=document.getElementById('sellerState').value;
+  const p=document.getElementById('placeOfSupply').value || document.getElementById('buyerState').value;
+  if(!s||!p) return false;
+  return s!==p;
+}
+
+function calc(){
+  const tbody=document.getElementById('itemsBody');
+  const inter=isInterState();
+  let subtotal=0, totalCgst=0, totalSgst=0, totalIgst=0;
+
+  [...tbody.children].forEach(tr=>{
+    const inputs=tr.querySelectorAll('input');
+    const selects=tr.querySelectorAll('select');
+    const qty=parseFloat(inputs[2].value)||0;
+    const rate=parseFloat(inputs[3].value)||0;
+    const disc=parseFloat(inputs[4].value)||0;
+    const gstRate=parseFloat(selects[1].value)||0;
+
+    const gross=qty*rate;
+    const discAmt=gross*(disc/100);
+    const taxable=gross-discAmt;
+    const taxAmt=taxable*(gstRate/100);
+
+    tr.querySelector('[data-f="taxable"]').textContent=fmt(taxable);
+    tr.querySelector('[data-f="tax"]').textContent=fmt(taxAmt);
+
+    subtotal+=taxable;
+    if(inter){
+      totalIgst+=taxAmt;
+    } else {
+      totalCgst+=taxAmt/2;
+      totalSgst+=taxAmt/2;
+    }
+  });
+
+  document.getElementById('sumSubtotal').textContent=fmt(subtotal);
+  document.getElementById('sumCgst').textContent=fmt(totalCgst);
+  document.getElementById('sumSgst').textContent=fmt(totalSgst);
+  document.getElementById('sumIgst').textContent=fmt(totalIgst);
+
+  // show/hide CGST/SGST vs IGST rows
+  document.getElementById('rowCgst').style.display=inter?'none':'flex';
+  document.getElementById('rowSgst').style.display=inter?'none':'flex';
+  document.getElementById('rowIgst').style.display=inter?'flex':'none';
+
+  const rawTotal=subtotal+totalCgst+totalSgst+totalIgst;
+  const rounded=Math.round(rawTotal);
+  const roundOff=rounded-rawTotal;
+
+  document.getElementById('sumRoundOff').textContent=(roundOff>=0?'+':'')+fmt(roundOff);
+  document.getElementById('sumGrandTotal').textContent=fmt(rounded);
+  document.getElementById('amountWords').textContent=rounded>0?('Amount in words: '+numberToWordsIndian(rounded)+' Rupees Only'):'';
+}
+
+function fmt(n){return n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+/* ===== Number to Words (Indian) ===== */
+function numberToWordsIndian(num){
+  if(num===0) return 'Zero';
+  const ones=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine',
+    'Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+  const tens=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+
+  function twoDigit(n){
+    if(n<20) return ones[n];
+    return tens[Math.floor(n/10)]+(n%10?' '+ones[n%10]:'');
+  }
+  function threeDigit(n){
+    if(n>=100) return ones[Math.floor(n/100)]+' Hundred'+(n%100?' and '+twoDigit(n%100):'');
+    return twoDigit(n);
+  }
+
+  num=Math.abs(Math.floor(num));
+  if(num===0) return 'Zero';
+
+  let result='';
+  // Crores
+  if(num>=10000000){
+    result+=threeDigit(Math.floor(num/10000000))+' Crore ';
+    num%=10000000;
+  }
+  // Lakhs
+  if(num>=100000){
+    result+=twoDigit(Math.floor(num/100000))+' Lakh ';
+    num%=100000;
+  }
+  // Thousands
+  if(num>=1000){
+    result+=twoDigit(Math.floor(num/1000))+' Thousand ';
+    num%=1000;
+  }
+  // Hundreds
+  if(num>0){
+    result+=threeDigit(num);
+  }
+  return result.trim();
+}
+
+/* ===== State change listeners ===== */
+document.getElementById('sellerState').addEventListener('change',calc);
+document.getElementById('buyerState').addEventListener('change',calc);
+document.getElementById('placeOfSupply').addEventListener('change',calc);
+
+/* ===== Actions ===== */
+function printInvoice(){
+  window.print();
+}
+
+function downloadPdf(){
+  alert('To download as PDF:\n\n1. Click "Print Invoice" (or press Ctrl+P / Cmd+P)\n2. Change the destination to "Save as PDF"\n3. Click Save\n\nThis produces a high-quality PDF of your invoice.');
+}
+
+function resetForm(){
+  if(!confirm('Clear all fields and start over?')) return;
+  document.querySelectorAll('input[type="text"],input[type="email"],input[type="tel"],textarea').forEach(el=>el.value='');
+  document.querySelectorAll('select').forEach(el=>el.selectedIndex=0);
+  document.getElementById('itemsBody').innerHTML='';
+  rowId=0;
+  initForm();
+}
+
+/* ===== Boot ===== */
+initForm();
+</script>
+</body>
+</html>
