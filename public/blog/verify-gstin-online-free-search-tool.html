@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Verify GSTIN Online: Free GSTIN Search & Verification Tool | DoAide</title>
+    <meta name="description" content="Verify any GSTIN online instantly with our free GSTIN search tool. Step-by-step guide to GSTIN verification, understanding search results, format explained, and common issues.">
+    <meta name="keywords" content="GSTIN verification, GSTIN search, verify GSTIN online, GSTIN lookup, GSTIN number check, GST number verification, check GSTIN status">
+    <meta name="author" content="DoAide">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://doaide.com/blog/verify-gstin-online-free-search-tool.html">
+
+    <meta property="og:title" content="How to Verify GSTIN Online: Free GSTIN Search & Verification Tool">
+    <meta property="og:description" content="Verify any GSTIN online instantly. Step-by-step guide with free search tool, result interpretation, format breakdown, and troubleshooting.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://doaide.com/blog/verify-gstin-online-free-search-tool.html">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:locale" content="en_IN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Verify GSTIN Online: Free Search & Verification Tool">
+    <meta name="twitter:description" content="Verify any GSTIN online instantly. Step-by-step guide with free search tool, result interpretation, and format breakdown.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Verify GSTIN Online: Free GSTIN Search & Verification Tool",
+        "description": "Verify any GSTIN online instantly with our free GSTIN search tool. Step-by-step guide to GSTIN verification, understanding search results, format explained, and common issues.",
+        "author": {
+            "@type": "Organization",
+            "name": "DoAide",
+            "url": "https://doaide.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "DoAide",
+            "url": "https://doaide.com"
+        },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://doaide.com/blog/verify-gstin-online-free-search-tool.html"
+        },
+        "keywords": "GSTIN verification, GSTIN search, verify GSTIN online, GSTIN lookup, GSTIN number check, GST number verification"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How can I verify a GSTIN number online for free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can verify any GSTIN for free using DoAide's GSTIN Search Tool at gst.doaide.com/lookup. Simply enter the 15-digit GSTIN and get instant results including business name, registration status, filing history, and jurisdiction details. You can also verify on the official GST portal at services.gst.gov.in."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does each digit in a GSTIN number represent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A GSTIN is a 15-digit number where digits 1-2 represent the state code, digits 3-12 are the PAN of the business, digit 13 is the entity number (for multiple registrations under the same PAN in a state), digit 14 is always 'Z' (reserved for future use), and digit 15 is a check digit calculated using the Luhn algorithm."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is GSTIN verification important before business transactions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GSTIN verification is crucial because claiming Input Tax Credit (ITC) on invoices from an invalid or cancelled GSTIN will be rejected during reconciliation. It also helps prevent fraud, ensures your supplier is genuinely registered, and protects you from penalties during GST audits. The government regularly cancels fake GSTINs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I do if a GSTIN shows as 'Cancelled' or 'Suspended'?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If a supplier's GSTIN shows as Cancelled or Suspended, do not accept GST invoices from them as you will not be able to claim ITC on those invoices. Ask the supplier for an updated registration or a different GSTIN. For existing invoices, reverse any ITC already claimed on that GSTIN to avoid penalties."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I verify multiple GSTINs at once?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, for bulk verification you can use DoAide's GSTIN lookup tool to verify GSTINs one at a time quickly, or use the GST portal's API for automated bulk verification. Businesses with large vendor bases often integrate the GSTIN verification API into their procurement systems for automatic validation."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0b; --bg-secondary: #111114; --bg-tertiary: #1a1a1f; --bg-card: #15151a;
+            --text-primary: #edeff5; --text-secondary: #9aa1b2; --text-muted: #6b7280;
+            --accent: #f0b429; --accent-dim: rgba(240, 180, 41, 0.15); --accent-border: rgba(240, 180, 41, 0.3);
+            --border: #2a2a32; --border-light: #1f1f27; --success: #34d399; --danger: #f87171;
+            --font-heading: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Schibsted Grotesk', -apple-system, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+        .site-header { border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(17, 17, 20, 0.85); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: var(--font-heading); font-size: 26px; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a.cta-link { color: var(--accent); }
+        .nav-links a.cta-link:hover { color: #ffc940; }
+        .breadcrumb { max-width: 780px; margin: 0 auto; padding: 20px 24px 0; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+        .article-container { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 16px; display: flex; gap: 20px; flex-wrap: wrap; }
+        .article-meta time { color: var(--text-secondary); }
+        h1 { font-family: var(--font-heading); font-size: clamp(32px, 5vw, 48px); line-height: 1.15; color: var(--text-primary); margin-bottom: 24px; letter-spacing: -0.02em; font-weight: 400; }
+        .article-intro { font-size: 19px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px; border-left: 3px solid var(--accent); padding-left: 20px; }
+        h2 { font-family: var(--font-heading); font-size: 30px; color: var(--text-primary); margin-top: 56px; margin-bottom: 20px; letter-spacing: -0.01em; font-weight: 400; }
+        h3 { font-family: var(--font-body); font-size: 20px; font-weight: 600; color: var(--text-primary); margin-top: 36px; margin-bottom: 14px; }
+        p { margin-bottom: 18px; color: var(--text-secondary); }
+        strong { color: var(--text-primary); font-weight: 600; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .table-wrapper { overflow-x: auto; margin: 28px 0; border-radius: 10px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        thead { background: var(--bg-tertiary); }
+        thead th { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); padding: 14px 16px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--border); }
+        tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); vertical-align: top; }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: rgba(240, 180, 41, 0.04); }
+        .info-box { background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+        .info-box p { color: var(--text-primary); margin-bottom: 0; }
+        .info-box .label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 8px; }
+        .warning-box { background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+        .warning-box .label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--danger); margin-bottom: 8px; }
+        .warning-box p { color: var(--text-primary); margin-bottom: 0; }
+        ul, ol { margin-bottom: 18px; padding-left: 24px; }
+        li { color: var(--text-secondary); margin-bottom: 8px; }
+        li strong { color: var(--text-primary); }
+        .cta-section { background: linear-gradient(135deg, rgba(240, 180, 41, 0.12) 0%, rgba(240, 180, 41, 0.04) 100%); border: 1px solid var(--accent-border); border-radius: 14px; padding: 40px; margin: 48px 0; text-align: center; }
+        .cta-section h2 { margin-top: 0; font-size: 28px; }
+        .cta-section p { color: var(--text-secondary); max-width: 520px; margin: 0 auto 24px; }
+        .cta-button { display: inline-block; background: var(--accent); color: #0a0a0b; font-family: var(--font-body); font-weight: 600; font-size: 16px; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+        .cta-button:hover { background: #ffc940; text-decoration: none; transform: translateY(-1px); }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+        .faq-question { background: var(--bg-card); padding: 18px 24px; font-weight: 600; color: var(--text-primary); cursor: default; }
+        .faq-answer { padding: 0 24px 18px; background: var(--bg-card); }
+        .faq-answer p { margin-bottom: 0; }
+        .tips-list { list-style: none; padding-left: 0; counter-reset: tip-counter; }
+        .tips-list li { counter-increment: tip-counter; padding: 16px 20px 16px 56px; position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; }
+        .tips-list li::before { content: counter(tip-counter); position: absolute; left: 18px; top: 16px; width: 26px; height: 26px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--accent); text-align: center; line-height: 26px; }
+        .site-footer { border-top: 1px solid var(--border); background: var(--bg-secondary); padding: 48px 24px; text-align: center; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
+        @media (max-width: 640px) {
+            .header-inner { padding: 0 16px; }
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 14px; }
+            .article-container { padding: 28px 16px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 24px; }
+            .article-intro { font-size: 17px; }
+            table { font-size: 13px; }
+            thead th, tbody td { padding: 10px 12px; }
+            .cta-section { padding: 28px 20px; }
+            .tips-list li { padding-left: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://doaide.com">Home</a></li>
+                    <li><a href="https://doaide.com/blog">Blog</a></li>
+                    <li><a href="https://gst.doaide.com" class="cta-link">GST Bot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://doaide.com">Home</a>
+        <span>/</span>
+        <a href="https://doaide.com/blog">Blog</a>
+        <span>/</span>
+        Verify GSTIN Online
+    </nav>
+
+    <article class="article-container">
+
+        <div class="article-meta">
+            <span>Published <time datetime="2026-10-06">October 6, 2026</time></span>
+            <span>9 min read</span>
+        </div>
+
+        <h1>How to Verify GSTIN Online: Free GSTIN Search &amp; Verification Tool</h1>
+
+        <p class="article-intro">
+            Every business dealing in GST-taxable goods or services in India is assigned a unique 15-digit GSTIN. Verifying a supplier's or buyer's GSTIN before transacting is essential to protect your Input Tax Credit claims and avoid fraud. This guide covers everything you need to know about GSTIN verification &mdash; how to do it, what the results mean, and how to resolve common issues.
+        </p>
+
+        <h2>What is GSTIN and Why Should You Verify It?</h2>
+
+        <p>
+            GSTIN stands for <strong>Goods and Services Tax Identification Number</strong>. It is a 15-character alphanumeric code assigned to every registered taxpayer under India's GST regime. Think of it as the PAN card equivalent for GST &mdash; it uniquely identifies a business entity for all GST-related transactions and filings.
+        </p>
+
+        <p>
+            Every tax invoice you issue or receive must carry a valid GSTIN. When you file GST returns, the system matches invoices between buyers and sellers using their GSTINs. If the GSTIN on an invoice is invalid, cancelled, or belongs to a different entity, your <strong>Input Tax Credit (ITC) claim will be rejected</strong> during the GSTR-2B reconciliation process.
+        </p>
+
+        <h3>Why GSTIN Verification Matters</h3>
+
+        <ul>
+            <li><strong>Protect ITC claims:</strong> ITC on invoices from invalid or cancelled GSTINs is automatically denied. In FY 2024-25, the government blocked over Rs 14,000 crore in fraudulent ITC claims linked to fake GSTINs.</li>
+            <li><strong>Prevent invoice fraud:</strong> Fraudsters create fake invoices with fabricated GSTINs to claim false ITC. Verifying the GSTIN ensures the supplier actually exists and is registered.</li>
+            <li><strong>Vendor due diligence:</strong> Checking a vendor's GSTIN reveals their registration status, filing compliance, and business details &mdash; critical information before entering into a business relationship.</li>
+            <li><strong>Avoid audit penalties:</strong> During GST audits, officers check whether you verified the GSTINs of your suppliers. Claiming ITC from unverified or suspicious GSTINs can trigger demand notices under Section 74.</li>
+            <li><strong>Ensure correct tax treatment:</strong> The GSTIN reveals whether the supplier is under regular scheme or composition scheme, which affects how GST is charged and whether you can claim ITC.</li>
+        </ul>
+
+        <div class="warning-box">
+            <div class="label">Important</div>
+            <p>Since January 2022, ITC is available only for invoices that appear in your auto-generated GSTR-2B statement. If a supplier's GSTIN is cancelled or they have not filed their GSTR-1, the invoice will not appear in your GSTR-2B, and you cannot claim ITC regardless of having paid GST on the purchase.</p>
+        </div>
+
+        <h2>How to Verify GSTIN Online &mdash; Step-by-Step Guide</h2>
+
+        <p>
+            There are multiple ways to verify a GSTIN. Here are the most reliable methods, starting with the quickest option.
+        </p>
+
+        <h3>Method 1: Using DoAide's Free GSTIN Search Tool</h3>
+
+        <p>
+            The fastest way to verify any GSTIN is through <a href="https://gst.doaide.com/lookup">DoAide's GSTIN Lookup Tool</a>. It pulls real-time data from the GST Network and presents it in a clean, easy-to-read format.
+        </p>
+
+        <ol class="tips-list">
+            <li>Visit <a href="https://gst.doaide.com/lookup">gst.doaide.com/lookup</a> in your browser</li>
+            <li>Enter the 15-digit GSTIN in the search field</li>
+            <li>Click <strong>Search</strong> or press Enter</li>
+            <li>View the complete business profile including legal name, trade name, registration status, filing history, and jurisdiction details</li>
+        </ol>
+
+        <div class="info-box">
+            <div class="label">Pro Tip</div>
+            <p>Bookmark the <a href="https://gst.doaide.com/lookup">DoAide GSTIN Lookup</a> page for quick access. Unlike the official portal, it does not require CAPTCHA verification, making it significantly faster for checking multiple GSTINs during vendor onboarding.</p>
+        </div>
+
+        <h3>Method 2: Using the Official GST Portal</h3>
+
+        <p>
+            You can also verify GSTINs directly on the government's GST portal:
+        </p>
+
+        <ol>
+            <li>Go to <strong>services.gst.gov.in</strong></li>
+            <li>Navigate to <strong>Search Taxpayer</strong> &rarr; <strong>Search by GSTIN/UIN</strong></li>
+            <li>Enter the GSTIN and complete the CAPTCHA</li>
+            <li>Click <strong>Search</strong> to view the taxpayer's details</li>
+        </ol>
+
+        <p>
+            The official portal is authoritative but requires CAPTCHA completion for each lookup, which can be tedious when verifying multiple GSTINs.
+        </p>
+
+        <h3>Method 3: Bulk Verification via API</h3>
+
+        <p>
+            Businesses with large vendor databases often need to verify hundreds or thousands of GSTINs. The GST Network provides APIs that allow automated bulk verification. ERP systems like Tally and SAP have built-in integrations for periodic GSTIN validation of your vendor master list.
+        </p>
+
+        <h2>Understanding GSTIN Search Results</h2>
+
+        <p>
+            When you search a GSTIN, the result contains several fields. Understanding each field helps you assess the legitimacy and compliance status of the taxpayer. Here is what each field means:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>What It Shows</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Legal Name</strong></td>
+                        <td>Official name as per PAN records</td>
+                        <td>Must match the name on invoices for ITC claims</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trade Name</strong></td>
+                        <td>Business name used for trading</td>
+                        <td>The name the business operates under &mdash; may differ from legal name</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Registration Date</strong></td>
+                        <td>Date when GST registration became effective</td>
+                        <td>Invoices dated before registration date are invalid for ITC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GSTIN Status</strong></td>
+                        <td>Active, Cancelled, Suspended, or Inactive</td>
+                        <td>Only <strong>Active</strong> status allows valid tax invoices</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Taxpayer Type</strong></td>
+                        <td>Regular, Composition, ISD, Casual, SEZ, etc.</td>
+                        <td>Composition dealers cannot charge GST separately on invoices</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Constitution of Business</strong></td>
+                        <td>Proprietorship, Partnership, Company, LLP, etc.</td>
+                        <td>Helps verify the business structure matches expectations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jurisdiction</strong></td>
+                        <td>State and Centre jurisdiction (e.g., State &mdash; Ward 45, Delhi)</td>
+                        <td>Determines which GST officer oversees the taxpayer</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Place of Business</strong></td>
+                        <td>Principal place of business address</td>
+                        <td>Cross-verify with the address on invoices</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nature of Business</strong></td>
+                        <td>Activities such as Manufacturing, Trading, Services</td>
+                        <td>Confirms the supplier actually deals in what they invoice you for</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Filing Status</strong></td>
+                        <td>Whether recent GSTR-1 and GSTR-3B have been filed</td>
+                        <td>Non-filers' invoices will not appear in your GSTR-2B for ITC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Key Check</div>
+            <p>The most critical field is <strong>GSTIN Status</strong>. If the status shows anything other than "Active," do not accept tax invoices from that GSTIN. Invoices from cancelled or suspended GSTINs will not generate ITC in your GSTR-2B.</p>
+        </div>
+
+        <h2>GSTIN Format Explained: The 15-Digit Structure</h2>
+
+        <p>
+            Every GSTIN follows a standardized 15-character alphanumeric format. Understanding this structure helps you spot obvious errors before even running a verification search. Here is how the 15 digits break down:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Characters</th>
+                        <th>Represents</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1&ndash;2</strong></td>
+                        <td>2 digits</td>
+                        <td>State code (as per Indian Census 2011)</td>
+                        <td>27 (Maharashtra), 07 (Delhi), 29 (Karnataka)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3&ndash;12</strong></td>
+                        <td>10 characters</td>
+                        <td>PAN of the entity</td>
+                        <td>AABCT1234F</td>
+                    </tr>
+                    <tr>
+                        <td><strong>13</strong></td>
+                        <td>1 character</td>
+                        <td>Entity number (1&ndash;9, then A&ndash;Z) for multiple registrations under the same PAN in a state</td>
+                        <td>1 (first entity), 2 (second entity)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>14</strong></td>
+                        <td>1 character</td>
+                        <td>Reserved &mdash; always "Z" currently</td>
+                        <td>Z</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15</strong></td>
+                        <td>1 character</td>
+                        <td>Check digit (calculated via algorithm for validation)</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            For example, the GSTIN <strong>27AABCT1234F1Z5</strong> tells us:
+        </p>
+        <ul>
+            <li><strong>27</strong> &mdash; Business is registered in Maharashtra</li>
+            <li><strong>AABCT1234F</strong> &mdash; The PAN number of the entity</li>
+            <li><strong>1</strong> &mdash; This is the first (or only) GST registration under this PAN in Maharashtra</li>
+            <li><strong>Z</strong> &mdash; Reserved character</li>
+            <li><strong>5</strong> &mdash; Check digit for validation</li>
+        </ul>
+
+        <h3>Common State Codes in GSTIN</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>State/UT</th>
+                        <th>Code</th>
+                        <th>State/UT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01</strong></td>
+                        <td>Jammu &amp; Kashmir</td>
+                        <td><strong>19</strong></td>
+                        <td>West Bengal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>02</strong></td>
+                        <td>Himachal Pradesh</td>
+                        <td><strong>20</strong></td>
+                        <td>Jharkhand</td>
+                    </tr>
+                    <tr>
+                        <td><strong>06</strong></td>
+                        <td>Haryana</td>
+                        <td><strong>21</strong></td>
+                        <td>Odisha</td>
+                    </tr>
+                    <tr>
+                        <td><strong>07</strong></td>
+                        <td>Delhi</td>
+                        <td><strong>23</strong></td>
+                        <td>Madhya Pradesh</td>
+                    </tr>
+                    <tr>
+                        <td><strong>08</strong></td>
+                        <td>Rajasthan</td>
+                        <td><strong>24</strong></td>
+                        <td>Gujarat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>09</strong></td>
+                        <td>Uttar Pradesh</td>
+                        <td><strong>27</strong></td>
+                        <td>Maharashtra</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10</strong></td>
+                        <td>Bihar</td>
+                        <td><strong>29</strong></td>
+                        <td>Karnataka</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12</strong></td>
+                        <td>Arunachal Pradesh</td>
+                        <td><strong>32</strong></td>
+                        <td>Kerala</td>
+                    </tr>
+                    <tr>
+                        <td><strong>18</strong></td>
+                        <td>Assam</td>
+                        <td><strong>33</strong></td>
+                        <td>Tamil Nadu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>03</strong></td>
+                        <td>Punjab</td>
+                        <td><strong>36</strong></td>
+                        <td>Telangana</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>When Should You Verify a GSTIN?</h2>
+
+        <p>
+            While it is good practice to verify GSTINs regularly, there are specific situations where verification is absolutely critical:
+        </p>
+
+        <ul>
+            <li><strong>Onboarding new vendors or suppliers:</strong> Before placing your first order with a new supplier, verify their GSTIN to ensure they are a legitimate, registered taxpayer. Check their filing status to see if they regularly file returns.</li>
+            <li><strong>Before claiming Input Tax Credit:</strong> Before filing your GSTR-3B, cross-check the GSTINs on purchase invoices. Any ITC claimed against an invalid GSTIN will be reversed during assessment, along with interest under Section 50.</li>
+            <li><strong>During B2B reconciliation:</strong> When reconciling your purchase register with the GSTR-2B auto-populated statement, verify any GSTINs where there is a mismatch.</li>
+            <li><strong>Before issuing credit or debit notes:</strong> Verify the recipient's GSTIN is still active before issuing credit notes or debit notes, as these affect both parties' GST liability.</li>
+            <li><strong>Periodically for existing vendors:</strong> GSTINs can be cancelled at any time by the department. Run a periodic check (quarterly is recommended) on your active vendor list to catch any cancellations early.</li>
+        </ul>
+
+        <div class="info-box">
+            <div class="label">Best Practice</div>
+            <p>Integrate GSTIN verification into your accounts payable workflow. Verify the GSTIN at the time of vendor creation in your ERP or accounting system, and revalidate quarterly. This prevents ITC losses and simplifies GST return filing. Use <a href="https://gst.doaide.com/lookup">DoAide's GSTIN Search</a> for quick manual checks.</p>
+        </div>
+
+        <h2>Common GSTIN Verification Issues and Solutions</h2>
+
+        <p>
+            Sometimes a GSTIN verification does not go smoothly. Here are the most common issues you might encounter and how to resolve them:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Possible Cause</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GSTIN not found</strong></td>
+                        <td>Typo in the number, or the GSTIN does not exist</td>
+                        <td>Double-check each digit. Verify the PAN portion (digits 3&ndash;12) with the supplier. If it still fails, the GSTIN may be fake.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status shows "Cancelled"</strong></td>
+                        <td>The taxpayer's registration has been cancelled by the department or voluntarily</td>
+                        <td>Do not accept new invoices from this GSTIN. Ask the supplier for an alternative active GSTIN or if they have applied for revocation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status shows "Suspended"</strong></td>
+                        <td>Registration temporarily suspended pending cancellation proceedings</td>
+                        <td>Treat as high-risk. The supplier cannot issue valid tax invoices while suspended. Wait for resolution before transacting.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Name mismatch</strong></td>
+                        <td>Legal name on GSTIN differs from invoice name</td>
+                        <td>The legal name must match. Trade name can differ. Ask the supplier to correct their invoice to show the legal name as registered.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>State code mismatch</strong></td>
+                        <td>The supplier's GSTIN state code does not match the invoice address</td>
+                        <td>The supplier may have multiple GSTINs across states. Ask for the GSTIN registered in the state from which they are supplying.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Composition dealer flag</strong></td>
+                        <td>Supplier is registered under composition scheme</td>
+                        <td>Composition dealers cannot charge GST on their invoices. If they have charged GST, the invoice is incorrect and ITC cannot be claimed.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Filing status shows defaults</strong></td>
+                        <td>Supplier has not filed recent returns</td>
+                        <td>Their invoices will not appear in your GSTR-2B. Follow up with the supplier to file their pending GSTR-1 before your filing deadline.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="warning-box">
+            <div class="label">Watch Out for Fake GSTINs</div>
+            <p>The GST department regularly identifies and cancels GSTINs used for fraudulent ITC claims. In recent drives, thousands of fake GSTINs were detected. Always verify before transacting &mdash; if a GSTIN shows no filing history or was registered very recently with high-value invoices, treat it as a red flag.</p>
+        </div>
+
+        <h2>How to Verify GSTIN Using the PAN Number</h2>
+
+        <p>
+            If you have a vendor's PAN but not their GSTIN, you can search for all GSTINs associated with that PAN. On the official GST portal, navigate to <strong>Search Taxpayer &rarr; Search by PAN</strong> and enter the PAN number. This will show all GST registrations linked to that PAN across different states.
+        </p>
+
+        <p>
+            This is particularly useful when dealing with large businesses that have <a href="https://gst.doaide.com">multiple GST registrations</a> across states. You can verify which state-specific GSTIN the supplier should be using for your transaction based on the place of supply.
+        </p>
+
+        <h2>GSTIN Verification for E-Commerce Sellers</h2>
+
+        <p>
+            If you are an e-commerce seller on platforms like Amazon, Flipkart, or Meesho, you are <strong>required to have GST registration</strong> regardless of your turnover (Section 24 of CGST Act). Buyers on these platforms should verify seller GSTINs to ensure:
+        </p>
+
+        <ul>
+            <li>The seller is genuinely registered and not operating with a fake GSTIN</li>
+            <li>Tax invoices will be valid for claiming ITC (for B2B purchases)</li>
+            <li>The seller's registration is in the state from which they ship the goods</li>
+        </ul>
+
+        <p>
+            You can quickly verify any seller's GSTIN using the <a href="https://gst.doaide.com/lookup">DoAide GSTIN lookup tool</a>. Many e-commerce platforms display the seller's GSTIN on product pages or invoices.
+        </p>
+
+        <div class="cta-section">
+            <h2>Verify Any GSTIN Instantly</h2>
+            <p>Use DoAide's free GSTIN search tool to verify any taxpayer's registration status, filing compliance, and business details in seconds.</p>
+            <a href="https://gst.doaide.com/lookup" class="cta-button">Search GSTIN Free &rarr;</a>
+        </div>
+
+        <h2>Related DoAide Tools</h2>
+
+        <p>
+            DoAide offers a complete suite of GST tools to simplify your tax compliance:
+        </p>
+
+        <ul>
+            <li><a href="https://gst.doaide.com/hsn">HSN Code Search</a> &mdash; Find the correct HSN code and GST rate for any product</li>
+            <li><a href="https://gst.doaide.com/calculator">GST Calculator</a> &mdash; Calculate GST inclusive and exclusive amounts instantly</li>
+            <li><a href="https://invoice.doaide.com">Invoice Generator</a> &mdash; Create GST-compliant invoices for free</li>
+            <li><a href="https://gst.doaide.com">GST Bot</a> &mdash; AI-powered assistant for all your GST queries</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">How can I verify a GSTIN number online for free?</div>
+            <div class="faq-answer">
+                <p>You can verify any GSTIN for free using <a href="https://gst.doaide.com/lookup">DoAide's GSTIN Search Tool</a>. Simply enter the 15-digit GSTIN and get instant results including business name, registration status, filing history, and jurisdiction details. You can also verify on the official GST portal at services.gst.gov.in.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What does each digit in a GSTIN number represent?</div>
+            <div class="faq-answer">
+                <p>A GSTIN is a 15-digit number where digits 1&ndash;2 represent the state code, digits 3&ndash;12 are the PAN of the business, digit 13 is the entity number (for multiple registrations under the same PAN in a state), digit 14 is always &lsquo;Z&rsquo; (reserved for future use), and digit 15 is a check digit for validation.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Why is GSTIN verification important before business transactions?</div>
+            <div class="faq-answer">
+                <p>GSTIN verification is crucial because claiming Input Tax Credit (ITC) on invoices from an invalid or cancelled GSTIN will be rejected during reconciliation. It also helps prevent fraud, ensures your supplier is genuinely registered, and protects you from penalties during GST audits.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What should I do if a GSTIN shows as &lsquo;Cancelled&rsquo; or &lsquo;Suspended&rsquo;?</div>
+            <div class="faq-answer">
+                <p>If a supplier's GSTIN shows as Cancelled or Suspended, do not accept GST invoices from them as you will not be able to claim ITC on those invoices. Ask the supplier for an updated registration or a different GSTIN. For existing invoices, reverse any ITC already claimed on that GSTIN to avoid penalties.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I verify multiple GSTINs at once?</div>
+            <div class="faq-answer">
+                <p>For bulk verification, you can use <a href="https://gst.doaide.com/lookup">DoAide's GSTIN lookup tool</a> to verify GSTINs quickly one at a time, or integrate with the GST Network API for automated bulk validation. Businesses with large vendor bases often build API integrations into their procurement or ERP systems.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://doaide.com">Home</a>
+                <a href="https://doaide.com/blog">Blog</a>
+                <a href="https://gst.doaide.com">GST Bot</a>
+                <a href="https://gst.doaide.com/lookup">GSTIN Lookup</a>
+                <a href="https://gst.doaide.com/hsn">HSN Search</a>
+                <a href="https://invoice.doaide.com">Invoice Generator</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 DoAide. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
