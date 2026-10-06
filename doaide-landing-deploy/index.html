@@ -327,10 +327,25 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .doaide-ad ins{background:transparent}
 @media print{.doaide-ad{display:none}}
 
-/* ---- Hero calculator embed ---- */
-.hero-calc{max-width:740px;margin:2.5rem auto 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-hover);background:var(--bg-card);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.hero-calc iframe{width:100%;height:440px;border:none;display:block}
-@media(max-width:600px){.hero-calc iframe{height:400px}}
+/* ---- Hero calculator widget ---- */
+.hero-calc{max-width:520px;margin:2.5rem auto 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-hover);background:var(--bg-card);box-shadow:0 20px 60px rgba(0,0,0,.4);padding:clamp(1.5rem,3vw,2rem)}
+.hero-calc__title{font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+.hero-calc__title svg{width:20px;height:20px;color:var(--accent-green)}
+.hero-calc__row{display:flex;gap:.75rem;margin-bottom:1rem}
+@media(max-width:500px){.hero-calc__row{flex-direction:column}}
+.hero-calc__field{flex:1;display:flex;flex-direction:column;gap:.375rem}
+.hero-calc__field label{font-size:.75rem;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.06em}
+.hero-calc__field input,.hero-calc__field select{background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:10px;padding:.75rem 1rem;color:var(--text-primary);font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
+.hero-calc__field input:focus,.hero-calc__field select:focus{border-color:var(--accent-teal)}
+.hero-calc__field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b92a8' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.hero-calc__result{background:linear-gradient(135deg,rgba(45,212,191,.06),rgba(56,189,248,.04));border:1px solid rgba(45,212,191,.15);border-radius:12px;padding:1rem 1.25rem;margin-top:.5rem}
+.hero-calc__result-row{display:flex;justify-content:space-between;align-items:center;padding:.25rem 0}
+.hero-calc__result-row span:first-child{font-size:.8125rem;color:var(--text-secondary)}
+.hero-calc__result-row span:last-child{font-size:.9375rem;font-weight:600}
+.hero-calc__result-row.total{border-top:1px solid rgba(255,255,255,.08);margin-top:.5rem;padding-top:.75rem}
+.hero-calc__result-row.total span:last-child{font-size:1.25rem;font-weight:800;color:var(--accent-teal)}
+.hero-calc__link{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;padding:.625rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--accent-teal);background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.12);transition:all .2s}
+.hero-calc__link:hover{background:rgba(45,212,191,.12);border-color:rgba(45,212,191,.25)}
 
 /* ---- Try Now section ---- */
 .try-now{position:relative;z-index:2;padding:clamp(3rem,6vw,5rem) 0}
@@ -409,8 +424,36 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         </a>
       </div>
     </div>
-    <div class="hero-calc rv">
-      <iframe src="https://gst.doaide.com/calculator" title="Free GST Calculator — Calculate GST Instantly" loading="lazy" allow="clipboard-write"></iframe>
+    <div class="hero-calc rv" id="gst-calc">
+      <div class="hero-calc__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+        Quick GST Calculator
+      </div>
+      <div class="hero-calc__row">
+        <div class="hero-calc__field">
+          <label for="calc-amount">Amount (&#x20B9;)</label>
+          <input type="number" id="calc-amount" placeholder="Enter amount" value="10000">
+        </div>
+        <div class="hero-calc__field">
+          <label for="calc-rate">GST Rate</label>
+          <select id="calc-rate">
+            <option value="5">5%</option>
+            <option value="12">12%</option>
+            <option value="18" selected>18%</option>
+            <option value="28">28%</option>
+          </select>
+        </div>
+      </div>
+      <div class="hero-calc__result" id="calc-result">
+        <div class="hero-calc__result-row"><span>Base Amount</span><span id="calc-base">&#x20B9;10,000</span></div>
+        <div class="hero-calc__result-row"><span>CGST (9%)</span><span id="calc-cgst">&#x20B9;900</span></div>
+        <div class="hero-calc__result-row"><span>SGST (9%)</span><span id="calc-sgst">&#x20B9;900</span></div>
+        <div class="hero-calc__result-row total"><span>Total with GST</span><span id="calc-total">&#x20B9;11,800</span></div>
+      </div>
+      <a class="hero-calc__link" href="https://gst.doaide.com/calculator" target="_blank" rel="noopener">
+        Open Full GST Calculator
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
   </div>
 </section>

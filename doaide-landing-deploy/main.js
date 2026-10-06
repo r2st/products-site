@@ -76,4 +76,38 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   });
+
+  /* ---- Hero GST Calculator ---- */
+  safe(function () {
+    var amtInput = document.getElementById("calc-amount");
+    var rateSelect = document.getElementById("calc-rate");
+    if (!amtInput || !rateSelect) return;
+
+    function fmt(n) {
+      return "₹" + n.toLocaleString("en-IN", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    function calc() {
+      var amount = parseFloat(amtInput.value) || 0;
+      var rate = parseFloat(rateSelect.value) || 18;
+      var halfRate = rate / 2;
+      var gstAmt = amount * rate / 100;
+      var half = amount * halfRate / 100;
+      var total = amount + gstAmt;
+
+      document.getElementById("calc-base").textContent = fmt(amount);
+      document.getElementById("calc-cgst").textContent = fmt(half);
+      document.getElementById("calc-sgst").textContent = fmt(half);
+      document.getElementById("calc-total").textContent = fmt(total);
+
+      var cgstLabel = document.querySelector("#calc-result .hero-calc__result-row:nth-child(2) span:first-child");
+      var sgstLabel = document.querySelector("#calc-result .hero-calc__result-row:nth-child(3) span:first-child");
+      if (cgstLabel) cgstLabel.textContent = "CGST (" + halfRate + "%)";
+      if (sgstLabel) sgstLabel.textContent = "SGST (" + halfRate + "%)";
+    }
+
+    amtInput.addEventListener("input", calc);
+    rateSelect.addEventListener("change", calc);
+    calc();
+  });
 })();
