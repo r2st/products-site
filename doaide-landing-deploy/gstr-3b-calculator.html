@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSTR-3B Filing Guide &amp; Calculator — Free Step-by-Step Return Filing Tool | DoAide</title>
+<meta name="description" content="Free GSTR-3B calculator and step-by-step filing guide. Calculate output tax, ITC claims, reverse charge, late fees, and interest. File your GST return accurately with our interactive GSTR-3B form tool.">
+<meta name="keywords" content="GSTR-3B filing, GSTR-3B calculator, GSTR-3B form, GST return filing, ITC claim calculator, reverse charge mechanism, GST late fee calculator, GSTR-3B due date, how to file GSTR-3B, GST return tool, input tax credit, IGST CGST SGST calculator">
+<link rel="canonical" href="https://doaide.com/gstr-3b-calculator.html">
+<meta property="og:title" content="GSTR-3B Filing Guide & Calculator — Free Step-by-Step Tool | DoAide">
+<meta property="og:description" content="Free interactive GSTR-3B calculator. Compute output tax, ITC, reverse charge, late fees & interest. Step-by-step guide to file your GST return correctly.">
+<meta property="og:url" content="https://doaide.com/gstr-3b-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GSTR-3B Filing Guide & Calculator — Free Tool | DoAide">
+<meta name="twitter:description" content="Free interactive GSTR-3B calculator. Compute output tax, ITC, reverse charge, late fees & interest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GSTR-3B Filing Guide & Calculator",
+  "url": "https://doaide.com/gstr-3b-calculator.html",
+  "description": "Free interactive GSTR-3B calculator and step-by-step filing guide for Indian SMBs. Calculate output tax, ITC claims, reverse charge, late fees, and interest.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "DoAide",
+    "url": "https://doaide.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GSTR-3B and who needs to file it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GSTR-3B is a monthly self-declaration summary return filed by all regular GST-registered taxpayers. It summarises outward and inward supplies, ITC claimed, and tax payable. Composition scheme dealers and those with UIN do not file GSTR-3B. Taxpayers under the QRMP scheme file it quarterly instead of monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the due date for filing GSTR-3B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly filers must file GSTR-3B by the 20th of the following month. Quarterly filers under the QRMP scheme file by the 22nd or 24th of the month following the quarter, depending on their state. For example, the GSTR-3B for September 2026 (monthly) is due by 20th October 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Input Tax Credit (ITC) claimed in GSTR-3B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ITC is claimed in Table 4 of GSTR-3B. You report ITC from imports, reverse charge supplies, ISD invoices, and all other purchases. ITC must match GSTR-2B auto-populated data. Ineligible ITC under Section 17(5) must be reversed. Net ITC after reversals is applied against output tax liability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the penalty for late filing of GSTR-3B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Late filing attracts a late fee of Rs 25 per day each for CGST and SGST (total Rs 50/day), capped at Rs 5,000 each (Rs 10,000 total). For nil returns, the fee is Rs 10 per day each for CGST and SGST (total Rs 20/day). Additionally, interest at 18% per annum is charged on the outstanding tax amount from the due date until payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can IGST credit be used to pay CGST and SGST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, IGST credit is utilised first against IGST liability, then the balance can be used against CGST and SGST liabilities. The order of cross-utilisation follows the amended Section 49A: IGST credit must be fully exhausted before using CGST or SGST credits. CGST credit can offset CGST and then IGST, but not SGST. SGST credit can offset SGST and then IGST, but not CGST."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between GSTR-3B and GSTR-1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GSTR-1 is a detailed return of all outward supplies (sales) with invoice-level data, filed by the 11th of the following month. GSTR-3B is a summary return covering both outward supplies and inward supplies (purchases/ITC), along with tax payment, filed by the 20th. GSTR-1 feeds into the buyer's GSTR-2B for ITC matching, while GSTR-3B is the return where actual tax payment is made."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0a0a0b;--bg-card:#111113;--bg-input:#18181b;
+--text:#edeff5;--muted:#9aa1b2;
+--accent:#f0b429;--accent-dim:rgba(240,180,41,0.12);--accent-hover:#f5c34a;
+--border:rgba(255,255,255,0.07);--border-focus:rgba(240,180,41,0.4);
+--radius:14px;--radius-sm:10px;
+--font-heading:'Instrument Serif',serif;
+--font-body:'Schibsted Grotesk',sans-serif;
+--font-mono:'IBM Plex Mono',monospace;
+--danger:#ef4444;--success:#22c55e;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:400;line-height:1.2}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-hover)}
+
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{padding:20px 0;border-bottom:1px solid var(--border)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-heading);font-size:1.5rem;color:var(--text)}
+.logo span{color:var(--accent)}
+
+/* Hero */
+.hero{padding:48px 0 32px;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:12px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:640px;margin:0 auto}
+
+/* Step Indicator */
+.step-indicator{display:flex;align-items:center;justify-content:center;gap:4px;padding:24px 0 32px;flex-wrap:wrap}
+.step-dot{display:flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;color:var(--muted);font-family:var(--font-body);font-size:0.82rem;padding:6px 10px;border-radius:20px;transition:all 0.2s}
+.step-dot.active{background:var(--accent-dim);color:var(--accent);font-weight:600}
+.step-dot.completed{color:var(--success)}
+.step-dot .dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background 0.2s}
+.step-dot.active .dot{background:var(--accent)}
+.step-dot.completed .dot{background:var(--success)}
+.step-connector{width:20px;height:1px;background:var(--border);flex-shrink:0}
+@media(max-width:700px){.step-dot span.step-label{display:none}.step-connector{width:10px}}
+
+/* Card */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px}
+.card h2{font-size:1.6rem;margin-bottom:6px}
+.card h3{font-size:1.25rem;margin-bottom:12px;color:var(--accent)}
+.card-subtitle{color:var(--muted);font-size:0.9rem;margin-bottom:24px}
+
+/* Forms */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-row.triple{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:600px){.form-row,.form-row.triple{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{font-size:0.82rem;color:var(--muted);font-weight:500}
+.form-group input,.form-group select{background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-family:var(--font-body);font-size:0.95rem;transition:border-color 0.2s;outline:none;width:100%}
+.form-group input:focus,.form-group select:focus{border-color:var(--border-focus)}
+.form-group input::placeholder{color:rgba(154,161,178,0.5)}
+.form-group .error-msg{font-size:0.75rem;color:var(--danger);min-height:1em}
+
+/* Toggle */
+.toggle-group{display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;width:fit-content}
+.toggle-btn{background:var(--bg-input);border:none;color:var(--muted);padding:10px 20px;font-family:var(--font-body);font-size:0.9rem;cursor:pointer;transition:all 0.2s}
+.toggle-btn.active{background:var(--accent-dim);color:var(--accent);font-weight:600}
+
+/* Data Table */
+.table-wrap{overflow-x:auto;margin:16px 0;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.data-table{width:100%;border-collapse:collapse;min-width:700px}
+.data-table th{background:var(--bg-input);color:var(--muted);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:10px 12px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+.data-table th:first-child{text-align:left;min-width:200px}
+.data-table td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+.data-table td:first-child{font-size:0.88rem;padding-left:12px;color:var(--text)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr.total-row td{background:var(--accent-dim);font-weight:600;border-top:2px solid var(--accent)}
+.data-table input[type="number"]{background:var(--bg-input);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-family:var(--font-mono);font-size:0.85rem;width:100%;min-width:90px;text-align:right;outline:none;transition:border-color 0.2s}
+.data-table input[type="number"]:focus{border-color:var(--border-focus)}
+.data-table input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none}
+.data-table input[type="number"]{-moz-appearance:textfield}
+.data-table .ro{font-family:var(--font-mono);font-size:0.85rem;text-align:right;padding-right:12px;color:var(--accent);white-space:nowrap}
+
+/* Interstate row */
+.interstate-row{display:grid;grid-template-columns:1fr 120px 120px;gap:12px;align-items:end;padding:10px 0;border-bottom:1px solid var(--border)}
+.interstate-row:last-child{border-bottom:none}
+@media(max-width:600px){.interstate-row{grid-template-columns:1fr}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.92rem;font-weight:600;cursor:pointer;transition:all 0.2s;border:none}
+.btn-primary{background:var(--accent);color:#0a0a0b}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-danger{background:transparent;border:1px solid rgba(239,68,68,0.3);color:var(--danger);font-size:0.82rem;padding:8px 16px}
+.btn-danger:hover{background:rgba(239,68,68,0.1)}
+.nav-buttons{display:flex;justify-content:space-between;align-items:center;padding:24px 0;gap:12px;flex-wrap:wrap}
+
+/* Summary */
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+@media(max-width:600px){.summary-grid{grid-template-columns:1fr}}
+.summary-box{background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px}
+.summary-box .label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.summary-box .value{font-family:var(--font-mono);font-size:1.3rem;color:var(--accent);font-weight:600}
+.summary-box.total{border-color:var(--accent);background:var(--accent-dim)}
+.summary-box.total .value{font-size:1.5rem}
+
+.breakdown-table{width:100%;border-collapse:collapse;margin:12px 0}
+.breakdown-table th{text-align:left;font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;padding:8px 12px;border-bottom:1px solid var(--border);font-weight:600}
+.breakdown-table th:not(:first-child){text-align:right}
+.breakdown-table td{padding:8px 12px;font-size:0.9rem;border-bottom:1px solid var(--border)}
+.breakdown-table td:not(:first-child){text-align:right;font-family:var(--font-mono);font-size:0.85rem}
+.breakdown-table tr.highlight td{color:var(--accent);font-weight:600}
+.breakdown-table tr.sub td{color:var(--success)}
+.breakdown-table tr.net td{border-top:2px solid var(--accent);font-weight:700;color:var(--accent)}
+
+/* Late fee / interest inputs */
+.penalty-section{margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.penalty-row{display:flex;gap:16px;align-items:end;flex-wrap:wrap;margin-bottom:16px}
+.penalty-row .form-group{flex:1;min-width:160px}
+
+/* Educational Cards */
+.edu-section{padding:48px 0}
+.edu-section h2{font-size:2rem;text-align:center;margin-bottom:32px}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.edu-grid{grid-template-columns:1fr}}
+.edu-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.edu-card h3{font-size:1.15rem;color:var(--accent);margin-bottom:12px;font-family:var(--font-heading)}
+.edu-card ul,.edu-card ol{padding-left:20px;color:var(--muted);font-size:0.9rem}
+.edu-card li{margin-bottom:6px;line-height:1.5}
+.edu-card li strong{color:var(--text)}
+.edu-card p{color:var(--muted);font-size:0.9rem;line-height:1.6}
+.edu-card.full-width{grid-column:1/-1}
+
+/* CTA Banner */
+.cta-banner{background:linear-gradient(135deg,rgba(240,180,41,0.15),rgba(240,180,41,0.05));border:1px solid rgba(240,180,41,0.25);border-radius:var(--radius);padding:36px;text-align:center;margin:40px 0}
+.cta-banner h2{font-size:1.8rem;margin-bottom:8px}
+.cta-banner p{color:var(--muted);margin-bottom:20px;font-size:1rem}
+.cta-banner .btn-primary{font-size:1rem;padding:14px 32px}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--muted);font-size:0.85rem}
+.site-footer a{color:var(--muted)}
+.site-footer a:hover{color:var(--accent)}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+
+/* Step visibility */
+.step-panel{display:none}
+.step-panel.active{display:block}
+
+/* Nil return notice */
+.nil-notice{background:var(--accent-dim);border:1px solid rgba(240,180,41,0.25);border-radius:var(--radius-sm);padding:20px;text-align:center;color:var(--accent);margin:20px 0}
+
+/* Section divider inside step */
+.section-divider{border:none;border-top:1px solid var(--border);margin:24px 0}
+
+/* Subsection */
+.subsection{margin-bottom:20px}
+.subsection h4{font-size:0.85rem;font-family:var(--font-body);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+<div class="container">
+<a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
+<a href="https://gst.doaide.com" class="btn btn-outline" style="font-size:0.82rem;padding:8px 16px">GST Suite</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>GSTR-3B <span>Filing Guide</span> &amp; Calculator</h1>
+<p>Step-by-step interactive tool to prepare your GSTR-3B return. Calculate output tax, claim ITC, compute late fees and interest — all in one place.</p>
+</div>
+</section>
+
+<div class="container">
+
+<!-- Step Indicator -->
+<div class="step-indicator" id="stepIndicator">
+<button class="step-dot active" onclick="goToStep(1)"><span class="dot"></span><span class="step-label">Basic Info</span></button>
+<div class="step-connector"></div>
+<button class="step-dot" onclick="goToStep(2)"><span class="dot"></span><span class="step-label">Outward Supplies</span></button>
+<div class="step-connector"></div>
+<button class="step-dot" onclick="goToStep(3)"><span class="dot"></span><span class="step-label">Inter-State</span></button>
+<div class="step-connector"></div>
+<button class="step-dot" onclick="goToStep(4)"><span class="dot"></span><span class="step-label">ITC</span></button>
+<div class="step-connector"></div>
+<button class="step-dot" onclick="goToStep(5)"><span class="dot"></span><span class="step-label">Exempt Supplies</span></button>
+<div class="step-connector"></div>
+<button class="step-dot" onclick="goToStep(6)"><span class="dot"></span><span class="step-label">Summary</span></button>
+</div>
+
+<!-- ==================== STEP 1 ==================== -->
+<div class="step-panel active" id="step1">
+<div class="card">
+<h2>Step 1: Basic Information</h2>
+<p class="card-subtitle">Enter your GSTIN and return period details</p>
+
+<div class="form-row">
+<div class="form-group">
+<label for="gstin">GSTIN</label>
+<input type="text" id="gstin" maxlength="15" placeholder="e.g. 27AADCB2230M1ZT" oninput="validateGSTIN(this)" style="text-transform:uppercase;font-family:var(--font-mono)">
+<span class="error-msg" id="gstinError"></span>
+</div>
+<div class="form-group">
+<label for="legalName">Legal / Trade Name (optional)</label>
+<input type="text" id="legalName" placeholder="Your business name">
+</div>
+</div>
+
+<div class="form-row triple">
+<div class="form-group">
+<label for="returnMonth">Return Month</label>
+<select id="returnMonth">
+<option value="">Select month</option>
+<option>January</option><option>February</option><option>March</option>
+<option>April</option><option>May</option><option>June</option>
+<option>July</option><option>August</option><option>September</option>
+<option>October</option><option>November</option><option>December</option>
+</select>
+</div>
+<div class="form-group">
+<label for="returnYear">Return Year</label>
+<select id="returnYear">
+<option value="">Select year</option>
+<option>2024-25</option><option>2025-26</option><option>2026-27</option><option>2027-28</option>
+</select>
+</div>
+<div class="form-group">
+<label>Filing Type</label>
+<div class="toggle-group">
+<button class="toggle-btn active" onclick="setFilingType('regular',this)">Regular</button>
+<button class="toggle-btn" onclick="setFilingType('nil',this)">Nil Return</button>
+</div>
+</div>
+</div>
+
+<div class="nil-notice" id="nilNotice" style="display:none">
+This is a Nil return. All tax values will be zero. You can proceed to Step 6 for the summary.
+</div>
+</div>
+
+<div class="nav-buttons">
+<div></div>
+<button class="btn btn-primary" onclick="goToStep(2)">Next: Outward Supplies <span style="margin-left:4px">&rarr;</span></button>
+</div>
+</div>
+
+<!-- ==================== STEP 2 ==================== -->
+<div class="step-panel" id="step2">
+<div class="card">
+<h2>Step 2: Table 3.1 — Outward Supplies &amp; Inward Supplies (Reverse Charge)</h2>
+<p class="card-subtitle">Enter taxable values and tax amounts for each category of supply</p>
+
+<div class="table-wrap">
+<table class="data-table" id="table31">
+<thead>
+<tr>
+<th>Nature of Supplies</th>
+<th>Taxable Value</th>
+<th>IGST</th>
+<th>CGST</th>
+<th>SGST/UTGST</th>
+<th>Cess</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) Taxable outward supplies (other than zero rated, nil rated and exempted)</td>
+<td><input type="number" data-row="3.1a" data-col="taxable" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1a" data-col="igst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1a" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1a" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1a" data-col="cess" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+</tr>
+<tr>
+<td>(b) Outward supplies (zero rated)</td>
+<td><input type="number" data-row="3.1b" data-col="taxable" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1b" data-col="igst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1b" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1b" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1b" data-col="cess" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+</tr>
+<tr>
+<td>(c) Other outward supplies (nil rated, exempted)</td>
+<td><input type="number" data-row="3.1c" data-col="taxable" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+</tr>
+<tr>
+<td>(d) Inward supplies (liable to reverse charge)</td>
+<td><input type="number" data-row="3.1d" data-col="taxable" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1d" data-col="igst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1d" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1d" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td><input type="number" data-row="3.1d" data-col="cess" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+</tr>
+<tr>
+<td>(e) Non-GST outward supplies</td>
+<td><input type="number" data-row="3.1e" data-col="taxable" step="0.01" placeholder="0.00" oninput="calc31()"></td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+</tr>
+<tr class="total-row">
+<td>Total</td>
+<td class="ro" id="t31_taxable">0.00</td>
+<td class="ro" id="t31_igst">0.00</td>
+<td class="ro" id="t31_cgst">0.00</td>
+<td class="ro" id="t31_sgst">0.00</td>
+<td class="ro" id="t31_cess">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="nav-buttons">
+<button class="btn btn-outline" onclick="goToStep(1)">&larr; Previous</button>
+<button class="btn btn-primary" onclick="goToStep(3)">Next: Inter-State Supplies &rarr;</button>
+</div>
+</div>
+
+<!-- ==================== STEP 3 ==================== -->
+<div class="step-panel" id="step3">
+<div class="card">
+<h2>Step 3: Table 3.2 — Inter-State Supplies</h2>
+<p class="card-subtitle">Supplies made to unregistered persons, composition dealers, and UIN holders</p>
+
+<div class="subsection">
+<h4>(a) Supplies to Unregistered Persons</h4>
+<div id="interUnreg"></div>
+<button class="btn btn-outline" style="margin-top:8px;font-size:0.8rem;padding:6px 14px" onclick="addInterRow('interUnreg')">+ Add Row</button>
+</div>
+<hr class="section-divider">
+<div class="subsection">
+<h4>(b) Supplies to Composition Taxable Persons</h4>
+<div id="interComp"></div>
+<button class="btn btn-outline" style="margin-top:8px;font-size:0.8rem;padding:6px 14px" onclick="addInterRow('interComp')">+ Add Row</button>
+</div>
+<hr class="section-divider">
+<div class="subsection">
+<h4>(c) Supplies to UIN Holders</h4>
+<div id="interUIN"></div>
+<button class="btn btn-outline" style="margin-top:8px;font-size:0.8rem;padding:6px 14px" onclick="addInterRow('interUIN')">+ Add Row</button>
+</div>
+</div>
+
+<div class="nav-buttons">
+<button class="btn btn-outline" onclick="goToStep(2)">&larr; Previous</button>
+<button class="btn btn-primary" onclick="goToStep(4)">Next: ITC Details &rarr;</button>
+</div>
+</div>
+
+<!-- ==================== STEP 4 ==================== -->
+<div class="step-panel" id="step4">
+<div class="card">
+<h2>Step 4: Table 4 — Eligible ITC</h2>
+<p class="card-subtitle">Input Tax Credit available, reversed, and net ITC</p>
+
+<h3 style="margin-top:8px">(A) ITC Available (whether in full or part)</h3>
+<div class="table-wrap">
+<table class="data-table" id="table4a">
+<thead>
+<tr>
+<th>Details</th>
+<th>IGST</th>
+<th>CGST</th>
+<th>SGST/UTGST</th>
+<th>Cess</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) Import of goods</td>
+<td><input type="number" data-row="4a1" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td><input type="number" data-row="4a1" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr>
+<td>(2) Import of services</td>
+<td><input type="number" data-row="4a2" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td class="ro">-</td>
+<td class="ro">-</td>
+<td><input type="number" data-row="4a2" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr>
+<td>(3) Inward supplies liable to reverse charge</td>
+<td><input type="number" data-row="4a3" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a3" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a3" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a3" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr>
+<td>(4) Inward supplies from ISD</td>
+<td><input type="number" data-row="4a4" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a4" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a4" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a4" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr>
+<td>(5) All other ITC</td>
+<td><input type="number" data-row="4a5" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a5" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a5" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4a5" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr class="total-row">
+<td>Total ITC Available (A)</td>
+<td class="ro" id="t4a_igst">0.00</td>
+<td class="ro" id="t4a_cgst">0.00</td>
+<td class="ro" id="t4a_sgst">0.00</td>
+<td class="ro" id="t4a_cess">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr class="section-divider">
+
+<h3>(B) ITC Reversed</h3>
+<div class="table-wrap">
+<table class="data-table" id="table4b">
+<thead>
+<tr>
+<th>Details</th>
+<th>IGST</th>
+<th>CGST</th>
+<th>SGST/UTGST</th>
+<th>Cess</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) As per rules 42 &amp; 43 of CGST Rules</td>
+<td><input type="number" data-row="4b1" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b1" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b1" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b1" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr>
+<td>(2) Others</td>
+<td><input type="number" data-row="4b2" data-col="igst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b2" data-col="cgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b2" data-col="sgst" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+<td><input type="number" data-row="4b2" data-col="cess" step="0.01" placeholder="0.00" oninput="calc4()"></td>
+</tr>
+<tr class="total-row">
+<td>Total ITC Reversed (B)</td>
+<td class="ro" id="t4b_igst">0.00</td>
+<td class="ro" id="t4b_cgst">0.00</td>
+<td class="ro" id="t4b_sgst">0.00</td>
+<td class="ro" id="t4b_cess">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr class="section-divider">
+
+<h3>(C) Net ITC Available (A - B)</h3>
+<div class="summary-grid">
+<div class="summary-box"><div class="label">IGST</div><div class="value" id="t4c_igst">0.00</div></div>
+<div class="summary-box"><div class="label">CGST</div><div class="value" id="t4c_cgst">0.00</div></div>
+<div class="summary-box"><div class="label">SGST/UTGST</div><div class="value" id="t4c_sgst">0.00</div></div>
+<div class="summary-box"><div class="label">Cess</div><div class="value" id="t4c_cess">0.00</div></div>
+</div>
+
+<hr class="section-divider">
+
+<h3>(D) Ineligible ITC</h3>
+<div class="table-wrap">
+<table class="data-table" id="table4d">
+<thead>
+<tr>
+<th>Details</th>
+<th>IGST</th>
+<th>CGST</th>
+<th>SGST/UTGST</th>
+<th>Cess</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) As per section 17(5)</td>
+<td><input type="number" data-row="4d1" data-col="igst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d1" data-col="cgst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d1" data-col="sgst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d1" data-col="cess" step="0.01" placeholder="0.00"></td>
+</tr>
+<tr>
+<td>(2) Others</td>
+<td><input type="number" data-row="4d2" data-col="igst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d2" data-col="cgst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d2" data-col="sgst" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="4d2" data-col="cess" step="0.01" placeholder="0.00"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="nav-buttons">
+<button class="btn btn-outline" onclick="goToStep(3)">&larr; Previous</button>
+<button class="btn btn-primary" onclick="goToStep(5)">Next: Exempt Supplies &rarr;</button>
+</div>
+</div>
+
+<!-- ==================== STEP 5 ==================== -->
+<div class="step-panel" id="step5">
+<div class="card">
+<h2>Step 5: Table 5 — Exempt, Nil-Rated and Non-GST Inward Supplies</h2>
+<p class="card-subtitle">Values of supplies received that are exempt, nil-rated or non-GST</p>
+
+<div class="table-wrap">
+<table class="data-table" id="table5">
+<thead>
+<tr>
+<th>Nature of Supplies</th>
+<th>Inter-State</th>
+<th>Intra-State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>From a registered supplier</td>
+<td><input type="number" data-row="5a" data-col="inter" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="5a" data-col="intra" step="0.01" placeholder="0.00"></td>
+</tr>
+<tr>
+<td>From an unregistered supplier</td>
+<td><input type="number" data-row="5b" data-col="inter" step="0.01" placeholder="0.00"></td>
+<td><input type="number" data-row="5b" data-col="intra" step="0.01" placeholder="0.00"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="nav-buttons">
+<button class="btn btn-outline" onclick="goToStep(4)">&larr; Previous</button>
+<button class="btn btn-primary" onclick="goToStep(6)">Next: Summary &amp; Payment &rarr;</button>
+</div>
+</div>
+
+<!-- ==================== STEP 6 ==================== -->
+<div class="step-panel" id="step6">
+<div class="card">
+<h2>Step 6: Tax Liability &amp; Payment Summary</h2>
+<p class="card-subtitle">Auto-calculated from your entries above. Review before filing.</p>
+
+<h3 style="margin-top:8px">Output Tax Liability</h3>
+<p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px">From Table 3.1 rows (a) + (b) + (d)</p>
+<div class="table-wrap">
+<table class="breakdown-table">
+<thead><tr><th>Head</th><th>IGST</th><th>CGST</th><th>SGST/UTGST</th><th>Cess</th></tr></thead>
+<tbody>
+<tr><td>On outward supplies</td><td id="out_igst">0.00</td><td id="out_cgst">0.00</td><td id="out_sgst">0.00</td><td id="out_cess">0.00</td></tr>
+<tr class="sub"><td>Less: ITC (Table 4C)</td><td id="itc_igst">0.00</td><td id="itc_cgst">0.00</td><td id="itc_sgst">0.00</td><td id="itc_cess">0.00</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="section-divider">
+<h3>IGST Credit Cross-Utilisation</h3>
+<p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px">IGST credit is applied first to IGST liability, then to CGST, then to SGST (Section 49A)</p>
+<div class="table-wrap">
+<table class="breakdown-table" id="crossUtilTable">
+<thead><tr><th>Utilisation</th><th>IGST</th><th>CGST</th><th>SGST/UTGST</th><th>Cess</th></tr></thead>
+<tbody id="crossUtilBody"></tbody>
+</table>
+</div>
+
+<hr class="section-divider">
+<h3>Net Tax Payable (in Cash)</h3>
+<div class="summary-grid">
+<div class="summary-box"><div class="label">IGST Payable</div><div class="value" id="pay_igst">0.00</div></div>
+<div class="summary-box"><div class="label">CGST Payable</div><div class="value" id="pay_cgst">0.00</div></div>
+<div class="summary-box"><div class="label">SGST/UTGST Payable</div><div class="value" id="pay_sgst">0.00</div></div>
+<div class="summary-box"><div class="label">Cess Payable</div><div class="value" id="pay_cess">0.00</div></div>
+</div>
+
+<!-- Late Fee & Interest -->
+<div class="penalty-section">
+<h3>Late Fee &amp; Interest (if applicable)</h3>
+<div class="penalty-row">
+<div class="form-group">
+<label for="daysLate">Days Late (0 if on time)</label>
+<input type="number" id="daysLate" min="0" value="0" placeholder="0" oninput="calcPenalty()">
+</div>
+</div>
+<div class="table-wrap">
+<table class="breakdown-table">
+<thead><tr><th>Component</th><th>CGST</th><th>SGST/UTGST</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td>Late Fee</td><td id="lf_cgst">0.00</td><td id="lf_sgst">0.00</td><td id="lf_total">0.00</td></tr>
+<tr><td>Interest (18% p.a.)</td><td id="int_cgst">0.00</td><td id="int_sgst">0.00</td><td id="int_total">0.00</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<hr class="section-divider">
+<div class="summary-grid">
+<div class="summary-box total" style="grid-column:1/-1">
+<div class="label">Total Payment (Tax + Late Fee + Interest)</div>
+<div class="value" id="grandTotal">0.00</div>
+</div>
+</div>
+</div>
+
+<div class="nav-buttons">
+<button class="btn btn-outline" onclick="goToStep(5)">&larr; Previous</button>
+<button class="btn btn-danger" onclick="resetAll()">Reset All</button>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- CTA Banner -->
+<div class="container">
+<div class="cta-banner">
+<h2>Automate Your GST Compliance</h2>
+<p>Stop spending hours on manual calculations. Let DoAide GST handle your returns, reconciliation, and ITC matching automatically.</p>
+<a href="https://gst.doaide.com" class="btn btn-primary">Try DoAide GST &rarr;</a>
+</div>
+</div>
+
+<!-- Educational Section -->
+<section class="edu-section">
+<div class="container">
+<h2>GSTR-3B <span style="color:var(--accent)">Filing Guide</span></h2>
+<div class="edu-grid">
+
+<div class="edu-card">
+<h3>Common Mistakes in GSTR-3B Filing</h3>
+<ul>
+<li><strong>Mismatch with GSTR-1:</strong> Output tax in GSTR-3B must reconcile with GSTR-1 totals. Discrepancies trigger notices.</li>
+<li><strong>Claiming ineligible ITC:</strong> Blocked credits under Section 17(5) (personal use, motor vehicles, food) are often wrongly claimed.</li>
+<li><strong>Wrong table for reverse charge:</strong> RCM supplies go in Table 3.1(d), not in regular outward supplies. The ITC for RCM is claimed in Table 4(A)(3).</li>
+<li><strong>Inter-state vs intra-state errors:</strong> Misclassifying supply type leads to IGST paid instead of CGST+SGST or vice versa.</li>
+<li><strong>Not reversing ITC on non-payment:</strong> If you haven't paid your supplier within 180 days, ITC must be reversed with interest.</li>
+<li><strong>Ignoring GSTR-2B reconciliation:</strong> ITC claimed should not exceed the amount reflected in your auto-generated GSTR-2B.</li>
+</ul>
+</div>
+
+<div class="edu-card">
+<h3>How to Claim ITC Correctly</h3>
+<ol>
+<li><strong>Check GSTR-2B:</strong> Start with your auto-populated GSTR-2B. It shows eligible ITC from supplier filings.</li>
+<li><strong>Match invoices:</strong> Verify each invoice against your purchase register. Only claim ITC on invoices reflected in GSTR-2B.</li>
+<li><strong>Segregate by type:</strong> Separate imports, reverse charge, ISD credits, and regular purchases into the correct rows of Table 4.</li>
+<li><strong>Apply Rule 42/43 reversal:</strong> If inputs are used for both taxable and exempt supplies, reverse proportionate ITC.</li>
+<li><strong>Exclude Section 17(5) items:</strong> Motor vehicles, food &amp; beverages, health/fitness, club memberships, etc. Report these in Table 4(D).</li>
+<li><strong>Report net ITC:</strong> Available ITC minus reversals gives you Net ITC in Table 4(C), which offsets your output liability.</li>
+</ol>
+</div>
+
+<div class="edu-card">
+<h3>Reverse Charge Mechanism (RCM)</h3>
+<p>Under RCM, the recipient pays GST instead of the supplier. It applies when:</p>
+<ul>
+<li><strong>Specified goods/services:</strong> Legal services from advocates, goods transport by GTA (if not opting forward charge), security services, etc.</li>
+<li><strong>Unregistered suppliers:</strong> Certain notified categories of supply from unregistered persons.</li>
+<li><strong>Import of services:</strong> All imports of services are subject to RCM.</li>
+<li><strong>Filing:</strong> Report in Table 3.1(d) of GSTR-3B. Pay tax through the electronic cash ledger (not ITC). Claim ITC for RCM in Table 4(A)(3) in the same or subsequent return.</li>
+</ul>
+</div>
+
+<div class="edu-card">
+<h3>Due Dates for GSTR-3B</h3>
+<p><strong>Monthly filers:</strong> 20th of the following month. Example: July return due by 20th August.</p>
+<p style="margin-top:10px"><strong>Quarterly filers (QRMP Scheme):</strong></p>
+<ul>
+<li><strong>Category 1 states</strong> (Chhattisgarh, MP, Gujarat, Maharashtra, Karnataka, Goa, Kerala, Tamil Nadu, Telangana, AP, Daman &amp; Diu, Dadra &amp; Nagar Haveli, Puducherry, Andaman &amp; Nicobar, Lakshadweep): <strong>22nd</strong> of the month after the quarter.</li>
+<li><strong>Category 2 states</strong> (all others): <strong>24th</strong> of the month after the quarter.</li>
+</ul>
+<p style="margin-top:10px"><strong>QRMP eligibility:</strong> Aggregate turnover up to Rs 5 crore in the preceding financial year. Must opt in on the GST portal.</p>
+</div>
+
+<div class="edu-card full-width">
+<h3>Penalties for Late Filing of GSTR-3B</h3>
+<ul>
+<li><strong>Late fee:</strong> Rs 25 per day each under CGST and SGST (total Rs 50/day) for returns with tax liability. For nil returns, Rs 10 per day each (total Rs 20/day).</li>
+<li><strong>Maximum cap:</strong> Rs 5,000 per act (Rs 5,000 CGST + Rs 5,000 SGST = Rs 10,000 total). For nil returns, Rs 500 per act (Rs 1,000 total).</li>
+<li><strong>Interest:</strong> 18% per annum on the net tax liability, calculated from the day after the due date until the date of payment. Interest is charged only on the tax paid in cash (after adjusting ITC).</li>
+<li><strong>Registration cancellation:</strong> Continuous non-filing for 6 months (monthly) or 2 consecutive quarters (quarterly) can lead to suo motu cancellation of GST registration.</li>
+<li><strong>Impact on recipient:</strong> If your supplier does not file GSTR-1/3B, your ITC gets restricted. Timely filing protects the supply chain.</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-links">
+<span>&copy; 2026 DoAide</span>
+<span>&middot;</span>
+<span>More GST Tools:</span>
+<a href="https://doaide.com/gst-calculator.html">GST Calculator</a><span>&middot;</span>
+<a href="https://doaide.com/hsn-code-finder.html">HSN Code Finder</a><span>&middot;</span>
+<a href="https://doaide.com/gst-invoice-generator.html">Invoice Generator</a><span>&middot;</span>
+<a href="https://doaide.com/itc-calculator.html">ITC Calculator</a>
+</div>
+</div>
+</footer>
+
+<script>
+/* ===== State ===== */
+var currentStep = 1;
+var filingType = 'regular';
+var STATES = ['Andaman and Nicobar Islands','Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli and Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Ladakh','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Other Territory'];
+
+/* ===== Indian number formatting ===== */
+function fmt(n) {
+  if (n === undefined || n === null || isNaN(n)) n = 0;
+  n = Math.round(n * 100) / 100;
+  var neg = n < 0; if (neg) n = -n;
+  var parts = n.toFixed(2).split('.');
+  var intPart = parts[0];
+  var lastThree = intPart.slice(-3);
+  var rest = intPart.slice(0, -3);
+  if (rest.length > 0) lastThree = ',' + lastThree;
+  var formatted = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + lastThree;
+  return (neg ? '-' : '') + formatted + '.' + parts[1];
+}
+
+function fmtRupee(n) { return '₹' + fmt(n); }
+
+/* ===== Helper to get input value ===== */
+function gv(row, col) {
+  var el = document.querySelector('input[data-row="' + row + '"][data-col="' + col + '"]');
+  return el ? (parseFloat(el.value) || 0) : 0;
+}
+
+/* ===== GSTIN validation ===== */
+function validateGSTIN(input) {
+  var v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  input.value = v;
+  var err = document.getElementById('gstinError');
+  if (v.length === 0) { err.textContent = ''; return; }
+  if (v.length < 15) { err.textContent = 'GSTIN must be 15 characters'; return; }
+  var pattern = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+  if (!pattern.test(v)) { err.textContent = 'Invalid GSTIN format'; return; }
+  err.textContent = '';
+}
+
+/* ===== Filing type toggle ===== */
+function setFilingType(type, btn) {
+  filingType = type;
+  var btns = btn.parentElement.querySelectorAll('.toggle-btn');
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('nilNotice').style.display = type === 'nil' ? 'block' : 'none';
+}
+
+/* ===== Step navigation ===== */
+function goToStep(n) {
+  if (n < 1 || n > 6) return;
+  document.querySelectorAll('.step-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('step' + n).classList.add('active');
+  var dots = document.querySelectorAll('.step-dot');
+  dots.forEach(function(d, i) {
+    d.classList.remove('active');
+    if (i + 1 < n) d.classList.add('completed'); else d.classList.remove('completed');
+    if (i + 1 === n) d.classList.add('active');
+  });
+  currentStep = n;
+  if (n === 6) calcSummary();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ===== Table 3.1 calc ===== */
+function calc31() {
+  var cols = ['taxable','igst','cgst','sgst','cess'];
+  var rows = ['3.1a','3.1b','3.1d'];
+  var taxRows = ['3.1a','3.1b','3.1c','3.1d','3.1e'];
+  cols.forEach(function(col) {
+    var sum = 0;
+    taxRows.forEach(function(row) { sum += gv(row, col); });
+    var el = document.getElementById('t31_' + col);
+    if (el) el.textContent = fmt(sum);
+  });
+}
+
+/* ===== Table 4 calc ===== */
+function calc4() {
+  var cols = ['igst','cgst','sgst','cess'];
+  var aRows = ['4a1','4a2','4a3','4a4','4a5'];
+  var bRows = ['4b1','4b2'];
+  cols.forEach(function(col) {
+    var aSum = 0, bSum = 0;
+    aRows.forEach(function(r) { aSum += gv(r, col); });
+    bRows.forEach(function(r) { bSum += gv(r, col); });
+    var aEl = document.getElementById('t4a_' + col);
+    var bEl = document.getElementById('t4b_' + col);
+    var cEl = document.getElementById('t4c_' + col);
+    if (aEl) aEl.textContent = fmt(aSum);
+    if (bEl) bEl.textContent = fmt(bSum);
+    if (cEl) cEl.textContent = fmtRupee(aSum - bSum);
+  });
+}
+
+/* ===== Inter-state supply rows ===== */
+function buildStateOptions() {
+  var opts = '<option value="">Select State</option>';
+  STATES.forEach(function(s) { opts += '<option>' + s + '</option>'; });
+  return opts;
+}
+
+function addInterRow(containerId) {
+  var wrap = document.getElementById(containerId);
+  var row = document.createElement('div');
+  row.className = 'interstate-row';
+  row.innerHTML = '<div class="form-group"><label>Place of Supply</label><select>' + buildStateOptions() + '</select></div>' +
+    '<div class="form-group"><label>Taxable Value</label><input type="number" step="0.01" placeholder="0.00"></div>' +
+    '<div class="form-group"><label>IGST</label><input type="number" step="0.01" placeholder="0.00"></div>';
+  wrap.appendChild(row);
+}
+
+/* Init one row each */
+['interUnreg','interComp','interUIN'].forEach(function(id) { addInterRow(id); });
+
+/* ===== Summary Calculation ===== */
+function calcSummary() {
+  /* Output tax = 3.1(a) + 3.1(b) + 3.1(d) */
+  var heads = ['igst','cgst','sgst','cess'];
+  var outputRows = ['3.1a','3.1b','3.1d'];
+  var output = {};
+  heads.forEach(function(h) {
+    output[h] = 0;
+    outputRows.forEach(function(r) { output[h] += gv(r, h); });
+  });
+
+  document.getElementById('out_igst').textContent = fmt(output.igst);
+  document.getElementById('out_cgst').textContent = fmt(output.cgst);
+  document.getElementById('out_sgst').textContent = fmt(output.sgst);
+  document.getElementById('out_cess').textContent = fmt(output.cess);
+
+  /* Net ITC */
+  var aRows = ['4a1','4a2','4a3','4a4','4a5'];
+  var bRows = ['4b1','4b2'];
+  var itc = {};
+  heads.forEach(function(h) {
+    var a = 0, b = 0;
+    aRows.forEach(function(r) { a += gv(r, h); });
+    bRows.forEach(function(r) { b += gv(r, h); });
+    itc[h] = a - b;
+  });
+
+  document.getElementById('itc_igst').textContent = fmt(itc.igst);
+  document.getElementById('itc_cgst').textContent = fmt(itc.cgst);
+  document.getElementById('itc_sgst').textContent = fmt(itc.sgst);
+  document.getElementById('itc_cess').textContent = fmt(itc.cess);
+
+  /* Cross-utilisation of IGST credit */
+  /* Liabilities */
+  var liab = { igst: output.igst, cgst: output.cgst, sgst: output.sgst, cess: output.cess };
+  /* Available ITC */
+  var avail = { igst: Math.max(0, itc.igst), cgst: Math.max(0, itc.cgst), sgst: Math.max(0, itc.sgst), cess: Math.max(0, itc.cess) };
+
+  /* Step 1: IGST credit vs IGST liability */
+  var igstUsedForIgst = Math.min(avail.igst, liab.igst);
+  liab.igst -= igstUsedForIgst;
+  avail.igst -= igstUsedForIgst;
+
+  /* Step 2: remaining IGST credit vs CGST */
+  var igstUsedForCgst = Math.min(avail.igst, liab.cgst);
+  liab.cgst -= igstUsedForCgst;
+  avail.igst -= igstUsedForCgst;
+
+  /* Step 3: remaining IGST credit vs SGST */
+  var igstUsedForSgst = Math.min(avail.igst, liab.sgst);
+  liab.sgst -= igstUsedForSgst;
+  avail.igst -= igstUsedForSgst;
+
+  /* Step 4: CGST credit vs CGST liability */
+  var cgstUsedForCgst = Math.min(avail.cgst, liab.cgst);
+  liab.cgst -= cgstUsedForCgst;
+  avail.cgst -= cgstUsedForCgst;
+
+  /* Step 5: remaining CGST credit vs IGST */
+  var cgstUsedForIgst = Math.min(avail.cgst, liab.igst);
+  liab.igst -= cgstUsedForIgst;
+  avail.cgst -= cgstUsedForIgst;
+
+  /* Step 6: SGST credit vs SGST liability */
+  var sgstUsedForSgst = Math.min(avail.sgst, liab.sgst);
+  liab.sgst -= sgstUsedForSgst;
+  avail.sgst -= sgstUsedForSgst;
+
+  /* Step 7: remaining SGST credit vs IGST */
+  var sgstUsedForIgst = Math.min(avail.sgst, liab.igst);
+  liab.igst -= sgstUsedForIgst;
+  avail.sgst -= sgstUsedForIgst;
+
+  /* Cess credit vs Cess liability */
+  var cessUsed = Math.min(avail.cess, liab.cess);
+  liab.cess -= cessUsed;
+  avail.cess -= cessUsed;
+
+  /* Build cross-util table */
+  var body = document.getElementById('crossUtilBody');
+  body.innerHTML = '<tr><td>IGST credit used for IGST</td><td>' + fmt(igstUsedForIgst) + '</td><td>-</td><td>-</td><td>-</td></tr>' +
+    '<tr><td>IGST credit used for CGST</td><td>-</td><td>' + fmt(igstUsedForCgst) + '</td><td>-</td><td>-</td></tr>' +
+    '<tr><td>IGST credit used for SGST</td><td>-</td><td>-</td><td>' + fmt(igstUsedForSgst) + '</td><td>-</td></tr>' +
+    '<tr><td>CGST credit used for CGST</td><td>-</td><td>' + fmt(cgstUsedForCgst) + '</td><td>-</td><td>-</td></tr>' +
+    '<tr><td>CGST credit used for IGST</td><td>' + fmt(cgstUsedForIgst) + '</td><td>-</td><td>-</td><td>-</td></tr>' +
+    '<tr><td>SGST credit used for SGST</td><td>-</td><td>-</td><td>' + fmt(sgstUsedForSgst) + '</td><td>-</td></tr>' +
+    '<tr><td>SGST credit used for IGST</td><td>' + fmt(sgstUsedForIgst) + '</td><td>-</td><td>-</td><td>-</td></tr>' +
+    '<tr><td>Cess credit used for Cess</td><td>-</td><td>-</td><td>-</td><td>' + fmt(cessUsed) + '</td></tr>' +
+    '<tr class="net"><td>Net Payable in Cash</td><td>' + fmt(Math.max(0, liab.igst)) + '</td><td>' + fmt(Math.max(0, liab.cgst)) + '</td><td>' + fmt(Math.max(0, liab.sgst)) + '</td><td>' + fmt(Math.max(0, liab.cess)) + '</td></tr>';
+
+  var payIgst = Math.max(0, liab.igst);
+  var payCgst = Math.max(0, liab.cgst);
+  var paySgst = Math.max(0, liab.sgst);
+  var payCess = Math.max(0, liab.cess);
+
+  document.getElementById('pay_igst').textContent = fmtRupee(payIgst);
+  document.getElementById('pay_cgst').textContent = fmtRupee(payCgst);
+  document.getElementById('pay_sgst').textContent = fmtRupee(paySgst);
+  document.getElementById('pay_cess').textContent = fmtRupee(payCess);
+
+  /* Store for penalty calc */
+  window._payable = { igst: payIgst, cgst: payCgst, sgst: paySgst, cess: payCess };
+  calcPenalty();
+}
+
+/* ===== Late Fee & Interest ===== */
+function calcPenalty() {
+  var days = parseInt(document.getElementById('daysLate').value) || 0;
+  if (days < 0) days = 0;
+  var p = window._payable || { igst: 0, cgst: 0, sgst: 0, cess: 0 };
+  var isNil = filingType === 'nil';
+  var perDay = isNil ? 10 : 25;
+  var maxFee = isNil ? 500 : 5000;
+
+  var lfCgst = Math.min(days * perDay, maxFee);
+  var lfSgst = Math.min(days * perDay, maxFee);
+  if (days === 0) { lfCgst = 0; lfSgst = 0; }
+
+  /* Interest: 18% p.a. on net tax payable in cash */
+  var totalCashTax = p.cgst + p.sgst + p.igst + p.cess;
+  var interestTotal = days > 0 ? (totalCashTax * 0.18 * days / 365) : 0;
+  var intCgst = days > 0 ? (p.cgst * 0.18 * days / 365) : 0;
+  var intSgst = days > 0 ? (p.sgst * 0.18 * days / 365) : 0;
+
+  document.getElementById('lf_cgst').textContent = fmt(lfCgst);
+  document.getElementById('lf_sgst').textContent = fmt(lfSgst);
+  document.getElementById('lf_total').textContent = fmt(lfCgst + lfSgst);
+  document.getElementById('int_cgst').textContent = fmt(intCgst);
+  document.getElementById('int_sgst').textContent = fmt(intSgst);
+  document.getElementById('int_total').textContent = fmt(interestTotal);
+
+  var grand = totalCashTax + lfCgst + lfSgst + interestTotal;
+  document.getElementById('grandTotal').textContent = fmtRupee(grand);
+}
+
+/* ===== Reset ===== */
+function resetAll() {
+  if (!confirm('Reset all fields? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="number"]').forEach(function(inp) { inp.value = ''; });
+  document.getElementById('gstin').value = '';
+  document.getElementById('legalName').value = '';
+  document.getElementById('returnMonth').value = '';
+  document.getElementById('returnYear').value = '';
+  document.getElementById('gstinError').textContent = '';
+  document.getElementById('daysLate').value = '0';
+  filingType = 'regular';
+  var toggles = document.querySelectorAll('.toggle-btn');
+  toggles[0].classList.add('active');
+  toggles[1].classList.remove('active');
+  document.getElementById('nilNotice').style.display = 'none';
+  calc31(); calc4();
+  goToStep(1);
+}
+
+/* Initial calc */
+calc31(); calc4();
+</script>
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free GST Calculator — Calculate CGST, SGST, IGST Instantly | DoAide</title>
+<meta name="description" content="Free online GST Calculator for Indian businesses. Instantly calculate CGST, SGST, and IGST for all GST slab rates — 5%, 12%, 18%, 28%. Supports inclusive and exclusive GST calculations.">
+<meta name="keywords" content="GST calculator, CGST calculator, SGST calculator, IGST calculator, GST India, tax calculator, GST slab rates">
+<meta name="author" content="DoAide">
+<link rel="canonical" href="https://doaide.com/gst-calculator.html">
+
+<meta property="og:title" content="Free GST Calculator — Calculate CGST, SGST, IGST Instantly | DoAide">
+<meta property="og:description" content="Free online GST Calculator for Indian businesses. Instantly calculate CGST, SGST, and IGST for all GST slab rates — 5%, 12%, 18%, 28%.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doaide.com/gst-calculator.html">
+<meta property="og:site_name" content="DoAide">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free GST Calculator — Calculate CGST, SGST, IGST Instantly | DoAide">
+<meta name="twitter:description" content="Free online GST Calculator for Indian businesses. Instantly calculate CGST, SGST, and IGST for all GST slab rates.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DoAide GST Calculator",
+  "url": "https://doaide.com/gst-calculator.html",
+  "description": "Free online GST Calculator for Indian businesses. Calculate CGST, SGST, and IGST for all GST slab rates.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DoAide",
+    "url": "https://doaide.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #111113;
+  --bg-input: #18181b;
+  --text: #edeff5;
+  --muted: #9aa1b2;
+  --accent: #f0b429;
+  --accent-dim: rgba(240, 180, 41, 0.12);
+  --accent-hover: #f5c34a;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(240, 180, 41, 0.4);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --font-heading: 'Instrument Serif', serif;
+  --font-body: 'Schibsted Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Main */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 40px;
+  max-width: 560px;
+}
+
+/* Calculator Card */
+.calc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.amount-input-wrap {
+  position: relative;
+}
+
+.amount-input-wrap .currency {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 14px 16px 14px 36px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.amount-input:focus {
+  border-color: var(--border-focus);
+}
+
+.amount-input::placeholder {
+  color: rgba(154, 161, 178, 0.4);
+}
+
+/* Toggle groups */
+.toggle-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.toggle-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+.toggle-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.toggle-options {
+  display: flex;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.toggle-options button {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.toggle-options button.active {
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.toggle-options button:hover:not(.active) {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Slab Rate Selector */
+.slab-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.slab-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.slab-btn {
+  padding: 12px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.slab-btn:hover:not(.active) {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+.slab-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Buttons row */
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-calc {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #0a0a0b;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-calc:hover {
+  background: var(--accent-hover);
+}
+
+.btn-reset {
+  padding: 14px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+/* Results */
+.results-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: none;
+}
+
+.results-card.visible {
+  display: block;
+}
+
+.results-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.result-item {
+  padding: 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.result-item.highlight {
+  border-color: rgba(240, 180, 41, 0.3);
+  background: var(--accent-dim);
+}
+
+.result-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.result-value {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.result-item.highlight .result-value {
+  color: var(--accent);
+}
+
+.result-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.result-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* All slabs table */
+.all-slabs {
+  margin-top: 32px;
+}
+
+.all-slabs-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.slabs-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.slabs-table th,
+.slabs-table td {
+  padding: 12px 16px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.slabs-table th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: var(--bg-input);
+  font-weight: 500;
+}
+
+.slabs-table th:first-child,
+.slabs-table td:first-child {
+  text-align: left;
+}
+
+.slabs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.slabs-table td {
+  color: var(--text);
+}
+
+.slabs-table .slab-label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.slabs-table tr.active-row {
+  background: var(--accent-dim);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(154, 161, 178, 0.6);
+}
+
+.footer-copy a {
+  color: rgba(154, 161, 178, 0.6);
+}
+
+.footer-copy a:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .calc-card, .results-card {
+    padding: 20px;
+  }
+
+  .slab-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toggle-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .toggle-group {
+    min-width: 100%;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .slabs-table th,
+  .slabs-table td {
+    padding: 10px 10px;
+    font-size: 0.75rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
+    <nav class="nav-links">
+      <a href="/gst.html">GST Tools</a>
+      <a href="https://gst.doaide.com">GST Portal</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>GST <span>Calculator</span></h1>
+  <p class="subtitle">Calculate CGST, SGST, and IGST instantly for all GST slab rates. Free tool for Indian businesses and professionals.</p>
+
+  <div class="calc-card">
+    <div class="input-group">
+      <label for="amount">Enter Amount</label>
+      <div class="amount-input-wrap">
+        <span class="currency">&#8377;</span>
+        <input type="text" id="amount" class="amount-input" placeholder="0.00" inputmode="decimal" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <div class="toggle-group">
+        <label>GST Type</label>
+        <div class="toggle-options" id="gst-type-toggle">
+          <button class="active" data-value="exclusive">GST Exclusive</button>
+          <button data-value="inclusive">GST Inclusive</button>
+        </div>
+      </div>
+
+      <div class="toggle-group">
+        <label>Supply Type</label>
+        <div class="toggle-options" id="supply-type-toggle">
+          <button class="active" data-value="intra">Intra-State (CGST + SGST)</button>
+          <button data-value="inter">Inter-State (IGST)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slab-group">
+      <label>GST Slab Rate</label>
+      <div class="slab-options" id="slab-options">
+        <button class="slab-btn" data-rate="5">5%</button>
+        <button class="slab-btn" data-rate="12">12%</button>
+        <button class="slab-btn active" data-rate="18">18%</button>
+        <button class="slab-btn" data-rate="28">28%</button>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-calc" id="btn-calculate" onclick="calculate()">Calculate GST</button>
+      <button class="btn-reset" onclick="resetAll()">Clear</button>
+    </div>
+  </div>
+
+  <div class="results-card" id="results-card">
+    <h2 class="results-title">Breakdown</h2>
+    <div class="results-grid" id="results-grid"></div>
+    <p class="result-note" id="result-note"></p>
+
+    <div class="all-slabs">
+      <h3 class="all-slabs-title">All Slab Rates</h3>
+      <div style="overflow-x:auto;">
+        <table class="slabs-table" id="slabs-table"></table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/hsn-code-finder.html">HSN Code Finder</a>
+      <a href="/invoice-generator.html">Invoice Generator</a>
+      <a href="/itc-calculator.html">ITC Calculator</a>
+      <a href="/gst-due-dates.html">GST Due Dates</a>
+      <a href="https://doaide.com">DoAide Home</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 DoAide &middot; Powered by <a href="https://gst.doaide.com">gst.doaide.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // State
+  let gstType = 'exclusive';
+  let supplyType = 'intra';
+  let selectedRate = 18;
+
+  // Toggle setup
+  function setupToggle(id, callback) {
+    const wrap = document.getElementById(id);
+    const buttons = wrap.querySelectorAll('button');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        callback(btn.dataset.value);
+      });
+    });
+  }
+
+  setupToggle('gst-type-toggle', function (val) { gstType = val; });
+  setupToggle('supply-type-toggle', function (val) { supplyType = val; });
+
+  // Slab buttons
+  var slabBtns = document.querySelectorAll('.slab-btn');
+  slabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      slabBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      selectedRate = parseInt(btn.dataset.rate, 10);
+    });
+  });
+
+  // Format currency
+  function fmt(num) {
+    return num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  // Input formatting
+  var amountInput = document.getElementById('amount');
+  amountInput.addEventListener('input', function () {
+    this.value = this.value.replace(/[^0-9.]/g, '');
+    var parts = this.value.split('.');
+    if (parts.length > 2) {
+      this.value = parts[0] + '.' + parts.slice(1).join('');
+    }
+  });
+
+  amountInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      calculate();
+    }
+  });
+
+  // Calculate
+  window.calculate = function () {
+    var raw = parseFloat(amountInput.value);
+    if (isNaN(raw) || raw <= 0) {
+      amountInput.focus();
+      return;
+    }
+
+    var resultsCard = document.getElementById('results-card');
+    var resultsGrid = document.getElementById('results-grid');
+    var resultNote = document.getElementById('result-note');
+
+    var base, gstAmount, total;
+
+    if (gstType === 'exclusive') {
+      base = raw;
+      gstAmount = raw * selectedRate / 100;
+      total = base + gstAmount;
+    } else {
+      total = raw;
+      base = raw * 100 / (100 + selectedRate);
+      gstAmount = total - base;
+    }
+
+    var html = '';
+
+    html += '<div class="result-item"><div class="result-label">Base Amount</div><div class="result-value">' + '₹' + fmt(base) + '</div></div>';
+
+    if (supplyType === 'intra') {
+      var half = gstAmount / 2;
+      html += '<div class="result-item"><div class="result-label">GST Rate</div><div class="result-value">' + selectedRate + '%</div></div>';
+      html += '<div class="result-item"><div class="result-label">CGST (' + (selectedRate / 2) + '%)</div><div class="result-value">' + '₹' + fmt(half) + '</div></div>';
+      html += '<div class="result-item"><div class="result-label">SGST (' + (selectedRate / 2) + '%)</div><div class="result-value">' + '₹' + fmt(half) + '</div></div>';
+    } else {
+      html += '<div class="result-item"><div class="result-label">GST Rate</div><div class="result-value">' + selectedRate + '%</div></div>';
+      html += '<div class="result-item full-width"><div class="result-label">IGST (' + selectedRate + '%)</div><div class="result-value">' + '₹' + fmt(gstAmount) + '</div></div>';
+    }
+
+    html += '<div class="result-item highlight full-width"><div class="result-label">Total Amount</div><div class="result-value">' + '₹' + fmt(total) + '</div></div>';
+
+    resultsGrid.innerHTML = html;
+
+    var noteText = gstType === 'exclusive'
+      ? 'GST of ₹' + fmt(gstAmount) + ' added to base amount of ₹' + fmt(base)
+      : 'GST of ₹' + fmt(gstAmount) + ' extracted from total of ₹' + fmt(total);
+    noteText += ' · ' + (supplyType === 'intra' ? 'Intra-State (CGST + SGST)' : 'Inter-State (IGST)');
+    resultNote.textContent = noteText;
+
+    // All slabs table
+    var rates = [5, 12, 18, 28];
+    var tableHTML = '<thead><tr><th>Slab</th><th>Base</th>';
+    if (supplyType === 'intra') {
+      tableHTML += '<th>CGST</th><th>SGST</th>';
+    } else {
+      tableHTML += '<th>IGST</th>';
+    }
+    tableHTML += '<th>Total</th></tr></thead><tbody>';
+
+    rates.forEach(function (r) {
+      var b, g, t;
+      if (gstType === 'exclusive') {
+        b = raw;
+        g = raw * r / 100;
+        t = b + g;
+      } else {
+        t = raw;
+        b = raw * 100 / (100 + r);
+        g = t - b;
+      }
+
+      var isActive = r === selectedRate;
+      tableHTML += '<tr' + (isActive ? ' class="active-row"' : '') + '>';
+      tableHTML += '<td class="slab-label">' + r + '%</td>';
+      tableHTML += '<td>' + '₹' + fmt(b) + '</td>';
+      if (supplyType === 'intra') {
+        tableHTML += '<td>' + '₹' + fmt(g / 2) + '</td>';
+        tableHTML += '<td>' + '₹' + fmt(g / 2) + '</td>';
+      } else {
+        tableHTML += '<td>' + '₹' + fmt(g) + '</td>';
+      }
+      tableHTML += '<td>' + '₹' + fmt(t) + '</td>';
+      tableHTML += '</tr>';
+    });
+
+    tableHTML += '</tbody>';
+    document.getElementById('slabs-table').innerHTML = tableHTML;
+
+    resultsCard.classList.add('visible');
+    resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+
+  // Reset
+  window.resetAll = function () {
+    amountInput.value = '';
+    document.getElementById('results-card').classList.remove('visible');
+
+    // Reset toggles to defaults
+    gstType = 'exclusive';
+    supplyType = 'intra';
+    selectedRate = 18;
+
+    var gstBtns = document.querySelectorAll('#gst-type-toggle button');
+    gstBtns.forEach(function (b) { b.classList.remove('active'); });
+    gstBtns[0].classList.add('active');
+
+    var supplyBtns = document.querySelectorAll('#supply-type-toggle button');
+    supplyBtns.forEach(function (b) { b.classList.remove('active'); });
+    supplyBtns[0].classList.add('active');
+
+    slabBtns.forEach(function (b) { b.classList.remove('active'); });
+    document.querySelector('.slab-btn[data-rate="18"]').classList.add('active');
+
+    amountInput.focus();
+  };
+
+  // Auto-focus
+  amountInput.focus();
+})();
+</script>
+
+</body>
+</html>

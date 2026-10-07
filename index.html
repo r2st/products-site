@@ -43,27 +43,10 @@
 }
 </script>
 
-<!-- JSON-LD: WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "DoAide",
-  "url": "https://doaide.com",
-  "description": "AI-powered business tools for everyone. 40+ products across finance, HR, legal, marketing, productivity, and developer tools.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://doaide.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
 <!-- JSON-LD: SoftwareApplication for each product -->
 <script type="application/ld+json">
 [
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide GST Calculator","url":"https://gst.doaide.com","applicationCategory":"FinanceApplication","description":"Free GST compliance tool for Indian businesses. Auto-file GST returns, reconcile invoices, track ITC, and never miss a deadline.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"},
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide 409A Valuation","url":"https://409a.doaide.com","applicationCategory":"FinanceApplication","description":"AI-powered 409A valuation for startups. Get defensible fair market value reports, cap table analysis, and compliance-ready documentation.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Salary Calculator","url":"https://salary.doaide.com","applicationCategory":"FinanceApplication","description":"Free salary calculator for India. Calculate take-home pay, compare old vs new tax regime, optimize HRA, and get full CTC breakdown.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide AI Resume Builder","url":"https://resume.doaide.com","applicationCategory":"BusinessApplication","description":"Free AI resume builder. ATS-optimized templates, AI-written bullet points, cover letter generator, and multi-format export.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Invoice Generator","url":"https://invoicer.doaide.com","applicationCategory":"BusinessApplication","description":"Free invoice generator. Create professional GST-compliant invoices, track payments, send reminders, and export to PDF.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
@@ -77,8 +60,6 @@
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Proposal Writer","url":"https://proposals.doaide.com","applicationCategory":"BusinessApplication","description":"AI proposal writer. Generate winning business proposals, RFP responses, and client pitches in minutes.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Inventory Management","url":"https://inventory.doaide.com","applicationCategory":"BusinessApplication","description":"AI inventory management. Track stock levels, automate reordering, manage suppliers, and optimize warehouse operations.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Meeting Scheduler","url":"https://scheduler.doaide.com","applicationCategory":"BusinessApplication","description":"AI meeting scheduler. Smart calendar management, availability sharing, timezone handling, and automated reminders.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Desk","url":"https://desk.doaide.com","applicationCategory":"BusinessApplication","description":"AI-powered help desk and ticket management. Smart routing, automated responses, SLA tracking, and omnichannel support.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Pulse","url":"https://pulse.doaide.com","applicationCategory":"BusinessApplication","description":"Real-time business health monitoring. Track KPIs, revenue metrics, team productivity, and get AI-powered alerts and insights.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Customer Support AI","url":"https://support.doaide.com","applicationCategory":"BusinessApplication","description":"AI customer support platform. Automate ticket routing, generate responses, manage SLAs, and provide 24/7 AI assistance.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Voice AI","url":"https://voice.doaide.com","applicationCategory":"BusinessApplication","description":"Voice AI for business. AI phone agents, call transcription, voice commands, and automated voice workflows.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Compliance Pilot","url":"https://comply.doaide.com","applicationCategory":"BusinessApplication","description":"AI compliance management. Track filing deadlines, manage regulatory requirements, get penalty alerts, and stay compliant.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"},
@@ -89,10 +70,11 @@
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Project Tracker","url":"https://tracker.doaide.com","applicationCategory":"BusinessApplication","description":"AI project tracker. Task management, team collaboration, progress tracking, and automated status reports.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Web Analytics","url":"https://analytics.doaide.com","applicationCategory":"BusinessApplication","description":"Privacy-first web analytics. Track visitors, conversions, and user behavior without cookies.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Knowledge Management","url":"https://cortex.doaide.com","applicationCategory":"BusinessApplication","description":"AI knowledge management. Build knowledge graphs, smart recall, auto-learning, and team knowledge sharing.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide AutoApply","url":"https://job.doaide.com","applicationCategory":"BusinessApplication","description":"AI job search and auto-apply platform. Smart job matching, automated applications, AI cover letters, and application tracking.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide AI Job Search","url":"https://job.doaide.com","applicationCategory":"BusinessApplication","description":"AI job search and auto-apply platform. Smart job matching, automated applications, AI cover letters, and application tracking.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide CA Workflow","url":"https://caflow.doaide.com","applicationCategory":"BusinessApplication","description":"AI workflow management for Chartered Accountants. Client management, deadline tracking, task automation, and compliance.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"},
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide Auth Management","url":"https://authmatic.doaide.com","applicationCategory":"DeveloperApplication","description":"Authentication management for developers. OAuth, SSO, MFA, session management, and user identity.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"},
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide PDF Tools","url":"https://pdf.doaide.com","applicationCategory":"UtilitiesApplication","description":"Free PDF tools. Merge, split, compress, convert, and edit PDFs online. No signup required.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"operatingSystem":"Web"}
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide InsureKit","url":"https://insure.doaide.com","applicationCategory":"FinanceApplication","description":"Free LIC insurance agent toolkit for India. Premium calculator, maturity calculator, plan comparison, commission calculator, tax benefits, bonus history, receipt generator, policy tracker, and client management.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"},
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide TaxFile","url":"https://tax.doaide.com","applicationCategory":"FinanceApplication","description":"Free ITR filing assistant for India. Income tax calculator with old vs new regime comparison, ITR form selector, HRA exemption, 80C planner, capital gains, TDS calculator, advance tax, home loan benefits, NPS, and rent receipts.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"operatingSystem":"Web"}
 ]
 </script>
 
@@ -321,15 +303,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 /* ---- Spectrum divider ---- */
 .spectrum-bar{height:2px;background:var(--gradient-main);border-radius:2px;margin:0 auto}
-
-/* ---- Ad containers ---- */
-.doaide-ad{position:relative;z-index:2}
-.doaide-ad ins{background:transparent}
-@media print{.doaide-ad{display:none}}
 </style>
-<!-- Google Analytics 4 - REPLACE G-REPLACE_WITH_GA4_ID with your GA4 measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_GA4_ID"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-REPLACE_WITH_GA4_ID");</script>
     <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
 </head>
 <body>
@@ -385,9 +359,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<div class="doaide-ad" style="max-width:1280px;margin:2rem auto;padding:0 clamp(1rem,4vw,2rem);text-align:center">
-</div>
-
 <!-- ============== FREE TOOLS BANNER ============== -->
 <section class="free-banner" id="free-tools">
   <div class="wrap">
@@ -403,13 +374,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <a class="free-tool" href="https://convert.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🔄</span> File Converter</a>
         <a class="free-tool" href="https://bizname.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">✨</span> Business Name Generator</a>
         <a class="free-tool" href="https://invoicer.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🧾</span> Invoice Generator</a>
-        <a class="free-tool" href="https://pdf.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">📑</span> PDF Tools</a>
-        <a class="free-tool" href="/gst-invoice-generator.html"><span class="free-tool__icon">🧾</span> GST Invoice Generator</a>
-        <a class="free-tool" href="/eway-bill-helper.html"><span class="free-tool__icon">🚚</span> E-Way Bill Helper</a>
-        <a class="free-tool" href="/hsn-code-finder.html"><span class="free-tool__icon">🔍</span> HSN Code Finder</a>
-        <a class="free-tool" href="/gst-penalty-calculator.html"><span class="free-tool__icon">⏰</span> GST Penalty Calculator</a>
-        <a class="free-tool" href="/gst-composition-calculator.html"><span class="free-tool__icon">📊</span> GST Composition Calculator</a>
-        <a class="free-tool" href="/gstr-9-calculator.html"><span class="free-tool__icon">📋</span> GSTR-9 Calculator</a>
       </div>
     </div>
   </div>
@@ -514,18 +478,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
       <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
         <div class="product-card__head">
-          <div class="product-card__icon">📐</div>
-          <span class="product-card__badge">Finance</span>
-        </div>
-        <h3 class="product-card__name">409A Valuation</h3>
-        <p class="product-card__desc">AI-powered 409A valuations for startups. Get defensible fair market value reports, cap table analysis, and compliance-ready documentation.</p>
-        <div class="product-card__foot">
-          <a class="product-card__link" href="https://409a.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
-        </div>
-      </article>
-
-      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
-        <div class="product-card__head">
           <div class="product-card__icon">💼</div>
           <span class="product-card__badge">Finance</span>
         </div>
@@ -548,6 +500,32 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         </div>
       </article>
 
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🛡️</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">InsureKit</h3>
+        <p class="product-card__desc">Free tools for India's 24 lakh+ LIC agents — premium calculator, maturity calculator, plan comparison, commission calculator, tax benefits, bonus history, and receipt generator.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://insure.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📋</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">TaxFile</h3>
+        <p class="product-card__desc">Free ITR filing tools competing with ClearTax — income tax calculator (old vs new regime), ITR form selector, HRA exemption, 80C planner, capital gains, TDS, advance tax, home loan, and NPS calculators.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://tax.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
       <!-- ===== HR & CAREER ===== -->
       <article class="product-card rv" data-cat="hr" style="--cat-color:var(--accent-blue)">
         <div class="product-card__head">
@@ -567,8 +545,8 @@ button{font:inherit;cursor:pointer;border:none;background:none}
           <div class="product-card__icon">🎯</div>
           <span class="product-card__badge">HR & Career</span>
         </div>
-        <h3 class="product-card__name">AutoApply</h3>
-        <p class="product-card__desc">AI job search and auto-apply. Smart job matching, automated applications, AI cover letters, and full application pipeline tracking.</p>
+        <h3 class="product-card__name">AI Job Search</h3>
+        <p class="product-card__desc">Smart job matching, automated applications, AI cover letters, and full application pipeline tracking.</p>
         <div class="product-card__foot">
           <a class="product-card__link" href="https://job.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
         </div>
@@ -750,30 +728,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
       <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
         <div class="product-card__head">
-          <div class="product-card__icon">🎫</div>
-          <span class="product-card__badge">Productivity</span>
-        </div>
-        <h3 class="product-card__name">Desk</h3>
-        <p class="product-card__desc">AI-powered help desk and ticket management. Smart routing, automated responses, SLA tracking, and omnichannel customer support.</p>
-        <div class="product-card__foot">
-          <a class="product-card__link" href="https://desk.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
-        </div>
-      </article>
-
-      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
-        <div class="product-card__head">
-          <div class="product-card__icon">📊</div>
-          <span class="product-card__badge">Productivity</span>
-        </div>
-        <h3 class="product-card__name">Pulse</h3>
-        <p class="product-card__desc">Real-time business health monitoring. Track KPIs, revenue metrics, team productivity, and get AI-powered alerts and insights.</p>
-        <div class="product-card__foot">
-          <a class="product-card__link" href="https://pulse.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
-        </div>
-      </article>
-
-      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
-        <div class="product-card__head">
           <div class="product-card__icon">💬</div>
           <span class="product-card__badge">Productivity</span>
         </div>
@@ -808,19 +762,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         </div>
       </article>
 
-      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
-        <div class="product-card__head">
-          <div class="product-card__icon">📑</div>
-          <span class="product-card__badge">Productivity</span>
-        </div>
-        <h3 class="product-card__name">PDF Tools</h3>
-        <p class="product-card__desc">Merge, split, compress, convert, and edit PDFs online. No signup required, completely free.</p>
-        <div class="product-card__foot">
-          <a class="product-card__link" href="https://pdf.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
-          <span class="product-card__free">Free</span>
-        </div>
-      </article>
-
       <!-- ===== DEV TOOLS ===== -->
       <article class="product-card rv" data-cat="dev" style="--cat-color:var(--accent-indigo)">
         <div class="product-card__head">
@@ -849,9 +790,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div>
 </section>
-
-<div class="doaide-ad" style="max-width:1280px;margin:2rem auto;padding:0 clamp(1rem,4vw,2rem);text-align:center">
-</div>
 
 <!-- ============== HOW IT WORKS ============== -->
 <section class="how" id="how">
@@ -936,9 +874,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<div class="doaide-ad" style="max-width:1280px;margin:2rem auto;padding:0 clamp(1rem,4vw,2rem);text-align:center">
-</div>
-
 <!-- ============== FOOTER ============== -->
 <footer class="footer">
   <div class="wrap">
@@ -956,14 +891,15 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <a href="https://salary.doaide.com" target="_blank" rel="noopener">Salary Calculator</a>
         <a href="https://invoicer.doaide.com" target="_blank" rel="noopener">Invoice Generator</a>
         <a href="https://fincalc.doaide.com" target="_blank" rel="noopener">Financial Calculator</a>
-        <a href="https://409a.doaide.com" target="_blank" rel="noopener">409A Valuation</a>
         <a href="https://payroll.doaide.com" target="_blank" rel="noopener">Payroll Management</a>
         <a href="https://inventory.doaide.com" target="_blank" rel="noopener">Inventory Management</a>
+        <a href="https://insure.doaide.com" target="_blank" rel="noopener">InsureKit</a>
+        <a href="https://tax.doaide.com" target="_blank" rel="noopener">TaxFile</a>
       </div>
       <div class="footer__col">
         <h4>HR & Career</h4>
         <a href="https://resume.doaide.com" target="_blank" rel="noopener">AI Resume Builder</a>
-        <a href="https://job.doaide.com" target="_blank" rel="noopener">AutoApply</a>
+        <a href="https://job.doaide.com" target="_blank" rel="noopener">AI Job Search</a>
         <a href="https://scheduler.doaide.com" target="_blank" rel="noopener">Meeting Scheduler</a>
         <h4 style="margin-top:1.5rem">Legal & Compliance</h4>
         <a href="https://contracts.doaide.com" target="_blank" rel="noopener">Contract Management</a>
@@ -985,9 +921,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <a href="https://cortex.doaide.com" target="_blank" rel="noopener">Knowledge Management</a>
         <a href="https://support.doaide.com" target="_blank" rel="noopener">Customer Support AI</a>
         <a href="https://voice.doaide.com" target="_blank" rel="noopener">Voice AI</a>
-        <a href="https://desk.doaide.com" target="_blank" rel="noopener">Desk</a>
-        <a href="https://pulse.doaide.com" target="_blank" rel="noopener">Pulse</a>
-        <a href="https://pdf.doaide.com" target="_blank" rel="noopener">PDF Tools</a>
         <a href="https://documedic.doaide.com" target="_blank" rel="noopener">Clinical Decision Support</a>
         <h4 style="margin-top:1.5rem">Dev Tools</h4>
         <a href="https://authmatic.doaide.com" target="_blank" rel="noopener">Auth Management</a>

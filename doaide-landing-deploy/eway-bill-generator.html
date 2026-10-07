@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free E-Way Bill Generator — Generate EWB-01 Online | DoAide</title>
+<meta name="description" content="Generate e-way bills (EWB-01) online for free. Auto-calculate validity period, check exemptions, get transport document summaries. Required for goods transport over ₹50,000 in India.">
+<meta name="keywords" content="e-way bill generator, EWB-01, e-way bill online, GST e-way bill, transport goods India, eway bill calculator, e-way bill validity, GSTIN eway bill">
+<link rel="canonical" href="https://doaide.com/eway-bill-generator.html">
+<meta property="og:title" content="Free E-Way Bill Generator — Generate EWB-01 Online | DoAide">
+<meta property="og:description" content="Generate e-way bills (EWB-01) online for free. Auto-calculate validity period, check exemptions. Required for goods transport over ₹50,000 in India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doaide.com/eway-bill-generator.html">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free E-Way Bill Generator — Generate EWB-01 Online | DoAide">
+<meta name="twitter:description" content="Generate e-way bills online for free. Auto-calculate validity, check exemptions, get EWB-01 format summaries.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "E-Way Bill Generator",
+  "description": "Generate e-way bills (EWB-01) online for free. Auto-calculate validity period based on distance, check exemptions, and get transport document summaries for goods movement in India.",
+  "url": "https://doaide.com/eway-bill-generator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an e-way bill and when is it required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An e-way bill (Electronic Way Bill) is a document required under GST for transporting goods worth more than ₹50,000. It must be generated on the e-way bill portal before goods are moved, whether inter-state or intra-state. The bill contains details of the goods, consignor, consignee, and transporter. It is governed by Rule 138 of the CGST Rules, 2017."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the penalties for not having an e-way bill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If goods are transported without a valid e-way bill, the penalty is ₹10,000 or the tax amount sought to be evaded, whichever is greater, under Section 129 of CGST Act. Additionally, the vehicle and goods can be detained and seized. The goods owner must pay the applicable tax and penalty to get the goods released."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is e-way bill validity calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For normal cargo (other than over-dimensional cargo), validity is 1 day for every 200 km or part thereof. For over-dimensional cargo, validity is 1 day for every 20 km or part thereof. The validity period starts from the date and time of generation. It can be extended before expiry by the generator or transporter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is an e-way bill NOT required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E-way bills are not required when: the consignment value is below ₹50,000; goods are transported by non-motorised conveyance; goods are moved from port/airport to customs station or ICD; transit cargo to/from Nepal or Bhutan; defence ministry goods under exemption; empty cargo containers; goods exempted under specific state notifications; and goods transported within 50 km (in some states) for delivery challan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I cancel or modify an e-way bill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An e-way bill can be cancelled within 24 hours of generation, provided the goods have not been verified in transit. If a vehicle breaks down or the vehicle number changes, you can update the vehicle number (Part-B) on the portal. The validity can be extended before expiry if goods cannot be transported within the validity period."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--bg2:#131316;--bg3:#1a1a1f;--border:#2a2a30;--text:#edeff5;--text2:#9a9caa;--accent:#f0b429;--accent2:#e09400;--red:#ef4444;--green:#22c55e;--blue:#3b82f6;--mono:'IBM Plex Mono',monospace;--body:'Schibsted Grotesk',sans-serif;--heading:'Instrument Serif',serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.site-header .logo{font-family:var(--heading);font-size:1.5rem;color:var(--accent);font-weight:400}
+.site-header nav{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.site-header nav a{color:var(--text2);font-size:.9rem;font-weight:500;transition:color .2s}
+.site-header nav a:hover{color:var(--accent);text-decoration:none}
+
+.main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem}
+h1{font-family:var(--heading);font-size:2.4rem;margin-bottom:.5rem;color:var(--text);font-weight:400}
+h1 span{color:var(--accent)}
+.subtitle{color:var(--text2);margin-bottom:2rem;font-size:1rem}
+
+.section-title{font-family:var(--heading);font-size:1.3rem;color:var(--accent);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);font-weight:400}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
+.form-panel{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+.form-row.full{grid-template-columns:1fr}
+.form-row.triple{grid-template-columns:1fr 1fr 1fr}
+.form-row.quad{grid-template-columns:1fr 1fr 1fr 1fr}
+label{display:block;font-size:.8rem;color:var(--text2);margin-bottom:.25rem;font-weight:500;text-transform:uppercase;letter-spacing:.03em}
+input,select,textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.55rem .75rem;border-radius:6px;font-family:var(--body);font-size:.9rem;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+input[type="number"]{font-family:var(--mono)}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239a9caa'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center}
+
+.doc-section{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem}
+
+.items-section{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem;overflow-x:auto}
+.items-table{width:100%;border-collapse:collapse;min-width:800px}
+.items-table th{background:var(--bg3);color:var(--text2);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;padding:.6rem .5rem;text-align:left;font-weight:600;white-space:nowrap;border-bottom:1px solid var(--border)}
+.items-table td{padding:.4rem .3rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.items-table input,.items-table select{padding:.45rem .5rem;font-size:.85rem;border-radius:4px}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.5rem;border-radius:8px;font-family:var(--body);font-size:.9rem;font-weight:600;cursor:pointer;border:none;transition:all .2s}
+.btn-primary{background:var(--accent);color:#0a0a0b}
+.btn-primary:hover{background:var(--accent2)}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent)}
+.btn-danger{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.btn-danger:hover{background:rgba(239,68,68,.25)}
+.btn-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+
+.result-card{background:var(--bg2);border:1px solid var(--accent);border-radius:10px;padding:2rem;margin:2rem 0;display:none}
+.result-card.show{display:block}
+.result-card h2{font-family:var(--heading);font-size:1.5rem;color:var(--accent);margin-bottom:1rem;font-weight:400}
+
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.summary-item{padding:.75rem;background:var(--bg3);border-radius:6px;border-left:3px solid var(--accent)}
+.summary-item .label{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.03em}
+.summary-item .value{font-family:var(--mono);font-size:1rem;color:var(--text);margin-top:.2rem}
+
+.validity-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:20px;font-family:var(--mono);font-weight:600;font-size:.9rem}
+.validity-badge.valid{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.validity-badge.warning{background:rgba(240,180,41,.12);color:var(--accent);border:1px solid rgba(240,180,41,.3)}
+
+.alert-box{padding:1rem 1.25rem;border-radius:8px;margin-bottom:1.5rem;font-size:.9rem;display:none}
+.alert-box.show{display:flex;align-items:flex-start;gap:.75rem}
+.alert-warning{background:rgba(240,180,41,.1);border:1px solid rgba(240,180,41,.3);color:var(--accent)}
+.alert-info{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);color:var(--blue)}
+.alert-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--red)}
+
+.edu-section{margin-top:3rem}
+.edu-section h2{font-family:var(--heading);font-size:1.8rem;color:var(--text);margin-bottom:1.5rem;font-weight:400}
+.edu-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:1.5rem}
+.edu-card h3{font-family:var(--heading);font-size:1.2rem;color:var(--accent);margin-bottom:.75rem;font-weight:400}
+.edu-card p,.edu-card li{color:var(--text2);font-size:.92rem;line-height:1.7}
+.edu-card ul{margin:.75rem 0;padding-left:1.5rem}
+.edu-card li{margin-bottom:.4rem}
+.edu-card strong{color:var(--text)}
+
+.penalty-box{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:8px;padding:1.25rem;margin:1rem 0}
+.penalty-box p{color:var(--red);font-size:.9rem}
+
+.exemption-tag{display:inline-block;padding:.25rem .6rem;border-radius:4px;font-size:.8rem;margin:.2rem;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:var(--green)}
+
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text2);font-size:.85rem;margin-top:3rem}
+.footer a{color:var(--accent)}
+
+@media(max-width:768px){
+  .site-header{padding:1rem}
+  .main-container{padding:1rem 1rem 2rem}
+  h1{font-size:1.8rem}
+  .form-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .form-row.triple,.form-row.quad{grid-template-columns:1fr}
+  .summary-grid{grid-template-columns:1fr}
+  .items-table{min-width:600px}
+}
+@media print{
+  .site-header,.btn-row,.edu-section,.footer,#exemptionAlert{display:none!important}
+  body{background:#fff;color:#000}
+  .form-panel,.doc-section,.items-section,.result-card,.summary-item{background:#fff;border-color:#ccc;color:#000}
+  .summary-item .value,.result-card h2,.section-title{color:#000}
+  .summary-item .label{color:#555}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">DoAide</a>
+  <nav>
+    <a href="/gst.html">GST Suite</a>
+    <a href="/gst-invoice-generator.html">Invoice</a>
+    <a href="/hsn-code-finder.html">HSN Codes</a>
+    <a href="/gst-calculator.html">GST Calc</a>
+    <a href="/">All Tools</a>
+  </nav>
+</header>
+
+<main class="main-container">
+  <h1>E-Way Bill <span>Generator</span></h1>
+  <p class="subtitle">Generate EWB-01 format summaries for goods transport across India. Auto-calculate validity, check exemptions, and prepare your e-way bill data before filing on the government portal.</p>
+
+  <div id="exemptionAlert" class="alert-box alert-warning">
+    <span>⚠️</span>
+    <div><strong>E-Way Bill may not be required.</strong> <span id="exemptionReason"></span></div>
+  </div>
+
+  <!-- Part A: Supply & Document Details -->
+  <div class="doc-section">
+    <div class="section-title">Part A — Supply & Document Details</div>
+    <div class="form-row">
+      <div>
+        <label for="supplyType">Supply Type</label>
+        <select id="supplyType">
+          <option value="outward">Outward</option>
+          <option value="inward">Inward</option>
+        </select>
+      </div>
+      <div>
+        <label for="subType">Sub-Type</label>
+        <select id="subType">
+          <option value="supply">Supply</option>
+          <option value="export">Export</option>
+          <option value="jobwork">Job Work</option>
+          <option value="skdckd">SKD/CKD/Lots</option>
+          <option value="recipientnotknown">Recipient Not Known</option>
+          <option value="linesofsale">For Own Use</option>
+          <option value="exhibitionsales">Exhibition or Fairs</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label for="docType">Document Type</label>
+        <select id="docType">
+          <option value="taxinvoice">Tax Invoice</option>
+          <option value="billofsupply">Bill of Supply</option>
+          <option value="billofentry">Bill of Entry</option>
+          <option value="deliverychallan">Delivery Challan</option>
+          <option value="creditnote">Credit Note</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div>
+        <label for="docNumber">Document Number</label>
+        <input type="text" id="docNumber" placeholder="INV/2026-27/001">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label for="docDate">Document Date</label>
+        <input type="date" id="docDate">
+      </div>
+      <div>
+        <label for="transType">Transaction Type</label>
+        <select id="transType">
+          <option value="regular">Regular</option>
+          <option value="billto_shipto">Bill To — Ship To</option>
+          <option value="billfrm_dispfrom">Bill From — Dispatch From</option>
+          <option value="combination">Combination of 2 & 3</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supplier & Recipient -->
+  <div class="form-grid">
+    <div class="form-panel">
+      <div class="section-title">Supplier (From)</div>
+      <div class="form-row full">
+        <div>
+          <label for="fromGstin">GSTIN</label>
+          <input type="text" id="fromGstin" placeholder="22AAAAA0000A1Z5" maxlength="15" oninput="validateGSTIN(this)">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div>
+          <label for="fromName">Legal Name / Trade Name</label>
+          <input type="text" id="fromName" placeholder="Supplier business name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="fromState">State</label>
+          <select id="fromState" onchange="autoSuggestDistance()">
+            <option value="">Select State</option>
+          </select>
+        </div>
+        <div>
+          <label for="fromPin">Pin Code</label>
+          <input type="text" id="fromPin" maxlength="6" placeholder="380001">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div class="section-title">Recipient (To)</div>
+      <div class="form-row full">
+        <div>
+          <label for="toGstin">GSTIN</label>
+          <input type="text" id="toGstin" placeholder="27BBBBB0000B1Z6" maxlength="15" oninput="validateGSTIN(this)">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div>
+          <label for="toName">Legal Name / Trade Name</label>
+          <input type="text" id="toName" placeholder="Recipient business name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="toState">State</label>
+          <select id="toState" onchange="autoSuggestDistance()">
+            <option value="">Select State</option>
+          </select>
+        </div>
+        <div>
+          <label for="toPin">Pin Code</label>
+          <input type="text" id="toPin" maxlength="6" placeholder="400001">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item Details -->
+  <div class="items-section">
+    <div class="section-title">Item Details</div>
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="col-desc">Product Name</th>
+          <th>HSN Code</th>
+          <th>Qty</th>
+          <th>Unit</th>
+          <th>Taxable Value (₹)</th>
+          <th>Tax Rate (%)</th>
+          <th>Tax Amount (₹)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="itemsBody">
+        <tr>
+          <td>1</td>
+          <td><input type="text" placeholder="Product name" class="item-name"></td>
+          <td><input type="text" placeholder="8471" class="item-hsn" maxlength="8"></td>
+          <td><input type="number" placeholder="0" class="item-qty" min="0" oninput="calcItemTax(this)"></td>
+          <td>
+            <select class="item-unit">
+              <option value="NOS">NOS</option>
+              <option value="KGS">KGS</option>
+              <option value="MTR">MTR</option>
+              <option value="LTR">LTR</option>
+              <option value="PCS">PCS</option>
+              <option value="BOX">BOX</option>
+              <option value="TON">TON</option>
+              <option value="SET">SET</option>
+              <option value="PAC">PAC</option>
+              <option value="BAG">BAG</option>
+              <option value="ROL">ROL</option>
+              <option value="SQM">SQM</option>
+              <option value="OTH">OTH</option>
+            </select>
+          </td>
+          <td><input type="number" placeholder="0.00" class="item-value" min="0" step="0.01" oninput="calcItemTax(this)"></td>
+          <td>
+            <select class="item-rate" onchange="calcItemTax(this)">
+              <option value="0">0%</option>
+              <option value="0.25">0.25%</option>
+              <option value="3">3%</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18" selected>18%</option>
+              <option value="28">28%</option>
+            </select>
+          </td>
+          <td><input type="number" class="item-tax" readonly tabindex="-1" style="opacity:.7"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="addItem()">+ Add Item</button>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:2rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border)">
+      <div><span style="color:var(--text2);font-size:.85rem">Total Taxable Value: </span><strong id="totalTaxable" style="font-family:var(--mono)">₹0.00</strong></div>
+      <div><span style="color:var(--text2);font-size:.85rem">Total Tax: </span><strong id="totalTax" style="font-family:var(--mono)">₹0.00</strong></div>
+      <div><span style="color:var(--text2);font-size:.85rem">Grand Total: </span><strong id="grandTotal" style="font-family:var(--mono);color:var(--accent)">₹0.00</strong></div>
+    </div>
+  </div>
+
+  <!-- Part B: Transport Details -->
+  <div class="doc-section">
+    <div class="section-title">Part B — Transport Details</div>
+    <div class="form-row quad">
+      <div>
+        <label for="transMode">Transport Mode</label>
+        <select id="transMode" onchange="toggleVehicle()">
+          <option value="road">Road</option>
+          <option value="rail">Rail</option>
+          <option value="air">Air</option>
+          <option value="ship">Ship</option>
+        </select>
+      </div>
+      <div id="vehicleWrap">
+        <label for="vehicleNo">Vehicle Number</label>
+        <input type="text" id="vehicleNo" placeholder="GJ01AB1234" oninput="this.value=this.value.toUpperCase()">
+      </div>
+      <div>
+        <label for="transporterId">Transporter ID (GSTIN)</label>
+        <input type="text" id="transporterId" placeholder="Optional" maxlength="15">
+      </div>
+      <div>
+        <label for="transporterName">Transporter Name</label>
+        <input type="text" id="transporterName" placeholder="Optional">
+      </div>
+    </div>
+    <div class="form-row triple">
+      <div>
+        <label for="distance">Distance (km)</label>
+        <input type="number" id="distance" placeholder="Auto-suggested" min="1" max="4000" oninput="updateValidity()">
+        <span id="distHint" style="font-size:.75rem;color:var(--text2);margin-top:.2rem;display:block"></span>
+      </div>
+      <div>
+        <label for="cargoType">Cargo Type</label>
+        <select id="cargoType" onchange="updateValidity()">
+          <option value="normal">Normal Cargo</option>
+          <option value="odc">Over Dimensional Cargo (ODC)</option>
+        </select>
+      </div>
+      <div>
+        <label for="ewbDate">E-Way Bill Date</label>
+        <input type="date" id="ewbDate">
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="btn-row" style="margin-bottom:2rem">
+    <button class="btn btn-primary" onclick="generateEWB()">⚡ Generate E-Way Bill Summary</button>
+    <button class="btn btn-secondary" onclick="resetForm()">↻ Reset Form</button>
+    <button class="btn btn-secondary" onclick="window.print()">🖨️ Print</button>
+  </div>
+
+  <!-- Result -->
+  <div id="resultCard" class="result-card">
+    <h2>📄 E-Way Bill Summary (EWB-01 Format)</h2>
+    <p style="color:var(--text2);font-size:.85rem;margin-bottom:1rem">This is a preview summary. For legally valid e-way bills, submit on <a href="https://ewaybillgst.gov.in" target="_blank" rel="noopener">ewaybillgst.gov.in</a>.</p>
+
+    <div class="summary-grid" id="summaryGrid"></div>
+
+    <div id="validitySection" style="margin-top:1rem"></div>
+
+    <div id="itemsSummary" style="margin-top:1.5rem"></div>
+  </div>
+
+  <!-- Educational Content -->
+  <div class="edu-section">
+    <h2>Everything You Need to Know About <span style="color:var(--accent)">E-Way Bills</span></h2>
+
+    <div class="edu-card">
+      <h3>What is an E-Way Bill?</h3>
+      <p>An e-way bill (Electronic Way Bill) is a compliance document required under GST law for the movement of goods worth more than ₹50,000, whether within a state or across state borders. Introduced on 1 April 2018, it is generated electronically on the <strong>ewaybillgst.gov.in</strong> portal. The e-way bill has two parts: Part A contains details of the goods, supplier, recipient, and document reference; Part B contains transport details like vehicle number, transporter ID, and mode of transport. Any registered person or transporter can generate an e-way bill, and it must be carried by the person in charge of the conveyance during transit.</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>When is an E-Way Bill Required?</h3>
+      <p>An e-way bill must be generated in the following scenarios:</p>
+      <ul>
+        <li>Movement of goods with a consignment value exceeding <strong>₹50,000</strong> (including tax) — whether for supply, reasons other than supply (e.g., job work), or inward supply from an unregistered person.</li>
+        <li><strong>Inter-state movement</strong> of goods by a principal to a job worker, regardless of value (as per Section 143 of CGST Act).</li>
+        <li><strong>Inter-state transport</strong> of handicraft goods by an exempted dealer, regardless of value.</li>
+        <li>Any movement of goods by a registered person, even if value is below ₹50,000, can voluntarily generate an e-way bill for tracking purposes.</li>
+      </ul>
+    </div>
+
+    <div class="edu-card">
+      <h3>Penalties for Non-Compliance</h3>
+      <div class="penalty-box">
+        <p><strong>Section 129, CGST Act:</strong> If goods are transported without a valid e-way bill or with an expired one, the penalty is <strong>₹10,000 or the tax amount</strong> sought to be evaded, <strong>whichever is greater</strong>. The vehicle carrying the goods can be <strong>detained and seized</strong>. To get goods and the vehicle released, the owner must pay the applicable tax and penalty equal to 200% of the tax payable (for owner) or 50% of the value of goods (for transporter).</p>
+      </div>
+      <p style="margin-top:.75rem">Officers authorised under GST can intercept conveyances to verify e-way bills. Physical verification of goods happens only once during the entire movement. If goods are detained for more than 30 minutes during verification at a check-post, the transporter can report the incident on the e-way bill portal.</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>E-Way Bill Validity Period</h3>
+      <p>The validity of an e-way bill is calculated based on the distance goods need to travel:</p>
+      <ul>
+        <li><strong>Normal cargo:</strong> 1 day for every 200 km or part thereof</li>
+        <li><strong>Over Dimensional Cargo (ODC):</strong> 1 day for every 20 km or part thereof</li>
+      </ul>
+      <p style="margin-top:.5rem">The validity period starts from the date and time of e-way bill generation. "Day" means the period ending at midnight of the day immediately following the date of generation. The validity can be <strong>extended</strong> before expiry by the generator or transporter by updating Part B with new transport details and specifying the reason for extension (natural calamity, law-and-order issues, transshipment delay, accident, etc.).</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>When E-Way Bill is NOT Required</h3>
+      <p>The following movements are exempt from e-way bill requirements:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem">
+        <span class="exemption-tag">Consignment value below ₹50,000</span>
+        <span class="exemption-tag">Non-motorised conveyance</span>
+        <span class="exemption-tag">Port/Airport to Customs/ICD</span>
+        <span class="exemption-tag">Transit to/from Nepal or Bhutan</span>
+        <span class="exemption-tag">Defence Ministry exempted goods</span>
+        <span class="exemption-tag">Empty cargo containers</span>
+        <span class="exemption-tag">Goods under Customs Bond/Seal</span>
+        <span class="exemption-tag">LPG for household use</span>
+        <span class="exemption-tag">Kerosene under PDS</span>
+        <span class="exemption-tag">Postal baggage</span>
+        <span class="exemption-tag">Jewellery & Currency</span>
+        <span class="exemption-tag">Used personal & household effects</span>
+        <span class="exemption-tag">Coral, unworked</span>
+        <span class="exemption-tag">Judicial/non-judicial stamp papers</span>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <h3>How to Cancel, Modify, or Extend an E-Way Bill</h3>
+      <ul>
+        <li><strong>Cancel:</strong> An e-way bill can be cancelled within <strong>24 hours</strong> of generation, provided the goods have not been verified in transit by any officer. The cancellation must specify the reason.</li>
+        <li><strong>Update Vehicle Number:</strong> If the vehicle breaks down or goods are transshipped, Part B (vehicle number) can be updated on the portal by the generator or the transporter. There is no time limit for updating vehicle details as long as the e-way bill is valid.</li>
+        <li><strong>Extend Validity:</strong> Before the e-way bill expires, the generator or transporter can extend it by specifying the reason (natural calamity, transshipment, accident, etc.) and updating the remaining distance. Extension must be done within <strong>8 hours before or after</strong> the expiry time.</li>
+        <li><strong>Reject:</strong> A recipient or transporter who does not agree with the details can <strong>reject</strong> the e-way bill within 72 hours of generation, or before delivery, whichever is earlier. If not rejected within this window, it is deemed accepted.</li>
+      </ul>
+    </div>
+
+    <div class="edu-card">
+      <h3>Recent Rule Changes (2024–2026)</h3>
+      <ul>
+        <li><strong>Multi-vehicle tracking:</strong> A single e-way bill can now track goods across multiple vehicles during transit via the "Update Vehicle" feature, simplifying multimodal transport.</li>
+        <li><strong>Extended validity window:</strong> The time to extend an e-way bill has been widened to 8 hours before or after expiry (earlier it was only 8 hours before).</li>
+        <li><strong>Blocking for non-filers:</strong> Taxpayers who have not filed GSTR-3B for two or more consecutive months are blocked from generating e-way bills on the portal.</li>
+        <li><strong>Distance-based auto-calculation:</strong> The portal now auto-calculates distance between PIN codes and allows a maximum of 10% deviation from the auto-calculated distance.</li>
+        <li><strong>E-way bill for gold & precious stones:</strong> Several states have reduced the threshold to ₹2 lakh for movement of gold, precious stones, and jewellery.</li>
+        <li><strong>IRN-linked e-way bills:</strong> Taxpayers generating e-invoices (IRN) can auto-populate Part A of the e-way bill from the Invoice Reference Number, reducing duplicate data entry.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2026 <a href="/">DoAide</a>. This tool generates format summaries for reference only — not actual government e-way bills. File official e-way bills at <a href="https://ewaybillgst.gov.in" target="_blank" rel="noopener">ewaybillgst.gov.in</a>.</p>
+  <p style="margin-top:.5rem"><a href="/gst-calculator.html">GST Calculator</a> · <a href="/gst-invoice-generator.html">GST Invoice</a> · <a href="/hsn-code-finder.html">HSN Codes</a> · <a href="/gstr-3b-calculator.html">GSTR-3B Calculator</a> · <a href="/tds-calculator.html">TDS Calculator</a></p>
+</footer>
+
+<script>
+const STATES = [
+  {code:'01',name:'Jammu & Kashmir'},{code:'02',name:'Himachal Pradesh'},{code:'03',name:'Punjab'},
+  {code:'04',name:'Chandigarh'},{code:'05',name:'Uttarakhand'},{code:'06',name:'Haryana'},
+  {code:'07',name:'Delhi'},{code:'08',name:'Rajasthan'},{code:'09',name:'Uttar Pradesh'},
+  {code:'10',name:'Bihar'},{code:'11',name:'Sikkim'},{code:'12',name:'Arunachal Pradesh'},
+  {code:'13',name:'Nagaland'},{code:'14',name:'Manipur'},{code:'15',name:'Mizoram'},
+  {code:'16',name:'Tripura'},{code:'17',name:'Meghalaya'},{code:'18',name:'Assam'},
+  {code:'19',name:'West Bengal'},{code:'20',name:'Jharkhand'},{code:'21',name:'Odisha'},
+  {code:'22',name:'Chhattisgarh'},{code:'23',name:'Madhya Pradesh'},{code:'24',name:'Gujarat'},
+  {code:'25',name:'Daman & Diu'},{code:'26',name:'Dadra & Nagar Haveli'},{code:'27',name:'Maharashtra'},
+  {code:'29',name:'Karnataka'},{code:'30',name:'Goa'},{code:'31',name:'Lakshadweep'},
+  {code:'32',name:'Kerala'},{code:'33',name:'Tamil Nadu'},{code:'34',name:'Puducherry'},
+  {code:'35',name:'Andaman & Nicobar'},{code:'36',name:'Telangana'},{code:'37',name:'Andhra Pradesh'},
+  {code:'38',name:'Ladakh'},{code:'97',name:'Other Territory'}
+];
+
+// Approximate state capital distances (km) for auto-suggest
+const STATE_DISTANCES={
+  '07-27':1400,'07-24':950,'07-33':2200,'07-29':2100,'07-09':550,'07-36':1500,
+  '07-19':1500,'07-08':600,'07-32':2700,'07-37':1700,'07-03':450,'07-06':250,
+  '07-10':1000,'07-23':750,'07-22':1100,'07-21':1800,'07-05':300,'07-18':1900,
+  '27-24':550,'27-33':1300,'27-29':850,'27-36':700,'27-19':1850,'27-32':1500,
+  '27-37':850,'27-30':600,'27-08':1150,'27-23':850,'27-22':750,'27-09':1400,
+  '24-33':1700,'24-29':1500,'24-27':550,'24-08':600,'24-07':950,'24-23':850,
+  '33-29':350,'33-32':700,'33-37':500,'33-36':650,'33-27':1300,'33-07':2200,
+  '29-33':350,'29-32':600,'29-36':570,'29-30':590,'29-27':850,'29-37':650,
+  '09-10':550,'09-07':550,'09-23':750,'09-19':1000,'09-27':1400,'09-08':600,
+  '19-10':600,'19-21':500,'19-09':1000,'19-18':1100,'19-07':1500,'19-27':1850,
+  '36-37':250,'36-29':570,'36-33':650,'36-27':700,'36-07':1500,'36-19':1650
+};
+
+function getDistance(s1,s2){
+  if(!s1||!s2||s1===s2) return null;
+  const key1=s1+'-'+s2, key2=s2+'-'+s1;
+  return STATE_DISTANCES[key1]||STATE_DISTANCES[key2]||null;
+}
+
+// Populate state dropdowns
+function populateStates(){
+  ['fromState','toState'].forEach(id=>{
+    const sel=document.getElementById(id);
+    STATES.forEach(s=>{
+      const o=document.createElement('option');
+      o.value=s.code;
+      o.textContent=s.code+' — '+s.name;
+      sel.appendChild(o);
+    });
+  });
+}
+
+function autoSuggestDistance(){
+  const from=document.getElementById('fromState').value;
+  const to=document.getElementById('toState').value;
+  const dist=getDistance(from,to);
+  const hint=document.getElementById('distHint');
+  const inp=document.getElementById('distance');
+  if(dist){
+    hint.textContent='Suggested: ~'+dist+' km (approx. state capital to capital)';
+    if(!inp.value) inp.value=dist;
+    updateValidity();
+  } else {
+    hint.textContent='';
+  }
+}
+
+function validateGSTIN(el){
+  el.value=el.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  const v=el.value;
+  if(v.length===15){
+    const pattern=/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/;
+    el.style.borderColor=pattern.test(v)?'var(--green)':'var(--red)';
+  } else {
+    el.style.borderColor=v.length>0?'var(--border)':'var(--border)';
+  }
+}
+
+function calcItemTax(el){
+  const row=el.closest('tr');
+  const val=parseFloat(row.querySelector('.item-value').value)||0;
+  const rate=parseFloat(row.querySelector('.item-rate').value)||0;
+  row.querySelector('.item-tax').value=(val*rate/100).toFixed(2);
+  updateTotals();
+}
+
+function updateTotals(){
+  let tv=0,tt=0;
+  document.querySelectorAll('#itemsBody tr').forEach(row=>{
+    tv+=parseFloat(row.querySelector('.item-value').value)||0;
+    tt+=parseFloat(row.querySelector('.item-tax').value)||0;
+  });
+  document.getElementById('totalTaxable').textContent='₹'+tv.toLocaleString('en-IN',{minimumFractionDigits:2});
+  document.getElementById('totalTax').textContent='₹'+tt.toLocaleString('en-IN',{minimumFractionDigits:2});
+  document.getElementById('grandTotal').textContent='₹'+(tv+tt).toLocaleString('en-IN',{minimumFractionDigits:2});
+  checkExemption(tv+tt);
+}
+
+function checkExemption(total){
+  const alert=document.getElementById('exemptionAlert');
+  const reason=document.getElementById('exemptionReason');
+  if(total>0 && total<50000){
+    reason.textContent='Consignment value (₹'+total.toLocaleString('en-IN',{minimumFractionDigits:2})+') is below ₹50,000. E-way bill is generally not required unless it is an inter-state job work movement or handicraft goods.';
+    alert.classList.add('show');
+  } else {
+    alert.classList.remove('show');
+  }
+}
+
+let itemCount=1;
+function addItem(){
+  itemCount++;
+  const row=document.createElement('tr');
+  row.innerHTML=`
+    <td>${itemCount}</td>
+    <td><input type="text" placeholder="Product name" class="item-name"></td>
+    <td><input type="text" placeholder="8471" class="item-hsn" maxlength="8"></td>
+    <td><input type="number" placeholder="0" class="item-qty" min="0" oninput="calcItemTax(this)"></td>
+    <td><select class="item-unit"><option value="NOS">NOS</option><option value="KGS">KGS</option><option value="MTR">MTR</option><option value="LTR">LTR</option><option value="PCS">PCS</option><option value="BOX">BOX</option><option value="TON">TON</option><option value="SET">SET</option><option value="PAC">PAC</option><option value="BAG">BAG</option><option value="ROL">ROL</option><option value="SQM">SQM</option><option value="OTH">OTH</option></select></td>
+    <td><input type="number" placeholder="0.00" class="item-value" min="0" step="0.01" oninput="calcItemTax(this)"></td>
+    <td><select class="item-rate" onchange="calcItemTax(this)"><option value="0">0%</option><option value="0.25">0.25%</option><option value="3">3%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></td>
+    <td><input type="number" class="item-tax" readonly tabindex="-1" style="opacity:.7"></td>
+    <td><button class="btn btn-danger" onclick="removeItem(this)" style="padding:.3rem .5rem;font-size:.8rem">✕</button></td>`;
+  document.getElementById('itemsBody').appendChild(row);
+}
+
+function removeItem(btn){
+  if(document.querySelectorAll('#itemsBody tr').length>1){
+    btn.closest('tr').remove();
+    // Renumber
+    document.querySelectorAll('#itemsBody tr').forEach((r,i)=>r.children[0].textContent=i+1);
+    itemCount=document.querySelectorAll('#itemsBody tr').length;
+    updateTotals();
+  }
+}
+
+function toggleVehicle(){
+  const mode=document.getElementById('transMode').value;
+  const lbl=document.querySelector('#vehicleWrap label');
+  const inp=document.getElementById('vehicleNo');
+  if(mode==='rail'){lbl.textContent='Railway Receipt No.';inp.placeholder='RR Number';}
+  else if(mode==='air'){lbl.textContent='Airway Bill No.';inp.placeholder='AWB Number';}
+  else if(mode==='ship'){lbl.textContent='Bill of Lading No.';inp.placeholder='B/L Number';}
+  else{lbl.textContent='Vehicle Number';inp.placeholder='GJ01AB1234';}
+}
+
+function updateValidity(){
+  const dist=parseInt(document.getElementById('distance').value)||0;
+  const cargo=document.getElementById('cargoType').value;
+  if(dist<=0) return;
+  const kmPerDay=cargo==='odc'?20:200;
+  const days=Math.ceil(dist/kmPerDay);
+  const hint=document.getElementById('distHint');
+  const existing=hint.textContent;
+  if(!existing.includes('Validity')){
+    hint.textContent=(existing?existing+' | ':'')+'Validity: '+days+' day'+(days>1?'s':'')+' ('+kmPerDay+' km/day)';
+  }
+}
+
+function getStateName(code){
+  const s=STATES.find(st=>st.code===code);
+  return s?s.name:'—';
+}
+
+function generateEWB(){
+  // Gather values
+  const supplyType=document.getElementById('supplyType');
+  const subType=document.getElementById('subType');
+  const docType=document.getElementById('docType');
+  const docNumber=document.getElementById('docNumber').value||'—';
+  const docDate=document.getElementById('docDate').value||'—';
+  const fromGstin=document.getElementById('fromGstin').value||'—';
+  const fromName=document.getElementById('fromName').value||'—';
+  const fromState=document.getElementById('fromState').value;
+  const toGstin=document.getElementById('toGstin').value||'—';
+  const toName=document.getElementById('toName').value||'—';
+  const toState=document.getElementById('toState').value;
+  const transMode=document.getElementById('transMode');
+  const vehicleNo=document.getElementById('vehicleNo').value||'—';
+  const distance=parseInt(document.getElementById('distance').value)||0;
+  const cargo=document.getElementById('cargoType').value;
+  const ewbDate=document.getElementById('ewbDate').value||new Date().toISOString().slice(0,10);
+
+  // Calculate
+  let tv=0,tt=0;
+  document.querySelectorAll('#itemsBody tr').forEach(row=>{
+    tv+=parseFloat(row.querySelector('.item-value').value)||0;
+    tt+=parseFloat(row.querySelector('.item-tax').value)||0;
+  });
+  const total=tv+tt;
+  const kmPerDay=cargo==='odc'?20:200;
+  const days=distance>0?Math.ceil(distance/kmPerDay):1;
+  const expiryDate=new Date(ewbDate);
+  expiryDate.setDate(expiryDate.getDate()+days);
+
+  // Build summary grid
+  const grid=document.getElementById('summaryGrid');
+  grid.innerHTML=`
+    <div class="summary-item"><div class="label">Supply Type</div><div class="value">${supplyType.options[supplyType.selectedIndex].text} — ${subType.options[subType.selectedIndex].text}</div></div>
+    <div class="summary-item"><div class="label">Document</div><div class="value">${docType.options[docType.selectedIndex].text} / ${docNumber}</div></div>
+    <div class="summary-item"><div class="label">Document Date</div><div class="value">${docDate}</div></div>
+    <div class="summary-item"><div class="label">Total Value (incl. Tax)</div><div class="value">₹${total.toLocaleString('en-IN',{minimumFractionDigits:2})}</div></div>
+    <div class="summary-item"><div class="label">Supplier</div><div class="value">${fromName}<br><small style="color:var(--text2)">${fromGstin} — ${getStateName(fromState)}</small></div></div>
+    <div class="summary-item"><div class="label">Recipient</div><div class="value">${toName}<br><small style="color:var(--text2)">${toGstin} — ${getStateName(toState)}</small></div></div>
+    <div class="summary-item"><div class="label">Transport Mode</div><div class="value">${transMode.options[transMode.selectedIndex].text} — ${vehicleNo}</div></div>
+    <div class="summary-item"><div class="label">Distance</div><div class="value">${distance} km</div></div>
+  `;
+
+  // Validity section
+  const validitySection=document.getElementById('validitySection');
+  validitySection.innerHTML=`
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <span class="validity-badge valid">Valid for ${days} day${days>1?'s':''}</span>
+      <span style="color:var(--text2);font-size:.85rem">Generated: ${ewbDate} → Expires: ${expiryDate.toISOString().slice(0,10)} at midnight</span>
+    </div>
+    ${total<50000&&total>0?'<div style="margin-top:.75rem;padding:.5rem .75rem;background:rgba(240,180,41,.1);border-radius:6px;color:var(--accent);font-size:.85rem">⚠️ Consignment value is below ₹50,000 — e-way bill may not be required.</div>':''}
+  `;
+
+  // Items summary
+  const items=document.getElementById('itemsSummary');
+  let tableHTML='<div style="font-size:.85rem;color:var(--text2);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em">Items Summary</div><table style="width:100%;border-collapse:collapse;font-size:.85rem"><thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:.4rem;color:var(--text2)">Product</th><th style="text-align:left;padding:.4rem;color:var(--text2)">HSN</th><th style="text-align:right;padding:.4rem;color:var(--text2)">Qty</th><th style="text-align:right;padding:.4rem;color:var(--text2)">Taxable</th><th style="text-align:right;padding:.4rem;color:var(--text2)">Tax</th></tr></thead><tbody>';
+  document.querySelectorAll('#itemsBody tr').forEach(row=>{
+    const name=row.querySelector('.item-name').value||'—';
+    const hsn=row.querySelector('.item-hsn').value||'—';
+    const qty=row.querySelector('.item-qty').value||'0';
+    const unit=row.querySelector('.item-unit').value;
+    const val=parseFloat(row.querySelector('.item-value').value)||0;
+    const tax=parseFloat(row.querySelector('.item-tax').value)||0;
+    tableHTML+=`<tr style="border-bottom:1px solid var(--border)"><td style="padding:.4rem">${name}</td><td style="padding:.4rem;font-family:var(--mono)">${hsn}</td><td style="padding:.4rem;text-align:right;font-family:var(--mono)">${qty} ${unit}</td><td style="padding:.4rem;text-align:right;font-family:var(--mono)">₹${val.toLocaleString('en-IN',{minimumFractionDigits:2})}</td><td style="padding:.4rem;text-align:right;font-family:var(--mono)">₹${tax.toLocaleString('en-IN',{minimumFractionDigits:2})}</td></tr>`;
+  });
+  tableHTML+='</tbody></table>';
+  items.innerHTML=tableHTML;
+
+  // Show result
+  document.getElementById('resultCard').classList.add('show');
+  document.getElementById('resultCard').scrollIntoView({behavior:'smooth'});
+}
+
+function resetForm(){
+  document.querySelectorAll('input').forEach(i=>{i.value='';i.style.borderColor='var(--border)';});
+  document.querySelectorAll('select').forEach(s=>s.selectedIndex=0);
+  const tbody=document.getElementById('itemsBody');
+  while(tbody.children.length>1) tbody.removeChild(tbody.lastChild);
+  const firstRow=tbody.children[0];
+  firstRow.querySelectorAll('input').forEach(i=>i.value='');
+  firstRow.querySelector('.item-rate').selectedIndex=5;
+  itemCount=1;
+  updateTotals();
+  document.getElementById('resultCard').classList.remove('show');
+  document.getElementById('distHint').textContent='';
+  toggleVehicle();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Init
+populateStates();
+document.getElementById('docDate').valueAsDate=new Date();
+document.getElementById('ewbDate').valueAsDate=new Date();
+</script>
+</body>
+</html>

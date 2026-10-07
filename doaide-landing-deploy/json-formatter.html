@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter &amp; Validator — Format, Beautify, Minify JSON Online | DoAide</title>
+<meta name="description" content="Free online JSON formatter, validator &amp; beautifier. Paste JSON to format, minify, validate with error messages, syntax highlighting &amp; copy to clipboard.">
+<meta name="keywords" content="JSON formatter, JSON validator, JSON beautifier, JSON minify online, JSON pretty print, format JSON online, validate JSON, JSON viewer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tools.doaide.com/">
+<meta property="og:title" content="JSON Formatter &amp; Validator — Format, Beautify, Minify JSON Online">
+<meta property="og:description" content="Free online JSON formatter &amp; validator. Format, beautify, minify and validate JSON with syntax highlighting instantly.">
+<meta property="og:url" content="https://tools.doaide.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON Formatter &amp; Validator — Format, Beautify, Minify JSON Online">
+<meta name="twitter:description" content="Free online JSON formatter. Format, beautify, minify &amp; validate JSON instantly.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Formatter & Validator",
+  "url": "https://tools.doaide.com/",
+  "description": "Free online JSON formatter, validator and beautifier. Paste JSON to format, minify, validate with syntax highlighting.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is JSON?",
+      "acceptedAnswer": { "@type": "Answer", "text": "JSON (JavaScript Object Notation) is a lightweight, text-based data interchange format. It is easy for humans to read and write, and easy for machines to parse and generate." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a JSON formatter do?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A JSON formatter takes raw or minified JSON and adds proper indentation and line breaks to make it human-readable. It can also validate JSON syntax and report errors." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this tool free to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, this JSON formatter and validator is completely free. No login or signup is required. All processing happens in your browser — your data is never sent to any server." }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--cyan:#22d3ee;--pink:#f472b6;--yellow:#facc15;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+header{border-bottom:1px solid var(--border);padding:16px 0}
+header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}.logo span{color:var(--accent)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}nav a:hover{color:var(--text)}
+
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--text2);max-width:620px;margin:0 auto;font-size:1.05rem}
+
+/* Toolbar */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center}
+.tbtn{padding:8px 18px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.tbtn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.tbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.stats{margin-left:auto;display:flex;gap:16px;font-size:.8rem;color:var(--text2);flex-wrap:wrap}
+.stats span{white-space:nowrap}
+
+/* Status */
+.status-bar{padding:10px 16px;border-radius:8px;margin-bottom:16px;font-size:.88rem;font-weight:500;display:none}
+.status-bar.valid{display:block;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green)}
+.status-bar.invalid{display:block;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:var(--red)}
+
+/* Editor */
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+@media(max-width:768px){.editor-grid{grid-template-columns:1fr}}
+.editor-pane{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.pane-header{padding:10px 16px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:.82rem;font-weight:600;color:var(--text2);display:flex;justify-content:space-between;align-items:center}
+.input-wrap{position:relative;flex:1;min-height:350px}
+.input-wrap textarea{width:100%;height:100%;min-height:350px;padding:14px 14px 14px 52px;background:transparent;border:none;color:var(--text);font-family:'SF Mono','Fira Code','Cascadia Code',monospace;font-size:.85rem;resize:vertical;outline:none;line-height:1.65;tab-size:2}
+.line-nums{position:absolute;top:0;left:0;width:40px;padding:14px 8px 14px 0;text-align:right;color:var(--border);font-family:'SF Mono','Fira Code',monospace;font-size:.85rem;line-height:1.65;pointer-events:none;user-select:none;overflow:hidden}
+.output-wrap{flex:1;min-height:350px;overflow:auto;position:relative}
+.output-wrap pre{padding:14px 14px 14px 52px;font-family:'SF Mono','Fira Code','Cascadia Code',monospace;font-size:.85rem;line-height:1.65;white-space:pre;margin:0;min-height:100%}
+.output-nums{position:absolute;top:0;left:0;width:40px;padding:14px 8px 14px 0;text-align:right;color:var(--border);font-family:'SF Mono','Fira Code',monospace;font-size:.85rem;line-height:1.65;pointer-events:none;user-select:none;overflow:hidden}
+
+/* Syntax colors */
+.json-key{color:var(--cyan)}.json-string{color:var(--green)}.json-number{color:var(--orange)}.json-bool{color:var(--pink)}.json-null{color:var(--red)}.json-brace{color:var(--text2)}.json-comma{color:var(--text2)}
+
+/* Copy toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:10px 24px;border-radius:8px;font-size:.88rem;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999}
+.toast.show{opacity:1}
+
+/* Content */
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.4rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.1rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:14px;max-width:800px}
+.content-section ul{color:var(--text2);margin:0 0 14px 20px}
+.content-section li{margin-bottom:6px}
+.code-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-family:'SF Mono','Fira Code',monospace;font-size:.85rem;margin:14px 0;color:var(--green);overflow-x:auto;white-space:pre}
+
+/* FAQ */
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.4rem;font-weight:700;margin-bottom:20px}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:14px 18px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+.faq-q:hover{background:var(--surface2)}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2);transition:transform .2s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;color:var(--text2);font-size:.9rem}
+.faq-item.open .faq-a{max-height:300px;padding:0 18px 16px}
+
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.82rem}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--surface)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<div class="logo">Do<span>Aide</span> Tools</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://calc.doaide.com">Calculator</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+<h1><span>JSON Formatter</span> &amp; Validator</h1>
+<p>Paste your JSON to format, beautify, minify &amp; validate — with syntax highlighting, line numbers and instant error reporting. Free, no login required.</p>
+</div>
+</section>
+
+<section class="container">
+<div class="toolbar">
+<button class="tbtn active" onclick="doFormat(this)" title="Format & Beautify">✦ Format</button>
+<button class="tbtn" onclick="doMinify(this)" title="Minify JSON">⊟ Minify</button>
+<button class="tbtn" onclick="doValidate(this)" title="Validate JSON">✓ Validate</button>
+<button class="tbtn" onclick="doCopy()" title="Copy Output">⎘ Copy</button>
+<button class="tbtn" onclick="doClear()" title="Clear All">✕ Clear</button>
+<div class="stats">
+<span id="charCount">Chars: 0</span>
+<span id="lineCount">Lines: 0</span>
+<span id="depthInfo">Depth: 0</span>
+<span id="sizeInfo">Size: 0 B</span>
+</div>
+</div>
+
+<div class="status-bar" id="statusBar"></div>
+
+<div class="editor-grid">
+<div class="editor-pane">
+<div class="pane-header"><span>Input — Raw JSON</span></div>
+<div class="input-wrap">
+<div class="line-nums" id="inputLines">1</div>
+<textarea id="jsonInput" spellcheck="false" placeholder='Paste your JSON here...
+
+Example:
+{"name":"DoAide","type":"tools","features":["format","validate","minify"]}'></textarea>
+</div>
+</div>
+<div class="editor-pane">
+<div class="pane-header"><span>Output — Formatted</span><span id="outputLabel"></span></div>
+<div class="output-wrap">
+<div class="output-nums" id="outputLines"></div>
+<pre id="jsonOutput"><span style="color:var(--text2)">Formatted output will appear here...</span></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section class="content-section">
+<div class="container">
+<h2>About JSON — JavaScript Object Notation</h2>
+<p><strong>JSON</strong> (JavaScript Object Notation) is a lightweight, text-based data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It was derived from JavaScript but is language-independent and supported by virtually every modern programming language.</p>
+<p>JSON is the most widely used format for APIs, configuration files, and data storage in web and mobile applications. It has largely replaced XML for data interchange on the web due to its simplicity and smaller payload sizes.</p>
+
+<h3>JSON Syntax Rules</h3>
+<p>JSON has a small set of strict syntax rules:</p>
+<ul>
+<li>Data is written as key-value pairs, with keys always in double quotes.</li>
+<li>Values can be strings, numbers, booleans (<code>true</code>/<code>false</code>), <code>null</code>, arrays, or objects.</li>
+<li>Strings must use double quotes — single quotes are not valid JSON.</li>
+<li>No trailing commas are allowed after the last item in an array or object.</li>
+<li>No comments are permitted in standard JSON.</li>
+</ul>
+
+<h3>Example JSON</h3>
+<div class="code-box">{
+  "name": "DoAide",
+  "version": 2,
+  "features": ["format", "validate", "minify"],
+  "pricing": {
+    "plan": "free",
+    "loginRequired": false
+  }
+}</div>
+
+<h3>JSON vs XML</h3>
+<p>JSON has become the preferred format over XML for web APIs for several reasons: it is more concise (no closing tags), faster to parse, and maps directly to native data structures in JavaScript and most languages. XML retains advantages in document markup, namespaces, and schema validation for enterprise systems, but for typical API communication, JSON is the standard choice.</p>
+
+<h3>Common JSON Use Cases</h3>
+<ul>
+<li><strong>REST APIs:</strong> Nearly all modern web APIs use JSON for request and response bodies.</li>
+<li><strong>Configuration files:</strong> Tools like <code>package.json</code>, <code>tsconfig.json</code>, and VS Code settings use JSON.</li>
+<li><strong>Data exchange:</strong> JSON is used to transfer data between client and server, between microservices, and for data import/export.</li>
+<li><strong>NoSQL databases:</strong> MongoDB, CouchDB, and Firebase store data in JSON-like formats.</li>
+<li><strong>Logging:</strong> Structured logging with JSON makes logs machine-parseable and searchable.</li>
+</ul>
+
+<h3>Why Use a JSON Formatter?</h3>
+<p>Raw or minified JSON is difficult to read. A JSON formatter adds indentation and line breaks to make the structure clear. This tool also validates your JSON syntax and highlights errors with their exact location, helping you debug API responses, configuration files, and data payloads quickly.</p>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item open">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is JSON?</div>
+<div class="faq-a">JSON (JavaScript Object Notation) is a lightweight, text-based data interchange format. It is easy for humans to read and write, and easy for machines to parse and generate. It is the standard format for web APIs.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does a JSON formatter do?</div>
+<div class="faq-a">A JSON formatter takes raw or minified JSON and adds proper indentation (usually 2 spaces) and line breaks to make it human-readable. It can also validate JSON syntax and report the exact location of errors.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is my data safe?</div>
+<div class="faq-a">Yes. All processing happens entirely in your browser using JavaScript. Your JSON data is never sent to any server. You can even use this tool offline once the page is loaded.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this tool free to use?</div>
+<div class="faq-a">Yes, this JSON formatter and validator is completely free. No login or signup is required.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I format large JSON files?</div>
+<div class="faq-a">This tool handles JSON up to several megabytes comfortably in modern browsers. For very large files (50MB+), a desktop tool like jq may be more appropriate.</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>&copy; 2024 DoAide. Free SEO &amp; productivity tools. <a href="https://doaide.com">doaide.com</a></p>
+</div>
+</footer>
+
+<div class="toast" id="toast">Copied to clipboard!</div>
+
+<script>
+const input=document.getElementById('jsonInput');
+const output=document.getElementById('jsonOutput');
+const statusBar=document.getElementById('statusBar');
+const outputLabel=document.getElementById('outputLabel');
+let currentMode='format';
+let lastParsed=null;
+
+input.addEventListener('input',()=>{updateStats();autoProcess();});
+input.addEventListener('scroll',()=>{document.getElementById('inputLines').scrollTop=input.scrollTop;});
+
+function updateStats(){
+  const v=input.value;
+  document.getElementById('charCount').textContent='Chars: '+v.length.toLocaleString();
+  document.getElementById('lineCount').textContent='Lines: '+(v?v.split('\n').length:0);
+  const bytes=new Blob([v]).size;
+  document.getElementById('sizeInfo').textContent='Size: '+formatBytes(bytes);
+  try{const obj=JSON.parse(v);document.getElementById('depthInfo').textContent='Depth: '+getDepth(obj);}catch(e){document.getElementById('depthInfo').textContent='Depth: —';}
+  updateInputLineNums();
+}
+
+function formatBytes(b){if(b===0)return '0 B';const k=1024;const s=['B','KB','MB'];const i=Math.floor(Math.log(b)/Math.log(k));return parseFloat((b/Math.pow(k,i)).toFixed(1))+' '+s[i];}
+
+function getDepth(obj){if(obj===null||typeof obj!=='object')return 0;if(Array.isArray(obj))return obj.length?1+Math.max(...obj.map(getDepth)):1;const vals=Object.values(obj);return vals.length?1+Math.max(...vals.map(getDepth)):1;}
+
+function updateInputLineNums(){
+  const lines=input.value.split('\n').length;
+  const el=document.getElementById('inputLines');
+  let s='';for(let i=1;i<=lines;i++)s+=i+'\n';
+  el.textContent=s;
+}
+
+function updateOutputLineNums(text){
+  const lines=text.split('\n').length;
+  const el=document.getElementById('outputLines');
+  let s='';for(let i=1;i<=lines;i++)s+=i+'\n';
+  el.textContent=s;
+}
+
+function setActive(btn){document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
+
+function autoProcess(){
+  if(currentMode==='format')doFormat(null,true);
+  else if(currentMode==='minify')doMinify(null,true);
+  else doValidate(null,true);
+}
+
+function doFormat(btn,auto){
+  currentMode='format';if(btn)setActive(btn);
+  const v=input.value.trim();
+  if(!v){output.innerHTML='<span style="color:var(--text2)">Formatted output will appear here...</span>';statusBar.className='status-bar';outputLabel.textContent='';updateOutputLineNums('');return;}
+  try{
+    const obj=JSON.parse(v);lastParsed=obj;
+    const formatted=JSON.stringify(obj,null,2);
+    output.innerHTML=syntaxHighlight(formatted);
+    statusBar.className='status-bar valid';statusBar.textContent='✓ Valid JSON';
+    outputLabel.textContent='Formatted';
+    updateOutputLineNums(formatted);
+  }catch(e){
+    showError(e);
+  }
+}
+
+function doMinify(btn,auto){
+  currentMode='minify';if(btn)setActive(btn);
+  const v=input.value.trim();
+  if(!v){output.innerHTML='<span style="color:var(--text2)">Minified output will appear here...</span>';statusBar.className='status-bar';outputLabel.textContent='';updateOutputLineNums('');return;}
+  try{
+    const obj=JSON.parse(v);lastParsed=obj;
+    const minified=JSON.stringify(obj);
+    output.innerHTML=syntaxHighlight(minified);
+    statusBar.className='status-bar valid';statusBar.textContent='✓ Valid JSON — Minified to '+minified.length+' chars';
+    outputLabel.textContent='Minified';
+    updateOutputLineNums(minified);
+  }catch(e){
+    showError(e);
+  }
+}
+
+function doValidate(btn,auto){
+  currentMode='validate';if(btn)setActive(btn);
+  const v=input.value.trim();
+  if(!v){statusBar.className='status-bar';output.innerHTML='<span style="color:var(--text2)">Paste JSON and click Validate...</span>';outputLabel.textContent='';updateOutputLineNums('');return;}
+  try{
+    const obj=JSON.parse(v);lastParsed=obj;
+    const formatted=JSON.stringify(obj,null,2);
+    output.innerHTML=syntaxHighlight(formatted);
+    const type=Array.isArray(obj)?'Array':'Object';
+    const keys=Array.isArray(obj)?obj.length:Object.keys(obj).length;
+    statusBar.className='status-bar valid';
+    statusBar.textContent='✓ Valid JSON — Type: '+type+' | Top-level entries: '+keys+' | Depth: '+getDepth(obj);
+    outputLabel.textContent='Valid';
+    updateOutputLineNums(formatted);
+  }catch(e){
+    showError(e);
+  }
+}
+
+function showError(e){
+  const msg=e.message;
+  statusBar.className='status-bar invalid';statusBar.textContent='✗ Invalid JSON — '+msg;
+  output.innerHTML='<span style="color:var(--red)">'+escapeHtml(msg)+'</span>';
+  outputLabel.textContent='Error';
+  updateOutputLineNums('');
+}
+
+function doCopy(){
+  const text=output.textContent;
+  if(!text)return;
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1500);
+  });
+}
+
+function doClear(){
+  input.value='';output.innerHTML='<span style="color:var(--text2)">Formatted output will appear here...</span>';
+  statusBar.className='status-bar';outputLabel.textContent='';
+  updateStats();updateOutputLineNums('');
+}
+
+function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function syntaxHighlight(json){
+  json=escapeHtml(json);
+  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,function(match){
+    let cls='json-number';
+    if(/^"/.test(match)){
+      if(/:$/.test(match)){cls='json-key';}
+      else{cls='json-string';}
+    }else if(/true|false/.test(match)){cls='json-bool';}
+    else if(/null/.test(match)){cls='json-null';}
+    return '<span class="'+cls+'">'+match+'</span>';
+  });
+}
+
+updateStats();
+</script>
+</body>
+</html>

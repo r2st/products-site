@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://doaide.com/sitemap.xml
-Sitemap: https://doaide.com/sitemap-index.xml

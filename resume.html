@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ATS Resume Scorer — Check Your Resume Score | DoAide</title>
+<meta name="description" content="Free ATS Resume Scorer: Paste your resume and job description to get an instant ATS compatibility score out of 100. Get actionable tips to beat applicant tracking systems.">
+<meta name="keywords" content="ATS resume checker, resume score, ATS friendly resume, resume keyword checker, ATS compatibility, resume scanner, applicant tracking system, resume optimizer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://resume.doaide.com/">
+<meta property="og:title" content="Free ATS Resume Scorer — Check Your Resume Score | DoAide">
+<meta property="og:description" content="Paste your resume and job description to instantly check ATS compatibility. Get a score out of 100 with actionable improvement tips.">
+<meta property="og:url" content="https://resume.doaide.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free ATS Resume Scorer — Check Your Resume Score | DoAide">
+<meta name="twitter:description" content="Paste your resume and job description to instantly check ATS compatibility. Score out of 100 with improvement tips.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free ATS Resume Scorer",
+  "description": "Paste your resume and job description to get an instant ATS compatibility score with keyword analysis and actionable suggestions.",
+  "url": "https://resume.doaide.com/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an ATS (Applicant Tracking System)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ATS is software used by employers to collect, sort, scan, and rank job applications. Over 98% of Fortune 500 companies use an ATS. It parses your resume for relevant keywords, skills, experience, and education before a human ever sees it. If your resume isn't ATS-friendly, it may be filtered out regardless of your qualifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this ATS resume scorer work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our scorer analyzes your resume against the job description by checking keyword matches, section completeness (experience, education, skills), formatting compatibility, and content depth. It runs entirely in your browser — your resume data is never uploaded to any server, ensuring complete privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What score do I need to pass an ATS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most ATS systems rank candidates by relevance. Generally, a match rate of 70% or higher gives you a good chance of being seen by a recruiter. Aim for 80%+ to maximize your chances. Our scorer helps you identify exactly which keywords and sections to improve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my resume data safe with this tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely. This tool runs 100% in your browser using JavaScript. Your resume and job description text are never sent to any server. No data is stored, logged, or transmitted. You can verify this by checking the network tab in your browser's developer tools."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+header{border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent2)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}
+nav a:hover{color:var(--text)}
+
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--accent2),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:1.05rem;max-width:650px;margin:0 auto}
+.privacy-badge{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:6px 14px;margin-top:16px;font-size:.8rem;color:var(--green)}
+
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+@media(max-width:768px){.input-grid{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.card h2{font-size:1.05rem;margin-bottom:12px;color:var(--accent2)}
+.card textarea{width:100%;min-height:220px;padding:14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.9rem;font-family:inherit;resize:vertical;outline:none;line-height:1.5}
+.card textarea:focus{border-color:var(--accent)}
+.card textarea::placeholder{color:#555}
+.char-count{font-size:.75rem;color:var(--text2);text-align:right;margin-top:4px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:background .2s;width:100%;max-width:400px;margin:0 auto;display:block}
+.btn:hover{background:var(--accent2)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.results{display:none;margin-top:32px}
+.results.active{display:block}
+
+.score-header{text-align:center;margin-bottom:32px}
+.score-ring{position:relative;width:160px;height:160px;margin:0 auto 16px}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring .bg{fill:none;stroke:var(--surface2);stroke-width:10}
+.score-ring .fg{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1s ease}
+.score-number{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.5rem;font-weight:800}
+.score-label{font-size:.9rem;color:var(--text2)}
+
+.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center}
+.score-card .sc-val{font-size:1.5rem;font-weight:700;margin-bottom:4px}
+.score-card .sc-label{font-size:.8rem;color:var(--text2)}
+
+.detail-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.detail-section h3{font-size:1.05rem;margin-bottom:14px;color:var(--accent2)}
+
+.keyword-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.kw-tag{padding:5px 12px;border-radius:6px;font-size:.8rem;font-weight:500}
+.kw-found{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.3)}
+.kw-missing{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+
+.suggestion{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.875rem}
+.suggestion:last-child{border-bottom:none}
+.suggestion .icon{flex-shrink:0;width:20px;text-align:center}
+.suggestion .text{color:var(--text2)}
+.suggestion .text strong{color:var(--text)}
+
+.section-check{display:flex;justify-content:space-between;padding:8px 0;font-size:.875rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.section-check:last-child{border-bottom:none}
+.section-check .status{font-weight:600}
+.found{color:var(--green)}
+.missing{color:var(--red)}
+
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.5rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.15rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:12px}
+.content-section ul{color:var(--text2);margin:8px 0 16px 20px}
+.content-section li{margin-bottom:6px}
+
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.5rem;font-weight:700;margin-bottom:20px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2)}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 20px 16px;color:var(--text2);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.8rem}
+footer a{color:var(--text2)}
+</style>
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="resume-doaide-com"></script>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<div class="logo">Do<span>Aide</span> Resume Scorer</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://salary.doaide.com">Salary Calculator</a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+<h1>Free ATS Resume Scorer</h1>
+<p>Paste your job description and resume to get an instant ATS compatibility score. Find missing keywords, check section completeness, and get actionable tips to pass applicant tracking systems.</p>
+<div class="privacy-badge">🔒 100% Private — runs in your browser, nothing uploaded</div>
+</section>
+
+<div class="input-grid">
+<div class="card">
+<h2>📋 Job Description</h2>
+<textarea id="jd" placeholder="Paste the full job description here...&#10;&#10;Include: job title, responsibilities, required skills, qualifications, nice-to-haves, etc."></textarea>
+<div class="char-count"><span id="jd-count">0</span> characters</div>
+</div>
+<div class="card">
+<h2>📄 Your Resume</h2>
+<textarea id="resume" placeholder="Paste your resume text here...&#10;&#10;Copy-paste from your resume document. Include all sections: summary, experience, education, skills, certifications, etc."></textarea>
+<div class="char-count"><span id="resume-count">0</span> characters</div>
+</div>
+</div>
+
+<button class="btn" id="score-btn" onclick="scoreResume()">Score My Resume</button>
+
+<section class="results" id="results">
+<div class="score-header">
+<div class="score-ring">
+<svg viewBox="0 0 160 160" width="160" height="160">
+<circle class="bg" cx="80" cy="80" r="70"/>
+<circle class="fg" id="score-circle" cx="80" cy="80" r="70" stroke-dasharray="440" stroke-dashoffset="440"/>
+</svg>
+<div class="score-number" id="total-score">0</div>
+</div>
+<div class="score-label" id="score-verdict"></div>
+</div>
+
+<div class="score-grid" id="score-cards"></div>
+
+<div class="detail-section">
+<h3>🔑 Keyword Analysis</h3>
+<p style="font-size:.85rem;color:var(--text2);margin-bottom:12px" id="kw-summary"></p>
+<div class="keyword-grid" id="keyword-tags"></div>
+</div>
+
+<div class="detail-section">
+<h3>📑 Section Detection</h3>
+<div id="section-checks"></div>
+</div>
+
+<div class="detail-section">
+<h3>💡 Improvement Suggestions</h3>
+<div id="suggestions"></div>
+</div>
+</section>
+
+<section class="content-section">
+<h2>What is an ATS and Why Does It Matter?</h2>
+<p>An <strong>Applicant Tracking System (ATS)</strong> is software used by employers to manage the hiring process. Over 98% of Fortune 500 companies and 75% of all employers use some form of ATS. These systems automatically scan, parse, and rank resumes before a human recruiter ever sees them.</p>
+<p>If your resume isn't optimized for ATS, it could be filtered out before reaching a hiring manager — even if you're perfectly qualified for the role. Understanding how ATS works is the first step to getting more interviews.</p>
+
+<h3>How ATS Systems Parse Your Resume</h3>
+<p>ATS software extracts text from your resume and looks for specific information: contact details, work experience, education, skills, and certifications. It then compares these against the job description to calculate a relevance score. Resumes that score above a threshold get forwarded to recruiters.</p>
+
+<h3>Key Factors ATS Systems Evaluate</h3>
+<ul>
+<li><strong>Keyword matching:</strong> The most critical factor. ATS looks for exact and related keywords from the job description in your resume — job titles, technical skills, tools, certifications, and industry terms.</li>
+<li><strong>Section headers:</strong> Standard sections like "Experience," "Education," "Skills" help ATS parse your resume correctly. Creative headers like "My Journey" can confuse parsers.</li>
+<li><strong>Formatting:</strong> Simple, clean formatting works best. Avoid tables, columns, headers/footers, images, and graphics — most ATS can't read these.</li>
+<li><strong>File format:</strong> Submit .docx or .pdf unless specified otherwise. Plain text (.txt) is the safest but loses formatting.</li>
+<li><strong>Chronological order:</strong> List your most recent experience first. ATS and recruiters both prefer reverse-chronological format.</li>
+</ul>
+
+<h3>Tips to Beat the ATS</h3>
+<ul>
+<li><strong>Mirror the job description:</strong> Use the exact phrases and terminology from the posting. If they say "project management," don't just write "managed projects."</li>
+<li><strong>Include a skills section:</strong> List both hard skills (Python, SQL, Figma) and soft skills (leadership, communication) that match the job.</li>
+<li><strong>Quantify achievements:</strong> Use numbers — "Increased revenue by 35%" or "Managed team of 12" — to stand out to both ATS and recruiters.</li>
+<li><strong>Spell out acronyms:</strong> Write "Search Engine Optimization (SEO)" so ATS catches both forms.</li>
+<li><strong>Use standard job titles:</strong> If your actual title was creative (e.g., "Growth Ninja"), add the standard equivalent in parentheses.</li>
+<li><strong>Tailor for each application:</strong> One-size-fits-all resumes score lower. Customize keywords for each job.</li>
+</ul>
+
+<h3>Common ATS Resume Mistakes</h3>
+<p>Avoid these pitfalls that cause ATS to misread or reject resumes: using images or icons for contact info, putting key information in headers or footers (ATS often skips these), using uncommon fonts, embedding text in graphics, and having no clear section structure. Stick to standard fonts, clean layouts, and plain text content for the best results.</p>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is an ATS (Applicant Tracking System)?</div>
+<div class="faq-a">An ATS is software used by employers to collect, sort, scan, and rank job applications. Over 98% of Fortune 500 companies use an ATS. It parses your resume for relevant keywords, skills, and experience before a human ever sees it. If your resume isn't ATS-friendly, it may be filtered out regardless of your qualifications.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How does this ATS resume scorer work?</div>
+<div class="faq-a">Our scorer analyzes your resume against the job description by checking keyword matches, section completeness (experience, education, skills), formatting signals, and content depth. It runs entirely in your browser — your resume data is never uploaded to any server, ensuring complete privacy.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What score do I need to pass an ATS?</div>
+<div class="faq-a">Most ATS systems rank candidates by relevance. A match rate of 70% or higher generally gives you a good chance of being seen by a recruiter. Aim for 80%+ to maximize your chances. Our scorer identifies exactly which keywords and sections to improve.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Is my resume data safe with this tool?</div>
+<div class="faq-a">Yes, completely. This tool runs 100% in your browser using JavaScript. Your resume and job description text are never sent to any server — no data is stored, logged, or transmitted. You can verify by checking the network tab in your browser's developer tools.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What file format is best for ATS?</div>
+<div class="faq-a">Most modern ATS can parse both .docx and .pdf files well. When in doubt, use .docx — it has the highest compatibility across ATS systems. Avoid .jpg, .png, or heavily designed PDF files. This tool works with pasted text from any format.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Should I use the exact keywords from the job description?</div>
+<div class="faq-a">Yes! ATS primarily does keyword matching. Use the exact terms from the job posting wherever they genuinely apply to you. Include both the full term and common abbreviations (e.g., "Search Engine Optimization (SEO)"). Don't stuff keywords — they should appear naturally in context.</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>© 2026 <a href="https://doaide.com">DoAide</a> — Free tools to simplify your work. <a href="https://salary.doaide.com">Salary Calculator</a></p>
+</div>
+</footer>
+
+<script>
+document.getElementById('jd').addEventListener('input',e=>{document.getElementById('jd-count').textContent=e.target.value.length});
+document.getElementById('resume').addEventListener('input',e=>{document.getElementById('resume-count').textContent=e.target.value.length});
+
+function scoreResume(){
+  const jd=document.getElementById('jd').value.trim();
+  const resume=document.getElementById('resume').value.trim();
+  if(!jd||!resume){alert('Please paste both the job description and your resume.');return}
+  if(jd.length<50){alert('Job description seems too short. Paste the full job posting for best results.');return}
+  if(resume.length<100){alert('Resume seems too short. Paste your complete resume text.');return}
+
+  const jdLower=jd.toLowerCase();
+  const resumeLower=resume.toLowerCase();
+
+  // 1. Extract keywords from JD
+  const keywords=extractKeywords(jd);
+  const foundKw=[];
+  const missingKw=[];
+  keywords.forEach(kw=>{
+    if(resumeLower.includes(kw.toLowerCase()))foundKw.push(kw);
+    else missingKw.push(kw);
+  });
+  const kwScore=keywords.length?Math.round(foundKw.length/keywords.length*100):0;
+
+  // 2. Section detection
+  const sections=[
+    {name:'Contact Info',patterns:[/email|phone|linkedin|github|portfolio|@|\d{10}/i],weight:1},
+    {name:'Summary / Objective',patterns:[/summary|objective|profile|about me|professional summary/i],weight:1},
+    {name:'Work Experience',patterns:[/experience|employment|work history|professional experience/i],weight:1.5},
+    {name:'Education',patterns:[/education|degree|university|college|bachelor|master|phd|b\.?tech|m\.?tech|b\.?e\b|m\.?e\b|mba/i],weight:1},
+    {name:'Skills',patterns:[/skills|technical skills|core competencies|technologies|tools/i],weight:1.5},
+    {name:'Certifications',patterns:[/certif|license|accredit|credential/i],weight:0.5},
+    {name:'Projects',patterns:[/projects|portfolio|key projects/i],weight:0.5}
+  ];
+  let sectionScore=0,sectionTotal=0;
+  const sectionResults=[];
+  sections.forEach(s=>{
+    const found=s.patterns.some(p=>p.test(resume));
+    sectionResults.push({name:s.name,found});
+    sectionTotal+=s.weight;
+    if(found)sectionScore+=s.weight;
+  });
+  const secPct=Math.round(sectionScore/sectionTotal*100);
+
+  // 3. Formatting & content quality
+  let formatScore=0;
+  const formatChecks=[];
+  // Word count
+  const wordCount=resume.split(/\s+/).filter(w=>w.length>0).length;
+  if(wordCount>=300&&wordCount<=1200){formatScore+=15;formatChecks.push({pass:true,msg:'Resume length is good ('+wordCount+' words)'})}
+  else if(wordCount<300){formatChecks.push({pass:false,msg:'Resume is too short ('+wordCount+' words). Aim for 300-1200 words.'})}
+  else{formatChecks.push({pass:false,msg:'Resume may be too long ('+wordCount+' words). Keep it concise — 300-1200 words ideal.'})}
+
+  // Quantified achievements
+  const numbers=resume.match(/\d+[%+]|\$[\d,]+|\d+\s*(years?|months?|people|team|clients|users|projects)/gi)||[];
+  if(numbers.length>=3){formatScore+=15;formatChecks.push({pass:true,msg:'Good use of quantified achievements ('+numbers.length+' found)'})}
+  else{formatChecks.push({pass:false,msg:'Add more quantified achievements (numbers, percentages, dollar amounts). Found only '+numbers.length+'.'})}
+
+  // Action verbs
+  const actionVerbs=['managed','led','developed','created','implemented','designed','improved','increased','decreased','achieved','delivered','built','launched','optimized','reduced','generated','established','streamlined','coordinated','collaborated','executed','negotiated','analyzed','supervised','trained','mentored','initiated','resolved','spearheaded','transformed','automated','orchestrated'];
+  const usedVerbs=actionVerbs.filter(v=>resumeLower.includes(v));
+  if(usedVerbs.length>=5){formatScore+=10;formatChecks.push({pass:true,msg:'Strong action verbs used ('+usedVerbs.length+' found)'})}
+  else{formatChecks.push({pass:false,msg:'Use more action verbs to describe achievements. Found only '+usedVerbs.length+'. Try: managed, developed, implemented, improved, delivered.'})}
+
+  // Email/phone check
+  const hasContact=(/[\w.-]+@[\w.-]+\.\w+/.test(resume))||(/\d{10}/.test(resume.replace(/[\s-()]/g,'')));
+  if(hasContact){formatScore+=10;formatChecks.push({pass:true,msg:'Contact information detected'})}
+  else{formatChecks.push({pass:false,msg:'No email or phone number detected. Include contact info at the top.'})}
+
+  const fmtPct=Math.min(formatScore*2,100);
+
+  // 4. JD relevance — check job title match
+  let relevanceScore=0;
+  const jdTitle=extractJobTitle(jd);
+  if(jdTitle&&resumeLower.includes(jdTitle.toLowerCase())){relevanceScore+=30}
+  // Check years of experience alignment
+  const jdYears=jd.match(/(\d+)\+?\s*years?/i);
+  const resYears=resume.match(/(\d+)\+?\s*years?/gi);
+  if(jdYears&&resYears){relevanceScore+=20}
+  else if(jdYears&&!resYears){formatChecks.push({pass:false,msg:'Job requires '+jdYears[0]+' but no years of experience mentioned in resume.'})}
+  // Industry terms overlap
+  const jdBigrams=getNgrams(jdLower,2);
+  const resBigrams=getNgrams(resumeLower,2);
+  const bigramOverlap=jdBigrams.filter(b=>resBigrams.includes(b)).length;
+  relevanceScore+=Math.min(bigramOverlap*2,50);
+  const relPct=Math.min(relevanceScore,100);
+
+  // Overall score (weighted)
+  const overall=Math.round(kwScore*0.40+secPct*0.20+fmtPct*0.15+relPct*0.25);
+
+  // Render results
+  displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,sectionResults,formatChecks,jdTitle);
+}
+
+function extractKeywords(jd){
+  const stop=new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','as','is','was','are','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','must','about','above','after','again','all','also','am','any','because','before','between','both','but','during','each','few','further','get','got','here','how','if','into','it','its','just','know','let','like','make','more','most','much','no','nor','not','now','only','other','our','out','over','own','same','she','so','some','still','such','take','than','that','their','them','then','there','these','they','this','those','through','too','under','until','up','very','want','way','we','well','what','when','where','which','while','who','whom','why','work','working','you','your','able','across','along','already','among','another','around','away','back','based','become','best','better','big','come','day','different','even','every','experience','find','first','give','go','good','great','help','high','include','keep','last','long','look','made','many','may','new','next','old','one','part','people','place','point','provide','right','run','say','see','seem','show','small','start','state','thing','think','time','turn','two','use','used','using','want','way','well','within','without','year','years']);
+  const words=jd.toLowerCase().replace(/[^a-z0-9\s\-\+\#\.\/]/g,' ').split(/\s+/).filter(w=>w.length>2&&!stop.has(w));
+
+  // Get word frequency
+  const freq={};
+  words.forEach(w=>{
+    const normalized=w.replace(/[^a-z0-9\+\#]/g,'');
+    if(normalized.length>2)freq[normalized]=(freq[normalized]||0)+1;
+  });
+
+  // Also extract multi-word phrases (bigrams)
+  const text=jd.toLowerCase();
+  const skillPatterns=[
+    /(?:proficien(?:t|cy)|experience|knowledge|skilled?|expertise|familiar(?:ity)?)\s+(?:in|with)\s+([\w\s\-\+\#\.\/]+?)(?:\.|,|;|\n|and\s)/gi,
+    /(?:required|preferred|must have|nice to have|looking for)[:\s]+([\w\s\-\+\#\.,\/]+?)(?:\n|$)/gi
+  ];
+
+  // Get top keywords sorted by frequency
+  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,40).map(e=>e[0]);
+
+  // Also get common technical terms and skill phrases
+  const techTerms=['python','java','javascript','typescript','react','angular','vue','node','sql','nosql','aws','azure','gcp','docker','kubernetes','git','ci/cd','agile','scrum','machine learning','deep learning','ai','data science','api','rest','graphql','mongodb','postgresql','mysql','redis','elasticsearch','kafka','spark','hadoop','tableau','power bi','excel','figma','sketch','photoshop','jira','confluence','salesforce','sap','html','css','sass','webpack','jenkins','terraform','ansible','linux','devops','microservices','cloud','blockchain','nlp','computer vision','tensorflow','pytorch','pandas','numpy','r','scala','golang','go','rust','swift','kotlin','flutter','react native','ios','android','c++','c#','.net','spring','django','flask','fastapi','laravel','php','ruby','rails','perl','matlab','sas','spss','project management','product management','business analysis','data analysis','data engineering','etl','data warehouse','bi','crm','erp','ux','ui','design thinking','leadership','communication','problem solving','critical thinking','teamwork','collaboration'];
+
+  const foundTech=techTerms.filter(t=>jd.toLowerCase().includes(t));
+
+  // Combine and deduplicate
+  const combined=new Set([...sorted.slice(0,25),...foundTech]);
+  return [...combined].slice(0,35);
+}
+
+function extractJobTitle(jd){
+  const lines=jd.split('\n').filter(l=>l.trim());
+  // First non-empty line is often the title
+  const first=lines[0]?.trim();
+  if(first&&first.length<80)return first;
+  // Look for "Job Title:" or "Position:" patterns
+  const titleMatch=jd.match(/(?:job\s*title|position|role)\s*[:\-]\s*(.+?)(?:\n|$)/i);
+  if(titleMatch)return titleMatch[1].trim();
+  return '';
+}
+
+function getNgrams(text,n){
+  const words=text.replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(w=>w.length>2);
+  const ngrams=[];
+  for(let i=0;i<=words.length-n;i++){
+    ngrams.push(words.slice(i,i+n).join(' '));
+  }
+  return ngrams;
+}
+
+function displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,sectionResults,formatChecks,jdTitle){
+  document.getElementById('results').classList.add('active');
+
+  // Score ring
+  const circle=document.getElementById('score-circle');
+  const circumference=2*Math.PI*70;
+  circle.setAttribute('stroke-dasharray',circumference);
+  const color=overall>=80?'var(--green)':overall>=60?'var(--orange)':'var(--red)';
+  circle.style.stroke=color;
+  setTimeout(()=>{circle.setAttribute('stroke-dashoffset',circumference-(overall/100)*circumference)},100);
+  const scoreEl=document.getElementById('total-score');
+  scoreEl.style.color=color;
+  animateNumber(scoreEl,0,overall,800);
+
+  const verdict=overall>=80?'Excellent! Your resume is well-optimized for ATS.':overall>=60?'Good, but there\'s room for improvement.':overall>=40?'Needs work. Several areas need attention to pass ATS screening.':'Significant optimization needed to pass ATS filters.';
+  document.getElementById('score-verdict').textContent=verdict;
+
+  // Score cards
+  document.getElementById('score-cards').innerHTML=[
+    {label:'Keyword Match',val:kwScore+'%',color:kwScore>=70?'var(--green)':kwScore>=50?'var(--orange)':'var(--red)'},
+    {label:'Section Completeness',val:secPct+'%',color:secPct>=70?'var(--green)':secPct>=50?'var(--orange)':'var(--red)'},
+    {label:'Content Quality',val:fmtPct+'%',color:fmtPct>=60?'var(--green)':fmtPct>=40?'var(--orange)':'var(--red)'},
+    {label:'JD Relevance',val:relPct+'%',color:relPct>=60?'var(--green)':relPct>=40?'var(--orange)':'var(--red)'}
+  ].map(c=>`<div class="score-card"><div class="sc-val" style="color:${c.color}">${c.val}</div><div class="sc-label">${c.label}</div></div>`).join('');
+
+  // Keywords
+  document.getElementById('kw-summary').textContent=`${foundKw.length} of ${foundKw.length+missingKw.length} keywords found in your resume (${kwScore}% match rate)`;
+  document.getElementById('keyword-tags').innerHTML=
+    foundKw.map(k=>`<span class="kw-tag kw-found">✓ ${k}</span>`).join('')+
+    missingKw.map(k=>`<span class="kw-tag kw-missing">✗ ${k}</span>`).join('');
+
+  // Sections
+  document.getElementById('section-checks').innerHTML=sectionResults.map(s=>`
+    <div class="section-check">
+      <span>${s.name}</span>
+      <span class="status ${s.found?'found':'missing'}">${s.found?'✓ Found':'✗ Missing'}</span>
+    </div>`).join('');
+
+  // Suggestions
+  const suggestions=[];
+  if(missingKw.length>0){
+    const top5=missingKw.slice(0,5).join(', ');
+    suggestions.push({icon:'🔑',text:`<strong>Add missing keywords:</strong> Include these terms naturally in your resume: ${top5}`});
+  }
+  if(jdTitle&&!document.getElementById('resume').value.toLowerCase().includes(jdTitle.toLowerCase())){
+    suggestions.push({icon:'💼',text:`<strong>Match the job title:</strong> Include "${jdTitle}" in your resume summary or experience section.`});
+  }
+  formatChecks.filter(c=>!c.pass).forEach(c=>{
+    suggestions.push({icon:'📝',text:c.msg});
+  });
+  sectionResults.filter(s=>!s.found).forEach(s=>{
+    suggestions.push({icon:'📑',text:`<strong>Add ${s.name} section:</strong> ATS looks for a clearly labeled "${s.name}" section in your resume.`});
+  });
+  if(kwScore>=80&&secPct>=80){
+    suggestions.push({icon:'⭐',text:'<strong>Great job!</strong> Your resume is well-aligned with this job description. Consider fine-tuning the order of your bullet points to lead with the most relevant experience.'});
+  }
+
+  document.getElementById('suggestions').innerHTML=suggestions.map(s=>`
+    <div class="suggestion">
+      <span class="icon">${s.icon}</span>
+      <span class="text">${s.text}</span>
+    </div>`).join('');
+
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function animateNumber(el,from,to,duration){
+  const start=performance.now();
+  function step(now){
+    const progress=Math.min((now-start)/duration,1);
+    el.textContent=Math.round(from+(to-from)*progress);
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+</script>
+</body>
+</html>

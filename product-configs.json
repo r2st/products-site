@@ -1,0 +1,221 @@
+{
+  "pulse": {
+    "name": "Pulse",
+    "fullName": "DoAide Pulse",
+    "tagline": "AI newsletters, on autopilot.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📰", "title": "Smart Curation" },
+      { "icon": "✍️", "title": "AI Writing" },
+      { "icon": "📊", "title": "Analytics" },
+      { "icon": "🚀", "title": "Auto Send" }
+    ]
+  },
+  "desk": {
+    "name": "Desk",
+    "fullName": "DoAide Desk",
+    "tagline": "All your conversations, one inbox.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "💬", "title": "Unified Inbox" },
+      { "icon": "🤖", "title": "AI Replies" },
+      { "icon": "📱", "title": "All Channels" },
+      { "icon": "📈", "title": "Insights" }
+    ]
+  },
+  "realty": {
+    "name": "Realty",
+    "fullName": "DoAide Realty",
+    "tagline": "Close deals faster with AI.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🏠", "title": "Property Match" },
+      { "icon": "💬", "title": "WhatsApp CRM" },
+      { "icon": "🔔", "title": "Smart Alerts" },
+      { "icon": "📋", "title": "Lead Tracking" }
+    ]
+  },
+  "med": {
+    "name": "Med",
+    "fullName": "DoAide Med",
+    "tagline": "Clinical decisions, AI-powered.",
+    "accentColor": "#34D399",
+    "accentColorDark": "#059669",
+    "features": [
+      { "icon": "🩺", "title": "Diagnosis AI" },
+      { "icon": "💊", "title": "Drug Safety" },
+      { "icon": "📋", "title": "Guidelines" },
+      { "icon": "🔬", "title": "Evidence-based" }
+    ]
+  },
+  "gst": {
+    "name": "GST",
+    "fullName": "DoAide GST",
+    "tagline": "GST compliance, on autopilot.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📄", "title": "Auto Filing" },
+      { "icon": "🔄", "title": "Reconciliation" },
+      { "icon": "💰", "title": "ITC Tracking" },
+      { "icon": "⏰", "title": "Deadline Alerts" }
+    ]
+  },
+  "reach": {
+    "name": "Reach",
+    "fullName": "DoAide Reach",
+    "tagline": "Outreach that actually works.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📧", "title": "Smart Emails" },
+      { "icon": "🎯", "title": "Targeting" },
+      { "icon": "📊", "title": "Campaign AI" },
+      { "icon": "🔄", "title": "Auto Follow-up" }
+    ]
+  },
+  "jobs": {
+    "name": "AutoApply",
+    "fullName": "DoAide AutoApply",
+    "tagline": "Apply to jobs while you sleep.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🎯", "title": "Smart Matching" },
+      { "icon": "⚡", "title": "Auto Apply" },
+      { "icon": "📧", "title": "Email Outreach" },
+      { "icon": "📊", "title": "Pipeline" }
+    ]
+  },
+  "n409": {
+    "name": "409A",
+    "fullName": "DoAide 409A",
+    "tagline": "409A valuations, simplified.",
+    "accentColor": "#818CF8",
+    "accentColorDark": "#6366F1",
+    "features": [
+      { "icon": "📊", "title": "AI Valuation" },
+      { "icon": "✅", "title": "Compliance" },
+      { "icon": "⚡", "title": "24hr Reports" },
+      { "icon": "🔗", "title": "Cap Table" }
+    ]
+  },
+  "trade": {
+    "name": "Trade",
+    "fullName": "DoAide Trade",
+    "tagline": "Smarter trades, automated.",
+    "accentColor": "#34D399",
+    "accentColorDark": "#059669",
+    "features": [
+      { "icon": "📈", "title": "Market AI" },
+      { "icon": "💼", "title": "Portfolio" },
+      { "icon": "🔔", "title": "Signals" },
+      { "icon": "🛡️", "title": "Risk Mgmt" }
+    ]
+  },
+  "cortex": {
+    "name": "Cortex",
+    "fullName": "DoAide Cortex",
+    "tagline": "Agent memory, always on.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🧠", "title": "Agent Memory" },
+      { "icon": "🔗", "title": "Knowledge Graph" },
+      { "icon": "🔍", "title": "Smart Recall" },
+      { "icon": "⚡", "title": "Auto-Learn" }
+    ]
+  },
+  "bizname": {
+    "name": "BizName",
+    "fullName": "DoAide BizName",
+    "tagline": "Business names that are ready to register.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "✨", "title": "AI Names" },
+      { "icon": "🌐", "title": "Domain Check" },
+      { "icon": "@", "title": "Social Handles" },
+      { "icon": "🏷️", "title": "Brand Score" }
+    ]
+  },
+  "comply": {
+    "name": "Comply",
+    "fullName": "DoAide Comply",
+    "tagline": "Never miss a compliance deadline.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "📅", "title": "Filing Calendar" },
+      { "icon": "⚖️", "title": "Penalty Info" },
+      { "icon": "⏰", "title": "Reminders" },
+      { "icon": "🇮🇳", "title": "GST·TDS·ROC" }
+    ]
+  },
+  "pitch": {
+    "name": "PitchCraft",
+    "fullName": "DoAide PitchCraft",
+    "tagline": "AI pitch decks and fundraising toolkit.",
+    "accentColor": "#F0B429",
+    "features": [
+      { "icon": "🎯", "title": "Pitch Decks" },
+      { "icon": "📊", "title": "Valuation" },
+      { "icon": "💰", "title": "Financial Model" },
+      { "icon": "✅", "title": "Readiness Check" }
+    ]
+  },
+  "salary": {
+    "name": "Salary",
+    "fullName": "DoAide Salary",
+    "tagline": "Know your real take-home, instantly.",
+    "accentColor": "#2dd4bf",
+    "features": [
+      { "icon": "💰", "title": "Take-Home Calc" },
+      { "icon": "⚖️", "title": "Tax Regimes" },
+      { "icon": "🏠", "title": "HRA Optimizer" },
+      { "icon": "📊", "title": "CTC Breakdown" }
+    ]
+  },
+  "resume": {
+    "name": "Resume",
+    "fullName": "DoAide Resume",
+    "tagline": "AI resumes that get past the filters.",
+    "accentColor": "#f0b429",
+    "features": [
+      { "icon": "✍️", "title": "AI Writer" },
+      { "icon": "🎯", "title": "ATS Ready" },
+      { "icon": "📄", "title": "Multi-Format" },
+      { "icon": "📧", "title": "Cover Letters" }
+    ]
+  },
+  "fincalc": {
+    "name": "FinCalc",
+    "fullName": "DoAide FinCalc",
+    "tagline": "Every money question, one calculator.",
+    "accentColor": "#fb7185",
+    "features": [
+      { "icon": "🏦", "title": "EMI Calculator" },
+      { "icon": "📈", "title": "SIP Returns" },
+      { "icon": "💎", "title": "FD/RD Planner" },
+      { "icon": "🔄", "title": "Loan Compare" }
+    ]
+  },
+  "qr": {
+    "name": "QR",
+    "fullName": "DoAide QR",
+    "tagline": "QR codes that look like yours.",
+    "accentColor": "#a78bfa",
+    "features": [
+      { "icon": "📱", "title": "Custom QR" },
+      { "icon": "🎨", "title": "Logo Embed" },
+      { "icon": "📦", "title": "Batch Generate" },
+      { "icon": "📊", "title": "Scan Analytics" }
+    ]
+  },
+  "convert": {
+    "name": "Convert",
+    "fullName": "DoAide Convert",
+    "tagline": "Convert anything to anything.",
+    "accentColor": "#38bdf8",
+    "features": [
+      { "icon": "📄", "title": "PDF Tools" },
+      { "icon": "🖼️", "title": "Image Convert" },
+      { "icon": "📎", "title": "Doc Merge" },
+      { "icon": "⚡", "title": "Batch Process" }
+    ]
+  }
+}

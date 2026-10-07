@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Salary Calculator – CTC to Take-Home Pay | DoAide</title>
+<meta name="description" content="Free Indian Salary Calculator: Convert your CTC to take-home salary instantly. Compare Old vs New Tax Regime for FY 2026-27. Calculate PF, HRA, income tax, and net salary.">
+<meta name="keywords" content="CTC calculator India, salary calculator, take home salary calculator, income tax calculator India, CTC to in-hand salary, salary breakup calculator, tax calculator India FY 2026-27">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://salary.doaide.com/">
+<meta property="og:title" content="Indian Salary Calculator – CTC to Take-Home Pay | DoAide">
+<meta property="og:description" content="Free CTC to take-home salary calculator for India. Compare Old vs New Tax Regime side-by-side for FY 2026-27.">
+<meta property="og:url" content="https://salary.doaide.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Indian Salary Calculator – CTC to Take-Home Pay | DoAide">
+<meta name="twitter:description" content="Free CTC to take-home salary calculator for India. Compare Old vs New Tax Regime side-by-side for FY 2026-27.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Indian Salary Calculator",
+  "description": "Free CTC to take-home salary calculator for India with Old vs New Tax Regime comparison for FY 2026-27.",
+  "url": "https://salary.doaide.com/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "author": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is CTC and how is it different from take-home salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CTC (Cost to Company) is the total amount a company spends on an employee per year. It includes basic salary, HRA, special allowances, employer PF contribution, gratuity, and other benefits. Take-home salary (in-hand salary) is what you actually receive after deductions like employee PF, professional tax, and income tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tax regime is better — Old or New for FY 2026-27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The New Tax Regime offers lower tax rates and a higher basic exemption limit (₹4 lakh vs ₹2.5 lakh) but does not allow most deductions like 80C, HRA, or home loan interest. The Old Regime has higher rates but allows deductions. If your total deductions exceed ₹3-4 lakh, the Old Regime may save more tax. Use our calculator to compare both side-by-side."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is HRA exemption calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HRA exemption is the minimum of: (1) Actual HRA received, (2) 50% of basic salary for metro cities (Delhi, Mumbai, Chennai, Kolkata) or 40% for non-metro cities, and (3) Actual rent paid minus 10% of basic salary. This exemption is available only under the Old Tax Regime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the standard deduction for salaried employees in FY 2026-27?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the New Tax Regime, the standard deduction is ₹75,000. Under the Old Tax Regime, it remains ₹50,000. This is a flat deduction from salary income — no bills or proofs are required."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+header{border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent2)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}
+nav a:hover{color:var(--text)}
+
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--accent2),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:1.05rem;max-width:650px;margin:0 auto}
+
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.card h2{font-size:1.15rem;margin-bottom:16px;color:var(--accent2)}
+
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.85rem;color:var(--text2);margin-bottom:6px;font-weight:500}
+.form-group input,.form-group select{width:100%;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.95rem;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent)}
+.form-group select option{background:var(--surface2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:var(--accent2)}
+
+.results-section{display:none}
+.results-section.active{display:block}
+
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+@media(max-width:600px){.comparison{grid-template-columns:1fr}}
+
+.regime-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.regime-card.better::after{content:'SAVES MORE';position:absolute;top:12px;right:-28px;background:var(--green);color:#000;font-size:.65rem;font-weight:700;padding:2px 32px;transform:rotate(45deg)}
+.regime-card h3{font-size:1rem;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.regime-card .take-home{font-size:1.75rem;font-weight:800;margin:12px 0 4px}
+.regime-card .monthly{font-size:.9rem;color:var(--text2)}
+
+.breakdown-row{display:flex;justify-content:space-between;padding:8px 0;font-size:.875rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.breakdown-row:last-child{border-bottom:none}
+.breakdown-row .label{color:var(--text2)}
+.breakdown-row .value{font-weight:600}
+.breakdown-row.highlight{color:var(--green);font-weight:600}
+.breakdown-row.deduction .value{color:var(--red)}
+
+.salary-breakdown{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.salary-breakdown h3{font-size:1rem;margin-bottom:14px;color:var(--accent2)}
+
+.bar-chart{margin:20px 0}
+.bar-item{margin-bottom:12px}
+.bar-label{display:flex;justify-content:space-between;font-size:.8rem;color:var(--text2);margin-bottom:4px}
+.bar-track{height:8px;background:var(--surface2);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.5rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.15rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:12px}
+
+.slab-table{width:100%;border-collapse:collapse;margin:16px 0 24px}
+.slab-table th,.slab-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:.875rem}
+.slab-table th{color:var(--text2);font-weight:600;background:var(--surface2)}
+.slab-table td{color:var(--text)}
+.slab-table tr:hover td{background:rgba(99,102,241,.05)}
+
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.5rem;font-weight:700;margin-bottom:20px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2);transition:transform .2s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 20px 16px;color:var(--text2);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.8rem}
+footer a{color:var(--text2)}
+
+.tag{display:inline-block;background:var(--surface2);color:var(--text2);padding:2px 8px;border-radius:4px;font-size:.75rem;margin-right:4px}
+</style>
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="salary-doaide-com"></script>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<div class="logo">Do<span>Aide</span> Salary Calculator</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://resume.doaide.com">ATS Resume Scorer</a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+<h1>Indian Salary Calculator — CTC to Take-Home</h1>
+<p>Calculate your in-hand salary from CTC. Compare Old vs New Tax Regime side-by-side for FY 2026-27 with accurate PF, HRA, professional tax &amp; income tax calculations.</p>
+</section>
+
+<div class="calc-grid">
+<div class="card">
+<h2>Enter Your Details</h2>
+<div class="form-group">
+<label for="ctc">Annual CTC (₹)</label>
+<input type="number" id="ctc" placeholder="e.g. 1200000" min="0">
+</div>
+<div class="form-group">
+<label for="basic-pct">Basic Salary % of CTC</label>
+<select id="basic-pct">
+<option value="0.40">40%</option>
+<option value="0.50" selected>50%</option>
+</select>
+</div>
+<div class="form-group">
+<label for="city">City Type (for HRA)</label>
+<select id="city">
+<option value="metro">Metro (Delhi, Mumbai, Chennai, Kolkata)</option>
+<option value="non-metro">Non-Metro</option>
+</select>
+</div>
+<div class="form-group">
+<label for="rent">Monthly Rent Paid (₹) — for HRA exemption under Old Regime</label>
+<input type="number" id="rent" placeholder="e.g. 15000" min="0" value="0">
+</div>
+<div class="form-group">
+<label for="age">Age Group</label>
+<select id="age">
+<option value="below60">Below 60</option>
+<option value="60to80">60–80 (Senior)</option>
+<option value="above80">Above 80 (Super Senior)</option>
+</select>
+</div>
+<div class="form-group">
+<label for="deductions80c">Section 80C Deductions (₹) — Old Regime only</label>
+<input type="number" id="deductions80c" placeholder="e.g. 150000" min="0" value="150000">
+</div>
+<div class="form-group">
+<label for="deductions80d">Section 80D (Health Insurance ₹) — Old Regime only</label>
+<input type="number" id="deductions80d" placeholder="e.g. 25000" min="0" value="25000">
+</div>
+<div class="form-group">
+<label for="other-deductions">Other Deductions under Old Regime (₹)</label>
+<input type="number" id="other-deductions" placeholder="e.g. 50000" min="0" value="0">
+</div>
+<button class="btn" onclick="calculate()">Calculate Take-Home Salary</button>
+</div>
+
+<div class="card" id="salary-structure" style="display:none">
+<h2>Salary Structure (Annual)</h2>
+<div id="structure-details"></div>
+<div class="bar-chart" id="bar-chart"></div>
+</div>
+</div>
+
+<section class="results-section" id="results">
+<div class="comparison">
+<div class="regime-card" id="old-regime-card">
+<h3>🏛️ Old Tax Regime</h3>
+<div id="old-breakdown"></div>
+<div class="take-home" id="old-takehome"></div>
+<div class="monthly" id="old-monthly"></div>
+</div>
+<div class="regime-card" id="new-regime-card">
+<h3>⚡ New Tax Regime</h3>
+<div id="new-breakdown"></div>
+<div class="take-home" id="new-takehome"></div>
+<div class="monthly" id="new-monthly"></div>
+</div>
+</div>
+<div class="salary-breakdown" id="savings-box">
+<h3>💡 Recommendation</h3>
+<p id="savings-text" style="color:var(--green);font-weight:600"></p>
+</div>
+</section>
+
+<section class="content-section">
+<h2>Understanding Indian Salary Components</h2>
+<p>When you receive a job offer in India, the CTC (Cost to Company) figure can be very different from what you actually take home every month. Here's a breakdown of the key components:</p>
+
+<h3>Basic Salary</h3>
+<p>Basic salary is the core component of your pay structure, typically 40–50% of CTC. It forms the basis for calculating HRA, PF, and gratuity. A higher basic means more PF savings but also higher tax liability since basic salary is fully taxable.</p>
+
+<h3>House Rent Allowance (HRA)</h3>
+<p>HRA is provided to help employees pay rent. Under the Old Tax Regime, you can claim HRA exemption — the minimum of: actual HRA received, 50% of basic (metro) or 40% (non-metro), or rent paid minus 10% of basic. The New Regime does not allow HRA exemption.</p>
+
+<h3>Provident Fund (PF)</h3>
+<p>Both employer and employee contribute 12% of basic salary (capped at ₹15,000 basic per month for the employer's mandatory contribution). Employee PF is deducted from your salary. Employer PF is part of CTC but does not come to you as cash — it goes into your PF account.</p>
+
+<h3>Professional Tax</h3>
+<p>Professional tax is a state-level tax on salaried individuals. The maximum is ₹2,500 per year. Most states charge ₹200/month (₹2,400/year). This calculator uses ₹2,400 as a standard deduction applicable in most states.</p>
+
+<h3>Income Tax</h3>
+<p>Your salary income is taxed based on the regime you choose. The New Tax Regime is the default from FY 2024-25 onward. You can opt for the Old Regime if it benefits you more (typically when you have significant deductions).</p>
+
+<h2>Income Tax Slabs for FY 2026-27</h2>
+
+<h3>New Tax Regime (Default)</h3>
+<table class="slab-table">
+<thead><tr><th>Income Slab</th><th>Tax Rate</th></tr></thead>
+<tbody>
+<tr><td>Up to ₹4,00,000</td><td>Nil</td></tr>
+<tr><td>₹4,00,001 – ₹8,00,000</td><td>5%</td></tr>
+<tr><td>₹8,00,001 – ₹12,00,000</td><td>10%</td></tr>
+<tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td></tr>
+<tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td></tr>
+<tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td></tr>
+<tr><td>Above ₹24,00,000</td><td>30%</td></tr>
+</tbody>
+</table>
+<p><strong>Standard Deduction:</strong> ₹75,000 | <strong>Rebate u/s 87A:</strong> No tax if taxable income ≤ ₹12,00,000 (effectively ₹12,75,000 for salaried)</p>
+
+<h3>Old Tax Regime</h3>
+<table class="slab-table">
+<thead><tr><th>Income Slab (Below 60)</th><th>Tax Rate</th></tr></thead>
+<tbody>
+<tr><td>Up to ₹2,50,000</td><td>Nil</td></tr>
+<tr><td>₹2,50,001 – ₹5,00,000</td><td>5%</td></tr>
+<tr><td>₹5,00,001 – ₹10,00,000</td><td>20%</td></tr>
+<tr><td>Above ₹10,00,000</td><td>30%</td></tr>
+</tbody>
+</table>
+<p><strong>Standard Deduction:</strong> ₹50,000 | Deductions: 80C (up to ₹1.5L), 80D (up to ₹25K/₹50K), HRA, home loan interest, NPS, etc.</p>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is CTC and how is it different from take-home salary?</div>
+<div class="faq-a">CTC (Cost to Company) is the total amount a company spends on an employee per year. It includes basic salary, HRA, special allowances, employer PF contribution, gratuity, and other benefits. Take-home salary (in-hand salary) is what you actually receive after deductions like employee PF, professional tax, and income tax.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Which tax regime is better — Old or New for FY 2026-27?</div>
+<div class="faq-a">The New Tax Regime offers lower tax rates and a higher basic exemption limit (₹4 lakh vs ₹2.5 lakh) but does not allow most deductions like 80C, HRA, or home loan interest. The Old Regime has higher rates but allows deductions. If your total deductions exceed ₹3–4 lakh, the Old Regime may save more tax. Use our calculator above to compare both side-by-side with your actual numbers.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How is HRA exemption calculated?</div>
+<div class="faq-a">HRA exemption under the Old Tax Regime is the minimum of: (1) Actual HRA received, (2) 50% of basic salary for metro cities (Delhi, Mumbai, Chennai, Kolkata) or 40% for non-metro cities, and (3) Actual rent paid minus 10% of basic salary. You need rent receipts to claim this exemption.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is the standard deduction for salaried employees?</div>
+<div class="faq-a">Under the New Tax Regime, the standard deduction is ₹75,000 for FY 2026-27. Under the Old Tax Regime, it is ₹50,000. This is a flat deduction from salary income — no bills or proofs required.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Is employer PF part of my take-home salary?</div>
+<div class="faq-a">No. Employer PF (12% of basic, capped at ₹1,800/month on ₹15,000 basic) is part of your CTC but goes directly into your EPF account. It's a retirement benefit, not cash in hand. Employee PF (your 12% contribution) is also deducted from your salary.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How accurate is this calculator?</div>
+<div class="faq-a">This calculator provides a close estimate based on standard salary structures. Actual take-home may vary based on your company's specific CTC breakup, additional perks (food coupons, car lease, etc.), and state-specific professional tax rates. For exact figures, refer to your salary slip or HR department.</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>© 2026 <a href="https://doaide.com">DoAide</a> — Free tools to simplify your work. <a href="https://resume.doaide.com">ATS Resume Scorer</a></p>
+</div>
+</footer>
+
+<script>
+function fmt(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+
+function calculate(){
+  const ctc=parseFloat(document.getElementById('ctc').value);
+  if(!ctc||ctc<=0){alert('Please enter a valid CTC amount.');return}
+
+  const basicPct=parseFloat(document.getElementById('basic-pct').value);
+  const cityType=document.getElementById('city').value;
+  const rent=parseFloat(document.getElementById('rent').value)||0;
+  const ageGroup=document.getElementById('age').value;
+  const ded80c=Math.min(parseFloat(document.getElementById('deductions80c').value)||0,150000);
+  const ded80d=Math.min(parseFloat(document.getElementById('deductions80d').value)||0,ageGroup==='below60'?25000:ageGroup==='60to80'?50000:50000);
+  const otherDed=parseFloat(document.getElementById('other-deductions').value)||0;
+
+  // Salary structure
+  const basic=ctc*basicPct;
+  const hra=basic*0.5; // HRA = 50% of basic (metro) or 40% (non-metro) — we allocate 50% for structure
+  const epfEmployer=Math.min(basic*0.12,21600); // 12% of basic, capped
+  const gratuity=basic*0.0481; // 4.81% of basic
+  const specialAllowance=ctc-basic-hra-epfEmployer-gratuity;
+
+  // Employee deductions
+  const epfEmployee=Math.min(basic*0.12,21600);
+  const profTax=2400;
+
+  // OLD REGIME tax calculation
+  const hraExemptMetro=basic*(cityType==='metro'?0.5:0.4);
+  const hraExemptRent=Math.max(rent*12-basic*0.1,0);
+  const hraExemptActual=hra;
+  const hraExemption=Math.min(hraExemptActual,hraExemptMetro,hraExemptRent);
+
+  const grossSalaryOld=basic+hra+specialAllowance; // taxable components
+  const stdDeductionOld=50000;
+  const taxableIncomeOld=Math.max(grossSalaryOld-hraExemption-stdDeductionOld-ded80c-ded80d-otherDed-epfEmployee,0); // EPF employee contribution counted under 80C typically
+  // Actually, employee PF is part of 80C. Let's not double count.
+  // 80C includes EPF employee contribution
+  const totalOld80c=Math.min(ded80c+epfEmployee,150000);
+  const taxableIncomeOldFinal=Math.max(grossSalaryOld-hraExemption-stdDeductionOld-totalOld80c-ded80d-otherDed,0);
+
+  const taxOld=calcOldTax(taxableIncomeOldFinal,ageGroup);
+  const cessOld=taxOld*0.04;
+  const totalTaxOld=taxOld+cessOld;
+  const takeHomeOld=grossSalaryOld-epfEmployee-profTax-totalTaxOld;
+
+  // NEW REGIME tax calculation
+  const grossSalaryNew=basic+hra+specialAllowance;
+  const stdDeductionNew=75000;
+  const taxableIncomeNew=Math.max(grossSalaryNew-stdDeductionNew,0);
+
+  const taxNew=calcNewTax(taxableIncomeNew);
+  const cessNew=taxNew*0.04;
+  const totalTaxNew=taxNew+cessNew;
+  const takeHomeNew=grossSalaryNew-epfEmployee-profTax-totalTaxNew;
+
+  // Display structure
+  document.getElementById('salary-structure').style.display='block';
+  document.getElementById('structure-details').innerHTML=`
+    <div class="breakdown-row"><span class="label">Annual CTC</span><span class="value">${fmt(ctc)}</span></div>
+    <div class="breakdown-row"><span class="label">Basic Salary (${basicPct*100}%)</span><span class="value">${fmt(basic)}</span></div>
+    <div class="breakdown-row"><span class="label">HRA</span><span class="value">${fmt(hra)}</span></div>
+    <div class="breakdown-row"><span class="label">Special Allowance</span><span class="value">${fmt(specialAllowance>0?specialAllowance:0)}</span></div>
+    <div class="breakdown-row"><span class="label">Employer PF</span><span class="value">${fmt(epfEmployer)}</span></div>
+    <div class="breakdown-row"><span class="label">Gratuity</span><span class="value">${fmt(gratuity)}</span></div>
+  `;
+
+  const comps=[
+    {label:'Basic',val:basic,color:'#6366f1'},
+    {label:'HRA',val:hra,color:'#818cf8'},
+    {label:'Special Allow.',val:Math.max(specialAllowance,0),color:'#22c55e'},
+    {label:'Employer PF',val:epfEmployer,color:'#f59e0b'},
+    {label:'Gratuity',val:gratuity,color:'#ef4444'}
+  ];
+  document.getElementById('bar-chart').innerHTML=comps.map(c=>`
+    <div class="bar-item">
+      <div class="bar-label"><span>${c.label}</span><span>${fmt(c.val)} (${(c.val/ctc*100).toFixed(1)}%)</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${c.val/ctc*100}%;background:${c.color}"></div></div>
+    </div>`).join('');
+
+  // Old regime breakdown
+  document.getElementById('old-breakdown').innerHTML=`
+    <div class="breakdown-row"><span class="label">Gross Salary</span><span class="value">${fmt(grossSalaryOld)}</span></div>
+    <div class="breakdown-row"><span class="label">HRA Exemption</span><span class="value">- ${fmt(hraExemption)}</span></div>
+    <div class="breakdown-row"><span class="label">Standard Deduction</span><span class="value">- ${fmt(stdDeductionOld)}</span></div>
+    <div class="breakdown-row"><span class="label">80C (incl. EPF)</span><span class="value">- ${fmt(totalOld80c)}</span></div>
+    <div class="breakdown-row"><span class="label">80D</span><span class="value">- ${fmt(ded80d)}</span></div>
+    ${otherDed?`<div class="breakdown-row"><span class="label">Other Deductions</span><span class="value">- ${fmt(otherDed)}</span></div>`:''}
+    <div class="breakdown-row"><span class="label">Taxable Income</span><span class="value">${fmt(taxableIncomeOldFinal)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Income Tax + Cess</span><span class="value">- ${fmt(totalTaxOld)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Employee PF</span><span class="value">- ${fmt(epfEmployee)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Professional Tax</span><span class="value">- ${fmt(profTax)}</span></div>
+  `;
+  document.getElementById('old-takehome').textContent=fmt(takeHomeOld);
+  document.getElementById('old-monthly').textContent=fmt(takeHomeOld/12)+' / month';
+
+  // New regime breakdown
+  document.getElementById('new-breakdown').innerHTML=`
+    <div class="breakdown-row"><span class="label">Gross Salary</span><span class="value">${fmt(grossSalaryNew)}</span></div>
+    <div class="breakdown-row"><span class="label">Standard Deduction</span><span class="value">- ${fmt(stdDeductionNew)}</span></div>
+    <div class="breakdown-row"><span class="label">Taxable Income</span><span class="value">${fmt(taxableIncomeNew)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Income Tax + Cess</span><span class="value">- ${fmt(totalTaxNew)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Employee PF</span><span class="value">- ${fmt(epfEmployee)}</span></div>
+    <div class="breakdown-row deduction"><span class="label">Professional Tax</span><span class="value">- ${fmt(profTax)}</span></div>
+  `;
+  document.getElementById('new-takehome').textContent=fmt(takeHomeNew);
+  document.getElementById('new-monthly').textContent=fmt(takeHomeNew/12)+' / month';
+
+  // Highlight better regime
+  const oldCard=document.getElementById('old-regime-card');
+  const newCard=document.getElementById('new-regime-card');
+  oldCard.classList.remove('better');
+  newCard.classList.remove('better');
+
+  const diff=Math.abs(takeHomeOld-takeHomeNew);
+  if(takeHomeOld>takeHomeNew){
+    oldCard.classList.add('better');
+    document.getElementById('savings-text').textContent=`The Old Tax Regime saves you ${fmt(diff)} more per year (${fmt(diff/12)}/month). Consider it if you can claim all the deductions entered above.`;
+  }else if(takeHomeNew>takeHomeOld){
+    newCard.classList.add('better');
+    document.getElementById('savings-text').textContent=`The New Tax Regime saves you ${fmt(diff)} more per year (${fmt(diff/12)}/month). With lower rates and fewer compliance requirements, it's the simpler choice.`;
+  }else{
+    document.getElementById('savings-text').textContent='Both regimes result in the same take-home salary. The New Regime is simpler with fewer compliance requirements.';
+  }
+
+  document.getElementById('results').classList.add('active');
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function calcOldTax(income,ageGroup){
+  let exempt=250000;
+  if(ageGroup==='60to80')exempt=300000;
+  if(ageGroup==='above80')exempt=500000;
+
+  if(income<=exempt)return 0;
+
+  let tax=0;
+  if(income>1000000)tax+=(income-1000000)*0.30;
+  income=Math.min(income,1000000);
+  if(income>500000)tax+=(income-500000)*0.20;
+  income=Math.min(income,500000);
+  if(income>exempt)tax+=(income-exempt)*0.05;
+
+  // Rebate 87A for old regime: if total income <= 5L, tax = 0 (max rebate 12500)
+  if(income<=500000&&ageGroup!=='above80'){
+    tax=Math.max(tax-12500,0);
+  }
+  // Actually let's recalculate properly with original income
+  return calcOldTaxProper(arguments[0],ageGroup);
+}
+
+function calcOldTaxProper(income,ageGroup){
+  let exempt=250000;
+  if(ageGroup==='60to80')exempt=300000;
+  if(ageGroup==='above80')exempt=500000;
+
+  if(income<=exempt)return 0;
+
+  let tax=0;
+  let remaining=income;
+
+  // Slab 1: exempt to 5L at 5%
+  if(remaining>exempt){
+    const slab1=Math.min(remaining,500000)-exempt;
+    if(slab1>0)tax+=slab1*0.05;
+  }
+  // Slab 2: 5L to 10L at 20%
+  if(remaining>500000){
+    const slab2=Math.min(remaining,1000000)-500000;
+    if(slab2>0)tax+=slab2*0.20;
+  }
+  // Slab 3: above 10L at 30%
+  if(remaining>1000000){
+    tax+=(remaining-1000000)*0.30;
+  }
+
+  // Rebate 87A old regime: if taxable income <= 5L
+  if(income<=500000){
+    tax=Math.max(tax-12500,0);
+  }
+
+  // Surcharge
+  if(income>5000000&&income<=10000000)tax*=1.10;
+  else if(income>10000000&&income<=20000000)tax*=1.15;
+  else if(income>20000000&&income<=50000000)tax*=1.25;
+  else if(income>50000000)tax*=1.37;
+
+  return tax;
+}
+
+function calcNewTax(income){
+  if(income<=0)return 0;
+
+  let tax=0;
+  // 0-4L: nil
+  // 4-8L: 5%
+  // 8-12L: 10%
+  // 12-16L: 15%
+  // 16-20L: 20%
+  // 20-24L: 25%
+  // 24L+: 30%
+  const slabs=[
+    [400000,0],
+    [400000,0.05],
+    [400000,0.10],
+    [400000,0.15],
+    [400000,0.20],
+    [400000,0.25],
+    [Infinity,0.30]
+  ];
+
+  let remaining=income;
+  for(const [width,rate] of slabs){
+    if(remaining<=0)break;
+    const taxable=Math.min(remaining,width);
+    tax+=taxable*rate;
+    remaining-=taxable;
+  }
+
+  // Rebate u/s 87A: if taxable income <= 12L, rebate up to 60000
+  if(income<=1200000){
+    tax=Math.max(tax-60000,0);
+  }
+
+  // Surcharge
+  if(income>5000000&&income<=10000000)tax*=1.10;
+  else if(income>10000000&&income<=20000000)tax*=1.15;
+  else if(income>20000000&&income<=50000000)tax*=1.25;
+  else if(income>50000000)tax*=1.37;
+
+  return tax;
+}
+</script>
+</body>
+</html>

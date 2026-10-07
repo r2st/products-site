@@ -1,0 +1,34 @@
+# Inner Caddy — serves the static files on the knol docker network.
+# TLS and the public hostname are handled by knol-caddy, which reverse-proxies
+# to this container by name. Nothing here is published to the host.
+
+:80 {
+	root * /srv
+	encode zstd gzip
+
+	# /n409 and /n409.html both resolve, so links survive either style.
+	try_files {path} {path}.html {path}/index.html
+
+	file_server {
+		precompressed br zstd gzip
+	}
+
+	# The HTML is regenerated on every deploy and must not go stale in a
+	# proxy cache; the two shared assets are small enough to revalidate.
+	@html path *.html /
+	header @html Cache-Control "public, max-age=0, must-revalidate"
+
+	@assets path /styles.css /main.js
+	header @assets Cache-Control "public, max-age=3600"
+
+	handle_errors {
+		rewrite * /index.html
+		file_server
+	}
+
+	log {
+		output stdout
+		format json
+		level WARN
+	}
+}

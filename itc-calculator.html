@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITC Calculator — Input Tax Credit Eligibility & Section 17(5) Blocked Credits | DoAide</title>
+<meta name="description" content="Calculate your Input Tax Credit eligibility, check Section 17(5) blocked credits, and compute ITC reversal under Rule 42/43 for Indian GST. Free online ITC calculator by DoAide.">
+<meta name="keywords" content="ITC calculator, input tax credit, Section 17(5), blocked credits, GST, Rule 42, Rule 43, ITC reversal, Indian GST, tax credit eligibility">
+<link rel="canonical" href="https://doaide.com/itc-calculator.html">
+
+<meta property="og:title" content="ITC Calculator — Input Tax Credit Eligibility & Section 17(5) Blocked Credits | DoAide">
+<meta property="og:description" content="Calculate your Input Tax Credit eligibility, check Section 17(5) blocked credits, and compute ITC reversal under Rule 42/43 for Indian GST.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doaide.com/itc-calculator.html">
+<meta property="og:site_name" content="DoAide">
+<meta property="og:image" content="https://doaide.com/og-itc-calculator.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ITC Calculator — Input Tax Credit Eligibility & Section 17(5) Blocked Credits | DoAide">
+<meta name="twitter:description" content="Calculate your Input Tax Credit eligibility, check Section 17(5) blocked credits, and compute ITC reversal under Rule 42/43 for Indian GST.">
+<meta name="twitter:image" content="https://doaide.com/og-itc-calculator.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ITC Calculator",
+  "description": "Calculate Input Tax Credit eligibility, check Section 17(5) blocked credits, and compute ITC reversal under Rule 42/43 for Indian GST.",
+  "url": "https://doaide.com/itc-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "DoAide",
+    "url": "https://doaide.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #111113;
+  --bg-input: #18181b;
+  --border: #27272a;
+  --border-hover: #3f3f46;
+  --text: #edeff5;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
+  --accent: #f0b429;
+  --accent-dim: rgba(240, 180, 41, 0.12);
+  --accent-hover: #f5c958;
+  --green: #34d399;
+  --green-dim: rgba(52, 211, 153, 0.12);
+  --red: #f87171;
+  --red-dim: rgba(248, 113, 113, 0.12);
+  --font-heading: 'Instrument Serif', serif;
+  --font-body: 'Schibsted Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-hover); }
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--accent); }
+.header-nav { display: flex; gap: 1.5rem; align-items: center; }
+.header-nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--text); }
+.header-nav a.active { color: var(--accent); }
+
+/* Hero */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Tabs */
+.tabs-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+.tab-bar {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.card-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.form-input {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus { border-color: var(--accent); }
+.form-input::placeholder { color: var(--text-dim); }
+
+.btn {
+  background: var(--accent);
+  color: #0a0a0b;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn:hover { background: var(--accent-hover); }
+.btn:active { transform: scale(0.98); }
+.btn-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--border-hover); color: var(--text); background: var(--bg-input); }
+
+/* Results */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.result-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.result-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+.result-value {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.result-value.positive { color: var(--green); }
+.result-value.negative { color: var(--red); }
+.result-value.accent { color: var(--accent); }
+.result-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 0.3rem;
+}
+.result-box.highlight {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* Checklist */
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.checklist-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.85rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.checklist-item:hover { border-color: var(--border-hover); }
+.checklist-item.checked { border-color: var(--red); background: var(--red-dim); }
+.checklist-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2px;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+.checklist-item input[type="checkbox"]:checked {
+  background: var(--red);
+  border-color: var(--red);
+}
+.checklist-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 6px;
+  width: 5px; height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checklist-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.checklist-text small {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+.checklist-amount {
+  width: 130px;
+  flex-shrink: 0;
+}
+.checklist-amount .form-input {
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+/* Summary bar */
+.summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--red-dim);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.summary-bar .label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.summary-bar .value {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--red);
+}
+
+/* Info box */
+.info-box {
+  background: var(--accent-dim);
+  border: 1px solid rgba(240, 180, 41, 0.2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+.info-box strong { color: var(--accent); }
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
+.footer-brand .logo { margin-bottom: 0.5rem; }
+.footer-brand p { color: var(--text-dim); font-size: 0.85rem; }
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.footer-col a {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
+    <nav class="header-nav">
+      <a href="/gst.html">GST Tools</a>
+      <a href="/itc-calculator.html" class="active">ITC Calculator</a>
+      <a href="https://doaide.com">Home</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Input Tax Credit <em>Calculator</em></h1>
+  <p>Calculate ITC eligibility, check Section 17(5) blocked credits, and compute ITC reversal under Rule 42/43 for Indian GST.</p>
+</section>
+
+<!-- Main Content -->
+<main class="tabs-container">
+
+  <!-- Tab Bar -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" role="tab" data-tab="eligibility" aria-selected="true">ITC Eligibility</button>
+    <button class="tab-btn" role="tab" data-tab="blocked" aria-selected="false">Section 17(5) Blocked Credits</button>
+    <button class="tab-btn" role="tab" data-tab="reversal" aria-selected="false">ITC Reversal (Rule 42/43)</button>
+  </div>
+
+  <!-- Tab 1: ITC Eligibility -->
+  <div class="tab-panel active" id="tab-eligibility" role="tabpanel">
+    <div class="card">
+      <h2>ITC Eligibility Calculator</h2>
+      <p class="card-subtitle">Determine your eligible Input Tax Credit and net GST liability for the tax period.</p>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="totalInputTax">Total GST Paid on Purchases (Input Tax)</label>
+          <input type="number" id="totalInputTax" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="outputTax">GST Collected on Sales (Output Tax)</label>
+          <input type="number" id="outputTax" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="blockedCredit">Blocked Credits (Section 17(5))</label>
+          <input type="number" id="blockedCredit" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reversalAmount">ITC Reversal (Rule 42/43)</label>
+          <input type="number" id="reversalAmount" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousCarryForward">ITC Carried Forward from Previous Period</label>
+          <input type="number" id="previousCarryForward" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="calculateEligibility()">Calculate ITC</button>
+        <button class="btn btn-secondary" onclick="resetEligibility()">Reset</button>
+      </div>
+
+      <div id="eligibilityResults" style="display:none;">
+        <div class="results-grid">
+          <div class="result-box">
+            <div class="result-label">Gross ITC Available</div>
+            <div class="result-value accent" id="resGrossITC">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Less: Blocked + Reversal</div>
+            <div class="result-value negative" id="resDeductions">--</div>
+          </div>
+          <div class="result-box highlight">
+            <div class="result-label">Net Eligible ITC</div>
+            <div class="result-value positive" id="resEligibleITC">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Output Tax Liability</div>
+            <div class="result-value" id="resOutputTax">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">ITC Utilised</div>
+            <div class="result-value accent" id="resITCUsed">--</div>
+            <div class="result-note" id="resITCUsedNote"></div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Net Tax Payable</div>
+            <div class="result-value" id="resNetTax">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">ITC to Carry Forward</div>
+            <div class="result-value positive" id="resCarryForward">--</div>
+            <div class="result-note">Available for next period</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Note:</strong> This calculator provides an estimate for educational purposes. Eligible ITC is computed as Total Input Tax + Carry Forward minus Blocked Credits and Reversals. Actual eligibility depends on compliance with Section 16 conditions including possession of valid tax invoice, receipt of goods/services, and filing of returns by the supplier.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Section 17(5) Blocked Credits -->
+  <div class="tab-panel" id="tab-blocked" role="tabpanel">
+    <div class="card">
+      <h2>Section 17(5) Blocked Credits Checker</h2>
+      <p class="card-subtitle">Select the categories of purchases where ITC is blocked under Section 17(5) of the CGST Act, and enter the GST amount paid on each.</p>
+
+      <ul class="checklist" id="blockedChecklist">
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="motorVehicles">
+          <div class="checklist-text">
+            Motor vehicles and conveyances
+            <small>Exception: used for transport of passengers, imparting training on driving/flying/navigating, or by vehicle dealers</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="motorVehicles" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="food">
+          <div class="checklist-text">
+            Food, beverages, outdoor catering
+            <small>Exception: when supplied as an outward taxable supply or as part of an inward supply on which ITC is available</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="food" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="beauty">
+          <div class="checklist-text">
+            Beauty treatment, health services, cosmetic and plastic surgery
+            <small>Exception: when provided as an outward taxable supply</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="beauty" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="club">
+          <div class="checklist-text">
+            Club membership, fitness centre, life insurance, health insurance
+            <small>Exception: when provided as outward supply, or where it is obligatory for employer to provide to employees under law</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="club" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="travel">
+          <div class="checklist-text">
+            Travel benefits extended to employees on vacation (LTC/LTA)
+            <small>Leave Travel Concession or Leave Travel Allowance</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="travel" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="worksContract">
+          <div class="checklist-text">
+            Works contract services for construction of immovable property
+            <small>Except where it is an input service for further supply of works contract service</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="worksContract" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="construction">
+          <div class="checklist-text">
+            Goods or services for construction of immovable property on own account
+            <small>Including when used for furtherance of business, plant and machinery excluded</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="construction" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="composition">
+          <div class="checklist-text">
+            Composition scheme taxpayer
+            <small>Registered persons opting for Composition Scheme under Section 10 cannot claim ITC</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="composition" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="personalUse">
+          <div class="checklist-text">
+            Goods or services used for personal consumption
+            <small>ITC is only available for goods/services used in the course or furtherance of business</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="personalUse" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="lostStolen">
+          <div class="checklist-text">
+            Goods lost, stolen, destroyed, written off, or disposed as gift/free sample
+            <small>ITC already availed must be reversed for such goods</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="lostStolen" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+        <li class="checklist-item" onclick="toggleCheck(this, event)">
+          <input type="checkbox" data-blocked="fraudTax">
+          <div class="checklist-text">
+            Tax paid under Section 74, 129, or 130
+            <small>Tax paid on account of fraud, evasion, seizure, or confiscation</small>
+          </div>
+          <div class="checklist-amount">
+            <input type="number" class="form-input blocked-amt" data-key="fraudTax" placeholder="0.00" min="0" step="0.01" onclick="event.stopPropagation()">
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="summary-bar" id="blockedSummary">
+        <div>
+          <div class="label">Total Blocked ITC (Section 17(5))</div>
+        </div>
+        <div class="value" id="totalBlockedAmount">&#8377; 0.00</div>
+      </div>
+
+      <div class="info-box">
+        <strong>How to use:</strong> Check the categories that apply to your purchases, then enter the GST amount paid for each. The total blocked ITC shown here can be entered in the "Blocked Credits" field of the ITC Eligibility calculator.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 3: ITC Reversal Rule 42/43 -->
+  <div class="tab-panel" id="tab-reversal" role="tabpanel">
+    <div class="card">
+      <h2>ITC Reversal Calculator (Rule 42/43)</h2>
+      <p class="card-subtitle">For businesses making both taxable and exempt supplies. Calculate the proportionate ITC reversal attributable to exempt supplies.</p>
+
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label" for="totalITCPeriod">Total ITC for the Tax Period (Common Credit)</label>
+          <input type="number" id="totalITCPeriod" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="exclusivelyTaxable">ITC Exclusively for Taxable Supplies</label>
+          <input type="number" id="exclusivelyTaxable" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="exclusivelyExempt">ITC Exclusively for Exempt Supplies</label>
+          <input type="number" id="exclusivelyExempt" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+      </div>
+
+      <hr class="divider">
+      <h3>Turnover Details</h3>
+      <p class="card-subtitle">Enter the turnover figures to determine the proportionate split of common credit.</p>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="taxableTurnover">Turnover from Taxable Supplies</label>
+          <input type="number" id="taxableTurnover" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="exemptTurnover">Turnover from Exempt Supplies</label>
+          <input type="number" id="exemptTurnover" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label" for="totalTurnover">Total Turnover (Aggregate)</label>
+          <input type="number" id="totalTurnover" class="form-input" placeholder="0.00" min="0" step="0.01">
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="calculateReversal()">Calculate Reversal</button>
+        <button class="btn btn-secondary" onclick="resetReversal()">Reset</button>
+      </div>
+
+      <div id="reversalResults" style="display:none;">
+        <div class="results-grid">
+          <div class="result-box">
+            <div class="result-label">Total ITC for Period</div>
+            <div class="result-value" id="revTotalITC">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">ITC for Taxable (Direct)</div>
+            <div class="result-value positive" id="revExclTaxable">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">ITC for Exempt (Direct)</div>
+            <div class="result-value negative" id="revExclExempt">--</div>
+            <div class="result-note">Fully blocked</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Common Credit (C2)</div>
+            <div class="result-value accent" id="revCommonCredit">--</div>
+            <div class="result-note">To be apportioned</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Exempt Ratio</div>
+            <div class="result-value" id="revExemptRatio">--</div>
+            <div class="result-note">Exempt / Total Turnover</div>
+          </div>
+          <div class="result-box highlight">
+            <div class="result-label">ITC to Reverse (D1)</div>
+            <div class="result-value negative" id="revITCReverse">--</div>
+            <div class="result-note">Common credit x exempt ratio</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Common ITC for Taxable</div>
+            <div class="result-value positive" id="revCommonTaxable">--</div>
+          </div>
+          <div class="result-box highlight">
+            <div class="result-label">Net Eligible ITC</div>
+            <div class="result-value positive" id="revNetEligible">--</div>
+            <div class="result-note">Taxable direct + common taxable</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Total ITC Reversed</div>
+            <div class="result-value negative" id="revTotalReversed">--</div>
+            <div class="result-note">Exempt direct + common reversal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Rule 42/43 Explained:</strong> When a business makes both taxable and exempt supplies, ITC that cannot be directly attributed to either category (common credit) must be apportioned. The portion attributable to exempt supplies is reversed. Formula: <em>Common Credit &times; (Exempt Turnover / Total Turnover)</em>. This reversal amount can be entered in the "ITC Reversal" field of the ITC Eligibility calculator.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Do<span>Aide</span></div>
+      <p>Smart tools for Indian tax compliance. Simplify your GST calculations and filing workflow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>GST Tools</h4>
+      <a href="/gst.html">GST Calculator</a>
+      <a href="/itc-calculator.html">ITC Calculator</a>
+      <a href="/hsn-lookup.html">HSN Code Lookup</a>
+      <a href="/gst-return-dates.html">GST Return Dates</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="/gst-guide.html">GST Guide</a>
+      <a href="/section-17-5.html">Section 17(5) Guide</a>
+      <a href="/rule-42-43.html">Rule 42/43 Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="https://doaide.com">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2024 DoAide. All rights reserved. This tool is for informational purposes only and does not constitute tax advice.
+  </div>
+</footer>
+
+<script>
+// --- Tab Switching ---
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// --- Utility ---
+function fmt(n) {
+  return '₹ ' + Math.abs(n).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function pct(n) {
+  return (n * 100).toFixed(2) + '%';
+}
+function val(id) {
+  return parseFloat(document.getElementById(id).value) || 0;
+}
+
+// --- Tab 1: ITC Eligibility ---
+function calculateEligibility() {
+  const totalInput = val('totalInputTax');
+  const output = val('outputTax');
+  const blocked = val('blockedCredit');
+  const reversal = val('reversalAmount');
+  const carryFwd = val('previousCarryForward');
+
+  const grossITC = totalInput + carryFwd;
+  const deductions = blocked + reversal;
+  const eligibleITC = Math.max(0, grossITC - deductions);
+  const itcUsed = Math.min(eligibleITC, output);
+  const netTax = Math.max(0, output - itcUsed);
+  const toCarryForward = Math.max(0, eligibleITC - itcUsed);
+
+  document.getElementById('resGrossITC').textContent = fmt(grossITC);
+  document.getElementById('resDeductions').textContent = '- ' + fmt(deductions);
+  document.getElementById('resEligibleITC').textContent = fmt(eligibleITC);
+  document.getElementById('resOutputTax').textContent = fmt(output);
+
+  const itcUsedEl = document.getElementById('resITCUsed');
+  itcUsedEl.textContent = fmt(itcUsed);
+  document.getElementById('resITCUsedNote').textContent = itcUsed < eligibleITC ? 'Partial utilisation' : itcUsed > 0 ? 'Fully utilised against output' : '';
+
+  const netTaxEl = document.getElementById('resNetTax');
+  netTaxEl.textContent = fmt(netTax);
+  netTaxEl.className = 'result-value ' + (netTax > 0 ? 'negative' : 'positive');
+
+  document.getElementById('resCarryForward').textContent = fmt(toCarryForward);
+  document.getElementById('eligibilityResults').style.display = 'block';
+}
+
+function resetEligibility() {
+  ['totalInputTax','outputTax','blockedCredit','reversalAmount','previousCarryForward'].forEach(id => { document.getElementById(id).value = ''; });
+  document.getElementById('eligibilityResults').style.display = 'none';
+}
+
+// --- Tab 2: Blocked Credits ---
+function toggleCheck(li, e) {
+  if (e.target.tagName === 'INPUT' && e.target.type === 'number') return;
+  const cb = li.querySelector('input[type="checkbox"]');
+  cb.checked = !cb.checked;
+  li.classList.toggle('checked', cb.checked);
+  updateBlockedTotal();
+}
+
+document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    this.closest('.checklist-item').classList.toggle('checked', this.checked);
+    updateBlockedTotal();
+  });
+});
+
+document.querySelectorAll('.blocked-amt').forEach(inp => {
+  inp.addEventListener('input', updateBlockedTotal);
+});
+
+function updateBlockedTotal() {
+  let total = 0;
+  document.querySelectorAll('.checklist-item').forEach(item => {
+    const cb = item.querySelector('input[type="checkbox"]');
+    const amt = item.querySelector('.blocked-amt');
+    if (cb.checked) {
+      total += parseFloat(amt.value) || 0;
+    }
+  });
+  document.getElementById('totalBlockedAmount').textContent = fmt(total);
+}
+
+// --- Tab 3: ITC Reversal ---
+function calculateReversal() {
+  const totalITC = val('totalITCPeriod');
+  const exclTaxable = val('exclusivelyTaxable');
+  const exclExempt = val('exclusivelyExempt');
+  const taxableTurnover = val('taxableTurnover');
+  const exemptTurnover = val('exemptTurnover');
+  const totalTurnover = val('totalTurnover');
+
+  const commonCredit = Math.max(0, totalITC - exclTaxable - exclExempt);
+
+  let exemptRatio = 0;
+  if (totalTurnover > 0) {
+    exemptRatio = exemptTurnover / totalTurnover;
+  }
+
+  const itcToReverse = commonCredit * exemptRatio;
+  const commonTaxable = commonCredit - itcToReverse;
+  const netEligible = exclTaxable + commonTaxable;
+  const totalReversed = exclExempt + itcToReverse;
+
+  document.getElementById('revTotalITC').textContent = fmt(totalITC);
+  document.getElementById('revExclTaxable').textContent = fmt(exclTaxable);
+  document.getElementById('revExclExempt').textContent = fmt(exclExempt);
+  document.getElementById('revCommonCredit').textContent = fmt(commonCredit);
+  document.getElementById('revExemptRatio').textContent = pct(exemptRatio);
+  document.getElementById('revITCReverse').textContent = fmt(itcToReverse);
+  document.getElementById('revCommonTaxable').textContent = fmt(commonTaxable);
+  document.getElementById('revNetEligible').textContent = fmt(netEligible);
+  document.getElementById('revTotalReversed').textContent = fmt(totalReversed);
+
+  document.getElementById('reversalResults').style.display = 'block';
+}
+
+function resetReversal() {
+  ['totalITCPeriod','exclusivelyTaxable','exclusivelyExempt','taxableTurnover','exemptTurnover','totalTurnover'].forEach(id => { document.getElementById(id).value = ''; });
+  document.getElementById('reversalResults').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

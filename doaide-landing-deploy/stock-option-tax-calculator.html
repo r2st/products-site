@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Stock Option Tax Calculator — ISO vs NSO Tax Implications | DoAide</title>
+    <meta name="description" content="Free stock option tax calculator. Calculate tax implications of exercising ISOs vs NSOs, including AMT exposure, regular income tax, and total cost to exercise. Understand your stock option taxes before you exercise.">
+    <meta name="keywords" content="stock option tax calculator, ISO tax calculator, NSO tax calculator, AMT calculator, alternative minimum tax, stock option exercise cost, incentive stock options, non-qualified stock options">
+    <link rel="canonical" href="https://doaide.com/stock-option-tax-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:title" content="Free Stock Option Tax Calculator — ISO vs NSO">
+    <meta property="og:description" content="Calculate tax implications of exercising stock options. Compare ISO vs NSO taxes, AMT exposure, and total exercise cost.">
+    <meta property="og:url" content="https://doaide.com/stock-option-tax-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Stock Option Tax Calculator",
+      "url": "https://doaide.com/stock-option-tax-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free stock option tax calculator for ISOs and NSOs. Calculate AMT exposure, regular income tax, and total cost to exercise.",
+      "provider": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is the difference between ISOs and NSOs?","acceptedAnswer":{"@type":"Answer","text":"Incentive Stock Options (ISOs) receive preferential tax treatment — no regular income tax at exercise if you hold shares for 1 year after exercise and 2 years after grant. The spread is an AMT preference item. Non-Qualified Stock Options (NSOs) are taxed as ordinary income on the spread at exercise, with taxes withheld by your employer."}},
+        {"@type":"Question","name":"What is AMT and how does it affect stock options?","acceptedAnswer":{"@type":"Answer","text":"The Alternative Minimum Tax (AMT) is a parallel tax system that limits certain deductions and adds back preference items. For ISOs, the spread between FMV and strike price at exercise is an AMT preference item, which can trigger AMT liability even though no regular income tax is owed. The 2026 AMT exemption is $85,700 for single filers and $133,300 for married filing jointly."}},
+        {"@type":"Question","name":"When should I exercise my stock options?","acceptedAnswer":{"@type":"Answer","text":"The optimal exercise timing depends on several factors: the spread between strike price and FMV, your current and expected tax bracket, AMT exposure, cash available, and your outlook on the company. Early exercise (when the spread is small or zero) minimizes tax impact. Some employees exercise as they vest to start the capital gains holding period clock."}},
+        {"@type":"Question","name":"How is the 409A valuation related to stock option taxes?","acceptedAnswer":{"@type":"Answer","text":"The 409A valuation determines the Fair Market Value (FMV) of common stock at the time options are granted. This FMV becomes the basis for calculating the spread at exercise. If options were granted below FMV (without a proper 409A valuation), the entire difference may be subject to immediate taxation plus a 20% penalty under Section 409A."}}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Schibsted Grotesk',sans-serif;color:#E5E7EB;background:#0A0A0B;overflow-x:hidden;line-height:1.6}
+        a{color:#F0B429;text-decoration:none}a:hover{text-decoration:underline}
+        .nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:20px 24px}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;text-decoration:none}.nav-logo:hover{text-decoration:none}
+        .nav-logo svg{width:32px;height:32px}
+        .nav-links{display:flex;gap:24px;align-items:center}
+        .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;text-decoration:none;transition:color 0.3s}.nav-links a:hover{color:#F0B429;text-decoration:none}
+        .nav-cta{background:#F0B429;color:#0A0A0B;padding:8px 20px;border-radius:8px;font-weight:600;font-size:0.8rem;transition:all 0.3s}.nav-cta:hover{background:#F7CC5F;text-decoration:none}
+        .hero{text-align:center;padding:60px 24px 40px;position:relative}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 60%,rgba(240,180,41,0.06) 0%,transparent 70%);pointer-events:none}
+        .hero h1{font-family:'Instrument Serif',serif;font-size:3rem;font-weight:400;color:#fff;margin-bottom:12px}.hero h1 span{color:#F0B429}
+        .hero p{color:rgba(255,255,255,0.45);max-width:600px;margin:0 auto;font-size:0.95rem}
+        .badge-free{display:inline-block;background:rgba(240,180,41,0.1);border:1px solid rgba(240,180,41,0.25);color:#F0B429;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+        .calc-container{max-width:900px;margin:0 auto 60px;padding:0 24px}
+        .calc-card{background:rgba(16,16,18,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px;backdrop-filter:blur(4px)}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;margin-bottom:6px;text-transform:uppercase}
+        .form-group input,.form-group select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;transition:border-color 0.3s;outline:none}
+        .form-group input:focus,.form-group select:focus{border-color:rgba(240,180,41,0.5)}
+        .form-group select option{background:#1a1a1c;color:#fff}
+        .form-hint{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:4px;font-family:'IBM Plex Mono',monospace}
+        .option-type-toggle{display:flex;gap:0;margin-bottom:24px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)}
+        .option-type-toggle button{flex:1;padding:12px;background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.5);border:none;font-family:'Schibsted Grotesk',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.3s}
+        .option-type-toggle button.active{background:#F0B429;color:#0A0A0B}
+        .calc-btn{width:100%;background:#F0B429;color:#0A0A0B;border:none;padding:14px 24px;border-radius:12px;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;margin-top:8px}
+        .calc-btn:hover{background:#F7CC5F;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,0.2)}
+        .results{display:none;margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}.results.show{display:block}
+        .results h3{font-family:'Instrument Serif',serif;font-size:1.5rem;color:#fff;margin-bottom:20px}
+        .result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .result-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px;text-align:center}
+        .result-box .label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+        .result-box .value{font-family:'Instrument Serif',serif;font-size:2rem;color:#F0B429}
+        .result-box .sub{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:4px}
+        .result-box.highlight{border-color:rgba(240,180,41,0.2);background:rgba(240,180,41,0.04)}
+        .breakdown{margin-top:20px}
+        .breakdown-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.9rem}
+        .breakdown-row .br-label{color:rgba(255,255,255,0.5)}.breakdown-row .br-val{color:#fff;font-weight:500}
+        .breakdown-row.total{border-top:2px solid rgba(240,180,41,0.3);border-bottom:none;font-weight:700;color:#F0B429;padding-top:14px;margin-top:4px}
+        .result-note{margin-top:20px;padding:16px;background:rgba(240,180,41,0.05);border:1px solid rgba(240,180,41,0.15);border-radius:12px;font-size:0.82rem;color:rgba(255,255,255,0.5)}
+        .result-cta{display:inline-block;margin-top:20px;background:#F0B429;color:#0A0A0B;padding:12px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s}.result-cta:hover{background:#F7CC5F;text-decoration:none;transform:translateY(-2px)}
+        .content{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .content h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin:48px 0 16px;font-weight:400}
+        .content h3{font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;margin:32px 0 12px;font-weight:400}
+        .content p{color:rgba(255,255,255,0.55);margin-bottom:16px;font-size:0.95rem;line-height:1.7}
+        .content ul,.content ol{color:rgba(255,255,255,0.55);margin:0 0 16px 20px;font-size:0.95rem;line-height:1.8}
+        .comparison-table{width:100%;border-collapse:collapse;margin:20px 0 24px}
+        .comparison-table th,.comparison-table td{padding:12px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem}
+        .comparison-table th{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.5px}
+        .comparison-table td{color:rgba(255,255,255,0.55)}
+        .comparison-table tr:hover td{color:rgba(255,255,255,0.7)}
+        .faq{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .faq h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin-bottom:24px;text-align:center;font-weight:400}
+        .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+        .faq-q{font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem}.faq-q::after{content:'+';color:#F0B429;font-size:1.4rem;transition:transform 0.3s}.faq-q.open::after{transform:rotate(45deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s;color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.7}.faq-a.open{max-height:500px;padding-top:12px}
+        footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,0.07);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.25)}
+        footer a{color:#F0B429;text-decoration:none}
+        .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px}
+        .footer-links a{color:rgba(255,255,255,0.35);font-size:0.7rem;letter-spacing:0.5px;transition:color 0.3s}.footer-links a:hover{color:#F0B429}
+        @media(max-width:700px){.calc-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}.nav-links{display:none}}
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://doaide.com" class="nav-logo">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="6" width="22" height="17" rx="5" fill="#F0B429"/><ellipse cx="11" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><ellipse cx="21" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><circle cx="11.5" cy="12.5" r="1" fill="#F7CC5F"/><circle cx="21.5" cy="12.5" r="1" fill="#F7CC5F"/><path d="M12 19Q16 22 20 19" stroke="#0A0A0B" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+            DoAide
+        </a>
+        <div class="nav-links">
+            <a href="https://doaide.com">Home</a>
+            <a href="https://doaide.com/409a-valuation-calculator.html">409A Calculator</a>
+            <a href="https://doaide.com/cap-table-calculator.html">Cap Table</a>
+            <a href="https://409a.doaide.com" class="nav-cta">Get Full 409A Valuation</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge-free">Free Tool — No Login Required</div>
+        <h1>Stock Option <span>Tax Calculator</span></h1>
+        <p>Calculate the tax implications of exercising your stock options. Compare ISO vs NSO treatment, estimate AMT exposure, and understand the true cost of exercising.</p>
+    </section>
+
+    <div class="calc-container">
+        <div class="calc-card">
+            <div class="option-type-toggle">
+                <button class="active" onclick="setType('iso',this)">ISO (Incentive)</button>
+                <button onclick="setType('nso',this)">NSO (Non-Qualified)</button>
+            </div>
+            <div class="calc-grid">
+                <div>
+                    <div class="form-group">
+                        <label>Strike Price (per share)</label>
+                        <input type="number" id="strike" placeholder="e.g. 1.50" step="0.01">
+                        <div class="form-hint">Your option exercise price from the grant agreement</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Fair Market Value (per share)</label>
+                        <input type="number" id="fmv" placeholder="e.g. 8.00" step="0.01">
+                        <div class="form-hint">Current 409A valuation price or latest FMV</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Shares to Exercise</label>
+                        <input type="number" id="numShares" placeholder="e.g. 10000">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label>Federal Tax Bracket</label>
+                        <select id="taxBracket">
+                            <option value="0.10">10%</option>
+                            <option value="0.12">12%</option>
+                            <option value="0.22" selected>22%</option>
+                            <option value="0.24">24%</option>
+                            <option value="0.32">32%</option>
+                            <option value="0.35">35%</option>
+                            <option value="0.37">37%</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>State Tax Rate</label>
+                        <input type="number" id="stateRate" placeholder="e.g. 9.3" step="0.1" value="0">
+                        <div class="form-hint">Your state income tax rate (e.g. CA: 9.3%, TX: 0%)</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Filing Status</label>
+                        <select id="filingStatus">
+                            <option value="single">Single</option>
+                            <option value="mfj">Married Filing Jointly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Other Income This Year ($)</label>
+                        <input type="number" id="otherIncome" placeholder="e.g. 150000" value="">
+                        <div class="form-hint">W-2 salary + other income (for AMT calculation)</div>
+                    </div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcTax()">Calculate Tax Impact</button>
+
+            <div class="results" id="results">
+                <h3 id="resultsTitle">ISO Exercise — Tax Breakdown</h3>
+                <div class="result-grid">
+                    <div class="result-box highlight">
+                        <div class="label">Total Cost to Exercise</div>
+                        <div class="value" id="totalCost">—</div>
+                        <div class="sub">exercise price + taxes</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="label">Bargain Element (Spread)</div>
+                        <div class="value" id="spread">—</div>
+                        <div class="sub">FMV minus strike × shares</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="label" id="taxLabel">AMT Exposure</div>
+                        <div class="value" id="taxAmount">—</div>
+                        <div class="sub" id="taxSub">estimated additional AMT</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="label">Exercise Cost (Cash Needed)</div>
+                        <div class="value" id="exerciseCost">—</div>
+                        <div class="sub">strike price × shares</div>
+                    </div>
+                </div>
+
+                <div class="breakdown" id="breakdown"></div>
+
+                <div class="result-note">
+                    <strong>Disclaimer:</strong> This calculator provides estimates for educational purposes only and is not tax advice. Actual tax liability depends on your complete financial situation, state-specific rules, deductions, credits, and other factors. Consult a qualified tax advisor before making exercise decisions. AMT calculations are simplified estimates.
+                </div>
+                <div style="text-align:center;margin-top:24px">
+                    <a href="https://409a.doaide.com" class="result-cta">Need a 409A Valuation for Your Company? →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content">
+        <h2>Understanding Stock Option Taxes</h2>
+        <p>Stock options are one of the most valuable components of startup compensation, but their tax treatment is complex and often misunderstood. The tax implications of exercising your options depend on the <strong style="color:#F0B429">type of option</strong> (ISO vs NSO), <strong style="color:#F0B429">when you exercise</strong>, and <strong style="color:#F0B429">when you sell</strong> the resulting shares.</p>
+        <p>Making the wrong exercise decision can cost tens of thousands of dollars in unnecessary taxes. This guide and calculator help you understand the tax landscape before you decide.</p>
+
+        <h2>ISO vs NSO: Key Differences</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Feature</th><th>ISO (Incentive Stock Option)</th><th>NSO (Non-Qualified Stock Option)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Tax at exercise</td><td>No regular income tax (AMT may apply)</td><td>Ordinary income tax on the spread</td></tr>
+                <tr><td>Tax at sale</td><td>Long-term capital gains (if qualified)</td><td>Capital gains on appreciation after exercise</td></tr>
+                <tr><td>Qualifying disposition</td><td>Hold 1yr after exercise + 2yr after grant</td><td>No holding requirement for tax treatment</td></tr>
+                <tr><td>AMT impact</td><td>Spread is an AMT preference item</td><td>No AMT impact (already taxed at exercise)</td></tr>
+                <tr><td>Employer deduction</td><td>None (unless disqualifying disposition)</td><td>Employer deducts the spread at exercise</td></tr>
+                <tr><td>Who can receive</td><td>Employees only</td><td>Employees, contractors, advisors</td></tr>
+                <tr><td>Annual grant limit</td><td>$100K vesting per year (by FMV at grant)</td><td>No limit</td></tr>
+            </tbody>
+        </table>
+
+        <h2>How the Alternative Minimum Tax (AMT) Works</h2>
+        <p>The AMT is a parallel tax system designed to ensure high-income taxpayers pay a minimum level of tax. When you exercise ISOs, the "bargain element" (FMV minus strike price × shares) is added to your AMT income as a preference item.</p>
+        <p>Here's how it works: You calculate your tax liability two ways — under the regular tax system and under the AMT system. You pay whichever is higher. The AMT has its own exemption amounts (for 2026: approximately $85,700 for single filers and $133,300 for married filing jointly) that phase out at higher incomes.</p>
+        <p>The key AMT rates are <strong>26%</strong> on the first $248,300 of AMT income above the exemption, and <strong>28%</strong> on amounts above that threshold.</p>
+        <p>Important: AMT paid on ISO exercises generates an AMT credit that can be used to offset future regular tax liability. This means the AMT is more of a timing difference than a permanent additional tax — but it still requires cash upfront.</p>
+
+        <h3>Strategies to Minimize Stock Option Taxes</h3>
+        <ul>
+            <li><strong>Early exercise:</strong> Exercise when the spread is small (ideally at or near the strike price) to minimize taxable income and start the capital gains clock</li>
+            <li><strong>83(b) election:</strong> If you early-exercise unvested shares, file an 83(b) election within 30 days to be taxed on the current (low) value instead of the future vesting value</li>
+            <li><strong>Spread exercises across tax years:</strong> Exercise a portion each year to stay under AMT thresholds</li>
+            <li><strong>Exercise in low-income years:</strong> If you have a gap between jobs or lower income, that's often the best time to exercise</li>
+            <li><strong>Same-day sale for NSOs:</strong> If you need cash, a same-day sale avoids market risk (but triggers full ordinary income tax)</li>
+        </ul>
+
+        <h2>How 409A Valuations Affect Your Options</h2>
+        <p>The 409A valuation directly determines the fair market value used to set your option strike price. A lower 409A valuation means a lower strike price, which means more upside potential and lower tax impact when you exercise.</p>
+        <p>If your company's 409A valuation was set incorrectly (too low without proper methodology), the IRS could reclassify your options as having been granted below FMV, triggering immediate taxation plus a 20% penalty under Section 409A. This is why proper 409A valuations matter — they protect employees from unexpected tax consequences.</p>
+
+        <div style="text-align:center;margin:40px 0">
+            <a href="https://409a.doaide.com" class="result-cta">Ensure Your 409A Is Correct →</a>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is the difference between ISOs and NSOs?</div>
+            <div class="faq-a">Incentive Stock Options (ISOs) receive preferential tax treatment — no regular income tax at exercise if you hold shares for 1 year after exercise and 2 years after grant. The spread is an AMT preference item. Non-Qualified Stock Options (NSOs) are taxed as ordinary income on the spread at exercise, with taxes withheld by your employer.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is AMT and how does it affect stock options?</div>
+            <div class="faq-a">The Alternative Minimum Tax (AMT) is a parallel tax system that limits certain deductions and adds back preference items. For ISOs, the spread between FMV and strike price at exercise is an AMT preference item, which can trigger AMT liability even though no regular income tax is owed. The 2026 AMT exemption is approximately $85,700 for single filers and $133,300 for married filing jointly.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">When should I exercise my stock options?</div>
+            <div class="faq-a">The optimal exercise timing depends on several factors: the spread between strike price and FMV, your current and expected tax bracket, AMT exposure, cash available, and your outlook on the company. Early exercise (when the spread is small or zero) minimizes tax impact. Some employees exercise as they vest to start the capital gains holding period clock.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How is the 409A valuation related to stock option taxes?</div>
+            <div class="faq-a">The 409A valuation determines the Fair Market Value (FMV) of common stock at the time options are granted. This FMV becomes the basis for calculating the spread at exercise. If options were granted below FMV (without a proper 409A valuation), the entire difference may be subject to immediate taxation plus a 20% penalty under Section 409A.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Do I owe taxes if I don't sell the shares after exercising?</div>
+            <div class="faq-a">For NSOs, yes — you owe ordinary income tax on the spread at exercise regardless of whether you sell. For ISOs, you don't owe regular income tax at exercise (only potentially AMT), but you must hold shares for 1 year after exercise and 2 years after grant for favorable long-term capital gains treatment at sale. Selling before those periods creates a "disqualifying disposition" taxed as ordinary income.</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://doaide.com">DoAide Home</a>
+            <a href="https://409a.doaide.com">409A Valuations</a>
+            <a href="https://doaide.com/409a-valuation-calculator.html">409A Valuation Calculator</a>
+            <a href="https://doaide.com/cap-table-calculator.html">Cap Table Calculator</a>
+        </div>
+        <p>&copy; 2026 <a href="https://doaide.com">DoAide</a> — Digital Robots for Modern Business</p>
+    </footer>
+
+    <script>
+    var optionType='iso';
+    function setType(t,btn){
+        optionType=t;
+        var btns=btn.parentNode.querySelectorAll('button');
+        btns.forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+    }
+
+    function calcTax(){
+        var strike=parseFloat(document.getElementById('strike').value)||0;
+        var fmv=parseFloat(document.getElementById('fmv').value)||0;
+        var shares=parseFloat(document.getElementById('numShares').value)||0;
+        var fedRate=parseFloat(document.getElementById('taxBracket').value)||0.22;
+        var stateRate=(parseFloat(document.getElementById('stateRate').value)||0)/100;
+        var filing=document.getElementById('filingStatus').value;
+        var otherIncome=parseFloat(document.getElementById('otherIncome').value)||0;
+
+        if(!strike||!fmv||!shares){alert('Please fill in strike price, FMV, and number of shares.');return}
+        if(fmv<=strike){alert('FMV must be greater than the strike price for a taxable spread to exist.');return}
+
+        var spreadPerShare=fmv-strike;
+        var totalSpread=spreadPerShare*shares;
+        var exerciseCash=strike*shares;
+        var totalValue=fmv*shares;
+
+        var fedTax=0,stateTax=0,socialTax=0,amtExposure=0,totalTax=0;
+
+        if(optionType==='nso'){
+            // NSO: spread taxed as ordinary income at exercise
+            fedTax=totalSpread*fedRate;
+            stateTax=totalSpread*stateRate;
+            // Social Security (6.2% up to $168,600 wage base) + Medicare (1.45% + 0.9% additional over $200k)
+            var ssWageBase=168600;
+            var ssExposure=Math.max(0,Math.min(totalSpread,ssWageBase-Math.min(otherIncome,ssWageBase)));
+            socialTax=ssExposure*0.062+totalSpread*0.0145;
+            if(otherIncome+totalSpread>200000){
+                var additionalMedicareBase=Math.max(0,otherIncome+totalSpread-200000)-Math.max(0,otherIncome-200000);
+                socialTax+=additionalMedicareBase*0.009;
+            }
+            totalTax=fedTax+stateTax+socialTax;
+
+            document.getElementById('resultsTitle').textContent='NSO Exercise — Tax Breakdown';
+            document.getElementById('taxLabel').textContent='Federal Income Tax';
+            document.getElementById('taxAmount').textContent='$'+formatNum(fedTax);
+            document.getElementById('taxSub').textContent='at '+Math.round(fedRate*100)+'% marginal rate';
+
+            document.getElementById('breakdown').innerHTML=
+                '<div class="breakdown-row"><span class="br-label">Spread (bargain element)</span><span class="br-val">$'+formatNum(totalSpread)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">Federal income tax ('+Math.round(fedRate*100)+'%)</span><span class="br-val">$'+formatNum(fedTax)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">State income tax ('+(stateRate*100).toFixed(1)+'%)</span><span class="br-val">$'+formatNum(stateTax)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">FICA (SS + Medicare)</span><span class="br-val">$'+formatNum(socialTax)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">Exercise cost (cash for shares)</span><span class="br-val">$'+formatNum(exerciseCash)+'</span></div>'+
+                '<div class="breakdown-row total"><span class="br-label">Total Out-of-Pocket</span><span class="br-val">$'+formatNum(exerciseCash+totalTax)+'</span></div>';
+        } else {
+            // ISO: No regular income tax; AMT preference item
+            var amtExemption=filing==='mfj'?133300:85700;
+            var amtPhaseoutStart=filing==='mfj'?1218700:609350;
+
+            var amtIncome=otherIncome+totalSpread;
+            // Phase out exemption
+            var phaseoutReduction=Math.max(0,(amtIncome-amtPhaseoutStart)*0.25);
+            var effectiveExemption=Math.max(0,amtExemption-phaseoutReduction);
+            var amtTaxableIncome=Math.max(0,amtIncome-effectiveExemption);
+
+            // AMT rate: 26% up to $248,300, 28% above
+            var amtBreakpoint=248300;
+            var amtTax;
+            if(amtTaxableIncome<=amtBreakpoint){
+                amtTax=amtTaxableIncome*0.26;
+            }else{
+                amtTax=amtBreakpoint*0.26+(amtTaxableIncome-amtBreakpoint)*0.28;
+            }
+
+            // Regular tax (simplified) on other income only
+            var regularTax=otherIncome*fedRate+otherIncome*stateRate;
+
+            // AMT exposure = max(0, AMT - regular tax)
+            amtExposure=Math.max(0,amtTax-regularTax);
+            stateTax=totalSpread*stateRate; // Some states tax ISO spread
+            totalTax=amtExposure;
+
+            document.getElementById('resultsTitle').textContent='ISO Exercise — Tax Breakdown';
+            document.getElementById('taxLabel').textContent='AMT Exposure';
+            document.getElementById('taxAmount').textContent='$'+formatNum(amtExposure);
+            document.getElementById('taxSub').textContent='estimated additional AMT liability';
+
+            document.getElementById('breakdown').innerHTML=
+                '<div class="breakdown-row"><span class="br-label">Spread (AMT preference item)</span><span class="br-val">$'+formatNum(totalSpread)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">Regular income tax at exercise</span><span class="br-val">$0 (ISO benefit)</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">Estimated AMT exposure</span><span class="br-val">$'+formatNum(amtExposure)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">AMT exemption used</span><span class="br-val">$'+formatNum(effectiveExemption)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">State tax (some states tax ISO spread)</span><span class="br-val">$'+formatNum(stateTax)+'</span></div>'+
+                '<div class="breakdown-row"><span class="br-label">Exercise cost (cash for shares)</span><span class="br-val">$'+formatNum(exerciseCash)+'</span></div>'+
+                '<div class="breakdown-row total"><span class="br-label">Total Out-of-Pocket (exercise + AMT)</span><span class="br-val">$'+formatNum(exerciseCash+amtExposure+stateTax)+'</span></div>'+
+                '<div style="margin-top:12px;font-size:0.82rem;color:rgba(255,255,255,0.4)">Note: AMT paid generates a credit usable against future regular tax. If you hold shares 1yr+ after exercise and 2yr+ after grant, sale gains are taxed at long-term capital gains rates (0-20%).</div>';
+
+            totalTax=amtExposure+stateTax;
+        }
+
+        document.getElementById('totalCost').textContent='$'+formatNum(exerciseCash+totalTax);
+        document.getElementById('spread').textContent='$'+formatNum(totalSpread);
+        document.getElementById('exerciseCost').textContent='$'+formatNum(exerciseCash);
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function formatNum(n){return n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})}
+    function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open')}
+    </script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free 409A Valuation Calculator — Estimate Your Startup's Fair Market Value | DoAide</title>
+    <meta name="description" content="Free 409A valuation calculator for startups. Estimate your company's fair market value using Backsolve, OPM, and PWERM methods. Understand IRC Section 409A compliance requirements.">
+    <meta name="keywords" content="409A valuation calculator, fair market value calculator, startup valuation, stock option pricing, IRC 409A, backsolve method, OPM valuation, PWERM method">
+    <link rel="canonical" href="https://doaide.com/409a-valuation-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='6' width='22' height='17' rx='5' fill='%23F0B429'/%3E%3Cellipse cx='11' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3Cellipse cx='21' cy='13' rx='2.5' ry='3' fill='%230A0A0B'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:title" content="Free 409A Valuation Calculator — Estimate Your Startup's FMV">
+    <meta property="og:description" content="Estimate your startup's fair market value using common 409A valuation methods. Free, no login required.">
+    <meta property="og:url" content="https://doaide.com/409a-valuation-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free 409A Valuation Calculator | DoAide">
+    <meta name="twitter:description" content="Estimate your startup's fair market value using Backsolve, OPM, and PWERM methods. Free, no login required.">
+
+    <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "409A Valuation Calculator",
+      "url": "https://doaide.com/409a-valuation-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free 409A valuation calculator for startups. Estimate fair market value using Backsolve, OPM, and PWERM methods.",
+      "provider": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is a 409A valuation?","acceptedAnswer":{"@type":"Answer","text":"A 409A valuation is an independent appraisal of a private company's common stock fair market value (FMV), required by IRC Section 409A. It determines the minimum exercise price for stock options to avoid tax penalties. Companies must obtain a new 409A valuation at least every 12 months or after a material event like a new funding round."}},
+        {"@type":"Question","name":"Why do startups need a 409A valuation?","acceptedAnswer":{"@type":"Answer","text":"Startups that grant stock options must have a 409A valuation to set the exercise (strike) price. If options are granted below FMV, employees face immediate income tax plus a 20% penalty tax under Section 409A. A qualified 409A valuation provides a safe harbor that protects both the company and employees from these penalties."}},
+        {"@type":"Question","name":"What methods are used in a 409A valuation?","acceptedAnswer":{"@type":"Answer","text":"The three most common methods are: (1) Backsolve Method — works backward from a recent funding round price to derive common stock value using an option pricing model; (2) OPM (Option Pricing Method) — treats each equity class as a call option on the company's total equity value; (3) PWERM (Probability-Weighted Expected Return Method) — models multiple future scenarios (IPO, acquisition, stay private) and weights them by probability to estimate current common stock value."}},
+        {"@type":"Question","name":"How much does a 409A valuation cost?","acceptedAnswer":{"@type":"Answer","text":"Traditional 409A valuations from consulting firms cost $5,000 to $15,000 per report. AI-powered platforms like DoAide can deliver IRS-compliant 409A valuations starting free for early-stage startups, significantly reducing cost while maintaining quality and audit defensibility."}},
+        {"@type":"Question","name":"How often do you need a 409A valuation?","acceptedAnswer":{"@type":"Answer","text":"A 409A valuation is valid for up to 12 months. However, a new valuation is needed sooner if a material event occurs, such as a new funding round, significant revenue changes, M&A activity, or major shifts in business outlook. Most startups get 2-3 valuations per year."}}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Schibsted Grotesk',sans-serif;color:#E5E7EB;background:#0A0A0B;overflow-x:hidden;line-height:1.6}
+        a{color:#F0B429;text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        /* Nav */
+        .nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:20px 24px}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;text-decoration:none}
+        .nav-logo:hover{text-decoration:none}
+        .nav-logo svg{width:32px;height:32px}
+        .nav-links{display:flex;gap:24px;align-items:center}
+        .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;text-decoration:none;transition:color 0.3s}
+        .nav-links a:hover{color:#F0B429;text-decoration:none}
+        .nav-cta{background:#F0B429;color:#0A0A0B;padding:8px 20px;border-radius:8px;font-weight:600;font-size:0.8rem;transition:all 0.3s}
+        .nav-cta:hover{background:#F7CC5F;text-decoration:none}
+
+        /* Hero */
+        .hero{text-align:center;padding:60px 24px 40px;position:relative}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 60%,rgba(240,180,41,0.06) 0%,transparent 70%);pointer-events:none}
+        .hero h1{font-family:'Instrument Serif',serif;font-size:3rem;font-weight:400;color:#fff;margin-bottom:12px}
+        .hero h1 span{color:#F0B429}
+        .hero p{color:rgba(255,255,255,0.45);max-width:600px;margin:0 auto;font-size:0.95rem}
+        .badge-free{display:inline-block;background:rgba(240,180,41,0.1);border:1px solid rgba(240,180,41,0.25);color:#F0B429;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+
+        /* Calculator */
+        .calc-container{max-width:900px;margin:0 auto 60px;padding:0 24px}
+        .calc-card{background:rgba(16,16,18,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px;backdrop-filter:blur(4px)}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:0.5px;margin-bottom:6px;text-transform:uppercase}
+        .form-group input,.form-group select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;color:#fff;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;transition:border-color 0.3s;outline:none}
+        .form-group input:focus,.form-group select:focus{border-color:rgba(240,180,41,0.5)}
+        .form-group select option{background:#1a1a1c;color:#fff}
+        .form-hint{font-size:0.72rem;color:rgba(255,255,255,0.3);margin-top:4px;font-family:'IBM Plex Mono',monospace}
+
+        .calc-btn{width:100%;background:#F0B429;color:#0A0A0B;border:none;padding:14px 24px;border-radius:12px;font-family:'Schibsted Grotesk',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;margin-top:8px}
+        .calc-btn:hover{background:#F7CC5F;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,0.2)}
+
+        .results{display:none;margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}
+        .results.show{display:block}
+        .results h3{font-family:'Instrument Serif',serif;font-size:1.5rem;color:#fff;margin-bottom:20px}
+        .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .result-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px;text-align:center}
+        .result-box .method-name{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+        .result-box .value{font-family:'Instrument Serif',serif;font-size:2rem;color:#F0B429}
+        .result-box .sub{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:4px}
+        .result-note{margin-top:20px;padding:16px;background:rgba(240,180,41,0.05);border:1px solid rgba(240,180,41,0.15);border-radius:12px;font-size:0.82rem;color:rgba(255,255,255,0.5)}
+        .result-cta{display:inline-block;margin-top:20px;background:#F0B429;color:#0A0A0B;padding:12px 28px;border-radius:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s}
+        .result-cta:hover{background:#F7CC5F;text-decoration:none;transform:translateY(-2px)}
+
+        /* Content */
+        .content{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .content h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin:48px 0 16px;font-weight:400}
+        .content h3{font-family:'Instrument Serif',serif;font-size:1.4rem;color:#fff;margin:32px 0 12px;font-weight:400}
+        .content p{color:rgba(255,255,255,0.55);margin-bottom:16px;font-size:0.95rem;line-height:1.7}
+        .content ul,.content ol{color:rgba(255,255,255,0.55);margin:0 0 16px 20px;font-size:0.95rem;line-height:1.8}
+
+        /* FAQ */
+        .faq{max-width:800px;margin:0 auto 60px;padding:0 24px}
+        .faq h2{font-family:'Instrument Serif',serif;font-size:2rem;color:#fff;margin-bottom:24px;text-align:center;font-weight:400}
+        .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+        .faq-q{font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem}
+        .faq-q::after{content:'+';color:#F0B429;font-size:1.4rem;transition:transform 0.3s}
+        .faq-q.open::after{transform:rotate(45deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s;color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.7}
+        .faq-a.open{max-height:500px;padding-top:12px}
+
+        /* Footer */
+        footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,0.07);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:rgba(255,255,255,0.25)}
+        footer a{color:#F0B429;text-decoration:none}
+        .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px}
+        .footer-links a{color:rgba(255,255,255,0.35);font-size:0.7rem;letter-spacing:0.5px;transition:color 0.3s}
+        .footer-links a:hover{color:#F0B429}
+
+        @media(max-width:700px){
+            .calc-grid{grid-template-columns:1fr}
+            .result-grid{grid-template-columns:1fr}
+            .hero h1{font-size:2.2rem}
+            .nav-links{display:none}
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://doaide.com" class="nav-logo">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="6" width="22" height="17" rx="5" fill="#F0B429"/><ellipse cx="11" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><ellipse cx="21" cy="13" rx="2.5" ry="3" fill="#0A0A0B"/><circle cx="11.5" cy="12.5" r="1" fill="#F7CC5F"/><circle cx="21.5" cy="12.5" r="1" fill="#F7CC5F"/><path d="M12 19Q16 22 20 19" stroke="#0A0A0B" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+            DoAide
+        </a>
+        <div class="nav-links">
+            <a href="https://doaide.com">Home</a>
+            <a href="https://doaide.com/stock-option-tax-calculator.html">Option Tax Calculator</a>
+            <a href="https://doaide.com/cap-table-calculator.html">Cap Table</a>
+            <a href="https://409a.doaide.com" class="nav-cta">Get Full 409A Valuation</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="badge-free">Free Tool — No Login Required</div>
+        <h1>409A Valuation <span>Calculator</span></h1>
+        <p>Estimate your startup's fair market value per share using the most common 409A valuation methods — Backsolve, OPM, and PWERM.</p>
+    </section>
+
+    <div class="calc-container">
+        <div class="calc-card">
+            <div class="calc-grid">
+                <div>
+                    <div class="form-group">
+                        <label>Company Stage</label>
+                        <select id="stage">
+                            <option value="pre-revenue">Pre-Revenue</option>
+                            <option value="early-revenue">Early Revenue ($0–$1M ARR)</option>
+                            <option value="growth" selected>Growth ($1M–$10M ARR)</option>
+                            <option value="scale">Scale ($10M–$50M ARR)</option>
+                            <option value="late">Late Stage ($50M+ ARR)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Annual Revenue ($)</label>
+                        <input type="number" id="revenue" placeholder="e.g. 2000000" value="">
+                        <div class="form-hint">Current annual recurring revenue or run rate</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Funding Round Price Per Share ($)</label>
+                        <input type="number" id="ppsPrice" placeholder="e.g. 5.00" step="0.01" value="">
+                        <div class="form-hint">Price per share from most recent preferred round</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Post-Money Valuation ($)</label>
+                        <input type="number" id="postMoney" placeholder="e.g. 20000000" value="">
+                        <div class="form-hint">Post-money valuation from last funding round</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label>Total Shares Outstanding</label>
+                        <input type="number" id="totalShares" placeholder="e.g. 10000000" value="">
+                        <div class="form-hint">Fully diluted share count including option pool</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Shares</label>
+                        <input type="number" id="prefShares" placeholder="e.g. 3000000" value="">
+                        <div class="form-hint">Total preferred shares across all series</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Time Since Last Round (months)</label>
+                        <input type="number" id="monthsSince" placeholder="e.g. 6" value="" min="0" max="36">
+                    </div>
+                    <div class="form-group">
+                        <label>Expected Exit Timeline (years)</label>
+                        <select id="exitTimeline">
+                            <option value="2">2 years</option>
+                            <option value="3" selected>3 years</option>
+                            <option value="5">5 years</option>
+                            <option value="7">7+ years</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calculate()">Estimate Fair Market Value</button>
+
+            <div class="results" id="results">
+                <h3>Estimated Fair Market Value</h3>
+                <div class="result-grid">
+                    <div class="result-box">
+                        <div class="method-name">Backsolve Method</div>
+                        <div class="value" id="backsolveVal">—</div>
+                        <div class="sub">per common share</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="method-name">OPM Method</div>
+                        <div class="value" id="opmVal">—</div>
+                        <div class="sub">per common share</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="method-name">PWERM Method</div>
+                        <div class="value" id="pwermVal">—</div>
+                        <div class="sub">per common share</div>
+                    </div>
+                </div>
+                <div class="result-box" style="margin-top:16px">
+                    <div class="method-name">Weighted Average Estimate</div>
+                    <div class="value" id="avgVal">—</div>
+                    <div class="sub">blended FMV per common share</div>
+                </div>
+                <div class="result-note">
+                    <strong>Disclaimer:</strong> This is an educational estimate only and does not constitute a qualified 409A valuation. Actual 409A valuations require an independent appraiser considering your specific cap table, financial projections, market conditions, and governance rights. For an IRS-compliant 409A valuation report, use DoAide's full service.
+                </div>
+                <div style="text-align:center;margin-top:24px">
+                    <a href="https://409a.doaide.com" class="result-cta">Get a Real 409A Valuation →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content">
+        <h2>What Is a 409A Valuation?</h2>
+        <p>A 409A valuation is an independent appraisal of a private company's common stock, required under Internal Revenue Code Section 409A. It determines the <strong style="color:#F0B429">fair market value (FMV)</strong> of your company's common shares — the minimum price at which you can grant stock options without triggering severe tax penalties for your employees.</p>
+        <p>Every private company that issues stock options, restricted stock units (RSUs), or other deferred compensation must have a current 409A valuation. Without one, employees who receive below-FMV options face ordinary income tax on the spread at vesting, plus an additional 20% penalty tax under Section 409A — a devastating outcome that responsible companies must avoid.</p>
+
+        <h2>Why Your Startup Needs a 409A Valuation</h2>
+        <p>If your startup grants equity compensation, a 409A valuation is not optional — it's a legal requirement. Here's why it matters:</p>
+        <ul>
+            <li><strong>Tax compliance:</strong> Options granted below FMV trigger a 20% penalty tax plus interest for employees under IRC §409A</li>
+            <li><strong>Safe harbor protection:</strong> A qualified independent appraisal creates a legal presumption that the strike price is at or above FMV</li>
+            <li><strong>Audit defense:</strong> In an IRS audit, a proper 409A valuation shifts the burden of proof to the IRS</li>
+            <li><strong>Employee trust:</strong> Employees need confidence that their options are priced fairly and won't create surprise tax liabilities</li>
+            <li><strong>M&A readiness:</strong> Acquirers examine 409A compliance during due diligence; non-compliance can kill or delay deals</li>
+        </ul>
+
+        <h2>409A Valuation Methods Explained</h2>
+
+        <h3>Backsolve Method (Most Common for Funded Startups)</h3>
+        <p>The Backsolve method is the most widely used approach for venture-backed startups. It works backward from the price per share paid by investors in the most recent preferred stock financing to derive the fair market value of common stock.</p>
+        <p>The logic is straightforward: since the preferred stock price reflects what a willing buyer paid in an arm's-length transaction, you can mathematically "solve back" to the common stock value by accounting for the economic differences between preferred and common stock — including liquidation preferences, participation rights, and anti-dilution protections.</p>
+        <p>Typically, common stock is valued at a <strong>discount of 20% to 40%</strong> to the preferred price, reflecting the inferior economic rights and lack of marketability of common shares. This discount is known as the DLOM (Discount for Lack of Marketability).</p>
+
+        <h3>OPM — Option Pricing Method</h3>
+        <p>The Option Pricing Method treats each class of equity as a call option on the company's total enterprise value. Using a Black-Scholes framework, the OPM allocates value across preferred and common shares based on their respective claims on the company's equity at different value thresholds (breakpoints).</p>
+        <p>OPM is particularly useful for companies with complex capital structures — multiple preferred series with different liquidation preferences, participation caps, and conversion rights. It's also the preferred method when a company's future is uncertain enough that a single-scenario analysis would be misleading.</p>
+
+        <h3>PWERM — Probability-Weighted Expected Return Method</h3>
+        <p>The PWERM models multiple discrete future outcomes — such as IPO, acquisition at various valuations, or continued operation as a private company — and assigns a probability to each. The common stock value is then calculated as the probability-weighted average of the common stock payoff in each scenario, discounted back to present value.</p>
+        <p>PWERM is most appropriate for later-stage companies with more predictable trajectories, or when specific exit events (like an IPO filing or acquisition discussions) are on the horizon. It's also useful for companies that have progressed beyond what a simple OPM can reasonably model.</p>
+
+        <h2>When Do You Need a 409A Valuation?</h2>
+        <p>You need a new 409A valuation in any of these situations:</p>
+        <ul>
+            <li>Before granting your first stock options</li>
+            <li>Every 12 months (valuations expire after one year)</li>
+            <li>After any new equity financing round</li>
+            <li>After significant changes in revenue, customers, or business model</li>
+            <li>When approaching an M&A transaction or IPO</li>
+            <li>After material events like key executive departures or pivots</li>
+        </ul>
+
+        <h2>How This Calculator Works</h2>
+        <p>Our 409A valuation calculator provides educational estimates using simplified versions of the three standard valuation methods. It considers your company's stage, revenue, last funding round, share structure, and expected timeline to exit.</p>
+        <p>The <strong>Backsolve estimate</strong> applies a stage-appropriate discount to the preferred price per share. The <strong>OPM estimate</strong> uses an equity allocation model based on liquidation preferences and Black-Scholes principles. The <strong>PWERM estimate</strong> models IPO, acquisition, and stay-private scenarios weighted by probability based on your company's stage.</p>
+        <p>Remember: this calculator is for educational purposes. A legally defensible 409A valuation requires a qualified independent appraiser who examines your complete financial picture.</p>
+
+        <div style="text-align:center;margin:40px 0">
+            <a href="https://409a.doaide.com" class="result-cta">Get a Professional 409A Valuation →</a>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What is a 409A valuation?</div>
+            <div class="faq-a">A 409A valuation is an independent appraisal of a private company's common stock fair market value (FMV), required by IRC Section 409A. It determines the minimum exercise price for stock options to avoid tax penalties. Companies must obtain a new 409A valuation at least every 12 months or after a material event like a new funding round.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Why do startups need a 409A valuation?</div>
+            <div class="faq-a">Startups that grant stock options must have a 409A valuation to set the exercise (strike) price. If options are granted below FMV, employees face immediate income tax plus a 20% penalty tax under Section 409A. A qualified 409A valuation provides a safe harbor that protects both the company and employees from these penalties.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What methods are used in a 409A valuation?</div>
+            <div class="faq-a">The three most common methods are: (1) Backsolve Method — works backward from a recent funding round price to derive common stock value using an option pricing model; (2) OPM (Option Pricing Method) — treats each equity class as a call option on the company's total equity value; (3) PWERM (Probability-Weighted Expected Return Method) — models multiple future scenarios (IPO, acquisition, stay private) and weights them by probability to estimate current common stock value.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How much does a 409A valuation cost?</div>
+            <div class="faq-a">Traditional 409A valuations from consulting firms cost $5,000 to $15,000 per report. AI-powered platforms like DoAide can deliver IRS-compliant 409A valuations starting free for early-stage startups, significantly reducing cost while maintaining quality and audit defensibility.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How often do you need a 409A valuation?</div>
+            <div class="faq-a">A 409A valuation is valid for up to 12 months. However, a new valuation is needed sooner if a material event occurs, such as a new funding round, significant revenue changes, M&A activity, or major shifts in business outlook. Most startups get 2-3 valuations per year.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What happens if you don't get a 409A valuation?</div>
+            <div class="faq-a">Without a 409A valuation (or with a stale one), you lose the safe harbor protection. If the IRS determines your options were granted below FMV, your employees may owe: ordinary income tax on the spread at vesting (not exercise), a 20% additional tax penalty, and interest on underpayment. The company may also face withholding and reporting obligations it failed to meet.</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://doaide.com">DoAide Home</a>
+            <a href="https://409a.doaide.com">409A Valuations</a>
+            <a href="https://doaide.com/stock-option-tax-calculator.html">Stock Option Tax Calculator</a>
+            <a href="https://doaide.com/cap-table-calculator.html">Cap Table Calculator</a>
+        </div>
+        <p>&copy; 2026 <a href="https://doaide.com">DoAide</a> — Digital Robots for Modern Business</p>
+    </footer>
+
+    <script>
+    function calculate(){
+        var stage=document.getElementById('stage').value;
+        var revenue=parseFloat(document.getElementById('revenue').value)||0;
+        var pps=parseFloat(document.getElementById('ppsPrice').value)||0;
+        var postMoney=parseFloat(document.getElementById('postMoney').value)||0;
+        var totalShares=parseFloat(document.getElementById('totalShares').value)||0;
+        var prefShares=parseFloat(document.getElementById('prefShares').value)||0;
+        var months=parseFloat(document.getElementById('monthsSince').value)||0;
+        var exitYears=parseFloat(document.getElementById('exitTimeline').value)||3;
+
+        if(!pps&&!postMoney){alert('Please enter either the last funding round price per share or post-money valuation.');return}
+        if(!totalShares){alert('Please enter total shares outstanding.');return}
+
+        if(!pps&&postMoney)pps=postMoney/totalShares;
+        if(!postMoney&&pps)postMoney=pps*totalShares;
+
+        var commonShares=totalShares-(prefShares||0);
+
+        // Stage-based discount factors
+        var discounts={
+            'pre-revenue':{dlom:0.40,prefDisc:0.35,vol:0.80},
+            'early-revenue':{dlom:0.35,prefDisc:0.30,vol:0.70},
+            'growth':{dlom:0.30,prefDisc:0.25,vol:0.60},
+            'scale':{dlom:0.25,prefDisc:0.20,vol:0.50},
+            'late':{dlom:0.20,prefDisc:0.15,vol:0.40}
+        };
+        var d=discounts[stage];
+
+        // Time decay: slight appreciation if time since round and revenue growing
+        var timeFactor=1+(months/12)*0.05;
+
+        // 1. Backsolve: PPS * (1 - preferred discount) * (1 - DLOM) * time factor
+        var backsolve=pps*(1-d.prefDisc)*(1-d.dlom)*timeFactor;
+
+        // 2. OPM: Allocate enterprise value using simplified option model
+        var eqValue=postMoney*timeFactor;
+        var prefLiqPref=prefShares*pps;  // 1x liquidation preference
+        var remainingValue=Math.max(0,eqValue-prefLiqPref);
+        // Common gets remaining value split among common + converted preferred
+        var commonValue=remainingValue*(commonShares/totalShares);
+        var opmPerShare=(commonValue/commonShares)*(1-d.dlom);
+        if(!commonShares)opmPerShare=0;
+
+        // 3. PWERM: Model 3 scenarios
+        var scenarios;
+        if(stage==='pre-revenue'){
+            scenarios=[
+                {name:'IPO',prob:0.05,multiple:10},
+                {name:'Acquisition',prob:0.30,multiple:2.5},
+                {name:'Stay Private',prob:0.65,multiple:1.0}
+            ];
+        }else if(stage==='early-revenue'){
+            scenarios=[
+                {name:'IPO',prob:0.10,multiple:8},
+                {name:'Acquisition',prob:0.35,multiple:3.0},
+                {name:'Stay Private',prob:0.55,multiple:1.2}
+            ];
+        }else if(stage==='growth'){
+            scenarios=[
+                {name:'IPO',prob:0.20,multiple:6},
+                {name:'Acquisition',prob:0.40,multiple:3.5},
+                {name:'Stay Private',prob:0.40,multiple:1.5}
+            ];
+        }else if(stage==='scale'){
+            scenarios=[
+                {name:'IPO',prob:0.30,multiple:4},
+                {name:'Acquisition',prob:0.40,multiple:3.0},
+                {name:'Stay Private',prob:0.30,multiple:1.8}
+            ];
+        }else{
+            scenarios=[
+                {name:'IPO',prob:0.40,multiple:3},
+                {name:'Acquisition',prob:0.35,multiple:2.5},
+                {name:'Stay Private',prob:0.25,multiple:2.0}
+            ];
+        }
+
+        var discountRate=0.25; // Typical risk-adjusted rate for startups
+        var pwermValue=0;
+        for(var i=0;i<scenarios.length;i++){
+            var s=scenarios[i];
+            var futureEV=postMoney*s.multiple;
+            var futureCommonVal=Math.max(0,futureEV-prefLiqPref)*(commonShares/totalShares);
+            var presentVal=futureCommonVal/Math.pow(1+discountRate,exitYears);
+            pwermValue+=s.prob*(presentVal/commonShares);
+        }
+        pwermValue*=(1-d.dlom);
+        if(!commonShares)pwermValue=0;
+
+        var avg=(backsolve+opmPerShare+pwermValue)/3;
+
+        document.getElementById('backsolveVal').textContent='$'+backsolve.toFixed(2);
+        document.getElementById('opmVal').textContent='$'+opmPerShare.toFixed(2);
+        document.getElementById('pwermVal').textContent='$'+pwermValue.toFixed(2);
+        document.getElementById('avgVal').textContent='$'+avg.toFixed(2);
+        document.getElementById('results').classList.add('show');
+        document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    function toggleFaq(el){
+        el.classList.toggle('open');
+        el.nextElementSibling.classList.toggle('open');
+    }
+    </script>
+</body>
+</html>

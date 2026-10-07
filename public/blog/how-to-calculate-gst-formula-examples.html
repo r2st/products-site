@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calculate GST: Formula, Examples & Free Online Calculator | DoAide</title>
+    <meta name="description" content="Learn how to calculate GST with simple formulas and worked examples. GST inclusive and exclusive calculations, CGST/SGST/IGST split, discount rules, and free online GST calculator.">
+    <meta name="keywords" content="GST calculation formula, how to calculate GST, GST calculator, GST inclusive exclusive, CGST SGST calculation, GST percentage calculator, calculate GST from total">
+    <meta name="author" content="DoAide">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://doaide.com/blog/how-to-calculate-gst-formula-examples.html">
+
+    <meta property="og:title" content="How to Calculate GST: Formula, Examples & Free Online Calculator">
+    <meta property="og:description" content="Learn GST calculation with simple formulas, worked examples for all slabs, CGST/SGST/IGST split, and a free online calculator.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://doaide.com/blog/how-to-calculate-gst-formula-examples.html">
+    <meta property="og:site_name" content="DoAide">
+    <meta property="og:locale" content="en_IN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Calculate GST: Formula, Examples & Free Calculator">
+    <meta name="twitter:description" content="Simple GST calculation formulas with worked examples for all slabs. Inclusive, exclusive, CGST/SGST/IGST split explained.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Calculate GST: Formula, Examples & Free Online Calculator",
+        "description": "Learn how to calculate GST with simple formulas and worked examples. GST inclusive and exclusive calculations, CGST/SGST/IGST split, discount rules, and free online calculator.",
+        "author": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" },
+        "publisher": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://doaide.com/blog/how-to-calculate-gst-formula-examples.html" },
+        "keywords": "GST calculation formula, how to calculate GST, GST calculator, GST inclusive exclusive, CGST SGST calculation"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate GST from the total amount (inclusive)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To extract GST from a GST-inclusive total, use the formula: GST Amount = Total Price × GST Rate ÷ (100 + GST Rate). For example, if the total price is Rs 1,180 and the GST rate is 18%, the GST amount is 1,180 × 18 ÷ 118 = Rs 180, and the base price is 1,180 - 180 = Rs 1,000."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the formula to add GST to a price?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To add GST to a base price, use: Total Price = Base Price × (1 + GST Rate ÷ 100). For example, for a product priced at Rs 1,000 with 18% GST: Total = 1,000 × 1.18 = Rs 1,180. The GST amount is Rs 180 (split into Rs 90 CGST + Rs 90 SGST for intra-state supply)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is GST calculated on discounted prices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If the discount is given before or at the time of supply and recorded on the invoice, GST is calculated on the discounted price. For example, a Rs 1,000 product with a 10% discount: GST is calculated on Rs 900 (after discount), not Rs 1,000. However, post-supply discounts require a credit note and the supplier must reverse the proportional ITC."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between CGST, SGST, and IGST?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CGST (Central GST) and SGST (State GST) are charged on intra-state supplies (within the same state) — each is half the total GST rate. IGST (Integrated GST) is charged on inter-state supplies (between different states) and equals the full GST rate. For example, 18% GST on an intra-state supply splits into 9% CGST + 9% SGST, while inter-state it's charged as 18% IGST."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is GST calculated on the MRP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, GST is not calculated on the MRP (Maximum Retail Price). GST is calculated on the actual transaction value — the price at which the goods are sold to the buyer. The MRP is already inclusive of all taxes including GST. If you are selling below MRP (which is common in wholesale), GST applies to your actual selling price, not the MRP printed on the product."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0b; --bg-secondary: #111114; --bg-tertiary: #1a1a1f; --bg-card: #15151a;
+            --text-primary: #edeff5; --text-secondary: #9aa1b2; --text-muted: #6b7280;
+            --accent: #f0b429; --accent-dim: rgba(240, 180, 41, 0.15); --accent-border: rgba(240, 180, 41, 0.3);
+            --border: #2a2a32; --border-light: #1f1f27; --success: #34d399; --danger: #f87171;
+            --font-heading: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Schibsted Grotesk', -apple-system, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+        .site-header { border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(17, 17, 20, 0.85); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: var(--font-heading); font-size: 26px; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a.cta-link { color: var(--accent); }
+        .nav-links a.cta-link:hover { color: #ffc940; }
+        .breadcrumb { max-width: 780px; margin: 0 auto; padding: 20px 24px 0; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+        .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+        .article-container { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+        .article-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 16px; display: flex; gap: 20px; flex-wrap: wrap; }
+        .article-meta time { color: var(--text-secondary); }
+        h1 { font-family: var(--font-heading); font-size: clamp(32px, 5vw, 48px); line-height: 1.15; color: var(--text-primary); margin-bottom: 24px; letter-spacing: -0.02em; font-weight: 400; }
+        .article-intro { font-size: 19px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px; border-left: 3px solid var(--accent); padding-left: 20px; }
+        h2 { font-family: var(--font-heading); font-size: 30px; color: var(--text-primary); margin-top: 56px; margin-bottom: 20px; letter-spacing: -0.01em; font-weight: 400; }
+        h3 { font-family: var(--font-body); font-size: 20px; font-weight: 600; color: var(--text-primary); margin-top: 36px; margin-bottom: 14px; }
+        p { margin-bottom: 18px; color: var(--text-secondary); }
+        strong { color: var(--text-primary); font-weight: 600; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .table-wrapper { overflow-x: auto; margin: 28px 0; border-radius: 10px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        thead { background: var(--bg-tertiary); }
+        thead th { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); padding: 14px 16px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--border); }
+        tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); color: var(--text-secondary); vertical-align: top; }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: rgba(240, 180, 41, 0.04); }
+        td.formula { font-family: var(--font-mono); font-size: 14px; color: var(--accent); }
+        .info-box { background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+        .info-box p { color: var(--text-primary); margin-bottom: 0; }
+        .info-box .label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 8px; }
+        .warning-box { background: rgba(248, 113, 113, 0.08); border: 1px solid rgba(248, 113, 113, 0.25); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+        .warning-box .label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--danger); margin-bottom: 8px; }
+        .warning-box p { color: var(--text-primary); margin-bottom: 0; }
+        ul, ol { margin-bottom: 18px; padding-left: 24px; }
+        li { color: var(--text-secondary); margin-bottom: 8px; }
+        li strong { color: var(--text-primary); }
+        .cta-section { background: linear-gradient(135deg, rgba(240, 180, 41, 0.12) 0%, rgba(240, 180, 41, 0.04) 100%); border: 1px solid var(--accent-border); border-radius: 14px; padding: 40px; margin: 48px 0; text-align: center; }
+        .cta-section h2 { margin-top: 0; font-size: 28px; }
+        .cta-section p { color: var(--text-secondary); max-width: 520px; margin: 0 auto 24px; }
+        .cta-button { display: inline-block; background: var(--accent); color: #0a0a0b; font-family: var(--font-body); font-weight: 600; font-size: 16px; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+        .cta-button:hover { background: #ffc940; text-decoration: none; transform: translateY(-1px); }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+        .faq-question { background: var(--bg-card); padding: 18px 24px; font-weight: 600; color: var(--text-primary); cursor: default; }
+        .faq-answer { padding: 0 24px 18px; background: var(--bg-card); }
+        .faq-answer p { margin-bottom: 0; }
+        .tips-list { list-style: none; padding-left: 0; counter-reset: tip-counter; }
+        .tips-list li { counter-increment: tip-counter; padding: 16px 20px 16px 56px; position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; }
+        .tips-list li::before { content: counter(tip-counter); position: absolute; left: 18px; top: 16px; width: 26px; height: 26px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--accent); text-align: center; line-height: 26px; }
+        .site-footer { border-top: 1px solid var(--border); background: var(--bg-secondary); padding: 48px 24px; text-align: center; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); }
+        @media (max-width: 640px) {
+            .header-inner { padding: 0 16px; }
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 14px; }
+            .article-container { padding: 28px 16px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 24px; }
+            .article-intro { font-size: 17px; }
+            table { font-size: 13px; }
+            thead th, tbody td { padding: 10px 12px; }
+            .cta-section { padding: 28px 20px; }
+            .tips-list li { padding-left: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://doaide.com">Home</a></li>
+                    <li><a href="https://doaide.com/blog">Blog</a></li>
+                    <li><a href="https://gst.doaide.com/calculator" class="cta-link">GST Calculator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://doaide.com">Home</a>
+        <span>/</span>
+        <a href="https://doaide.com/blog">Blog</a>
+        <span>/</span>
+        How to Calculate GST
+    </nav>
+
+    <article class="article-container">
+
+        <div class="article-meta">
+            <span>Published <time datetime="2026-10-06">October 6, 2026</time></span>
+            <span>10 min read</span>
+        </div>
+
+        <h1>How to Calculate GST: Formula, Examples &amp; Free Calculator</h1>
+
+        <p class="article-intro">
+            Whether you are a business owner preparing invoices, an accountant reconciling returns, or a consumer trying to understand your bill, knowing how to calculate GST is essential. This guide covers every GST calculation scenario you will encounter &mdash; adding GST to a price, extracting GST from a total, splitting between CGST/SGST/IGST, handling discounts, and calculating cess. Each formula comes with worked examples so you can apply them immediately.
+        </p>
+
+        <h2>Understanding GST Rates in India</h2>
+
+        <p>
+            India's GST system has five main tax slabs. The rate that applies to a product or service depends on its <a href="https://gst.doaide.com/hsn">HSN or SAC code</a> classification:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>GST Rate</th>
+                        <th>Common Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>0% (Exempt)</strong></td>
+                        <td>Fresh milk, fresh vegetables, fresh fruits, wheat, rice (unbranded), bread, salt, printed books, newspapers, education, healthcare</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5%</strong></td>
+                        <td>Packaged food items, sugar, tea, coffee, edible oils, coal, domestic LPG, economy class air travel, cab rides, branded rice and flour</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12%</strong></td>
+                        <td>Medicines, mobile phones, notebooks, frozen vegetables, butter, ghee, fruit juices, business class air travel, restaurant services (non-AC)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>18%</strong></td>
+                        <td>Most goods and services: laptops, printers, electronics, steel, cement paint, shampoo, IT services, telecom, financial services, restaurant services (AC)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>28%</strong></td>
+                        <td>Luxury and demerit goods: cars, motorcycles, air conditioners, cement, aerated drinks, dishwashers, tobacco products, pan masala</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Compensation Cess</div>
+            <p>Certain luxury and demerit goods in the 28% slab also attract <strong>Compensation Cess</strong> on top of GST. For example, large cars attract 15&ndash;22% cess, tobacco products attract specific cess rates, and aerated beverages attract 12% cess. The cess is calculated on the taxable value, not on the GST amount.</p>
+        </div>
+
+        <h2>GST Calculation Formulas</h2>
+
+        <p>
+            There are two fundamental GST calculations: adding GST to a base price (exclusive) and extracting GST from a total price (inclusive). Every other GST calculation is a variation of these two.
+        </p>
+
+        <h3>Formula 1: Adding GST to a Price (GST Exclusive)</h3>
+
+        <p>
+            When you know the base price before tax and need to calculate the total price including GST:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>What You Need</th>
+                        <th>Formula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GST Amount</strong></td>
+                        <td class="formula">GST = Base Price &times; GST Rate &divide; 100</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Price (with GST)</strong></td>
+                        <td class="formula">Total = Base Price &times; (1 + GST Rate &divide; 100)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Worked Example:</strong> A laptop costs Rs 50,000 before GST. The GST rate for laptops (HSN 8471) is 18%.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Base Price</td>
+                        <td>&mdash;</td>
+                        <td><strong>Rs 50,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>GST Amount (18%)</td>
+                        <td>50,000 &times; 18 &divide; 100</td>
+                        <td><strong>Rs 9,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Total Price</td>
+                        <td>50,000 + 9,000</td>
+                        <td><strong>Rs 59,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Formula 2: Removing GST from a Price (GST Inclusive)</h3>
+
+        <p>
+            When you have the total price that already includes GST and need to find the base price and GST component:
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>What You Need</th>
+                        <th>Formula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Base Price (without GST)</strong></td>
+                        <td class="formula">Base = Total &times; 100 &divide; (100 + GST Rate)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GST Amount</strong></td>
+                        <td class="formula">GST = Total &times; GST Rate &divide; (100 + GST Rate)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Worked Example:</strong> A bill shows Rs 59,000 inclusive of 18% GST. What is the base price and GST amount?</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Total Price (GST inclusive)</td>
+                        <td>&mdash;</td>
+                        <td><strong>Rs 59,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Base Price</td>
+                        <td>59,000 &times; 100 &divide; 118</td>
+                        <td><strong>Rs 50,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>GST Amount</td>
+                        <td>59,000 &times; 18 &divide; 118</td>
+                        <td><strong>Rs 9,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Quick Reference</div>
+            <p><strong>To add GST:</strong> Multiply by (1 + rate/100). For 18% GST, multiply by 1.18.<br>
+            <strong>To remove GST:</strong> Divide by (1 + rate/100). For 18% GST, divide by 1.18.<br>
+            Use the <a href="https://gst.doaide.com/calculator">DoAide GST Calculator</a> for instant calculations at any rate.</p>
+        </div>
+
+        <h2>CGST, SGST, and IGST Calculation</h2>
+
+        <p>
+            GST in India is a dual tax system. The total GST rate is split into two components depending on whether the supply is within the same state (intra-state) or between different states (inter-state):
+        </p>
+
+        <ul>
+            <li><strong>Intra-state supply</strong> (buyer and seller in the same state): Total GST is split equally into <strong>CGST</strong> (Central GST, goes to central government) and <strong>SGST</strong> (State GST, goes to state government).</li>
+            <li><strong>Inter-state supply</strong> (buyer and seller in different states): The full GST is charged as <strong>IGST</strong> (Integrated GST, collected by central government and shared with the destination state).</li>
+        </ul>
+
+        <h3>Intra-State Supply Example</h3>
+
+        <p>A Mumbai-based seller supplies goods worth Rs 10,000 to a buyer also in Maharashtra. GST rate is 18%.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Rate</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Taxable Value</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td><strong>Rs 10,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>CGST</td>
+                        <td>9%</td>
+                        <td>10,000 &times; 9%</td>
+                        <td><strong>Rs 900</strong></td>
+                    </tr>
+                    <tr>
+                        <td>SGST</td>
+                        <td>9%</td>
+                        <td>10,000 &times; 9%</td>
+                        <td><strong>Rs 900</strong></td>
+                    </tr>
+                    <tr>
+                        <td>IGST</td>
+                        <td>&mdash;</td>
+                        <td>Not applicable (same state)</td>
+                        <td><strong>Rs 0</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Invoice</strong></td>
+                        <td>&mdash;</td>
+                        <td>10,000 + 900 + 900</td>
+                        <td><strong>Rs 11,800</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Inter-State Supply Example</h3>
+
+        <p>The same Mumbai seller supplies goods worth Rs 10,000 to a buyer in Karnataka. GST rate is 18%.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Rate</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Taxable Value</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td><strong>Rs 10,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>CGST</td>
+                        <td>&mdash;</td>
+                        <td>Not applicable (different states)</td>
+                        <td><strong>Rs 0</strong></td>
+                    </tr>
+                    <tr>
+                        <td>SGST</td>
+                        <td>&mdash;</td>
+                        <td>Not applicable (different states)</td>
+                        <td><strong>Rs 0</strong></td>
+                    </tr>
+                    <tr>
+                        <td>IGST</td>
+                        <td>18%</td>
+                        <td>10,000 &times; 18%</td>
+                        <td><strong>Rs 1,800</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Invoice</strong></td>
+                        <td>&mdash;</td>
+                        <td>10,000 + 1,800</td>
+                        <td><strong>Rs 11,800</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="warning-box">
+            <div class="label">Common Mistake</div>
+            <p>The total amount is the same in both cases (Rs 11,800), but the tax split is different. Charging IGST on an intra-state supply (or CGST+SGST on an inter-state supply) is an error that creates reconciliation issues in GSTR-1 filing. The place of supply determines which type of GST applies &mdash; use your <a href="https://gst.doaide.com/lookup">GSTINs</a> to determine the correct split.</p>
+        </div>
+
+        <h2>GST Calculation Examples for Common Scenarios</h2>
+
+        <h3>Example 1: Restaurant Bill (5% GST)</h3>
+
+        <p>You dine at a restaurant that is not in a hotel with room tariff above Rs 7,500. The food bill is Rs 2,000. Restaurants with aggregate turnover up to Rs 1.5 crore under composition scheme charge 5% GST with no ITC.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Food Value</td><td>&mdash;</td><td><strong>Rs 2,000</strong></td></tr>
+                    <tr><td>CGST (2.5%)</td><td>2,000 &times; 2.5%</td><td><strong>Rs 50</strong></td></tr>
+                    <tr><td>SGST (2.5%)</td><td>2,000 &times; 2.5%</td><td><strong>Rs 50</strong></td></tr>
+                    <tr><td><strong>Total Bill</strong></td><td>2,000 + 50 + 50</td><td><strong>Rs 2,100</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Example 2: Electronics Purchase (18% GST, Inter-State)</h3>
+
+        <p>A business in Delhi purchases a printer (HSN 8443) worth Rs 15,000 from a supplier in Gujarat.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Printer (Taxable Value)</td><td>&mdash;</td><td><strong>Rs 15,000</strong></td></tr>
+                    <tr><td>IGST (18%)</td><td>15,000 &times; 18%</td><td><strong>Rs 2,700</strong></td></tr>
+                    <tr><td><strong>Total Invoice</strong></td><td>15,000 + 2,700</td><td><strong>Rs 17,700</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Example 3: Luxury Car (28% GST + 15% Cess)</h3>
+
+        <p>A luxury sedan with an ex-showroom price of Rs 25,00,000. Cars with engine capacity above 1500cc attract 28% GST plus 15% Compensation Cess.</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ex-Showroom Price</td><td>&mdash;</td><td><strong>Rs 25,00,000</strong></td></tr>
+                    <tr><td>GST (28%)</td><td>25,00,000 &times; 28%</td><td><strong>Rs 7,00,000</strong></td></tr>
+                    <tr><td>Cess (15%)</td><td>25,00,000 &times; 15%</td><td><strong>Rs 3,75,000</strong></td></tr>
+                    <tr><td><strong>On-Road Price (approx.)</strong></td><td>25,00,000 + 7,00,000 + 3,75,000</td><td><strong>Rs 35,75,000</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Example 4: Professional Services (18% GST)</h3>
+
+        <p>A chartered accountant in Bangalore bills Rs 50,000 for audit services to a client in Chennai (inter-state).</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Professional Fees</td><td>&mdash;</td><td><strong>Rs 50,000</strong></td></tr>
+                    <tr><td>IGST (18%)</td><td>50,000 &times; 18%</td><td><strong>Rs 9,000</strong></td></tr>
+                    <tr><td><strong>Total Invoice</strong></td><td>50,000 + 9,000</td><td><strong>Rs 59,000</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            The client (if GST-registered) can claim the Rs 9,000 IGST as Input Tax Credit. The CA must issue a proper <a href="https://invoice.doaide.com">tax invoice</a> with SAC code 998221 to enable this.
+        </p>
+
+        <h2>GST Calculation on Discounts</h2>
+
+        <p>
+            How discounts affect GST calculation depends on <strong>when</strong> the discount is given:
+        </p>
+
+        <h3>Pre-Supply Discount (Before or at the Time of Supply)</h3>
+
+        <p>
+            If the discount is offered before or at the time of supply and is recorded on the invoice, <strong>GST is calculated on the discounted price</strong>. This is the most common scenario.
+        </p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Calculation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Original Price</td><td>&mdash;</td><td><strong>Rs 10,000</strong></td></tr>
+                    <tr><td>Discount (10%)</td><td>10,000 &times; 10%</td><td><strong>- Rs 1,000</strong></td></tr>
+                    <tr><td>Taxable Value</td><td>10,000 - 1,000</td><td><strong>Rs 9,000</strong></td></tr>
+                    <tr><td>GST (18%)</td><td>9,000 &times; 18%</td><td><strong>Rs 1,620</strong></td></tr>
+                    <tr><td><strong>Total</strong></td><td>9,000 + 1,620</td><td><strong>Rs 10,620</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Post-Supply Discount (After the Invoice is Issued)</h3>
+
+        <p>
+            If a discount is given after the supply (e.g., year-end volume discount), the original invoice stands as is. The supplier must issue a <strong>credit note</strong> for the discount amount, and the recipient must reverse the proportional ITC. The discount must be linked to the original invoice and the recipient must have accepted the credit note.
+        </p>
+
+        <div class="info-box">
+            <div class="label">Discount Rule</div>
+            <p>For post-supply discounts to be excluded from the taxable value, three conditions must be met under Section 15(3) of the CGST Act: (1) the discount must be established by agreement before or at the time of supply, (2) the discount must be linked to specific invoices, and (3) the recipient must reverse the proportional ITC. If any condition is not met, GST remains payable on the full undiscounted value.</p>
+        </div>
+
+        <h2>Use DoAide's Free GST Calculator</h2>
+
+        <p>
+            Instead of calculating manually, use <a href="https://gst.doaide.com/calculator">DoAide's free GST Calculator</a> for instant, accurate calculations. The tool supports:
+        </p>
+
+        <ul>
+            <li><strong>All GST rates:</strong> Calculate at 5%, 12%, 18%, 28%, or any custom rate</li>
+            <li><strong>Both directions:</strong> Add GST to a price or extract GST from a total</li>
+            <li><strong>Tax split:</strong> Automatically shows CGST + SGST or IGST breakdown</li>
+            <li><strong>Cess calculation:</strong> Add compensation cess for luxury and demerit goods</li>
+            <li><strong>Bulk calculation:</strong> Calculate GST on multiple items at different rates</li>
+        </ul>
+
+        <p>
+            The calculator works directly in your browser with no sign-up required. Pair it with the <a href="https://gst.doaide.com/hsn">HSN Code Search</a> to find the correct GST rate, then generate a compliant <a href="https://invoice.doaide.com">tax invoice</a> with the calculated amounts.
+        </p>
+
+        <div class="cta-section">
+            <h2>Calculate GST Instantly &mdash; Free Tool</h2>
+            <p>Skip the manual math. DoAide's GST Calculator handles all rates, CGST/SGST/IGST split, and cess calculations instantly. No sign-up needed.</p>
+            <a href="https://gst.doaide.com/calculator" class="cta-button">Open GST Calculator &rarr;</a>
+        </div>
+
+        <h2>GST Calculation Quick Reference</h2>
+
+        <p>Here are the multiplication factors for quick mental math at each GST rate:</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>GST Rate</th>
+                        <th>To Add GST (multiply by)</th>
+                        <th>To Remove GST (divide by)</th>
+                        <th>CGST + SGST Split</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>5%</strong></td><td class="formula">1.05</td><td class="formula">1.05</td><td>2.5% + 2.5%</td></tr>
+                    <tr><td><strong>12%</strong></td><td class="formula">1.12</td><td class="formula">1.12</td><td>6% + 6%</td></tr>
+                    <tr><td><strong>18%</strong></td><td class="formula">1.18</td><td class="formula">1.18</td><td>9% + 9%</td></tr>
+                    <tr><td><strong>28%</strong></td><td class="formula">1.28</td><td class="formula">1.28</td><td>14% + 14%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I calculate GST from the total amount (inclusive)?</div>
+            <div class="faq-answer">
+                <p>Use the formula: GST Amount = Total Price &times; GST Rate &divide; (100 + GST Rate). For example, if the total is Rs 1,180 at 18% GST: GST = 1,180 &times; 18 &divide; 118 = Rs 180. The base price is 1,180 - 180 = Rs 1,000. Or use the <a href="https://gst.doaide.com/calculator">DoAide GST Calculator</a> for instant results.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the formula to add GST to a price?</div>
+            <div class="faq-answer">
+                <p>Total Price = Base Price &times; (1 + GST Rate &divide; 100). For a product at Rs 1,000 with 18% GST: Total = 1,000 &times; 1.18 = Rs 1,180. The GST amount is Rs 180, split into Rs 90 CGST + Rs 90 SGST for intra-state supply, or Rs 180 IGST for inter-state.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How is GST calculated on discounted prices?</div>
+            <div class="faq-answer">
+                <p>If the discount is given before or at the time of supply and shown on the invoice, GST is calculated on the discounted price. For a Rs 1,000 product with a 10% discount: GST applies to Rs 900, not Rs 1,000. Post-supply discounts require a credit note and proportional ITC reversal by the recipient.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the difference between CGST, SGST, and IGST?</div>
+            <div class="faq-answer">
+                <p>CGST and SGST are charged on intra-state supplies (within the same state) &mdash; each is half the total GST rate. IGST is charged on inter-state supplies (between different states) and equals the full GST rate. For 18% GST intra-state: 9% CGST + 9% SGST. For inter-state: 18% IGST. The total tax amount is identical either way.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is GST calculated on the MRP?</div>
+            <div class="faq-answer">
+                <p>No. GST is calculated on the actual transaction value (the selling price), not the MRP. The MRP printed on products is already inclusive of all taxes. If you sell below MRP (common in wholesale), GST applies to your actual selling price. The <a href="https://gst.doaide.com/calculator">GST Calculator</a> can help you determine the exact tax on any transaction value.</p>
+            </div>
+        </div>
+
+    </article>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://doaide.com">Home</a>
+                <a href="https://doaide.com/blog">Blog</a>
+                <a href="https://gst.doaide.com/calculator">GST Calculator</a>
+                <a href="https://gst.doaide.com">GST Bot</a>
+                <a href="https://gst.doaide.com/hsn">HSN Search</a>
+                <a href="https://gst.doaide.com/lookup">GSTIN Lookup</a>
+                <a href="https://invoice.doaide.com">Invoice Generator</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 DoAide. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
