@@ -27,7 +27,7 @@
   --text-3: #656c7e;
   --text-4: #434959;
 
-  /* The spectrum. Order matters. */
+  /* The nine. Order matters — this is the spectrum. */
   --p1: #2dd4bf;
   --p2: #f0b429;
   --p3: #fb7185;
@@ -37,17 +37,14 @@
   --p7: #f472b6;
   --p8: #fb923c;
   --p9: #818cf8;
-  --p10: #22d3ee;
-  --p11: #facc15;
 
   /* Default accent — overridden per product via inline custom property */
   --accent: var(--p5);
 
   --spectrum: linear-gradient(
     90deg,
-    var(--p1) 0%, var(--p2) 9%, var(--p3) 18%, var(--p4) 27%,
-    var(--p5) 36%, var(--p6) 45%, var(--p7) 54%, var(--p8) 63%,
-    var(--p9) 72%, var(--p10) 81%, var(--p11) 100%
+    var(--p1) 0%, var(--p2) 12.5%, var(--p3) 25%, var(--p4) 37.5%,
+    var(--p5) 50%, var(--p6) 62.5%, var(--p7) 75%, var(--p8) 87.5%, var(--p9) 100%
   );
 
   /* Fonts */
@@ -1410,6 +1407,11 @@ h1, h2, h3, h4 {
   }
   .rv { opacity: 1; transform: none; }
 }
+
+/* Ad containers */
+.doaide-ad { position: relative; z-index: 2; }
+.doaide-ad ins { background: transparent; }
+@media print { .doaide-ad { display: none; } }
 
 @media print {
   .field, .grain, .header, .band, .pn { display: none; }

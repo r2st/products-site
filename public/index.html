@@ -196,48 +196,29 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 }
 
 /* ---- Hero ---- */
-.hero{position:relative;z-index:2;padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem);text-align:center}
-.hero__badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.15);font-size:.8125rem;font-weight:500;color:var(--accent-teal);margin-bottom:1.5rem}
+.hero{position:relative;z-index:2;padding:clamp(5rem,12vw,10rem) 0 clamp(4rem,8vw,7rem);text-align:center}
+.hero__badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.15);font-size:.8125rem;font-weight:500;color:var(--accent-teal);margin-bottom:2rem}
 .hero__badge span{width:6px;height:6px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-.hero h1{font-size:clamp(2.25rem,6.5vw,4.5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;max-width:900px;margin:0 auto .5em;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero__sub{font-size:clamp(1.0625rem,2.2vw,1.25rem);color:var(--text-secondary);max-width:620px;margin:0 auto 2rem;line-height:1.6}
+.hero h1{font-size:clamp(2.5rem,7vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;max-width:900px;margin:0 auto .5em;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero__sub{font-size:clamp(1.125rem,2.5vw,1.375rem);color:var(--text-secondary);max-width:680px;margin:0 auto 2.5rem;line-height:1.6}
+.hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
 
-/* ---- Hero Search Bar ---- */
-.hero-search{max-width:640px;margin:0 auto 1.75rem;position:relative}
-.hero-search__input{width:100%;padding:1rem 1.25rem 1rem 3.25rem;border-radius:999px;border:2px solid rgba(45,212,191,.2);background:rgba(12,13,18,.9);color:var(--text-primary);font-size:1.0625rem;font-family:inherit;outline:none;transition:border-color .25s,box-shadow .25s}
-.hero-search__input:focus{border-color:var(--accent-teal);box-shadow:0 0 0 4px rgba(45,212,191,.1),0 8px 32px rgba(0,0,0,.4)}
-.hero-search__input::placeholder{color:transparent}
-.hero-search__icon{position:absolute;left:1.125rem;top:50%;transform:translateY(-50%);color:var(--accent-teal);pointer-events:none}
-.hero-search__typing{position:absolute;left:3.25rem;top:50%;transform:translateY(-50%);color:var(--text-tertiary);font-size:1.0625rem;pointer-events:none;white-space:nowrap;overflow:hidden}
-.hero-search__input:focus~.hero-search__typing,.hero-search__input:not(:placeholder-shown)~.hero-search__typing{display:none}
-.hero-search__results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--bg-card);border:1px solid var(--border-hover);border-radius:var(--radius);padding:.5rem;box-shadow:0 20px 40px rgba(0,0,0,.5);max-height:320px;overflow-y:auto;z-index:10}
-.hero-search__results.active{display:block}
-.hero-search__result{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:8px;cursor:pointer;transition:background .15s}
-.hero-search__result:hover{background:var(--bg-card-hover)}
-.hero-search__result-icon{font-size:1.25rem;flex-shrink:0}
-.hero-search__result-info{flex:1;min-width:0}
-.hero-search__result-name{font-weight:600;font-size:.9375rem}
-.hero-search__result-desc{font-size:.8125rem;color:var(--text-tertiary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.hero-search__result-badge{font-size:.6875rem;font-weight:600;padding:.125rem .5rem;border-radius:999px;background:rgba(74,222,128,.1);color:var(--accent-green);flex-shrink:0}
-
-/* ---- Quick access buttons ---- */
-.hero__quick{display:flex;gap:.625rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
-.hero__quick-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.125rem;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--border-hover);font-size:.8125rem;font-weight:600;color:var(--text-primary);transition:all .25s}
-.hero__quick-btn:hover{background:rgba(45,212,191,.1);border-color:rgba(45,212,191,.25);transform:translateY(-2px)}
-.hero__quick-btn span{font-size:1rem}
-
-/* ---- Trust bar ---- */
-.trust-bar{text-align:center;margin-bottom:2rem}
-.trust-bar__text{font-size:.875rem;color:var(--text-tertiary);font-weight:500}
-.trust-bar__text strong{color:var(--text-secondary)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:999px;font-weight:600;font-size:.9375rem;transition:all .25s ease;cursor:pointer}
+.btn--primary{background:var(--gradient-main);color:#050507;box-shadow:0 0 30px rgba(45,212,191,.2),0 0 60px rgba(56,189,248,.1)}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(45,212,191,.3),0 0 80px rgba(56,189,248,.15)}
+.btn--secondary{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hover)}
+.btn--secondary:hover{background:var(--bg-card-hover);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.btn--sm{padding:.5rem 1.25rem;font-size:.8125rem}
+.btn--accent{background:var(--cat-color,var(--accent-teal));color:#050507}
+.btn--accent:hover{filter:brightness(1.15);transform:translateY(-1px)}
 
 /* ---- Stats bar ---- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:800px;margin:0 auto}
-.stat{background:var(--bg-card);padding:1.5rem 1rem;text-align:center}
-.stat__n{font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;letter-spacing:-.03em;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat__l{font-size:.6875rem;color:var(--text-tertiary);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.stat{background:var(--bg-card);padding:1.75rem 1rem;text-align:center}
+.stat__n{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;letter-spacing:-.03em;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat__l{font-size:.75rem;color:var(--text-tertiary);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
 @media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
 
 /* ---- Section commons ---- */
@@ -247,54 +228,43 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .section__title{font-size:clamp(1.75rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.15}
 .section__sub{font-size:1.0625rem;color:var(--text-secondary);max-width:600px;margin:.75rem auto 0}
 
-/* ---- Featured tools ---- */
-.featured{position:relative;z-index:2;padding:clamp(3rem,6vw,5rem) 0}
-.featured__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-@media(max-width:800px){.featured__grid{grid-template-columns:1fr}}
-.featured-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
-.featured-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent-teal))}
-.featured-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
-.featured-card__icon{font-size:2rem;margin-bottom:1rem}
-.featured-card__name{font-size:1.25rem;font-weight:700;margin-bottom:.375rem}
-.featured-card__desc{font-size:.875rem;color:var(--text-secondary);line-height:1.55;margin-bottom:1rem}
-.featured-card__stats{display:flex;gap:1.5rem;margin-bottom:1.25rem}
-.featured-card__stat{font-size:.75rem;color:var(--text-tertiary)}
-.featured-card__stat strong{color:var(--text-secondary);font-weight:700}
-.featured-card__cta{display:inline-flex;align-items:center;gap:.375rem;padding:.5rem 1.25rem;border-radius:999px;font-size:.8125rem;font-weight:600;background:var(--cat-color,var(--accent-teal));color:#050507;transition:all .2s}
-.featured-card__cta:hover{filter:brightness(1.15);transform:translateY(-1px)}
+/* ---- Free tools banner ---- */
+.free-banner{position:relative;z-index:2;padding:3rem 0}
+.free-banner__inner{background:linear-gradient(135deg,rgba(45,212,191,.08) 0%,rgba(56,189,248,.05) 50%,rgba(129,140,248,.08) 100%);border:1px solid rgba(45,212,191,.15);border-radius:var(--radius-lg);padding:clamp(2rem,4vw,3.5rem);text-align:center}
+.free-banner__title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+.free-banner__sub{color:var(--text-secondary);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+.free-tools{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.free-tool{display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--border-hover);font-size:.875rem;font-weight:500;transition:all .25s}
+.free-tool:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.free-tool__icon{font-size:1.125rem}
 
-/* ---- Category section ---- */
+/* ---- Category tabs ---- */
 .categories{position:relative;z-index:2}
-.cat-section{margin-bottom:clamp(2rem,4vw,3rem)}
-.cat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;cursor:pointer;user-select:none}
-.cat-header__icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.cat-header__text{flex:1}
-.cat-header__name{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
-.cat-header__count{font-size:.8125rem;color:var(--text-tertiary)}
-.cat-header__toggle{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-tertiary);transition:all .2s;flex-shrink:0}
-.cat-header:hover .cat-header__toggle{background:rgba(255,255,255,.08);color:var(--text-secondary)}
-.cat-section.collapsed .cat-header__toggle svg{transform:rotate(-90deg)}
-.cat-section.collapsed .cat-grid{display:none}
+.cat-tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)}
+.cat-tab{padding:.5rem 1.25rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--text-secondary);background:transparent;border:1px solid transparent;transition:all .2s;cursor:pointer}
+.cat-tab:hover{color:var(--text-primary);background:var(--bg-card)}
+.cat-tab.active{color:#050507;background:var(--cat-color,var(--accent-teal));border-color:transparent}
 
 /* ---- Product grid ---- */
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
-@media(max-width:700px){.cat-grid{grid-template-columns:1fr}}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
+@media(max-width:700px){.products-grid{grid-template-columns:1fr}}
 
-.product-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;transition:all .3s ease;overflow:hidden}
+.product-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:all .3s ease;overflow:hidden}
 .product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent-teal));opacity:0;transition:opacity .3s}
 .product-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
 .product-card:hover::before{opacity:1}
-.product-card__head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.75rem}
-.product-card__icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:rgba(255,255,255,.04);border:1px solid var(--border)}
+.product-card__head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
+.product-card__icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;background:rgba(255,255,255,.04);border:1px solid var(--border)}
 .product-card__badge{font-size:.6875rem;font-weight:600;padding:.1875rem .625rem;border-radius:999px;color:var(--cat-color,var(--accent-teal));background:rgba(255,255,255,.04);text-transform:uppercase;letter-spacing:.04em}
-.product-card__name{font-size:1.0625rem;font-weight:700;margin-bottom:.25rem;letter-spacing:-.01em}
-.product-card__desc{font-size:.8125rem;color:var(--text-secondary);line-height:1.55;margin-bottom:1rem}
-.product-card__foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
-.product-card__cta{display:inline-flex;align-items:center;gap:.375rem;padding:.4375rem 1rem;border-radius:999px;font-size:.75rem;font-weight:600;background:var(--cat-color,var(--accent-teal));color:#050507;transition:all .2s;white-space:nowrap}
-.product-card__cta:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.product-card__name{font-size:1.125rem;font-weight:700;margin-bottom:.375rem;letter-spacing:-.01em}
+.product-card__desc{font-size:.875rem;color:var(--text-secondary);line-height:1.55;margin-bottom:1.25rem}
+.product-card__foot{display:flex;align-items:center;justify-content:space-between}
+.product-card__link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:var(--cat-color,var(--accent-teal));transition:gap .2s}
+.product-card__link:hover{gap:.625rem}
+.product-card__link svg{width:14px;height:14px}
 .product-card__free{font-size:.6875rem;font-weight:600;padding:.1875rem .5rem;border-radius:999px;background:rgba(74,222,128,.1);color:var(--accent-green)}
 
-/* ---- Social proof ---- */
+/* ---- Testimonial / Social proof ---- */
 .proof{position:relative;z-index:2;padding:clamp(4rem,8vw,7rem) 0}
 .proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:800px){.proof__grid{grid-template-columns:1fr}}
@@ -303,12 +273,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .proof-card__icon{font-size:2.5rem;margin-bottom:1rem}
 .proof-card__title{font-size:1.5rem;font-weight:800;margin-bottom:.375rem}
 .proof-card__desc{font-size:.875rem;color:var(--text-secondary)}
-
-/* ---- Live counter ---- */
-.live-counter{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1.5rem 0;font-size:.9375rem;color:var(--text-secondary)}
-.live-counter__dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse-green 2s ease-in-out infinite}
-@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0)}}
-.live-counter__number{font-weight:800;color:var(--accent-green);font-variant-numeric:tabular-nums}
 
 /* ---- How it works ---- */
 .how{position:relative;z-index:2;padding:clamp(4rem,8vw,7rem) 0}
@@ -338,12 +302,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .cta__title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
 .cta__sub{font-size:1.125rem;color:var(--text-secondary);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
 
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:999px;font-weight:600;font-size:.9375rem;transition:all .25s ease;cursor:pointer}
-.btn--primary{background:var(--gradient-main);color:#050507;box-shadow:0 0 30px rgba(45,212,191,.2),0 0 60px rgba(56,189,248,.1)}
-.btn--primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(45,212,191,.3),0 0 80px rgba(56,189,248,.15)}
-.btn--secondary{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hover)}
-.btn--secondary:hover{background:var(--bg-card-hover);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
-
 /* ---- Footer ---- */
 .footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:clamp(3rem,6vw,5rem) 0 2rem}
 .footer__grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:3rem 2rem;margin-bottom:3rem}
@@ -363,32 +321,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 /* ---- Spectrum divider ---- */
 .spectrum-bar{height:2px;background:var(--gradient-main);border-radius:2px;margin:0 auto}
-
-/* ---- Mobile sticky bar ---- */
-.mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(5,5,7,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border-hover);padding:.75rem var(--gutter);padding-bottom:calc(.75rem + env(safe-area-inset-bottom,0px))}
-.mobile-sticky__inner{display:flex;align-items:center;gap:.75rem}
-.mobile-sticky__text{flex:1;min-width:0}
-.mobile-sticky__label{font-size:.75rem;color:var(--text-tertiary);font-weight:500}
-.mobile-sticky__tool{font-size:.875rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mobile-sticky__cta{display:inline-flex;align-items:center;gap:.375rem;padding:.625rem 1.25rem;border-radius:999px;background:var(--accent-teal);color:#050507;font-weight:700;font-size:.8125rem;white-space:nowrap;flex-shrink:0;transition:all .2s}
-.mobile-sticky__cta:hover{background:#5eead4}
-@media(max-width:768px){.mobile-sticky{display:block}body{padding-bottom:72px}}
-
-/* ---- Exit intent popup ---- */
-.exit-popup{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:1rem}
-.exit-popup.active{display:flex}
-.exit-popup__overlay{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px)}
-.exit-popup__card{position:relative;background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:var(--radius-lg);padding:clamp(2rem,4vw,3rem);max-width:480px;width:100%;text-align:center;animation:popup-in .3s ease}
-@keyframes popup-in{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:none}}
-.exit-popup__close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);transition:all .2s}
-.exit-popup__close:hover{background:rgba(255,255,255,.06);color:var(--text-primary)}
-.exit-popup__icon{font-size:3rem;margin-bottom:1rem}
-.exit-popup__title{font-size:1.5rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.02em}
-.exit-popup__desc{font-size:.9375rem;color:var(--text-secondary);margin-bottom:1.5rem;line-height:1.6}
-.exit-popup__cta{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 2rem;border-radius:999px;background:var(--accent-teal);color:#050507;font-weight:700;font-size:1rem;transition:all .2s}
-.exit-popup__cta:hover{background:#5eead4;transform:translateY(-2px)}
-.exit-popup__skip{display:block;margin-top:1rem;font-size:.8125rem;color:var(--text-tertiary);cursor:pointer;transition:color .2s}
-.exit-popup__skip:hover{color:var(--text-secondary)}
 
 /* ---- Ad containers ---- */
 .doaide-ad{position:relative;z-index:2}
@@ -414,10 +346,11 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     </a>
     <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav" id="site-nav">
-      <a href="#categories">Tools</a>
+      <a href="#products">Products</a>
+      <a href="#free-tools">Free Tools</a>
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
-      <a class="nav__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try Free Tool</a>
+      <a class="nav__cta" href="#products">Get Started Free</a>
     </nav>
   </div>
 </header>
@@ -426,37 +359,26 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="hero">
   <div class="wrap">
     <div class="rv">
-      <div class="hero__badge"><span></span> Trusted by 10,000+ businesses across India</div>
-      <h1>Find the Right AI Tool for Your Business</h1>
-      <p class="hero__sub">40+ free AI tools for GST, invoicing, resumes, contracts, and more. No login required.</p>
+      <div class="hero__badge"><span></span> 40+ AI-Powered Tools — All Free to Start</div>
+      <h1>AI-Powered Business Tools for Everyone</h1>
+      <p class="hero__sub">
+        From GST filing to resume building, invoice generation to contract management
+        — DoAide gives you 40+ AI tools that handle the work nobody wants to do manually.
+        No login needed for most tools.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#products">
+          Explore All Tools
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 5v13m5-5-5 5-5-5"/></svg>
+        </a>
+        <a class="btn btn--secondary" href="#free-tools">
+          Try Free — No Login
+        </a>
+      </div>
     </div>
-
-    <!-- Search bar -->
-    <div class="hero-search rv" id="hero-search">
-      <svg class="hero-search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <input class="hero-search__input" type="text" id="search-input" placeholder="Search 40+ free tools..." autocomplete="off">
-      <div class="hero-search__typing" id="typing-placeholder">Search 40+ free tools...</div>
-      <div class="hero-search__results" id="search-results"></div>
-    </div>
-
-    <!-- Quick access buttons -->
-    <div class="hero__quick rv">
-      <a class="hero__quick-btn" href="https://gst.doaide.com" target="_blank" rel="noopener"><span>🧾</span> GST Calculator</a>
-      <a class="hero__quick-btn" href="https://invoicer.doaide.com" target="_blank" rel="noopener"><span>📄</span> Invoice Generator</a>
-      <a class="hero__quick-btn" href="https://resume.doaide.com" target="_blank" rel="noopener"><span>📝</span> Resume Builder</a>
-      <a class="hero__quick-btn" href="https://contracts.doaide.com" target="_blank" rel="noopener"><span>📋</span> Contracts</a>
-      <a class="hero__quick-btn" href="https://409a.doaide.com" target="_blank" rel="noopener"><span>📐</span> 409A Valuation</a>
-    </div>
-
-    <!-- Trust bar -->
-    <div class="trust-bar rv">
-      <p class="trust-bar__text">Trusted by <strong>10,000+ businesses</strong> across India &middot; Free to start &middot; No login required</p>
-    </div>
-
-    <!-- Stats -->
     <div class="stats rv">
       <div class="stat"><div class="stat__n">40+</div><div class="stat__l">AI Tools</div></div>
-      <div class="stat"><div class="stat__n" id="counter-calc" data-target="14872">0</div><div class="stat__l">Calculations Today</div></div>
+      <div class="stat"><div class="stat__n">6</div><div class="stat__l">Categories</div></div>
       <div class="stat"><div class="stat__n">10+</div><div class="stat__l">Free No-Login</div></div>
       <div class="stat"><div class="stat__n">27</div><div class="stat__l">Live Products</div></div>
     </div>
@@ -466,412 +388,465 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <div class="doaide-ad" style="max-width:1280px;margin:2rem auto;padding:0 clamp(1rem,4vw,2rem);text-align:center">
 </div>
 
-<!-- ============== LIVE COUNTER ============== -->
-<div class="live-counter rv" style="position:relative;z-index:2">
-  <div class="live-counter__dot"></div>
-  <span><span class="live-counter__number" id="live-counter">2,847</span> calculations done today &middot; Updated live</span>
-</div>
-
-<!-- ============== FEATURED TOOLS ============== -->
-<section class="featured" id="featured">
+<!-- ============== FREE TOOLS BANNER ============== -->
+<section class="free-banner" id="free-tools">
   <div class="wrap">
-    <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(45,212,191,.1);color:var(--accent-teal)">Most Popular</div>
-      <h2 class="section__title">Featured Tools</h2>
-      <p class="section__sub">Our most-used tools. Try them free — no login, no signup, no catch.</p>
-    </div>
-    <div class="featured__grid">
-      <div class="featured-card rv" style="--cat-color:var(--accent-green)">
-        <div class="featured-card__icon">🧾</div>
-        <h3 class="featured-card__name">GST Calculator</h3>
-        <p class="featured-card__desc">Auto-file GST returns, reconcile invoices, track ITC. The most complete GST tool for Indian businesses.</p>
-        <div class="featured-card__stats">
-          <span class="featured-card__stat"><strong>8,200+</strong> users/month</span>
-          <span class="featured-card__stat"><strong>4.9</strong> rating</span>
-        </div>
-        <a class="featured-card__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-      </div>
-      <div class="featured-card rv" style="--cat-color:var(--accent-blue)">
-        <div class="featured-card__icon">📄</div>
-        <h3 class="featured-card__name">AI Resume Builder</h3>
-        <p class="featured-card__desc">ATS-optimized resumes with AI-written bullet points. Pick a template, export in any format.</p>
-        <div class="featured-card__stats">
-          <span class="featured-card__stat"><strong>5,100+</strong> resumes created</span>
-          <span class="featured-card__stat"><strong>4.8</strong> rating</span>
-        </div>
-        <a class="featured-card__cta" href="https://resume.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-      </div>
-      <div class="featured-card rv" style="--cat-color:var(--accent-green)">
-        <div class="featured-card__icon">🧾</div>
-        <h3 class="featured-card__name">Invoice Generator</h3>
-        <p class="featured-card__desc">Create professional GST-compliant invoices in seconds. Track payments and export to PDF.</p>
-        <div class="featured-card__stats">
-          <span class="featured-card__stat"><strong>3,400+</strong> invoices/month</span>
-          <span class="featured-card__stat"><strong>4.7</strong> rating</span>
-        </div>
-        <a class="featured-card__cta" href="https://invoicer.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
+    <div class="free-banner__inner rv">
+      <div class="free-banner__title">Free Tools — No Login, No Signup</div>
+      <p class="free-banner__sub">These tools work instantly in your browser. No account needed. Just open and use.</p>
+      <div class="free-tools">
+        <a class="free-tool" href="https://gst.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🧾</span> GST Calculator</a>
+        <a class="free-tool" href="https://salary.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">💰</span> Salary Calculator</a>
+        <a class="free-tool" href="https://resume.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">📄</span> Resume Builder</a>
+        <a class="free-tool" href="https://fincalc.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🏦</span> Financial Calculator</a>
+        <a class="free-tool" href="https://qr.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">📱</span> QR Code Generator</a>
+        <a class="free-tool" href="https://convert.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🔄</span> File Converter</a>
+        <a class="free-tool" href="https://bizname.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">✨</span> Business Name Generator</a>
+        <a class="free-tool" href="https://invoicer.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">🧾</span> Invoice Generator</a>
+        <a class="free-tool" href="https://pdf.doaide.com" target="_blank" rel="noopener"><span class="free-tool__icon">📑</span> PDF Tools</a>
+        <a class="free-tool" href="/gst-invoice-generator.html"><span class="free-tool__icon">🧾</span> GST Invoice Generator</a>
+        <a class="free-tool" href="/eway-bill-helper.html"><span class="free-tool__icon">🚚</span> E-Way Bill Helper</a>
+        <a class="free-tool" href="/hsn-code-finder.html"><span class="free-tool__icon">🔍</span> HSN Code Finder</a>
+        <a class="free-tool" href="/gst-penalty-calculator.html"><span class="free-tool__icon">⏰</span> GST Penalty Calculator</a>
+        <a class="free-tool" href="/gst-composition-calculator.html"><span class="free-tool__icon">📊</span> GST Composition Calculator</a>
+        <a class="free-tool" href="/gstr-9-calculator.html"><span class="free-tool__icon">📋</span> GSTR-9 Calculator</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== TOOLS BY CATEGORY ============== -->
-<section class="section categories" id="categories">
+<!-- ============== SOCIAL PROOF ============== -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof__grid">
+      <div class="proof-card rv">
+        <div class="proof-card__icon">🚀</div>
+        <div class="proof-card__title">40+</div>
+        <div class="proof-card__desc">AI-powered tools live in production. Each one solves a real business problem.</div>
+      </div>
+      <div class="proof-card rv">
+        <div class="proof-card__icon">🎯</div>
+        <div class="proof-card__title">6 Categories</div>
+        <div class="proof-card__desc">Finance, HR, Legal, Marketing, Productivity & Dev Tools — one suite, every need.</div>
+      </div>
+      <div class="proof-card rv">
+        <div class="proof-card__icon">⚡</div>
+        <div class="proof-card__title">Zero Setup</div>
+        <div class="proof-card__desc">Most tools work instantly. No downloads, no installs, no credit card. Just results.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PRODUCTS BY CATEGORY ============== -->
+<section class="section categories" id="products">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(45,212,191,.1);color:var(--accent-teal)">All Tools</div>
+      <div class="section__badge" style="background:rgba(45,212,191,.1);color:var(--accent-teal)">Product Catalogue</div>
       <h2 class="section__title">Every Tool Your Business Needs</h2>
-      <p class="section__sub">Browse by category. Each tool is live, AI-powered, and free to start.</p>
+      <p class="section__sub">Browse by category. Each product is live, AI-powered, and free to start.</p>
     </div>
 
-    <!-- Tax & Compliance -->
-    <div class="cat-section rv" data-category="tax">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.15)">🧾</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-green)">Tax & Compliance</div>
-          <div class="cat-header__count">7 tools</div>
+    <div class="cat-tabs rv" role="tablist">
+      <button class="cat-tab active" data-cat="all" role="tab" style="--cat-color:var(--accent-teal)">All Products</button>
+      <button class="cat-tab" data-cat="finance" role="tab" style="--cat-color:var(--accent-green)">Finance & Tax</button>
+      <button class="cat-tab" data-cat="hr" role="tab" style="--cat-color:var(--accent-blue)">HR & Career</button>
+      <button class="cat-tab" data-cat="legal" role="tab" style="--cat-color:var(--accent-purple)">Legal & Compliance</button>
+      <button class="cat-tab" data-cat="marketing" role="tab" style="--cat-color:var(--accent-amber)">Marketing & Sales</button>
+      <button class="cat-tab" data-cat="productivity" role="tab" style="--cat-color:var(--accent-pink)">Productivity</button>
+      <button class="cat-tab" data-cat="dev" role="tab" style="--cat-color:var(--accent-indigo)">Dev Tools</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+
+      <!-- ===== FINANCE & TAX ===== -->
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🧾</div>
+          <span class="product-card__badge">Finance</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">🧾</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">GST Compliance</h3>
-          <p class="product-card__desc">Auto-file GST returns, reconcile invoices, track ITC, and never miss a filing deadline.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">💰</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">Salary Calculator</h3>
-          <p class="product-card__desc">Calculate take-home pay instantly. Compare old vs new tax regime, optimize HRA deductions.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://salary.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">🧾</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">Invoice Generator</h3>
-          <p class="product-card__desc">Create professional GST-compliant invoices in seconds. Track payments, export to PDF.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://invoicer.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">🏦</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">Financial Calculator</h3>
-          <p class="product-card__desc">EMI, SIP, FD/RD, loan comparison, retirement planning — every calculation in one place.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://fincalc.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">✅</div>
-          </div>
-          <h3 class="product-card__name">Compliance Pilot</h3>
-          <p class="product-card__desc">Never miss a compliance deadline. Filing calendar, penalty alerts for GST, TDS, ROC.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://comply.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">💼</div>
-          </div>
-          <h3 class="product-card__name">Payroll Management</h3>
-          <p class="product-card__desc">Automated salary processing, tax calculations, compliance, and payslip generation.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://payroll.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-green)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📊</div>
-          </div>
-          <h3 class="product-card__name">Inventory Management</h3>
-          <p class="product-card__desc">Track stock levels, automate reordering, manage suppliers, and optimize warehouse operations.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://inventory.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Legal & Contracts -->
-    <div class="cat-section rv" data-category="legal">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.15)">⚖️</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-purple)">Legal & Contracts</div>
-          <div class="cat-header__count">4 tools</div>
+        <h3 class="product-card__name">GST Compliance</h3>
+        <p class="product-card__desc">Auto-file GST returns, reconcile invoices, track ITC, and never miss a filing deadline. Built for Indian SMBs.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://gst.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-purple)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📋</div>
-          </div>
-          <h3 class="product-card__name">Contract Management</h3>
-          <p class="product-card__desc">Draft, review, and manage contracts with AI. Risk analysis, clause library, and e-signature.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://contracts.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-purple)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📝</div>
-          </div>
-          <h3 class="product-card__name">Proposal Writer</h3>
-          <p class="product-card__desc">Generate winning business proposals, RFP responses, and client pitches with AI.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://proposals.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-purple)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📐</div>
-          </div>
-          <h3 class="product-card__name">409A Valuation</h3>
-          <p class="product-card__desc">AI-powered 409A valuations. Defensible fair market value reports and cap table analysis.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://409a.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-purple)">
-          <div class="product-card__head">
-            <div class="product-card__icon">⚖️</div>
-          </div>
-          <h3 class="product-card__name">CA Workflow</h3>
-          <p class="product-card__desc">Workflow management for Chartered Accountants. Client tracking, deadline management, automation.</p>
-          <div class="product-card__foot">
-            <a class="product-card__cta" href="https://caflow.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a>
-          </div>
-        </article>
-      </div>
-    </div>
+      </article>
 
-    <!-- Business Tools -->
-    <div class="cat-section rv" data-category="business">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(240,180,41,.1);border:1px solid rgba(240,180,41,.15)">💼</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-amber)">Business Tools</div>
-          <div class="cat-header__count">9 tools</div>
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">💰</div>
+          <span class="product-card__badge">Finance</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">👥</div></div>
-          <h3 class="product-card__name">Client Management (CRM)</h3>
-          <p class="product-card__desc">Track leads, manage deals, automate follow-ups, and close more sales with AI-powered CRM.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://gosumo.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">📅</div></div>
-          <h3 class="product-card__name">Meeting Scheduler</h3>
-          <p class="product-card__desc">Smart calendar management with timezone handling, availability sharing, and automated reminders.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://scheduler.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">💬</div></div>
-          <h3 class="product-card__name">Customer Support AI</h3>
-          <p class="product-card__desc">AI-powered ticket routing, response generation, SLA management, and 24/7 assistance.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://support.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">🎫</div></div>
-          <h3 class="product-card__name">Desk</h3>
-          <p class="product-card__desc">AI help desk with smart routing, automated responses, SLA tracking, and omnichannel support.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://desk.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">📊</div></div>
-          <h3 class="product-card__name">Pulse</h3>
-          <p class="product-card__desc">Real-time business health monitoring. Track KPIs, revenue metrics, and get AI-powered alerts.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://pulse.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">🏠</div></div>
-          <h3 class="product-card__name">Real Estate CRM</h3>
-          <p class="product-card__desc">WhatsApp-native CRM for real estate. Property matching, lead management, deal pipeline.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://homenex.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">🎤</div></div>
-          <h3 class="product-card__name">Pitch Deck Builder</h3>
-          <p class="product-card__desc">AI-generated investor-ready pitch decks with financial models and valuation.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://pitchcraft.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">📰</div></div>
-          <h3 class="product-card__name">AI Newsletter</h3>
-          <p class="product-card__desc">AI-curated content, smart writing, subscriber management, and analytics on autopilot.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://herald.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-amber)">
-          <div class="product-card__head"><div class="product-card__icon">🎙️</div></div>
-          <h3 class="product-card__name">Voice AI</h3>
-          <p class="product-card__desc">AI phone agents, call transcription, voice commands, and automated voice workflows.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://voice.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Career -->
-    <div class="cat-section rv" data-category="career">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.15)">🎯</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-blue)">Career</div>
-          <div class="cat-header__count">3 tools</div>
+        <h3 class="product-card__name">Salary Calculator</h3>
+        <p class="product-card__desc">Calculate take-home pay instantly. Compare old vs new tax regime, optimize HRA deductions, get full CTC breakdown.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://salary.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-blue)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📄</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">AI Resume Builder</h3>
-          <p class="product-card__desc">ATS-optimized resumes with AI-written bullet points. Professional templates, multi-format export.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://resume.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-blue)">
-          <div class="product-card__head">
-            <div class="product-card__icon">💰</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">Salary Calculator</h3>
-          <p class="product-card__desc">Calculate take-home pay, compare tax regimes, optimize HRA, and get full CTC breakdown.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://salary.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-blue)">
-          <div class="product-card__head"><div class="product-card__icon">🎯</div></div>
-          <h3 class="product-card__name">AutoApply (Jobs)</h3>
-          <p class="product-card__desc">AI job search and auto-apply. Smart matching, automated applications, AI cover letters.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://job.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-      </div>
-    </div>
+      </article>
 
-    <!-- Productivity -->
-    <div class="cat-section rv" data-category="productivity">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.15)">⚡</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-pink)">Productivity</div>
-          <div class="cat-header__count">8 tools</div>
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🧾</div>
+          <span class="product-card__badge">Finance</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📱</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">QR Code Generator</h3>
-          <p class="product-card__desc">Custom branded QR codes with logo embed, batch generation, and scan analytics.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://qr.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head">
-            <div class="product-card__icon">🔄</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">File Converter</h3>
-          <p class="product-card__desc">Convert anything — PDF, images, documents. Batch processing supported.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://convert.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head">
-            <div class="product-card__icon">📑</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">PDF Tools</h3>
-          <p class="product-card__desc">Merge, split, compress, convert, and edit PDFs online. No signup required.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://pdf.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head">
-            <div class="product-card__icon">✨</div>
-            <span class="product-card__free">Free</span>
-          </div>
-          <h3 class="product-card__name">Business Name Generator</h3>
-          <p class="product-card__desc">AI-generated brandable names with domain availability and social handle checks.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://bizname.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head"><div class="product-card__icon">📋</div></div>
-          <h3 class="product-card__name">Project Tracker</h3>
-          <p class="product-card__desc">AI project management with task tracking, team collaboration, and automated status reports.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://tracker.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head"><div class="product-card__icon">🧠</div></div>
-          <h3 class="product-card__name">Knowledge Management</h3>
-          <p class="product-card__desc">Build knowledge graphs, smart recall, auto-learning, and team knowledge sharing.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://cortex.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head"><div class="product-card__icon">🩺</div></div>
-          <h3 class="product-card__name">Clinical Decision Support</h3>
-          <p class="product-card__desc">Evidence-based AI diagnosis, drug interactions, and treatment guidelines for healthcare pros.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://documedic.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-pink)">
-          <div class="product-card__head"><div class="product-card__icon">📈</div></div>
-          <h3 class="product-card__name">Web Analytics</h3>
-          <p class="product-card__desc">Privacy-first web analytics. Track visitors, conversions, and behavior without cookies.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://analytics.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Dev Tools -->
-    <div class="cat-section rv" data-category="dev">
-      <div class="cat-header">
-        <div class="cat-header__icon" style="background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.15)">🔧</div>
-        <div class="cat-header__text">
-          <div class="cat-header__name" style="color:var(--accent-indigo)">Dev Tools</div>
-          <div class="cat-header__count">2 tools</div>
+        <h3 class="product-card__name">Invoice Generator</h3>
+        <p class="product-card__desc">Create professional GST-compliant invoices in seconds. Track payments, send reminders, export to PDF.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://invoicer.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
         </div>
-        <div class="cat-header__toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
-      </div>
-      <div class="cat-grid">
-        <article class="product-card" style="--cat-color:var(--accent-indigo)">
-          <div class="product-card__head"><div class="product-card__icon">🔐</div></div>
-          <h3 class="product-card__name">Auth Management</h3>
-          <p class="product-card__desc">Drop-in authentication for devs. OAuth, SSO, MFA, session management — one SDK.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://authmatic.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-        <article class="product-card" style="--cat-color:var(--accent-indigo)">
-          <div class="product-card__head"><div class="product-card__icon">📈</div></div>
-          <h3 class="product-card__name">Web Analytics</h3>
-          <p class="product-card__desc">Privacy-first analytics. No cookies, no consent banners. Track what matters.</p>
-          <div class="product-card__foot"><a class="product-card__cta" href="https://analytics.doaide.com" target="_blank" rel="noopener">Try Free — No Login Required</a></div>
-        </article>
-      </div>
-    </div>
+      </article>
 
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🏦</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">Financial Calculator</h3>
+        <p class="product-card__desc">EMI, SIP, FD/RD, loan comparison, retirement planning — every financial calculation in one place.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://fincalc.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📐</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">409A Valuation</h3>
+        <p class="product-card__desc">AI-powered 409A valuations for startups. Get defensible fair market value reports, cap table analysis, and compliance-ready documentation.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://409a.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">💼</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">Payroll Management</h3>
+        <p class="product-card__desc">Automated salary processing, tax calculations, compliance, and payslip generation for Indian businesses.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://payroll.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="finance" style="--cat-color:var(--accent-green)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📊</div>
+          <span class="product-card__badge">Finance</span>
+        </div>
+        <h3 class="product-card__name">Inventory Management</h3>
+        <p class="product-card__desc">Track stock levels, automate reordering, manage suppliers, and optimize warehouse operations with AI.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://inventory.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <!-- ===== HR & CAREER ===== -->
+      <article class="product-card rv" data-cat="hr" style="--cat-color:var(--accent-blue)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📄</div>
+          <span class="product-card__badge">HR & Career</span>
+        </div>
+        <h3 class="product-card__name">AI Resume Builder</h3>
+        <p class="product-card__desc">ATS-optimized resumes with AI-written bullet points. Pick from professional templates, export in any format.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://resume.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="hr" style="--cat-color:var(--accent-blue)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🎯</div>
+          <span class="product-card__badge">HR & Career</span>
+        </div>
+        <h3 class="product-card__name">AutoApply</h3>
+        <p class="product-card__desc">AI job search and auto-apply. Smart job matching, automated applications, AI cover letters, and full application pipeline tracking.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://job.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="hr" style="--cat-color:var(--accent-blue)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📅</div>
+          <span class="product-card__badge">HR & Career</span>
+        </div>
+        <h3 class="product-card__name">Meeting Scheduler</h3>
+        <p class="product-card__desc">Smart calendar management with timezone handling, availability sharing, and automated meeting reminders.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://scheduler.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <!-- ===== LEGAL & COMPLIANCE ===== -->
+      <article class="product-card rv" data-cat="legal" style="--cat-color:var(--accent-purple)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📋</div>
+          <span class="product-card__badge">Legal</span>
+        </div>
+        <h3 class="product-card__name">Contract Management</h3>
+        <p class="product-card__desc">Draft, review, and manage contracts with AI. Risk analysis, clause library, and e-signature workflow.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://contracts.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="legal" style="--cat-color:var(--accent-purple)">
+        <div class="product-card__head">
+          <div class="product-card__icon">✅</div>
+          <span class="product-card__badge">Legal</span>
+        </div>
+        <h3 class="product-card__name">Compliance Pilot</h3>
+        <p class="product-card__desc">Never miss a compliance deadline. Filing calendar, penalty alerts, reminders for GST, TDS, ROC, and more.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://comply.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="legal" style="--cat-color:var(--accent-purple)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📝</div>
+          <span class="product-card__badge">Legal</span>
+        </div>
+        <h3 class="product-card__name">Proposal Writer</h3>
+        <p class="product-card__desc">Generate winning business proposals, RFP responses, and client pitches with AI in minutes.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://proposals.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="legal" style="--cat-color:var(--accent-purple)">
+        <div class="product-card__head">
+          <div class="product-card__icon">⚖️</div>
+          <span class="product-card__badge">Legal</span>
+        </div>
+        <h3 class="product-card__name">CA Workflow</h3>
+        <p class="product-card__desc">Workflow management for Chartered Accountants. Client tracking, deadline management, and task automation.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://caflow.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <!-- ===== MARKETING & SALES ===== -->
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🎤</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">Pitch Deck Builder</h3>
+        <p class="product-card__desc">AI-generated investor-ready pitch decks. Financial models, valuation, and fundraising readiness check.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://pitchcraft.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📰</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">AI Newsletter</h3>
+        <p class="product-card__desc">AI-curated content, smart writing, subscriber management, and analytics. Newsletters on autopilot.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://herald.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📱</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">QR Code Generator</h3>
+        <p class="product-card__desc">Custom branded QR codes with logo embed, batch generation, and scan analytics. Beautiful and functional.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://qr.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">✨</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">Business Name Generator</h3>
+        <p class="product-card__desc">AI-generated brandable names with domain availability, social handle checks, and brand scoring.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://bizname.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">👥</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">Client Management</h3>
+        <p class="product-card__desc">Track leads, manage deals, automate follow-ups, and close more sales with AI-powered CRM.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://gosumo.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="marketing" style="--cat-color:var(--accent-amber)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🏠</div>
+          <span class="product-card__badge">Marketing</span>
+        </div>
+        <h3 class="product-card__name">Real Estate CRM</h3>
+        <p class="product-card__desc">WhatsApp-native CRM for real estate agents. Property matching, lead management, and deal pipeline tracking.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://homenex.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <!-- ===== PRODUCTIVITY ===== -->
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🔄</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">File Converter</h3>
+        <p class="product-card__desc">Convert anything to anything — PDF, images, documents, and more. Batch processing supported.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://convert.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📋</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Project Tracker</h3>
+        <p class="product-card__desc">AI project management with task tracking, team collaboration, progress reports, and automated status updates.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://tracker.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🧠</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Knowledge Management</h3>
+        <p class="product-card__desc">Build knowledge graphs, smart recall, auto-learning, and team knowledge sharing with AI.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://cortex.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🎫</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Desk</h3>
+        <p class="product-card__desc">AI-powered help desk and ticket management. Smart routing, automated responses, SLA tracking, and omnichannel customer support.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://desk.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📊</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Pulse</h3>
+        <p class="product-card__desc">Real-time business health monitoring. Track KPIs, revenue metrics, team productivity, and get AI-powered alerts and insights.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://pulse.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">💬</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Customer Support AI</h3>
+        <p class="product-card__desc">AI-powered ticket routing, response generation, SLA management, and 24/7 customer assistance.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://support.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🎙️</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Voice AI</h3>
+        <p class="product-card__desc">AI phone agents, call transcription, voice commands, and automated voice workflows for your business.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://voice.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🩺</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">Clinical Decision Support</h3>
+        <p class="product-card__desc">Evidence-based AI diagnosis, drug interaction checks, and treatment guidelines for healthcare professionals.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://documedic.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="productivity" style="--cat-color:var(--accent-pink)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📑</div>
+          <span class="product-card__badge">Productivity</span>
+        </div>
+        <h3 class="product-card__name">PDF Tools</h3>
+        <p class="product-card__desc">Merge, split, compress, convert, and edit PDFs online. No signup required, completely free.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://pdf.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+          <span class="product-card__free">Free</span>
+        </div>
+      </article>
+
+      <!-- ===== DEV TOOLS ===== -->
+      <article class="product-card rv" data-cat="dev" style="--cat-color:var(--accent-indigo)">
+        <div class="product-card__head">
+          <div class="product-card__icon">🔐</div>
+          <span class="product-card__badge">Dev Tools</span>
+        </div>
+        <h3 class="product-card__name">Auth Management</h3>
+        <p class="product-card__desc">Drop-in authentication for developers. OAuth, SSO, MFA, session management, and user identity — all in one SDK.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://authmatic.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="product-card rv" data-cat="dev" style="--cat-color:var(--accent-indigo)">
+        <div class="product-card__head">
+          <div class="product-card__icon">📈</div>
+          <span class="product-card__badge">Dev Tools</span>
+        </div>
+        <h3 class="product-card__name">Web Analytics</h3>
+        <p class="product-card__desc">Privacy-first web analytics. Track visitors, conversions, and user behavior without cookies or consent banners.</p>
+        <div class="product-card__foot">
+          <a class="product-card__link" href="https://analytics.doaide.com" target="_blank" rel="noopener">Try Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
@@ -906,29 +881,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ============== SOCIAL PROOF ============== -->
-<section class="proof">
-  <div class="wrap">
-    <div class="proof__grid">
-      <div class="proof-card rv">
-        <div class="proof-card__icon">🚀</div>
-        <div class="proof-card__title">40+</div>
-        <div class="proof-card__desc">AI-powered tools live in production. Each one solves a real business problem.</div>
-      </div>
-      <div class="proof-card rv">
-        <div class="proof-card__icon">🎯</div>
-        <div class="proof-card__title">10,000+</div>
-        <div class="proof-card__desc">Businesses trust DoAide for GST, invoicing, HR, and more every month.</div>
-      </div>
-      <div class="proof-card rv">
-        <div class="proof-card__icon">⚡</div>
-        <div class="proof-card__title">Zero Setup</div>
-        <div class="proof-card__desc">Most tools work instantly. No downloads, no installs, no credit card. Just results.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============== FAQ ============== -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -951,7 +903,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
       </div>
       <div class="faq-item rv">
         <button class="faq-item__q">What categories of tools does DoAide offer?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg></button>
-        <div class="faq-item__a"><p>DoAide offers tools across 5 categories: Tax & Compliance (GST, salary calculator, invoicing, payroll, financial calculators), Legal & Contracts (contracts, proposals, 409A valuation, CA workflow), Business Tools (CRM, scheduler, support, pitch decks, newsletter), Career (resume builder, job search, salary benchmarking), and Productivity (QR codes, file converter, PDF tools, knowledge management, project tracker).</p></div>
+        <div class="faq-item__a"><p>DoAide offers tools across 6 categories: Finance & Tax (GST, salary calculator, invoicing, payroll, financial calculators), HR & Career (resume builder, job search, meeting scheduler), Legal & Compliance (contracts, proposals, compliance tracking, CA workflow), Marketing & Sales (newsletter platform, CRM, pitch decks, QR codes, business name generator), Productivity (project tracker, file converter, knowledge management, customer support, voice AI), and Developer Tools (auth management, web analytics).</p></div>
       </div>
       <div class="faq-item rv">
         <button class="faq-item__q">Is DoAide suitable for Indian businesses?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg></button>
@@ -970,14 +922,14 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   <div class="wrap">
     <div class="cta__inner rv">
       <h2 class="cta__title">Ready to Work Smarter?</h2>
-      <p class="cta__sub">Join 10,000+ businesses using DoAide's AI tools. Free to start, no credit card required.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn--primary" href="https://gst.doaide.com" target="_blank" rel="noopener">
-          Try GST Calculator Free
+      <p class="cta__sub">Join thousands of businesses using DoAide's AI tools. Free to start, no credit card required.</p>
+      <div class="hero__actions" style="justify-content:center">
+        <a class="btn btn--primary" href="#products">
+          Explore All Tools
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
         </a>
-        <a class="btn btn--secondary" href="#categories">
-          Browse All Tools
+        <a class="btn btn--secondary" href="#free-tools">
+          Try Free — No Login
         </a>
       </div>
     </div>
@@ -999,7 +951,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <p>AI-powered business tools for everyone. 40+ products across finance, HR, legal, marketing, productivity, and developer tools.</p>
       </div>
       <div class="footer__col">
-        <h4>Tax & Compliance</h4>
+        <h4>Finance & Tax</h4>
         <a href="https://gst.doaide.com" target="_blank" rel="noopener">GST Compliance</a>
         <a href="https://salary.doaide.com" target="_blank" rel="noopener">Salary Calculator</a>
         <a href="https://invoicer.doaide.com" target="_blank" rel="noopener">Invoice Generator</a>
@@ -1009,25 +961,36 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <a href="https://inventory.doaide.com" target="_blank" rel="noopener">Inventory Management</a>
       </div>
       <div class="footer__col">
-        <h4>Legal & Career</h4>
+        <h4>HR & Career</h4>
+        <a href="https://resume.doaide.com" target="_blank" rel="noopener">AI Resume Builder</a>
+        <a href="https://job.doaide.com" target="_blank" rel="noopener">AutoApply</a>
+        <a href="https://scheduler.doaide.com" target="_blank" rel="noopener">Meeting Scheduler</a>
+        <h4 style="margin-top:1.5rem">Legal & Compliance</h4>
         <a href="https://contracts.doaide.com" target="_blank" rel="noopener">Contract Management</a>
         <a href="https://comply.doaide.com" target="_blank" rel="noopener">Compliance Pilot</a>
         <a href="https://proposals.doaide.com" target="_blank" rel="noopener">Proposal Writer</a>
         <a href="https://caflow.doaide.com" target="_blank" rel="noopener">CA Workflow</a>
-        <a href="https://resume.doaide.com" target="_blank" rel="noopener">AI Resume Builder</a>
-        <a href="https://job.doaide.com" target="_blank" rel="noopener">AutoApply</a>
-        <a href="https://scheduler.doaide.com" target="_blank" rel="noopener">Meeting Scheduler</a>
       </div>
       <div class="footer__col">
-        <h4>Business & Productivity</h4>
+        <h4>Marketing & Sales</h4>
         <a href="https://pitchcraft.doaide.com" target="_blank" rel="noopener">Pitch Deck Builder</a>
         <a href="https://herald.doaide.com" target="_blank" rel="noopener">AI Newsletter</a>
         <a href="https://qr.doaide.com" target="_blank" rel="noopener">QR Code Generator</a>
         <a href="https://bizname.doaide.com" target="_blank" rel="noopener">Business Name Generator</a>
         <a href="https://gosumo.doaide.com" target="_blank" rel="noopener">Client Management</a>
+        <a href="https://homenex.doaide.com" target="_blank" rel="noopener">Real Estate CRM</a>
+        <h4 style="margin-top:1.5rem">Productivity</h4>
         <a href="https://convert.doaide.com" target="_blank" rel="noopener">File Converter</a>
-        <a href="https://pdf.doaide.com" target="_blank" rel="noopener">PDF Tools</a>
+        <a href="https://tracker.doaide.com" target="_blank" rel="noopener">Project Tracker</a>
         <a href="https://cortex.doaide.com" target="_blank" rel="noopener">Knowledge Management</a>
+        <a href="https://support.doaide.com" target="_blank" rel="noopener">Customer Support AI</a>
+        <a href="https://voice.doaide.com" target="_blank" rel="noopener">Voice AI</a>
+        <a href="https://desk.doaide.com" target="_blank" rel="noopener">Desk</a>
+        <a href="https://pulse.doaide.com" target="_blank" rel="noopener">Pulse</a>
+        <a href="https://pdf.doaide.com" target="_blank" rel="noopener">PDF Tools</a>
+        <a href="https://documedic.doaide.com" target="_blank" rel="noopener">Clinical Decision Support</a>
+        <h4 style="margin-top:1.5rem">Dev Tools</h4>
+        <a href="https://authmatic.doaide.com" target="_blank" rel="noopener">Auth Management</a>
         <a href="https://analytics.doaide.com" target="_blank" rel="noopener">Web Analytics</a>
       </div>
     </div>
@@ -1038,263 +1001,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   </div>
 </footer>
 
-<!-- ============== MOBILE STICKY BAR ============== -->
-<div class="mobile-sticky" id="mobile-sticky">
-  <div class="wrap">
-    <div class="mobile-sticky__inner">
-      <div class="mobile-sticky__text">
-        <div class="mobile-sticky__label">Most popular tool</div>
-        <div class="mobile-sticky__tool">GST Calculator</div>
-      </div>
-      <a class="mobile-sticky__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try Free</a>
-    </div>
-  </div>
-</div>
-
-<!-- ============== EXIT INTENT POPUP (desktop) ============== -->
-<div class="exit-popup" id="exit-popup">
-  <div class="exit-popup__overlay" id="exit-popup-overlay"></div>
-  <div class="exit-popup__card">
-    <button class="exit-popup__close" id="exit-popup-close" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-    <div class="exit-popup__icon">🧾</div>
-    <h3 class="exit-popup__title">Before you go...</h3>
-    <p class="exit-popup__desc">Try our most popular tool — the free GST Calculator. No login required. Used by 8,200+ businesses every month.</p>
-    <a class="exit-popup__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try GST Calculator Free</a>
-    <button class="exit-popup__skip" id="exit-popup-skip">No thanks, I'll browse more</button>
-  </div>
-</div>
-
-<script>
-(function () {
-  "use strict";
-
-  function safe(fn) {
-    try { fn(); } catch (err) { if (window.console && console.warn) console.warn("[doaide]", err); }
-  }
-
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---- Mobile menu ---- */
-  safe(function () {
-    var burger = document.querySelector(".burger");
-    var nav = document.getElementById("site-nav");
-    if (!burger || !nav) return;
-    burger.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      burger.setAttribute("aria-expanded", String(open));
-    });
-    nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-      }
-    });
-  });
-
-  /* ---- Category expand/collapse ---- */
-  safe(function () {
-    document.querySelectorAll(".cat-header").forEach(function (header) {
-      header.addEventListener("click", function () {
-        header.closest(".cat-section").classList.toggle("collapsed");
-      });
-    });
-  });
-
-  /* ---- FAQ accordion ---- */
-  safe(function () {
-    document.querySelectorAll(".faq-item__q").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var item = btn.closest(".faq-item");
-        var isOpen = item.classList.contains("open");
-        document.querySelectorAll(".faq-item").forEach(function (i) { i.classList.remove("open"); });
-        if (!isOpen) item.classList.add("open");
-      });
-    });
-  });
-
-  /* ---- Scroll reveal ---- */
-  safe(function () {
-    var els = document.querySelectorAll(".rv");
-    if (reduced || !("IntersectionObserver" in window)) {
-      els.forEach(function (el) { el.classList.add("visible"); });
-      return;
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
-    els.forEach(function (el) { obs.observe(el); });
-  });
-
-  /* ---- Header solidify ---- */
-  safe(function () {
-    var header = document.querySelector(".header");
-    if (!header) return;
-    var onScroll = function () { header.classList.toggle("is-stuck", window.scrollY > 12); };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  });
-
-  /* ---- Animated counter ---- */
-  safe(function () {
-    var el = document.getElementById("counter-calc");
-    if (!el) return;
-    var target = parseInt(el.getAttribute("data-target"), 10);
-    var start = Math.floor(target * 0.7);
-    var current = start;
-    var step = Math.ceil((target - start) / 60);
-    var obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        obs.unobserve(el);
-        var interval = setInterval(function () {
-          current += step;
-          if (current >= target) { current = target; clearInterval(interval); }
-          el.textContent = current.toLocaleString("en-IN");
-        }, 30);
-      }
-    }, { threshold: 0.5 });
-    obs.observe(el);
-  });
-
-  /* ---- Live counter increment ---- */
-  safe(function () {
-    var el = document.getElementById("live-counter");
-    if (!el) return;
-    var base = 2847 + Math.floor(Math.random() * 500);
-    el.textContent = base.toLocaleString("en-IN");
-    setInterval(function () {
-      base += Math.floor(Math.random() * 3) + 1;
-      el.textContent = base.toLocaleString("en-IN");
-    }, 4000 + Math.random() * 3000);
-  });
-
-  /* ---- Hero search ---- */
-  safe(function () {
-    var tools = [
-      { name: "GST Calculator", icon: "🧾", url: "https://gst.doaide.com", desc: "GST compliance, filing, ITC tracking", free: true },
-      { name: "Salary Calculator", icon: "💰", url: "https://salary.doaide.com", desc: "Take-home pay, tax regime comparison", free: true },
-      { name: "Invoice Generator", icon: "🧾", url: "https://invoicer.doaide.com", desc: "Professional GST-compliant invoices", free: true },
-      { name: "AI Resume Builder", icon: "📄", url: "https://resume.doaide.com", desc: "ATS-optimized resumes with AI", free: true },
-      { name: "Financial Calculator", icon: "🏦", url: "https://fincalc.doaide.com", desc: "EMI, SIP, FD/RD, loan comparison", free: true },
-      { name: "QR Code Generator", icon: "📱", url: "https://qr.doaide.com", desc: "Custom branded QR codes", free: true },
-      { name: "File Converter", icon: "🔄", url: "https://convert.doaide.com", desc: "Convert PDF, images, documents", free: true },
-      { name: "Business Name Generator", icon: "✨", url: "https://bizname.doaide.com", desc: "AI-generated brandable names", free: true },
-      { name: "PDF Tools", icon: "📑", url: "https://pdf.doaide.com", desc: "Merge, split, compress PDFs", free: true },
-      { name: "Contract Management", icon: "📋", url: "https://contracts.doaide.com", desc: "Draft, review, manage contracts with AI" },
-      { name: "409A Valuation", icon: "📐", url: "https://409a.doaide.com", desc: "AI-powered startup valuations" },
-      { name: "Compliance Pilot", icon: "✅", url: "https://comply.doaide.com", desc: "Filing calendar, penalty alerts" },
-      { name: "Proposal Writer", icon: "📝", url: "https://proposals.doaide.com", desc: "AI business proposals and RFP responses" },
-      { name: "Payroll Management", icon: "💼", url: "https://payroll.doaide.com", desc: "Automated salary processing, tax calculations" },
-      { name: "Pitch Deck Builder", icon: "🎤", url: "https://pitchcraft.doaide.com", desc: "AI pitch decks for startups" },
-      { name: "AI Newsletter", icon: "📰", url: "https://herald.doaide.com", desc: "AI-curated content and smart writing" },
-      { name: "Client Management (CRM)", icon: "👥", url: "https://gosumo.doaide.com", desc: "Track leads, manage deals" },
-      { name: "Meeting Scheduler", icon: "📅", url: "https://scheduler.doaide.com", desc: "Smart calendar, timezone handling" },
-      { name: "AutoApply (Jobs)", icon: "🎯", url: "https://job.doaide.com", desc: "AI job search and auto-apply" },
-      { name: "Desk", icon: "🎫", url: "https://desk.doaide.com", desc: "AI help desk, ticket management" },
-      { name: "Pulse", icon: "📊", url: "https://pulse.doaide.com", desc: "Real-time business health monitoring" },
-      { name: "Customer Support AI", icon: "💬", url: "https://support.doaide.com", desc: "AI ticket routing, 24/7 support" },
-      { name: "Voice AI", icon: "🎙️", url: "https://voice.doaide.com", desc: "AI phone agents, call transcription" },
-      { name: "Knowledge Management", icon: "🧠", url: "https://cortex.doaide.com", desc: "Knowledge graphs, smart recall" },
-      { name: "Project Tracker", icon: "📋", url: "https://tracker.doaide.com", desc: "AI task tracking, team collaboration" },
-      { name: "Real Estate CRM", icon: "🏠", url: "https://homenex.doaide.com", desc: "WhatsApp CRM for real estate" },
-      { name: "CA Workflow", icon: "⚖️", url: "https://caflow.doaide.com", desc: "Workflow management for CAs" },
-      { name: "Inventory Management", icon: "📊", url: "https://inventory.doaide.com", desc: "Stock tracking, automated reordering" },
-      { name: "Auth Management", icon: "🔐", url: "https://authmatic.doaide.com", desc: "OAuth, SSO, MFA for developers" },
-      { name: "Web Analytics", icon: "📈", url: "https://analytics.doaide.com", desc: "Privacy-first, cookie-free analytics" },
-      { name: "Clinical Decision Support", icon: "🩺", url: "https://documedic.doaide.com", desc: "AI diagnosis, drug interactions" }
-    ];
-
-    var input = document.getElementById("search-input");
-    var results = document.getElementById("search-results");
-    if (!input || !results) return;
-
-    input.addEventListener("input", function () {
-      var q = input.value.toLowerCase().trim();
-      if (!q) { results.classList.remove("active"); return; }
-      var matches = tools.filter(function (t) {
-        return t.name.toLowerCase().indexOf(q) !== -1 || t.desc.toLowerCase().indexOf(q) !== -1;
-      }).slice(0, 6);
-      if (!matches.length) { results.classList.remove("active"); return; }
-      results.innerHTML = matches.map(function (t) {
-        return '<a class="hero-search__result" href="' + t.url + '" target="_blank" rel="noopener">' +
-          '<span class="hero-search__result-icon">' + t.icon + '</span>' +
-          '<div class="hero-search__result-info"><div class="hero-search__result-name">' + t.name + '</div>' +
-          '<div class="hero-search__result-desc">' + t.desc + '</div></div>' +
-          (t.free ? '<span class="hero-search__result-badge">Free</span>' : '') +
-          '</a>';
-      }).join("");
-      results.classList.add("active");
-    });
-
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest("#hero-search")) results.classList.remove("active");
-    });
-  });
-
-  /* ---- Typing animation ---- */
-  safe(function () {
-    var el = document.getElementById("typing-placeholder");
-    var input = document.getElementById("search-input");
-    if (!el || !input) return;
-    var phrases = ["GST Calculator", "Invoice Generator", "Resume Builder", "Salary Calculator", "409A Valuation"];
-    var pi = 0, ci = 0, deleting = false, delay = 100;
-
-    function tick() {
-      if (input === document.activeElement || input.value) return;
-      var phrase = phrases[pi];
-      if (!deleting) {
-        ci++;
-        el.textContent = "Search: " + phrase.substring(0, ci);
-        if (ci === phrase.length) { deleting = true; delay = 2000; }
-        else delay = 80 + Math.random() * 40;
-      } else {
-        ci--;
-        el.textContent = ci > 0 ? "Search: " + phrase.substring(0, ci) : "Search 40+ free tools...";
-        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 500; }
-        else delay = 40;
-      }
-      setTimeout(tick, delay);
-    }
-    setTimeout(tick, 1500);
-  });
-
-  /* ---- Exit intent popup (desktop only) ---- */
-  safe(function () {
-    var popup = document.getElementById("exit-popup");
-    if (!popup || window.innerWidth < 769) return;
-    var shown = false;
-
-    document.addEventListener("mouseout", function (e) {
-      if (shown) return;
-      if (e.clientY < 5 && !e.relatedTarget && !e.toElement) {
-        shown = true;
-        popup.classList.add("active");
-        try { sessionStorage.setItem("doaide_exit", "1"); } catch (e) {}
-      }
-    });
-
-    try { if (sessionStorage.getItem("doaide_exit")) return; } catch (e) {}
-
-    document.getElementById("exit-popup-close").addEventListener("click", function () { popup.classList.remove("active"); });
-    document.getElementById("exit-popup-overlay").addEventListener("click", function () { popup.classList.remove("active"); });
-    document.getElementById("exit-popup-skip").addEventListener("click", function () { popup.classList.remove("active"); });
-  });
-
-  /* ---- Mobile sticky bar: hide when at top ---- */
-  safe(function () {
-    var bar = document.getElementById("mobile-sticky");
-    if (!bar) return;
-    var onScroll = function () {
-      bar.style.transform = window.scrollY > 400 ? "translateY(0)" : "translateY(100%)";
-    };
-    bar.style.transition = "transform .3s ease";
-    bar.style.transform = "translateY(100%)";
-    window.addEventListener("scroll", onScroll, { passive: true });
-  });
-})();
-</script>
+<script src="/main.js"></script>
 </body>
 </html>
