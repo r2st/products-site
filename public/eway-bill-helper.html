@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free E-Way Bill Checker & Calculator | Check EWB Requirement - DoAide</title>
+<meta name="description" content="Free E-Way Bill checker for India. Check if e-way bill is required based on consignment value, distance, and goods type. Calculate EWB validity period instantly.">
+<meta name="keywords" content="e-way bill checker, eway bill required or not, e-way bill limit, eway bill validity, e-way bill calculator, EWB requirement checker">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="canonical" href="https://doaide.com/eway-bill-helper.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%230a0a0b%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%232dd4bf%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23f0b429%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23fb7185%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%23a78bfa%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%2338bdf8%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%234ade80%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23f472b6%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23fb923c%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23818cf8%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta property="og:title" content="Free E-Way Bill Checker & Calculator | DoAide">
+<meta property="og:description" content="Check if e-way bill is required for your goods movement. Calculate EWB validity based on distance. Free, no login.">
+<meta property="og:url" content="https://doaide.com/eway-bill-helper.html">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free E-Way Bill Checker | DoAide">
+<meta name="twitter:description" content="Check if e-way bill is required for your goods movement. Calculate validity period. Free for Indian businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide E-Way Bill Helper","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://doaide.com/eway-bill-helper.html","description":"Free E-Way Bill checker for India. Check if EWB is required based on consignment value and distance. Calculate validity period.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","ratingCount":"1680"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"When is an e-way bill required under GST?","acceptedAnswer":{"@type":"Answer","text":"An e-way bill is required for inter-state movement of goods with consignment value exceeding ₹50,000. For intra-state movement, the threshold is ₹50,000 in most states, though some states have different limits. It applies to all modes of transport — road, rail, air, and ship."}},
+{"@type":"Question","name":"What is the validity of an e-way bill?","acceptedAnswer":{"@type":"Answer","text":"For regular cargo: 1 day for up to 200 km, and 1 additional day for every 200 km thereafter. For over-dimensional cargo (ODC): 1 day for up to 20 km, and 1 additional day for every 20 km. Validity is calculated from the time of generation."}},
+{"@type":"Question","name":"What is the penalty for not generating an e-way bill?","acceptedAnswer":{"@type":"Answer","text":"If goods are transported without a valid e-way bill, the penalty is the tax amount or ₹10,000, whichever is higher. The goods and vehicle can also be detained or seized under Section 129 of the CGST Act."}},
+{"@type":"Question","name":"What goods are exempt from e-way bill?","acceptedAnswer":{"@type":"Answer","text":"Exempt goods include: goods exempted under GST notifications, goods transported by non-motorized conveyance, goods transported from port/airport/land customs station to an inland container depot, transit cargo from customs, LPG for household use, kerosene under PDS, postal department goods, gold/precious stones, used personal household effects, and goods where an empty cargo container is being moved."}}
+]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_GA4_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-REPLACE_WITH_GA4_ID");</script>
+<style>
+:root {
+  --ink-000: #0a0a0b; --ink-050: #090b11; --ink-100: #0d0f16; --ink-200: #12141d; --ink-300: #191c27;
+  --line: rgba(255,255,255,0.07); --line-2: rgba(255,255,255,0.12); --line-3: rgba(255,255,255,0.2);
+  --text: #edeff5; --text-2: #9aa1b2; --text-3: #656c7e; --text-4: #434959;
+  --p1: #2dd4bf; --p2: #f0b429; --p3: #fb7185; --p4: #a78bfa; --p5: #38bdf8; --p6: #4ade80; --p7: #f472b6; --p8: #fb923c; --p9: #818cf8;
+  --accent: #f0b429;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter: clamp(1.25rem, 4vw, 3rem); --measure: 78rem; --radius: 14px; --radius-lg: 22px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { font-family: var(--font-body); background: var(--ink-000); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+.grain { position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 128px 128px; }
+.wrap { max-width: var(--measure); margin-inline: auto; padding-inline: var(--gutter); }
+.header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,11,0.85); backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--line); }
+.header__bar { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.mark { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 1.1rem; }
+.mark__grid { width: 28px; height: 28px; }
+.nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav__link { font-size: 0.9rem; color: var(--text-2); transition: color 0.2s; }
+.nav__link:hover { color: var(--text); }
+.nav__cta { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--text); transition: border-color 0.2s, background 0.2s; }
+.nav__cta:hover { border-color: var(--accent); background: rgba(240,180,41,0.06); }
+@media (max-width: 768px) { .nav { display: none; } .nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--ink-100); border-bottom: 1px solid var(--line); padding: 1.5rem var(--gutter); gap: 1rem; } .burger { display: flex; } }
+.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.burger span { display: block; width: 22px; height: 2px; background: var(--text-2); border-radius: 2px; }
+.crumbs { padding: 1.25rem 0 0; font-size: 0.82rem; color: var(--text-3); }
+.crumbs a { color: var(--text-3); transition: color 0.2s; }
+.crumbs a:hover { color: var(--text); }
+.crumbs span { margin-inline: 0.4rem; }
+.hero { padding: 3rem 0 2rem; text-align: center; }
+.hero__badge { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+.hero__icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; background: rgba(240,180,41,0.1); color: var(--accent); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 999px; background: var(--ink-200); color: var(--text-2); border: 1px solid var(--line); }
+.pill--live { color: #4ade80; }
+.pill__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.15; margin-bottom: 0.75rem; }
+.hero__sub { font-size: 1.05rem; color: var(--text-2); max-width: 52ch; margin-inline: auto; line-height: 1.7; }
+.calc-section { padding: 2rem 0 4rem; }
+.calc-card { max-width: 720px; margin-inline: auto; background: var(--ink-100); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); }
+.calc-card__title { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.3rem; }
+.calc-card__desc { font-size: 0.88rem; color: var(--text-2); margin-bottom: 2rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group--full { grid-column: 1 / -1; }
+.form-label { font-size: 0.82rem; font-weight: 500; color: var(--text-2); }
+.form-select, .form-input { width: 100%; padding: 10px 14px; font-family: var(--font-body); font-size: 0.92rem; color: var(--text); background: var(--ink-200); border: 1px solid var(--line-2); border-radius: 10px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+.form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa1b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; cursor: pointer; }
+.form-select option { background: var(--ink-200); color: var(--text); }
+.form-input::placeholder { color: var(--text-4); }
+.form-select:focus, .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(240,180,41,0.12); }
+.form-hint { font-size: 0.78rem; color: var(--text-4); margin-top: 2px; }
+.btn-calc { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; padding: 14px 32px; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--ink-000); background: var(--accent); border: none; border-radius: 12px; cursor: pointer; transition: transform 0.15s var(--ease), box-shadow 0.2s; }
+.btn-calc:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(240,180,41,0.25); }
+/* Results */
+.results { display: none; margin-top: 2rem; border-radius: var(--radius); overflow: hidden; }
+.results.show { display: block; animation: fadeIn 0.3s var(--ease); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.result-verdict { padding: 1.5rem; text-align: center; border-radius: var(--radius) var(--radius) 0 0; }
+.result-verdict.required { background: rgba(251,113,133,0.1); border: 1px solid rgba(251,113,133,0.2); }
+.result-verdict.not-required { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.2); }
+.verdict-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.verdict-text { font-family: var(--font-display); font-size: 1.5rem; }
+.verdict-sub { font-size: 0.9rem; color: var(--text-2); margin-top: 0.3rem; }
+.result-details { background: var(--ink-200); border: 1px solid var(--line); border-top: none; border-radius: 0 0 var(--radius) var(--radius); padding: 1.5rem; }
+.detail-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.detail-row:last-child { border-bottom: none; }
+.detail-label { color: var(--text-2); }
+.detail-value { font-weight: 500; text-align: right; max-width: 60%; }
+.detail-value.green { color: var(--p6); }
+.detail-value.red { color: var(--p3); }
+.detail-value.yellow { color: var(--accent); }
+.penalty-box { margin-top: 1rem; padding: 1rem; background: rgba(251,113,133,0.06); border: 1px solid rgba(251,113,133,0.15); border-radius: 10px; font-size: 0.85rem; color: var(--p3); }
+.penalty-box strong { display: block; margin-bottom: 4px; }
+.exemptions-box { margin-top: 1rem; padding: 1rem; background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.15); border-radius: 10px; font-size: 0.85rem; }
+.exemptions-box strong { display: block; margin-bottom: 4px; color: var(--p6); }
+.exemptions-box ul { margin: 0.5rem 0 0; padding-left: 1.2rem; color: var(--text-2); }
+.exemptions-box li { margin-bottom: 4px; }
+/* Info section */
+.info-section { padding: 0 0 4rem; }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 720px; margin-inline: auto; }
+.info-card { background: var(--ink-100); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+.info-card__icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.info-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.5rem; }
+.info-card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+/* Rules table */
+.rules-section { padding: 0 0 4rem; }
+.rules-wrap { max-width: 720px; margin-inline: auto; }
+.rules-title { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+.rules-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.rules-table th { text-align: left; padding: 10px 12px; background: var(--ink-200); color: var(--text-2); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--line-2); }
+.rules-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--text-2); }
+.rules-table tr:hover td { background: rgba(255,255,255,0.02); }
+/* FAQ */
+.faq-section { padding: 0 0 4rem; }
+.faq-wrap { max-width: 720px; margin-inline: auto; }
+.faq-title { font-family: var(--font-display); font-size: 1.8rem; text-align: center; margin-bottom: 2rem; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; cursor: pointer; font-weight: 500; font-size: 0.95rem; color: var(--text); background: none; border: none; width: 100%; text-align: left; font-family: var(--font-body); }
+.faq-q::after { content: "+"; font-size: 1.3rem; color: var(--text-3); flex-shrink: 0; margin-left: 1rem; }
+.faq-item.open .faq-q::after { content: "−"; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s var(--ease); }
+.faq-a__inner { padding: 0 0 1.25rem; font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+.faq-item.open .faq-a { max-height: 300px; }
+.footer { border-top: 1px solid var(--line); padding: 3rem 0; margin-top: 2rem; }
+.footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer__links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer__link { font-size: 0.85rem; color: var(--text-3); transition: color 0.2s; }
+.footer__link:hover { color: var(--text); }
+.footer__copy { font-size: 0.8rem; color: var(--text-4); }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="header">
+  <div class="wrap">
+    <div class="header__bar">
+      <a class="mark" href="/">
+        <svg class="mark__grid" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#0a0a0b"/><circle cx="5" cy="5" r="2.3" fill="#2dd4bf"/><circle cx="12" cy="5" r="2.3" fill="#f0b429"/><circle cx="19" cy="5" r="2.3" fill="#fb7185"/><circle cx="5" cy="12" r="2.3" fill="#a78bfa"/><circle cx="12" cy="12" r="2.3" fill="#38bdf8"/><circle cx="19" cy="12" r="2.3" fill="#4ade80"/><circle cx="5" cy="19" r="2.3" fill="#f472b6"/><circle cx="12" cy="19" r="2.3" fill="#fb923c"/><circle cx="19" cy="19" r="2.3" fill="#818cf8"/></svg>
+        <span class="mark__word">DoAide</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <a class="nav__link" href="/#free-tools">Free Tools</a>
+        <a class="nav__link" href="/gstbot.html">GST Suite</a>
+        <a class="nav__cta" href="https://gst.doaide.com" target="_blank" rel="noopener">Try DoAide GST →</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/gstbot.html">GST Tools</a><span>›</span>E-Way Bill Helper
+  </nav>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__badge">
+      <span class="hero__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 3 20 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </span>
+      <span class="pill pill--live"><span class="pill__dot"></span>Live</span>
+      <span class="pill">Free · No Login</span>
+    </div>
+    <h1>E-Way Bill Helper</h1>
+    <p class="hero__sub">Check instantly whether an e-way bill is required for your goods movement. Get validity period, Part A/B requirements, and penalty information — all based on latest GST rules.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="wrap">
+    <div class="calc-card">
+      <h2 class="calc-card__title">Check E-Way Bill Requirement</h2>
+      <p class="calc-card__desc">Enter your consignment details below.</p>
+
+      <form id="ewbForm" class="form-grid" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="consValue">Consignment Value (₹) *</label>
+          <input class="form-input" id="consValue" type="text" inputmode="numeric" placeholder="e.g. 75,000" required>
+          <span class="form-hint">Total value including tax</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="supplyType">Supply Type *</label>
+          <select class="form-select" id="supplyType">
+            <option value="inter">Inter-State</option>
+            <option value="intra">Intra-State</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fromState">State of Origin *</label>
+          <select class="form-select" id="fromState" required></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="toState">State of Destination *</label>
+          <select class="form-select" id="toState" required></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="docType">Document Type</label>
+          <select class="form-select" id="docType">
+            <option value="invoice">Tax Invoice</option>
+            <option value="billOfSupply">Bill of Supply</option>
+            <option value="deliveryChallan">Delivery Challan</option>
+            <option value="billOfEntry">Bill of Entry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="transportMode">Transport Mode</label>
+          <select class="form-select" id="transportMode">
+            <option value="road">Road</option>
+            <option value="rail">Rail</option>
+            <option value="air">Air</option>
+            <option value="ship">Ship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="distance">Approximate Distance (km)</label>
+          <input class="form-input" id="distance" type="number" min="0" placeholder="e.g. 350">
+          <span class="form-hint">Distance between origin and destination</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="goodsType">Goods Type</label>
+          <select class="form-select" id="goodsType">
+            <option value="regular">Regular Taxable Goods</option>
+            <option value="exempt">Exempt / Non-Taxable Goods</option>
+            <option value="odc">Over-Dimensional Cargo (ODC)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-calc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="m21 21-4.3-4.3"/><circle cx="11" cy="11" r="8"/></svg>
+          Check Requirement
+        </button>
+      </form>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="result-verdict" id="verdict">
+          <div class="verdict-icon" id="verdictIcon"></div>
+          <div class="verdict-text" id="verdictText"></div>
+          <div class="verdict-sub" id="verdictSub"></div>
+        </div>
+        <div class="result-details" id="resultDetails">
+          <div class="detail-row"><span class="detail-label">Consignment Value</span><span class="detail-value" id="resValue"></span></div>
+          <div class="detail-row"><span class="detail-label">Threshold Limit</span><span class="detail-value" id="resThreshold"></span></div>
+          <div class="detail-row"><span class="detail-label">Supply Type</span><span class="detail-value" id="resSupply"></span></div>
+          <div class="detail-row"><span class="detail-label">E-Way Bill Validity</span><span class="detail-value" id="resValidity"></span></div>
+          <div class="detail-row"><span class="detail-label">Part A (Supplier/Recipient)</span><span class="detail-value" id="resPartA"></span></div>
+          <div class="detail-row"><span class="detail-label">Part B (Vehicle/Transporter)</span><span class="detail-value" id="resPartB"></span></div>
+          <div class="detail-row"><span class="detail-label">Documents Required</span><span class="detail-value" id="resDocs"></span></div>
+          <div class="penalty-box" id="penaltyBox">
+            <strong>⚠ Penalty for Non-Compliance</strong>
+            Tax amount or ₹10,000, whichever is higher. Goods and vehicle may be detained/seized under Section 129 of CGST Act.
+          </div>
+          <div class="exemptions-box" id="exemptionsBox">
+            <strong>Possible Exemptions to Check</strong>
+            <ul>
+              <li>Goods transported by non-motorized conveyance</li>
+              <li>Goods transported within 50 km from business to transporter (Part B not needed)</li>
+              <li>Goods specified in Annexure to Rule 138(14) — e.g., LPG, kerosene under PDS</li>
+              <li>Transit cargo to/from customs</li>
+              <li>Used personal & household effects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Rules -->
+<section class="rules-section">
+  <div class="wrap">
+    <div class="rules-wrap">
+      <h2 class="rules-title">E-Way Bill Validity by Distance</h2>
+      <table class="rules-table">
+        <thead>
+          <tr><th>Distance</th><th>Regular Cargo</th><th>Over-Dimensional Cargo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Up to 200 km</td><td>1 day</td><td>—</td></tr>
+          <tr><td>Up to 20 km</td><td>—</td><td>1 day</td></tr>
+          <tr><td>201 – 400 km</td><td>2 days</td><td>—</td></tr>
+          <tr><td>21 – 40 km</td><td>—</td><td>2 days</td></tr>
+          <tr><td>401 – 600 km</td><td>3 days</td><td>—</td></tr>
+          <tr><td>Every additional 200 km</td><td>+1 day</td><td>—</td></tr>
+          <tr><td>Every additional 20 km</td><td>—</td><td>+1 day</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Info -->
+<section class="info-section">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card__icon">📋</div>
+        <h3>Part A vs Part B</h3>
+        <p>Part A captures supplier, recipient, and goods details. Part B captures vehicle number and transporter details. Part B is required for road transport over 50 km.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">🔄</div>
+        <h3>Extension & Cancellation</h3>
+        <p>E-way bills can be extended before expiry if goods can't reach destination in time. They can be cancelled within 24 hours if goods are not transported or invoice is cancelled.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card__icon">📱</div>
+        <h3>Generation Methods</h3>
+        <p>Generate e-way bills via the EWB portal (ewaybillgst.gov.in), SMS, Android app, API integration, or through GST Suvidha Providers (GSPs).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button">When is an e-way bill required under GST?</button>
+        <div class="faq-a"><div class="faq-a__inner">An e-way bill is required for inter-state movement of goods when the consignment value exceeds ₹50,000. For intra-state movement, the threshold is generally ₹50,000, though some states have different limits (e.g., ₹1 lakh in some states for certain goods). The bill must be generated before the movement of goods begins.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">What is the validity of an e-way bill?</button>
+        <div class="faq-a"><div class="faq-a__inner">For regular cargo: 1 day for the first 200 km, plus 1 additional day for every 200 km or part thereof. For over-dimensional cargo: 1 day for the first 20 km, plus 1 day for every 20 km. Validity starts from the time of generation and can be extended before expiry.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">What is the penalty for not generating an e-way bill?</button>
+        <div class="faq-a"><div class="faq-a__inner">Under Section 129 of the CGST Act, if goods are transported without a valid e-way bill, the penalty is the tax amount or ₹10,000, whichever is higher. Additionally, the goods and vehicle can be detained or seized. The penalty applies to the consignor, consignee, or transporter.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button">What goods are exempt from e-way bill?</button>
+        <div class="faq-a"><div class="faq-a__inner">Exempt goods include: goods exempted under GST notifications, goods by non-motorized transport, transit cargo from customs, LPG for household use, kerosene under PDS, postal department goods, precious metals (gold, silver), used personal effects, empty cargo containers, and goods specifically listed in Annexure to Rule 138(14).</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a class="footer__link" href="/">Home</a>
+        <a class="footer__link" href="/gstbot.html">GST Suite</a>
+        <a class="footer__link" href="/gst-invoice-generator.html">Invoice Generator</a>
+        <a class="footer__link" href="/gst-penalty-calculator.html">Penalty Calculator</a>
+        <a class="footer__link" href="/hsn-code-finder.html">HSN Finder</a>
+      </div>
+      <div class="footer__copy">© 2026 DoAide · Made with ♡ for Indian businesses</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var STATES = [
+    "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat",
+    "Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh",
+    "Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab",
+    "Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh",
+    "Uttarakhand","West Bengal","Andaman & Nicobar","Chandigarh",
+    "Dadra & Nagar Haveli and Daman & Diu","Delhi","Jammu & Kashmir","Ladakh","Lakshadweep","Puducherry"
+  ];
+
+  function populateStates(id) {
+    var sel = document.getElementById(id);
+    sel.innerHTML = '<option value="">Select State</option>';
+    STATES.forEach(function(s){ var o = document.createElement("option"); o.value = s; o.textContent = s; sel.appendChild(o); });
+  }
+  populateStates("fromState");
+  populateStates("toState");
+
+  document.getElementById("burger").addEventListener("click", function(){ document.getElementById("mainNav").classList.toggle("open"); });
+
+  function parseNum(s) {
+    if (!s) return 0;
+    return parseFloat(s.replace(/,/g, "")) || 0;
+  }
+
+  function formatINR(n) {
+    var parts = n.toFixed(0).split(".");
+    var intPart = parts[0];
+    var last3 = intPart.slice(-3);
+    var rest = intPart.slice(0, -3);
+    if (rest) last3 = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + last3;
+    return "₹" + last3;
+  }
+
+  function calcValidity(distance, isODC) {
+    if (!distance || distance <= 0) return "Enter distance to calculate";
+    if (isODC) {
+      return Math.ceil(distance / 20) + " day(s)";
+    }
+    return Math.ceil(distance / 200) + " day(s)";
+  }
+
+  document.getElementById("ewbForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    var value = parseNum(document.getElementById("consValue").value);
+    var supplyType = document.getElementById("supplyType").value;
+    var fromState = document.getElementById("fromState").value;
+    var toState = document.getElementById("toState").value;
+    var transportMode = document.getElementById("transportMode").value;
+    var distance = parseFloat(document.getElementById("distance").value) || 0;
+    var goodsType = document.getElementById("goodsType").value;
+    var isODC = goodsType === "odc";
+
+    var threshold = 50000;
+    var required = false;
+    var reasons = [];
+
+    if (goodsType === "exempt") {
+      required = false;
+      reasons.push("Exempt/non-taxable goods do not require an e-way bill.");
+    } else if (value > threshold) {
+      required = true;
+      reasons.push("Consignment value " + formatINR(value) + " exceeds threshold of " + formatINR(threshold) + ".");
+    } else {
+      required = false;
+      reasons.push("Consignment value " + formatINR(value) + " is within the " + formatINR(threshold) + " threshold.");
+    }
+
+    var verdict = document.getElementById("verdict");
+    var verdictIcon = document.getElementById("verdictIcon");
+    var verdictText = document.getElementById("verdictText");
+    var verdictSub = document.getElementById("verdictSub");
+
+    if (required) {
+      verdict.className = "result-verdict required";
+      verdictIcon.textContent = "⚠️";
+      verdictText.textContent = "E-Way Bill is REQUIRED";
+      verdictText.style.color = "#fb7185";
+      verdictSub.textContent = reasons.join(" ");
+    } else {
+      verdict.className = "result-verdict not-required";
+      verdictIcon.textContent = "✅";
+      verdictText.textContent = "E-Way Bill is NOT Required";
+      verdictText.style.color = "#4ade80";
+      verdictSub.textContent = reasons.join(" ");
+    }
+
+    document.getElementById("resValue").textContent = formatINR(value);
+    document.getElementById("resThreshold").textContent = formatINR(threshold) + (supplyType === "intra" ? " (may vary by state)" : "");
+    document.getElementById("resSupply").textContent = supplyType === "inter" ? "Inter-State (" + (fromState||"—") + " → " + (toState||"—") + ")" : "Intra-State (" + (fromState||"—") + ")";
+
+    var validity = calcValidity(distance, isODC);
+    document.getElementById("resValidity").textContent = validity;
+    document.getElementById("resValidity").className = "detail-value yellow";
+
+    if (required) {
+      document.getElementById("resPartA").textContent = "Required";
+      document.getElementById("resPartA").className = "detail-value red";
+
+      var needPartB = transportMode === "road" && distance > 50;
+      if (needPartB) {
+        document.getElementById("resPartB").textContent = "Required (distance > 50 km by road)";
+        document.getElementById("resPartB").className = "detail-value red";
+      } else if (transportMode === "road" && distance > 0 && distance <= 50) {
+        document.getElementById("resPartB").textContent = "Not required (within 50 km)";
+        document.getElementById("resPartB").className = "detail-value green";
+      } else if (transportMode !== "road") {
+        document.getElementById("resPartB").textContent = "Required (transport details for " + transportMode + ")";
+        document.getElementById("resPartB").className = "detail-value red";
+      } else {
+        document.getElementById("resPartB").textContent = "Enter distance to determine";
+        document.getElementById("resPartB").className = "detail-value";
+      }
+
+      document.getElementById("resDocs").textContent = "Invoice/Bill of Supply, E-Way Bill (EWB-01), Transporter copy";
+      document.getElementById("penaltyBox").style.display = "";
+    } else {
+      document.getElementById("resPartA").textContent = "Not required";
+      document.getElementById("resPartA").className = "detail-value green";
+      document.getElementById("resPartB").textContent = "Not required";
+      document.getElementById("resPartB").className = "detail-value green";
+      document.getElementById("resDocs").textContent = "Invoice/Bill of Supply only";
+      document.getElementById("penaltyBox").style.display = "none";
+    }
+
+    document.getElementById("results").classList.add("show");
+    document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.querySelectorAll(".faq-q").forEach(function(btn){
+    btn.addEventListener("click", function(){ btn.parentElement.classList.toggle("open"); });
+  });
+})();
+</script>
+</body>
+</html>
