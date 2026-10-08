@@ -53,18 +53,27 @@
     });
   });
 
-  /* ---- Scroll reveal ---- */
+  /* ---- Scroll reveal with staggered delays ---- */
   safe(function () {
     var els = document.querySelectorAll(".rv");
     if (reduced || !("IntersectionObserver" in window)) {
       els.forEach(function (el) { el.classList.add("visible"); });
       return;
     }
+
+    var gridParents = document.querySelectorAll(".try-grid, .more-tools__grid, .products-grid, .proof__grid, .how__grid");
+    gridParents.forEach(function (grid) {
+      var children = grid.querySelectorAll(".rv");
+      children.forEach(function (child, i) {
+        child.style.setProperty("--rv-delay", (i * 80) + "ms");
+      });
+    });
+
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
       });
-    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.06, rootMargin: "0px 0px -60px 0px" });
     els.forEach(function (el) { obs.observe(el); });
   });
 
@@ -75,6 +84,80 @@
     var onScroll = function () { header.classList.toggle("is-stuck", window.scrollY > 12); };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  });
+
+  /* ---- Floating mobile CTA ---- */
+  safe(function () {
+    var cta = document.getElementById("floating-cta");
+    var hero = document.querySelector(".hero");
+    if (!cta || !hero) return;
+    var onScroll = function () {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      cta.classList.toggle("visible", heroBottom < 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+  });
+
+  /* ---- Product card mouse tracking for glow effect ---- */
+  safe(function () {
+    var cards = document.querySelectorAll(".product-card");
+    cards.forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty("--mouse-x", (e.clientX - rect.left) + "px");
+        card.style.setProperty("--mouse-y", (e.clientY - rect.top) + "px");
+      });
+    });
+  });
+
+  /* ---- Hero typing effect ---- */
+  safe(function () {
+    if (reduced) return;
+    var el = document.getElementById("hero-title");
+    if (!el) return;
+    var phrases = [
+      "AI Tools That Just Work",
+      "Built for Indian Business",
+      "Free. No Signup.",
+      "40+ Tools. One Platform."
+    ];
+    var phraseIdx = 0;
+    var charIdx = 0;
+    var deleting = false;
+    var cursor = document.createElement("span");
+    cursor.className = "hero__typing-cursor";
+
+    var baseText = el.textContent;
+    el.textContent = "";
+    el.appendChild(document.createTextNode(baseText));
+    el.appendChild(cursor);
+
+    function tick() {
+      var phrase = phrases[phraseIdx];
+      if (!deleting) {
+        charIdx++;
+        if (charIdx > phrase.length) {
+          setTimeout(function () { deleting = true; tick(); }, 2500);
+          return;
+        }
+      } else {
+        charIdx--;
+        if (charIdx < 0) {
+          charIdx = 0;
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+        }
+      }
+      el.firstChild.textContent = phrase.substring(0, charIdx);
+      var speed = deleting ? 35 : 70;
+      setTimeout(tick, speed);
+    }
+
+    setTimeout(function () {
+      el.firstChild.textContent = "";
+      charIdx = 0;
+      tick();
+    }, 1200);
   });
 
   /* ---- Hero GST Calculator ---- */
@@ -109,5 +192,18 @@
     amtInput.addEventListener("input", calc);
     rateSelect.addEventListener("change", calc);
     calc();
+  });
+
+  /* ---- Smooth scroll for anchor links ---- */
+  safe(function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var target = document.querySelector(a.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
   });
 })();

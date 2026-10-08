@@ -6,7 +6,7 @@
 <title>Free AI Business Tools India — GST Calculator, Invoice Generator & 40+ Tools | DoAide</title>
 <meta name="description" content="Free business tools for India — GST calculator, GSTIN lookup, HSN code search, invoice generator, salary calculator, resume builder & 40+ AI tools. No signup required. Use instantly in your browser.">
 <meta name="keywords" content="free business tools india, GST calculator online free, GSTIN lookup free, HSN code search, salary calculator india, free invoice generator, AI resume builder, free tools for small business india, GST compliance tool, tax calculator india, AI business tools free, payroll software india, free online tools no signup">
-<meta name="theme-color" content="#0a0a0b">
+<meta name="theme-color" content="#1A1A1D">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://doaide.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%230a0a0b%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%232dd4bf%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23f0b429%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23fb7185%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%23a78bfa%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%2338bdf8%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%234ade80%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23f472b6%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23fb923c%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23818cf8%22%2F%3E%3C%2Fsvg%3E">
@@ -133,21 +133,22 @@
 *,*::before,*::after{box-sizing:border-box}
 *{margin:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#050507;color:#e8eaf0;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#1A1A1D;color:#e8eaf0;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:none;background:none}
 
 :root{
-  --bg:#050507;
-  --bg-card:#0c0d12;
-  --bg-card-hover:#111318;
-  --bg-elevated:#13151c;
-  --border:rgba(255,255,255,.06);
-  --border-hover:rgba(255,255,255,.12);
+  --bg:#1A1A1D;
+  --bg-card:#222225;
+  --bg-card-hover:#2a2a2e;
+  --bg-elevated:#2e2e32;
+  --border:rgba(255,255,255,.08);
+  --border-hover:rgba(255,255,255,.14);
   --text-primary:#e8eaf0;
-  --text-secondary:#8b92a8;
-  --text-tertiary:#555d75;
+  --text-secondary:#9ca3af;
+  --text-tertiary:#6b7280;
+  --accent-gold:#D4AF37;
   --accent-teal:#2dd4bf;
   --accent-amber:#f0b429;
   --accent-pink:#fb7185;
@@ -157,8 +158,9 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   --accent-rose:#f472b6;
   --accent-orange:#fb923c;
   --accent-indigo:#818cf8;
-  --gradient-main:linear-gradient(135deg,#2dd4bf 0%,#38bdf8 25%,#818cf8 50%,#f472b6 75%,#fb7185 100%);
-  --gradient-text:linear-gradient(135deg,#2dd4bf 0%,#38bdf8 50%,#a78bfa 100%);
+  --gradient-main:linear-gradient(135deg,#D4AF37 0%,#f0b429 25%,#D4AF37 50%,#c4a032 75%,#D4AF37 100%);
+  --gradient-text:linear-gradient(135deg,#D4AF37 0%,#f0b429 40%,#e8c547 70%,#D4AF37 100%);
+  --gradient-gold-glow:linear-gradient(135deg,rgba(212,175,55,.15) 0%,rgba(240,180,41,.08) 50%,rgba(212,175,55,.15) 100%);
   --radius:12px;
   --radius-lg:20px;
   --gutter:clamp(1rem,4vw,2rem);
@@ -169,52 +171,79 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 /* ---- Animated bg ---- */
 .bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.bg-glow::before{content:'';position:absolute;width:800px;height:800px;top:-200px;left:-200px;background:radial-gradient(circle,rgba(45,212,191,.07) 0%,transparent 70%);animation:float1 20s ease-in-out infinite}
-.bg-glow::after{content:'';position:absolute;width:600px;height:600px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(129,140,248,.06) 0%,transparent 70%);animation:float2 25s ease-in-out infinite}
+.bg-glow::before{content:'';position:absolute;width:900px;height:900px;top:-250px;left:-250px;background:radial-gradient(circle,rgba(212,175,55,.08) 0%,transparent 70%);animation:float1 20s ease-in-out infinite}
+.bg-glow::after{content:'';position:absolute;width:700px;height:700px;bottom:-150px;right:-150px;background:radial-gradient(circle,rgba(212,175,55,.05) 0%,transparent 70%);animation:float2 25s ease-in-out infinite}
 @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(100px,80px)}}
 @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-80px,-60px)}}
+
+/* ---- Hero animated gradient bg ---- */
+.hero__gradient-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero__gradient-bg::before{content:'';position:absolute;width:120%;height:120%;top:-10%;left:-10%;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(212,175,55,.12) 0%,rgba(240,180,41,.04) 40%,transparent 70%);animation:hero-glow 8s ease-in-out infinite}
+.hero__gradient-bg::after{content:'';position:absolute;width:80%;height:80%;bottom:-20%;right:-10%;background:radial-gradient(ellipse at 70% 60%,rgba(212,175,55,.06) 0%,transparent 60%);animation:hero-glow2 12s ease-in-out infinite}
+@keyframes hero-glow{0%,100%{opacity:.6;transform:scale(1) translate(0,0)}50%{opacity:1;transform:scale(1.1) translate(20px,-10px)}}
+@keyframes hero-glow2{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.15) translate(-15px,10px)}}
+
+/* ---- Floating particles ---- */
+.particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--accent-gold);opacity:0;animation:particle-float linear infinite}
+.particle:nth-child(1){left:10%;animation-duration:14s;animation-delay:0s}
+.particle:nth-child(2){left:25%;animation-duration:18s;animation-delay:2s}
+.particle:nth-child(3){left:45%;animation-duration:16s;animation-delay:4s}
+.particle:nth-child(4){left:65%;animation-duration:20s;animation-delay:1s}
+.particle:nth-child(5){left:80%;animation-duration:15s;animation-delay:3s}
+.particle:nth-child(6){left:90%;animation-duration:17s;animation-delay:5s}
+@keyframes particle-float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.4}50%{opacity:.2}90%{opacity:.3}100%{transform:translateY(-20vh) scale(1);opacity:0}}
 
 /* ---- Grain ---- */
 .grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
 
 /* ---- Header ---- */
-.header{position:sticky;top:0;z-index:100;backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);background:rgba(5,5,7,.8);border-bottom:1px solid var(--border)}
+.header{position:sticky;top:0;z-index:100;backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);background:rgba(26,26,29,.85);border-bottom:1px solid var(--border)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:.625rem;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
 .logo svg{width:28px;height:28px}
 .nav{display:flex;align-items:center;gap:2rem}
 .nav a{font-size:.875rem;font-weight:500;color:var(--text-secondary);transition:color .2s}
 .nav a:hover{color:var(--text-primary)}
-.nav__cta{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.125rem;border-radius:999px;background:var(--accent-teal);color:#050507;font-weight:600;font-size:.8125rem;transition:all .2s}
-.nav__cta:hover{background:#5eead4;color:#050507;transform:translateY(-1px)}
+.nav__cta{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.125rem;border-radius:999px;background:var(--accent-gold);color:#1A1A1D;font-weight:600;font-size:.8125rem;transition:all .25s ease}
+.nav__cta:hover{background:#e8c547;color:#1A1A1D;transform:translateY(-1px);box-shadow:0 4px 20px rgba(212,175,55,.3)}
 
 .burger{display:none;flex-direction:column;gap:5px;padding:8px}
 .burger span{display:block;width:20px;height:2px;background:var(--text-secondary);border-radius:2px;transition:.2s}
 
 @media(max-width:768px){
-  .nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(5,5,7,.97);border-bottom:1px solid var(--border);padding:1.5rem var(--gutter);gap:1rem;backdrop-filter:blur(20px)}
+  .nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(26,26,29,.97);border-bottom:1px solid var(--border);padding:1.5rem var(--gutter);gap:1rem;backdrop-filter:blur(20px)}
   .nav.open{display:flex}
   .burger{display:flex}
 }
 
 /* ---- Hero ---- */
 .hero{position:relative;z-index:2;padding:clamp(5rem,12vw,10rem) 0 clamp(4rem,8vw,7rem);text-align:center}
-.hero__badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.15);font-size:.8125rem;font-weight:500;color:var(--accent-teal);margin-bottom:2rem}
-.hero__badge span{width:6px;height:6px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero__badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);font-size:.8125rem;font-weight:500;color:var(--accent-gold);margin-bottom:2rem}
+.hero__badge span{width:6px;height:6px;border-radius:50%;background:var(--accent-gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(212,175,55,.4)}50%{opacity:.4;box-shadow:0 0 0 6px rgba(212,175,55,0)}}
+
+/* ---- Typing cursor ---- */
+.hero__typing-cursor{display:inline-block;width:3px;height:.85em;background:var(--accent-gold);margin-left:4px;animation:blink-cursor .8s step-end infinite;vertical-align:text-bottom}
+@keyframes blink-cursor{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ---- Made for India badge ---- */
+.india-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;border-radius:999px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);font-size:.75rem;font-weight:600;color:var(--accent-gold);margin-left:.75rem;animation:india-pulse 3s ease-in-out infinite}
+.india-badge__flag{font-size:1rem}
+@keyframes india-pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.2)}50%{box-shadow:0 0 0 8px rgba(212,175,55,0)}}
 
 .hero h1{font-size:clamp(2.5rem,7vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;max-width:900px;margin:0 auto .5em;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero__sub{font-size:clamp(1.125rem,2.5vw,1.375rem);color:var(--text-secondary);max-width:680px;margin:0 auto 2.5rem;line-height:1.6}
 .hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
 
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:999px;font-weight:600;font-size:.9375rem;transition:all .25s ease;cursor:pointer}
-.btn--primary{background:var(--gradient-main);color:#050507;box-shadow:0 0 30px rgba(45,212,191,.2),0 0 60px rgba(56,189,248,.1)}
-.btn--primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(45,212,191,.3),0 0 80px rgba(56,189,248,.15)}
-.btn--secondary{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hover)}
-.btn--secondary:hover{background:var(--bg-card-hover);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.btn--primary{background:var(--accent-gold);color:#1A1A1D;box-shadow:0 0 30px rgba(212,175,55,.2),0 0 60px rgba(212,175,55,.1)}
+.btn--primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 0 40px rgba(212,175,55,.35),0 0 80px rgba(212,175,55,.15)}
+.btn--secondary{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hover);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn--secondary:hover{background:var(--bg-card-hover);border-color:rgba(212,175,55,.3);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .btn--sm{padding:.5rem 1.25rem;font-size:.8125rem}
-.btn--accent{background:var(--cat-color,var(--accent-teal));color:#050507}
-.btn--accent:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn--accent{background:var(--accent-gold);color:#1A1A1D}
+.btn--accent:hover{background:#e8c547;transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,175,55,.3)}
 
 /* ---- Stats bar ---- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:800px;margin:0 auto}
@@ -232,7 +261,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 /* ---- Free tools banner ---- */
 .free-banner{position:relative;z-index:2;padding:3rem 0}
-.free-banner__inner{background:linear-gradient(135deg,rgba(45,212,191,.08) 0%,rgba(56,189,248,.05) 50%,rgba(129,140,248,.08) 100%);border:1px solid rgba(45,212,191,.15);border-radius:var(--radius-lg);padding:clamp(2rem,4vw,3.5rem);text-align:center}
+.free-banner__inner{background:linear-gradient(135deg,rgba(212,175,55,.06) 0%,rgba(212,175,55,.03) 50%,rgba(212,175,55,.06) 100%);border:1px solid rgba(212,175,55,.12);border-radius:var(--radius-lg);padding:clamp(2rem,4vw,3.5rem);text-align:center}
 .free-banner__title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
 .free-banner__sub{color:var(--text-secondary);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
 .free-tools{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
@@ -245,33 +274,35 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .cat-tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)}
 .cat-tab{padding:.5rem 1.25rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--text-secondary);background:transparent;border:1px solid transparent;transition:all .2s;cursor:pointer}
 .cat-tab:hover{color:var(--text-primary);background:var(--bg-card)}
-.cat-tab.active{color:#050507;background:var(--cat-color,var(--accent-teal));border-color:transparent}
+.cat-tab.active{color:#1A1A1D;background:var(--accent-gold);border-color:transparent}
 
 /* ---- Product grid ---- */
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
 @media(max-width:700px){.products-grid{grid-template-columns:1fr}}
 
-.product-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:all .3s ease;overflow:hidden}
-.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent-teal));opacity:0;transition:opacity .3s}
-.product-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.product-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:all .4s cubic-bezier(.22,1,.36,1);overflow:hidden}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);opacity:0;transition:opacity .4s}
+.product-card::after{content:'';position:absolute;inset:-1px;border-radius:var(--radius-lg);background:radial-gradient(300px circle at var(--mouse-x,50%) var(--mouse-y,0%),rgba(212,175,55,.1),transparent 60%);opacity:0;transition:opacity .4s;z-index:-1;pointer-events:none}
+.product-card:hover{border-color:rgba(212,175,55,.25);transform:translateY(-6px) scale(1.01);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(212,175,55,.08)}
 .product-card:hover::before{opacity:1}
+.product-card:hover::after{opacity:1}
 .product-card__head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
 .product-card__icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.375rem;background:rgba(255,255,255,.04);border:1px solid var(--border)}
-.product-card__badge{font-size:.6875rem;font-weight:600;padding:.1875rem .625rem;border-radius:999px;color:var(--cat-color,var(--accent-teal));background:rgba(255,255,255,.04);text-transform:uppercase;letter-spacing:.04em}
+.product-card__badge{font-size:.6875rem;font-weight:600;padding:.1875rem .625rem;border-radius:999px;color:var(--text-secondary);background:rgba(255,255,255,.04);text-transform:uppercase;letter-spacing:.04em}
 .product-card__name{font-size:1.125rem;font-weight:700;margin-bottom:.375rem;letter-spacing:-.01em}
 .product-card__desc{font-size:.875rem;color:var(--text-secondary);line-height:1.55;margin-bottom:1.25rem}
 .product-card__foot{display:flex;align-items:center;justify-content:space-between}
-.product-card__link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:var(--cat-color,var(--accent-teal));transition:gap .2s}
-.product-card__link:hover{gap:.625rem}
+.product-card__link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:600;color:var(--accent-gold);transition:gap .25s,color .25s}
+.product-card__link:hover{gap:.625rem;color:#e8c547}
 .product-card__link svg{width:14px;height:14px}
-.product-card__free{font-size:.6875rem;font-weight:600;padding:.1875rem .5rem;border-radius:999px;background:rgba(74,222,128,.1);color:var(--accent-green)}
+.product-card__free{font-size:.6875rem;font-weight:600;padding:.1875rem .5rem;border-radius:999px;background:rgba(212,175,55,.1);color:var(--accent-gold)}
 
 /* ---- Testimonial / Social proof ---- */
 .proof{position:relative;z-index:2;padding:clamp(4rem,8vw,7rem) 0}
 .proof__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:800px){.proof__grid{grid-template-columns:1fr}}
-.proof-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .3s}
-.proof-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}
+.proof-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.proof-card:hover{border-color:rgba(212,175,55,.2);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.3),0 0 20px rgba(212,175,55,.06)}
 .proof-card__icon{font-size:2.5rem;margin-bottom:1rem}
 .proof-card__title{font-size:1.5rem;font-weight:800;margin-bottom:.375rem}
 .proof-card__desc{font-size:.875rem;color:var(--text-secondary)}
@@ -281,7 +312,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .how__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 @media(max-width:800px){.how__grid{grid-template-columns:1fr}}
 .how-step{text-align:center;padding:2rem}
-.how-step__n{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(45,212,191,.12),rgba(56,189,248,.12));border:1px solid rgba(45,212,191,.2);font-size:1.25rem;font-weight:800;color:var(--accent-teal);margin-bottom:1.25rem}
+.how-step__n{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(212,175,55,.08));border:1px solid rgba(212,175,55,.2);font-size:1.25rem;font-weight:800;color:var(--accent-gold);margin-bottom:1.25rem}
 .how-step__title{font-size:1.125rem;font-weight:700;margin-bottom:.5rem}
 .how-step__desc{font-size:.875rem;color:var(--text-secondary);line-height:1.6}
 
@@ -290,7 +321,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .faq__list{max-width:800px;margin:0 auto}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item__q{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.5rem 0;font-size:1.0625rem;font-weight:600;color:var(--text-primary);text-align:left;cursor:pointer;transition:color .2s}
-.faq-item__q:hover{color:var(--accent-teal)}
+.faq-item__q:hover{color:var(--accent-gold)}
 .faq-item__q svg{width:20px;height:20px;color:var(--text-tertiary);transition:transform .3s;flex-shrink:0;margin-left:1rem}
 .faq-item.open .faq-item__q svg{transform:rotate(45deg)}
 .faq-item__a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
@@ -299,8 +330,8 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 /* ---- CTA ---- */
 .cta{position:relative;z-index:2;padding:clamp(4rem,8vw,7rem) 0}
-.cta__inner{background:linear-gradient(135deg,rgba(45,212,191,.06) 0%,rgba(129,140,248,.06) 50%,rgba(251,113,133,.06) 100%);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);padding:clamp(3rem,6vw,5rem);text-align:center;position:relative;overflow:hidden}
-.cta__inner::before{content:'';position:absolute;inset:0;background:var(--gradient-main);opacity:.03}
+.cta__inner{background:linear-gradient(135deg,rgba(212,175,55,.06) 0%,rgba(212,175,55,.03) 50%,rgba(212,175,55,.06) 100%);border:1px solid rgba(212,175,55,.12);border-radius:var(--radius-lg);padding:clamp(3rem,6vw,5rem);text-align:center;position:relative;overflow:hidden}
+.cta__inner::before{content:'';position:absolute;inset:0;background:var(--gradient-main);opacity:.04}
 .cta__title{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative}
 .cta__sub{font-size:1.125rem;color:var(--text-secondary);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
 
@@ -318,11 +349,35 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 @media(max-width:500px){.footer__bottom{flex-direction:column;gap:.5rem;text-align:center}}
 
 /* ---- Reveal animation ---- */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);transition-delay:var(--rv-delay,0ms)}
 .rv.visible{opacity:1;transform:none}
+.rv--left{transform:translateX(-30px)}
+.rv--left.visible{transform:none}
+.rv--right{transform:translateX(30px)}
+.rv--right.visible{transform:none}
+.rv--scale{transform:scale(.92);opacity:0}
+.rv--scale.visible{transform:none;opacity:1}
 
 /* ---- Spectrum divider ---- */
 .spectrum-bar{height:2px;background:var(--gradient-main);border-radius:2px;margin:0 auto}
+
+/* ---- Floating mobile CTA ---- */
+.floating-cta{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(100px);z-index:99;opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;pointer-events:none}
+.floating-cta.visible{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+.floating-cta a{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 2rem;border-radius:999px;background:var(--accent-gold);color:#1A1A1D;font-weight:700;font-size:.9375rem;box-shadow:0 8px 30px rgba(212,175,55,.35),0 2px 8px rgba(0,0,0,.3);min-height:48px;transition:all .25s}
+.floating-cta a:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,175,55,.45),0 4px 12px rgba(0,0,0,.3)}
+@media(min-width:769px){.floating-cta{display:none}}
+
+/* ---- Newsletter signup ---- */
+.newsletter{display:flex;gap:.5rem;margin-top:1.25rem;max-width:320px}
+.newsletter input{flex:1;padding:.625rem 1rem;border-radius:999px;border:1px solid var(--border-hover);background:var(--bg-card);color:var(--text-primary);font-size:.875rem;font-family:inherit;outline:none;transition:border-color .25s;min-height:44px}
+.newsletter input:focus{border-color:var(--accent-gold)}
+.newsletter input::placeholder{color:var(--text-tertiary)}
+.newsletter button{padding:.625rem 1.25rem;border-radius:999px;background:var(--accent-gold);color:#1A1A1D;font-weight:600;font-size:.8125rem;transition:all .25s;white-space:nowrap;min-height:44px}
+.newsletter button:hover{background:#e8c547;transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,175,55,.3)}
+
+/* ---- Counter animation ---- */
+.count-up{display:inline-block}
 
 /* ---- Ad containers ---- */
 .doaide-ad{position:relative;z-index:2}
@@ -332,46 +387,46 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 /* ---- Hero calculator widget ---- */
 .hero-calc{max-width:520px;margin:2.5rem auto 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-hover);background:var(--bg-card);box-shadow:0 20px 60px rgba(0,0,0,.4);padding:clamp(1.5rem,3vw,2rem)}
 .hero-calc__title{font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
-.hero-calc__title svg{width:20px;height:20px;color:var(--accent-green)}
+.hero-calc__title svg{width:20px;height:20px;color:var(--accent-gold)}
 .hero-calc__row{display:flex;gap:.75rem;margin-bottom:1rem}
 @media(max-width:500px){.hero-calc__row{flex-direction:column}}
 .hero-calc__field{flex:1;display:flex;flex-direction:column;gap:.375rem}
 .hero-calc__field label{font-size:.75rem;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.06em}
 .hero-calc__field input,.hero-calc__field select{background:var(--bg-elevated);border:1px solid var(--border-hover);border-radius:10px;padding:.75rem 1rem;color:var(--text-primary);font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
-.hero-calc__field input:focus,.hero-calc__field select:focus{border-color:var(--accent-teal)}
+.hero-calc__field input:focus,.hero-calc__field select:focus{border-color:var(--accent-gold)}
 .hero-calc__field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b92a8' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.hero-calc__result{background:linear-gradient(135deg,rgba(45,212,191,.06),rgba(56,189,248,.04));border:1px solid rgba(45,212,191,.15);border-radius:12px;padding:1rem 1.25rem;margin-top:.5rem}
+.hero-calc__result{background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(212,175,55,.03));border:1px solid rgba(212,175,55,.15);border-radius:12px;padding:1rem 1.25rem;margin-top:.5rem}
 .hero-calc__result-row{display:flex;justify-content:space-between;align-items:center;padding:.25rem 0}
 .hero-calc__result-row span:first-child{font-size:.8125rem;color:var(--text-secondary)}
 .hero-calc__result-row span:last-child{font-size:.9375rem;font-weight:600}
 .hero-calc__result-row.total{border-top:1px solid rgba(255,255,255,.08);margin-top:.5rem;padding-top:.75rem}
-.hero-calc__result-row.total span:last-child{font-size:1.25rem;font-weight:800;color:var(--accent-teal)}
-.hero-calc__link{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;padding:.625rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--accent-teal);background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.12);transition:all .2s}
-.hero-calc__link:hover{background:rgba(45,212,191,.12);border-color:rgba(45,212,191,.25)}
+.hero-calc__result-row.total span:last-child{font-size:1.25rem;font-weight:800;color:var(--accent-gold)}
+.hero-calc__link{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;padding:.625rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:var(--accent-gold);background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.12);transition:all .25s}
+.hero-calc__link:hover{background:rgba(212,175,55,.12);border-color:rgba(212,175,55,.25)}
 
 /* ---- Try Now section ---- */
 .try-now{position:relative;z-index:2;padding:clamp(3rem,6vw,5rem) 0}
 .try-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:800px){.try-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.try-grid{grid-template-columns:1fr}}
-.try-card{display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:all .3s ease;position:relative;overflow:hidden}
-.try-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent-teal));opacity:0;transition:opacity .3s}
-.try-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.try-card{display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:all .4s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.try-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);opacity:0;transition:opacity .4s}
+.try-card:hover{border-color:rgba(212,175,55,.2);transform:translateY(-6px) scale(1.01);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 20px rgba(212,175,55,.06)}
 .try-card:hover::before{opacity:1}
 .try-card__icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border:1px solid var(--border);margin-bottom:1rem}
 .try-card__icon svg{width:24px;height:24px}
 .try-card__name{font-size:1.125rem;font-weight:700;margin-bottom:.375rem}
 .try-card__desc{font-size:.875rem;color:var(--text-secondary);line-height:1.55;margin-bottom:1.25rem;flex:1}
-.try-card__cta{display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:#050507;background:var(--cat-color,var(--accent-teal));transition:all .2s;align-self:flex-start}
-.try-card__cta:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.try-card__cta{display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1.25rem;border-radius:999px;font-size:.8125rem;font-weight:600;color:#1A1A1D;background:var(--accent-gold);transition:all .3s cubic-bezier(.22,1,.36,1);align-self:flex-start;min-height:44px}
+.try-card__cta:hover{background:#e8c547;transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,175,55,.3)}
 
 /* ---- More Tools categorized grid ---- */
 .more-tools{position:relative;z-index:2;padding:clamp(3rem,6vw,5rem) 0}
 .more-tools__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 @media(max-width:800px){.more-tools__grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.more-tools__grid{grid-template-columns:1fr}}
-.tools-cat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;transition:all .3s}
-.tools-cat:hover{border-color:var(--border-hover)}
+.tools-cat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.tools-cat:hover{border-color:rgba(212,175,55,.15);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.2)}
 .tools-cat__head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .tools-cat__icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.125rem}
 .tools-cat__title{font-size:.9375rem;font-weight:700}
@@ -409,21 +464,28 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 <!-- ============== HERO ============== -->
 <section class="hero">
+  <div class="hero__gradient-bg" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  </div>
   <div class="wrap">
     <div class="rv">
-      <div class="hero__badge"><span></span> 40+ Free Tools — No Signup Required</div>
-      <h1>Free AI Business Tools — No Signup Required</h1>
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem">
+        <div class="hero__badge" style="margin-bottom:0"><span></span> 40+ Free Tools</div>
+        <div class="india-badge"><span class="india-badge__flag">&#127470;&#127475;</span> Made for India</div>
+      </div>
+      <h1 id="hero-title">AI Tools That Just Work</h1>
       <p class="hero__sub">
-        GST calculator, GSTIN lookup, invoice generator, salary calculator, resume builder
-        & 40+ AI-powered tools for Indian businesses. Use instantly — no login needed.
+        GST, invoices, salary, resumes & 40+ AI tools. Free. No login.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#try-now">
-          Try a Tool Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 5v13m5-5-5 5-5-5"/></svg>
+          Try Free Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
         </a>
         <a class="btn btn--secondary" href="#products">
-          Browse All 40+ Tools
+          All 40+ Tools
         </a>
       </div>
     </div>
@@ -465,45 +527,45 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="try-now" id="try-now">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(45,212,191,.1);color:var(--accent-teal)">Try Instantly</div>
-      <h2 class="section__title">Use These Tools Right Now — Free</h2>
-      <p class="section__sub">No signup, no login. Click and start using. Works in your browser.</p>
+      <div class="section__badge" style="background:rgba(212,175,55,.1);color:var(--accent-gold)">Try Instantly</div>
+      <h2 class="section__title">Click. Use. Done.</h2>
+      <p class="section__sub">No signup needed. Open any tool and start working.</p>
     </div>
     <div class="try-grid">
       <a class="try-card rv" href="https://gst.doaide.com/calculator" target="_blank" rel="noopener" style="--cat-color:var(--accent-green)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
         <h3 class="try-card__name">GST Calculator</h3>
-        <p class="try-card__desc">Calculate GST amounts instantly. Add or remove GST, get CGST/SGST/IGST breakdowns for any amount.</p>
+        <p class="try-card__desc">Instant CGST/SGST/IGST breakdowns for any amount.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
       <a class="try-card rv" href="https://gst.doaide.com/lookup" target="_blank" rel="noopener" style="--cat-color:var(--accent-blue)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
         <h3 class="try-card__name">GSTIN Lookup</h3>
-        <p class="try-card__desc">Verify any GSTIN number instantly. Check registration status, business details, and filing compliance.</p>
+        <p class="try-card__desc">Verify any GSTIN — status, details, compliance.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
       <a class="try-card rv" href="https://gst.doaide.com/hsn" target="_blank" rel="noopener" style="--cat-color:var(--accent-purple)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
         <h3 class="try-card__name">HSN Code Search</h3>
-        <p class="try-card__desc">Find the correct HSN/SAC code for any product or service. Get applicable GST rates instantly.</p>
+        <p class="try-card__desc">Find the right HSN/SAC code and GST rate instantly.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
       <a class="try-card rv" href="https://invoicer.doaide.com" target="_blank" rel="noopener" style="--cat-color:var(--accent-amber)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <h3 class="try-card__name">Invoice Generator</h3>
-        <p class="try-card__desc">Create professional GST-compliant invoices in seconds. Export to PDF, track payments, send reminders.</p>
+        <p class="try-card__desc">GST-compliant invoices in seconds. Export to PDF.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
       <a class="try-card rv" href="https://salary.doaide.com" target="_blank" rel="noopener" style="--cat-color:var(--accent-teal)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3 class="try-card__name">Salary Calculator</h3>
-        <p class="try-card__desc">Calculate take-home pay instantly. Compare old vs new tax regime, optimize HRA, get full CTC breakdown.</p>
+        <p class="try-card__desc">Old vs new regime, HRA, full CTC breakdown.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
       <a class="try-card rv" href="https://resume.doaide.com" target="_blank" rel="noopener" style="--cat-color:var(--accent-pink)">
         <div class="try-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-pink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 14h6"/><path d="M9 18h6"/></svg></div>
         <h3 class="try-card__name">Resume Builder</h3>
-        <p class="try-card__desc">Build ATS-optimized resumes with AI. Professional templates, AI-written bullet points, multi-format export.</p>
+        <p class="try-card__desc">ATS-optimized templates, AI bullet points.</p>
         <span class="try-card__cta">Try Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h13m-5-5 5 5-5 5"/></svg></span>
       </a>
     </div>
@@ -514,9 +576,9 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="more-tools" id="free-tools">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(129,140,248,.1);color:var(--accent-indigo)">40+ Tools</div>
-      <h2 class="section__title">More Free Tools by Category</h2>
-      <p class="section__sub">Every tool you need, organized by what it does. All free to start.</p>
+      <div class="section__badge" style="background:rgba(212,175,55,.1);color:var(--accent-gold)">40+ Tools</div>
+      <h2 class="section__title">Everything You Need</h2>
+      <p class="section__sub">Organized by what it does. All free to start.</p>
     </div>
     <div class="more-tools__grid">
       <div class="tools-cat rv">
@@ -612,21 +674,21 @@ button{font:inherit;cursor:pointer;border:none;background:none}
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <div class="proof-card__title">40+</div>
-        <div class="proof-card__desc">Free AI tools live and ready to use. Each one solves a real business problem.</div>
+        <div class="proof-card__desc">AI tools live and solving real problems.</div>
       </div>
       <div class="proof-card rv">
         <div class="proof-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="proof-card__title">30 Seconds</div>
-        <div class="proof-card__desc">Open any tool and start using it. No downloads, no installs, no credit card.</div>
+        <div class="proof-card__desc">Open. Use. No downloads, no credit card.</div>
       </div>
       <div class="proof-card rv">
         <div class="proof-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="proof-card__title">No Signup</div>
-        <div class="proof-card__desc">Most tools need zero registration. Your data stays in your browser. Privacy first.</div>
+        <div class="proof-card__desc">Your data stays in your browser. Privacy first.</div>
       </div>
     </div>
   </div>
@@ -636,9 +698,9 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="section categories" id="products">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(45,212,191,.1);color:var(--accent-teal)">Product Catalogue</div>
-      <h2 class="section__title">Every Tool Your Business Needs</h2>
-      <p class="section__sub">Browse by category. Each product is live, AI-powered, and free to start.</p>
+      <div class="section__badge" style="background:rgba(212,175,55,.1);color:var(--accent-gold)">Product Catalogue</div>
+      <h2 class="section__title">Your AI Toolkit</h2>
+      <p class="section__sub">Browse by category. Each one is live and free to start.</p>
     </div>
 
     <div class="cat-tabs rv" role="tablist">
@@ -1077,25 +1139,25 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="how" id="how">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(129,140,248,.1);color:var(--accent-indigo)">How It Works</div>
-      <h2 class="section__title">Start Using AI Tools in 30 Seconds</h2>
-      <p class="section__sub">No downloads. No installs. No credit card. Just open and start working.</p>
+      <div class="section__badge" style="background:rgba(212,175,55,.1);color:var(--accent-gold)">How It Works</div>
+      <h2 class="section__title">Three Steps. That's It.</h2>
+      <p class="section__sub">Open. Use. Done.</p>
     </div>
     <div class="how__grid">
       <div class="how-step rv">
         <div class="how-step__n">1</div>
         <h3 class="how-step__title">Pick Your Tool</h3>
-        <p class="how-step__desc">Browse 40+ AI tools organized by category. Each one is built for a specific business problem.</p>
+        <p class="how-step__desc">40+ tools organized by what they solve.</p>
       </div>
       <div class="how-step rv">
         <div class="how-step__n">2</div>
         <h3 class="how-step__title">Start Using — Free</h3>
-        <p class="how-step__desc">Most tools work instantly without login. Just open the tool and start getting results. No trial limits.</p>
+        <p class="how-step__desc">No login, no trial limits. Just results.</p>
       </div>
       <div class="how-step rv">
         <div class="how-step__n">3</div>
         <h3 class="how-step__title">Scale When Ready</h3>
-        <p class="how-step__desc">Create a free account to save your work, unlock premium features, and integrate with your existing stack.</p>
+        <p class="how-step__desc">Save work, unlock premium, integrate your stack.</p>
       </div>
     </div>
   </div>
@@ -1105,7 +1167,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="section__head rv">
-      <div class="section__badge" style="background:rgba(251,113,133,.1);color:var(--accent-pink)">FAQ</div>
+      <div class="section__badge" style="background:rgba(212,175,55,.1);color:var(--accent-gold)">FAQ</div>
       <h2 class="section__title">Frequently Asked Questions</h2>
     </div>
     <div class="faq__list">
@@ -1141,8 +1203,8 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <section class="cta">
   <div class="wrap">
     <div class="cta__inner rv">
-      <h2 class="cta__title">Ready to Work Smarter?</h2>
-      <p class="cta__sub">Join thousands of businesses using DoAide's AI tools. Free to start, no credit card required.</p>
+      <h2 class="cta__title">Start Building Smarter</h2>
+      <p class="cta__sub">40+ AI tools. Free. No credit card.</p>
       <div class="hero__actions" style="justify-content:center">
         <a class="btn btn--primary" href="#products">
           Explore All Tools
@@ -1168,7 +1230,11 @@ button{font:inherit;cursor:pointer;border:none;background:none}
           <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="3" cy="3" r="2.6" fill="#2dd4bf" opacity=".92"/><circle cx="12" cy="3" r="2.6" fill="#f0b429" opacity=".92"/><circle cx="21" cy="3" r="2.6" fill="#fb7185" opacity=".92"/><circle cx="3" cy="12" r="2.6" fill="#a78bfa" opacity=".92"/><circle cx="12" cy="12" r="2.6" fill="#38bdf8" opacity=".92"/><circle cx="21" cy="12" r="2.6" fill="#4ade80" opacity=".92"/><circle cx="3" cy="21" r="2.6" fill="#f472b6" opacity=".92"/><circle cx="12" cy="21" r="2.6" fill="#fb923c" opacity=".92"/><circle cx="21" cy="21" r="2.6" fill="#818cf8" opacity=".92"/></svg>
           DoAide
         </a>
-        <p>AI-powered business tools for everyone. 40+ products across finance, HR, legal, marketing, productivity, and developer tools.</p>
+        <p>AI-powered business tools for everyone. 40+ products for Indian businesses.</p>
+        <form class="newsletter" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed!';this.querySelector('input').disabled=true;this.querySelector('button').disabled=true">
+          <input type="email" placeholder="your@email.com" required aria-label="Email for newsletter">
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
       <div class="footer__col">
         <h4>Finance & Tax</h4>
@@ -1222,6 +1288,11 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div>
 </footer>
+
+<!-- ============== FLOATING MOBILE CTA ============== -->
+<div class="floating-cta" id="floating-cta" aria-hidden="true">
+  <a href="#try-now">Try Free Now</a>
+</div>
 
 <script src="/main.js"></script>
 </body>
