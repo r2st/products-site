@@ -3,7 +3,7 @@
 
 const ICONS = {
   n409: '<path d="M3 20h18M6 20V10m5 10V4m5 16v-7"/><path d="m6 8 5-4 5 5 4-4"/>',
-  herald: '<path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/><path d="M10.5 13.5 21 3"/>',
+  pulse: '<path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/><path d="M10.5 13.5 21 3"/>',
   gstbot: '<path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17l-3-2-3 2-3-2-3 2Z"/><path d="M9 8h6M9 12h6"/>',
   talentping: '<circle cx="12" cy="9" r="3.2"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0"/><path d="M3.5 6.5a9 9 0 0 1 3-3M20.5 6.5a9 9 0 0 0-3-3"/>',
   documedic: '<path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.5M14 3h1.5"/><path d="M10 12v3a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="12" r="2"/>',
@@ -68,19 +68,19 @@ const PRODUCTS = [
 
   /* ------------------------------------------------------------------ 02 */
   {
-    slug: 'herald',
+    slug: 'pulse',
     num: '02',
-    name: 'Herald',
+    name: 'Pulse',
     accent: '--p2',
     hex: '#f0b429',
-    url: 'https://herald.aiknol.com',
+    url: 'https://pulse.aiknol.com',
     status: 'live',
     category: 'Outreach & communications',
-    icon: ICONS.herald,
+    icon: ICONS.pulse,
     one: 'AI outreach that writes, schedules and sends campaigns — and holds itself to a quality bar before anything leaves.',
     tagline: 'Campaigns that run themselves, without sounding like they did.',
     lede:
-      'Herald is an AI-powered outreach and communications platform. It drafts and sequences email campaigns, decides when each message should land, and runs a watermark-based quality gate over every send — so autopilot never means unattended.',
+      'Pulse is an AI-powered outreach and communications platform. It drafts and sequences email campaigns, decides when each message should land, and runs a watermark-based quality gate over every send — so autopilot never means unattended.',
     feats: [
       'Automated multi-step email campaigns',
       'Autopilot mode with human-set guardrails',
@@ -94,18 +94,18 @@ const PRODUCTS = [
       ['Controls', 'Watermark quality gate, send caps'],
     ],
     features: [
-      ['Campaign composition', 'Describe the audience and the offer; Herald drafts the sequence — opener, follow-ups, breakup — each message written for its position in the thread rather than as a template with the name swapped.'],
-      ['Autopilot mode', 'Hand the campaign over entirely. Herald sources the send list, writes, schedules, sends and follows up, stopping at the guardrails you set rather than at the end of a queue.'],
+      ['Campaign composition', 'Describe the audience and the offer; Pulse drafts the sequence — opener, follow-ups, breakup — each message written for its position in the thread rather than as a template with the name swapped.'],
+      ['Autopilot mode', 'Hand the campaign over entirely. Pulse sources the send list, writes, schedules, sends and follows up, stopping at the guardrails you set rather than at the end of a queue.'],
       ['Watermark quality control', 'Every outgoing message is scored against a quality watermark before it is released. Messages below the line are held back and rewritten instead of sent and regretted.'],
       ['Smart scheduling', 'Send times are chosen per recipient — timezone, prior open behaviour, and the spacing that keeps a sequence from reading as a machine gun.'],
       ['Reply handling', 'Inbound replies are classified and routed: interested, not now, wrong person, unsubscribe. Sequences stop on their own when a human answers.'],
       ['Deliverability discipline', 'Warm-up pacing, per-domain send caps and content checks that keep a sending domain out of the places sending domains go to die.'],
     ],
     steps: [
-      ['Define the campaign', 'Set the audience, the offer and the tone. Herald turns that into a sequence with a distinct job for each message.'],
-      ['Review the draft', 'Read the full thread as a recipient would see it. Edit anything; Herald learns the correction for the rest of the campaign.'],
+      ['Define the campaign', 'Set the audience, the offer and the tone. Pulse turns that into a sequence with a distinct job for each message.'],
+      ['Review the draft', 'Read the full thread as a recipient would see it. Edit anything; Pulse learns the correction for the rest of the campaign.'],
       ['Set the guardrails', 'Daily send caps, quality watermark, blocked domains, and how far autopilot is allowed to go without checking in.'],
-      ['Let it run', 'Herald sends, follows up, handles replies and reports. You see what landed, what converted, and what it held back.'],
+      ['Let it run', 'Pulse sends, follows up, handles replies and reports. You see what landed, what converted, and what it held back.'],
     ],
     inside: [
       ['Sequence builder', 'multi-step threads with conditional branches on open, click and reply'],
