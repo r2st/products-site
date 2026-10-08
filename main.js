@@ -76,4 +76,30 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   });
+
+  /* ---- Animated stat counters ---- */
+  safe(function () {
+    var counters = document.querySelectorAll(".stat__n[data-count]");
+    if (!counters.length || reduced) return;
+    var animated = new Set();
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting || animated.has(e.target)) return;
+        animated.add(e.target);
+        var target = parseInt(e.target.getAttribute("data-count"), 10);
+        var suffix = e.target.textContent.replace(/[\d,]+/, "").trim();
+        var duration = 1200;
+        var start = performance.now();
+        function tick(now) {
+          var p = Math.min((now - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          var val = Math.round(target * ease);
+          e.target.textContent = val.toLocaleString("en-IN") + (suffix ? suffix : "");
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { obs.observe(el); });
+  });
 })();
