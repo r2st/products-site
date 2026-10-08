@@ -70,17 +70,17 @@ const PRODUCTS = [
   {
     slug: 'herald',
     num: '02',
-    name: 'Herald',
+    name: 'DoAide Pulse',
     accent: '--p2',
     hex: '#f0b429',
-    url: 'https://herald.aiknol.com',
+    url: 'https://pulse.doaide.com',
     status: 'live',
     category: 'Outreach & communications',
     icon: ICONS.herald,
     one: 'AI outreach that writes, schedules and sends campaigns — and holds itself to a quality bar before anything leaves.',
     tagline: 'Campaigns that run themselves, without sounding like they did.',
     lede:
-      'Herald is an AI-powered outreach and communications platform. It drafts and sequences email campaigns, decides when each message should land, and runs a watermark-based quality gate over every send — so autopilot never means unattended.',
+      'DoAide Pulse is an AI-powered outreach and communications platform. It drafts and sequences email campaigns, decides when each message should land, and runs a watermark-based quality gate over every send — so autopilot never means unattended.',
     feats: [
       'Automated multi-step email campaigns',
       'Autopilot mode with human-set guardrails',
@@ -94,18 +94,18 @@ const PRODUCTS = [
       ['Controls', 'Watermark quality gate, send caps'],
     ],
     features: [
-      ['Campaign composition', 'Describe the audience and the offer; Herald drafts the sequence — opener, follow-ups, breakup — each message written for its position in the thread rather than as a template with the name swapped.'],
-      ['Autopilot mode', 'Hand the campaign over entirely. Herald sources the send list, writes, schedules, sends and follows up, stopping at the guardrails you set rather than at the end of a queue.'],
+      ['Campaign composition', 'Describe the audience and the offer; Pulse drafts the sequence — opener, follow-ups, breakup — each message written for its position in the thread rather than as a template with the name swapped.'],
+      ['Autopilot mode', 'Hand the campaign over entirely. Pulse sources the send list, writes, schedules, sends and follows up, stopping at the guardrails you set rather than at the end of a queue.'],
       ['Watermark quality control', 'Every outgoing message is scored against a quality watermark before it is released. Messages below the line are held back and rewritten instead of sent and regretted.'],
       ['Smart scheduling', 'Send times are chosen per recipient — timezone, prior open behaviour, and the spacing that keeps a sequence from reading as a machine gun.'],
       ['Reply handling', 'Inbound replies are classified and routed: interested, not now, wrong person, unsubscribe. Sequences stop on their own when a human answers.'],
       ['Deliverability discipline', 'Warm-up pacing, per-domain send caps and content checks that keep a sending domain out of the places sending domains go to die.'],
     ],
     steps: [
-      ['Define the campaign', 'Set the audience, the offer and the tone. Herald turns that into a sequence with a distinct job for each message.'],
-      ['Review the draft', 'Read the full thread as a recipient would see it. Edit anything; Herald learns the correction for the rest of the campaign.'],
+      ['Define the campaign', 'Set the audience, the offer and the tone. Pulse turns that into a sequence with a distinct job for each message.'],
+      ['Review the draft', 'Read the full thread as a recipient would see it. Edit anything; Pulse learns the correction for the rest of the campaign.'],
       ['Set the guardrails', 'Daily send caps, quality watermark, blocked domains, and how far autopilot is allowed to go without checking in.'],
-      ['Let it run', 'Herald sends, follows up, handles replies and reports. You see what landed, what converted, and what it held back.'],
+      ['Let it run', 'Pulse sends, follows up, handles replies and reports. You see what landed, what converted, and what it held back.'],
     ],
     inside: [
       ['Sequence builder', 'multi-step threads with conditional branches on open, click and reply'],
@@ -174,17 +174,17 @@ const PRODUCTS = [
   {
     slug: 'talentping',
     num: '04',
-    name: 'TalentPing',
+    name: 'DoAide Jobs',
     accent: '--p4',
     hex: '#a78bfa',
-    url: 'https://talentping.aiknol.com',
+    url: 'https://job.doaide.com',
     status: 'live',
     category: 'Talent sourcing',
     icon: ICONS.talentping,
     one: 'AI talent sourcing that finds the candidates, writes the outreach, and briefs you before the call.',
     tagline: 'Sourcing, outreach and prep — one loop, run continuously.',
     lede:
-      'TalentPing is an AI talent sourcing platform. It discovers candidates against a role rather than a keyword, runs the outreach sequence, and produces a prep briefing for every conversation that comes back — so the pipeline moves without a recruiter driving each step by hand.',
+      'DoAide Jobs is an AI talent sourcing platform. It discovers candidates against a role rather than a keyword, runs the outreach sequence, and produces a prep briefing for every conversation that comes back — so the pipeline moves without a recruiter driving each step by hand.',
     feats: [
       'Automated candidate discovery',
       'AI-written email outreach sequences',
@@ -198,7 +198,7 @@ const PRODUCTS = [
       ['Output', 'Ranked pipeline, sent sequences, briefings'],
     ],
     features: [
-      ['Candidate discovery', 'Describe the role in prose. TalentPing builds the search from the description — adjacent titles, equivalent stacks, the companies that produce this profile — instead of matching the words you happened to type.'],
+      ['Candidate discovery', 'Describe the role in prose. DoAide Jobs builds the search from the description — adjacent titles, equivalent stacks, the companies that produce this profile — instead of matching the words you happened to type.'],
       ['Match reasoning', 'Every candidate arrives with the case for them written out: what lines up, what does not, and which part of the requirement is being stretched.'],
       ['Outreach sequences', 'First-touch and follow-ups written per candidate against the specific reason they are a fit, then sent on a schedule that does not read as a blast.'],
       ['Prep briefings', 'Before a call, a briefing: background, likely motivations, the gaps worth probing, and the questions that will actually tell you something.'],
@@ -206,7 +206,7 @@ const PRODUCTS = [
       ['Role calibration', 'Rejections feed back into the search. The tenth batch of candidates is measurably better targeted than the first.'],
     ],
     steps: [
-      ['Write the role', 'A description in plain prose. TalentPing derives the search criteria, including the ones you would not have thought to specify.'],
+      ['Write the role', 'A description in plain prose. DoAide Jobs derives the search criteria, including the ones you would not have thought to specify.'],
       ['Review the matches', 'Candidates ranked with the reasoning attached. Reject freely — each rejection sharpens the next batch.'],
       ['Launch outreach', 'Sequences written per candidate and sent on a paced schedule, with replies classified as they arrive.'],
       ['Take the call prepared', 'A briefing lands ahead of each conversation with the background and the questions worth asking.'],
@@ -278,17 +278,17 @@ const PRODUCTS = [
   {
     slug: 'gosumo',
     num: '06',
-    name: 'GoSumo',
+    name: 'DoAide CRM',
     accent: '--p6',
     hex: '#4ade80',
-    url: 'https://gosumo.aiknol.com',
+    url: 'https://crm.doaide.com',
     status: 'live',
     category: 'Client management',
     icon: ICONS.gosumo,
     one: 'Every client channel in one inbox, with an AI that answers the routine and escalates the rest.',
     tagline: 'One inbox for WhatsApp, Instagram, SMS, email and web chat.',
     lede:
-      'GoSumo is an AI client management platform. It unifies WhatsApp, Instagram, SMS, email and web chat into a single threaded inbox, answers the messages that have a known answer, and hands over the ones that do not — with the full history attached.',
+      'DoAide CRM is an AI client management platform. It unifies WhatsApp, Instagram, SMS, email and web chat into a single threaded inbox, answers the messages that have a known answer, and hands over the ones that do not — with the full history attached.',
     feats: [
       'WhatsApp, Instagram, SMS, email and web chat',
       'Unified inbox threaded per client',
@@ -311,7 +311,7 @@ const PRODUCTS = [
     ],
     steps: [
       ['Connect the channels', 'WhatsApp, Instagram, SMS, email and the website widget authorised once each.'],
-      ['Teach the business', 'Hours, services, pricing, policies and tone. GoSumo answers from that, not from a generic script.'],
+      ['Teach the business', 'Hours, services, pricing, policies and tone. DoAide CRM answers from that, not from a generic script.'],
       ['Let the AI take first contact', 'Routine messages answered on arrival. Everything else queued for a person, with context.'],
       ['Handle the exceptions', 'The team works a single inbox of things that genuinely need judgement.'],
     ],
