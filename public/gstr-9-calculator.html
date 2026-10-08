@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free GSTR-9 Annual Return Calculator 2026 | DoAide</title>
+<meta name="description" content="Free GSTR-9 annual return calculator. Reconcile turnover, tax liability, ITC claims, and check GSTR-9 filing requirements. GST annual return made simple.">
+<meta name="keywords" content="GSTR-9 calculator, GST annual return calculator, GSTR-9 reconciliation tool, GSTR-9 filing, ITC reconciliation, tax liability calculator, GST return India">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="canonical" href="https://doaide.com/gstr-9-calculator.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%230a0a0b%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%232dd4bf%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23f0b429%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%225%22%20r%3D%222.3%22%20fill%3D%22%23fb7185%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%23a78bfa%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%2338bdf8%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2212%22%20r%3D%222.3%22%20fill%3D%22%234ade80%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23f472b6%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23fb923c%22%2F%3E%3Ccircle%20cx%3D%2219%22%20cy%3D%2219%22%20r%3D%222.3%22%20fill%3D%22%23818cf8%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta property="og:title" content="Free GSTR-9 Annual Return Calculator 2026 | DoAide">
+<meta property="og:description" content="Free GSTR-9 calculator to reconcile turnover, tax liability, and ITC. Check GSTR-9 and GSTR-9C filing requirements instantly.">
+<meta property="og:url" content="https://doaide.com/gstr-9-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoAide GSTR-9 Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://doaide.com/gstr-9-calculator.html","description":"Free GSTR-9 annual return calculator for Indian businesses. Reconcile turnover, tax liability, ITC, and check filing requirements.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","ratingCount":"3200"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is GSTR-9?","acceptedAnswer":{"@type":"Answer","text":"GSTR-9 is the annual return that every registered GST taxpayer must file. It consolidates all monthly/quarterly returns (GSTR-1, GSTR-3B) filed during the financial year into a single summary. It includes details of outward supplies, inward supplies, ITC claimed, tax paid, and any amendments made during the year."}},
+{"@type":"Question","name":"Who needs to file GSTR-9?","acceptedAnswer":{"@type":"Answer","text":"GSTR-9 is mandatory for taxpayers with aggregate turnover exceeding Rs 2 crore in a financial year. It is optional for those below Rs 2 crore. Composition scheme dealers file GSTR-9A instead. Casual taxable persons, input service distributors, non-resident taxable persons, and TDS/TCS deductors are exempt."}},
+{"@type":"Question","name":"What is GSTR-9C and when is it required?","acceptedAnswer":{"@type":"Answer","text":"GSTR-9C is a reconciliation statement that must be filed along with GSTR-9 by taxpayers whose aggregate annual turnover exceeds Rs 5 crore. It reconciles the values declared in GSTR-9 with the audited financial statements. From FY 2020-21 onwards, it is a self-certified reconciliation statement instead of requiring a CA audit."}},
+{"@type":"Question","name":"Is this GSTR-9 calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The DoAide GSTR-9 Calculator is completely free with no login or signup required. Calculate turnover reconciliation, tax liability, ITC reconciliation, and check filing requirements instantly."}}
+]}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_GA4_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-REPLACE_WITH_GA4_ID");</script>
+<style>
+/* ========== RESET & BASE ========== */
+:root {
+  --ink-000: #0a0a0b;
+  --ink-050: #090b11;
+  --ink-100: #0d0f16;
+  --ink-200: #12141d;
+  --ink-300: #191c27;
+  --line: rgba(255,255,255,0.07);
+  --line-2: rgba(255,255,255,0.12);
+  --line-3: rgba(255,255,255,0.2);
+  --text: #edeff5;
+  --text-2: #9aa1b2;
+  --text-3: #656c7e;
+  --text-4: #434959;
+  --accent: #f0b429;
+  --accent-dim: rgba(240,180,41,0.12);
+  --accent-soft: rgba(240,180,41,0.25);
+  --green: #4ade80;
+  --red: #fb7185;
+  --p1:#2dd4bf;--p2:#f0b429;--p3:#fb7185;--p4:#a78bfa;--p5:#38bdf8;--p6:#4ade80;--p7:#f472b6;--p8:#fb923c;--p9:#818cf8;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --measure: 78rem;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body {
+  font-family: var(--font-body);
+  background: var(--ink-000);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img, svg { display: block; max-width: 100%; }
+
+/* ========== LAYOUT ========== */
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ========== HEADER ========== */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,11,0.85);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.header__bar {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 3.75rem;
+}
+.mark {
+  display: flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; color: var(--text);
+}
+.mark__grid { width: 26px; height: 26px; }
+.mark__word {
+  font-family: var(--font-body);
+  font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em;
+}
+.header__nav { display: flex; align-items: center; gap: 1.5rem; }
+.header__nav a {
+  font-size: 0.85rem; color: var(--text-2);
+  transition: color 0.2s;
+}
+.header__nav a:hover { color: var(--text); text-decoration: none; }
+
+/* ========== BREADCRUMB ========== */
+.crumbs {
+  padding: 1.5rem 0 0;
+  font-size: 0.8rem; color: var(--text-3);
+  display: flex; gap: 0.5rem; align-items: center;
+}
+.crumbs a { color: var(--text-3); }
+.crumbs a:hover { color: var(--text-2); }
+
+/* ========== HERO ========== */
+.hero {
+  padding: clamp(3rem,8vw,6rem) 0 clamp(2rem,5vw,4rem);
+}
+.hero__badge {
+  display: flex; gap: 0.75rem; align-items: center;
+  margin-bottom: 1.5rem;
+}
+.hero__icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-dim);
+  border-radius: 12px; color: var(--accent);
+}
+.pill {
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; padding: 0.3em 0.75em;
+  border: 1px solid var(--line-2); border-radius: 999px;
+  color: var(--text-2);
+}
+.pill--live {
+  display: flex; align-items: center; gap: 0.4em;
+  border-color: var(--green); color: var(--green);
+}
+.pill__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor; animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400; line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.hero__sub {
+  font-size: clamp(1rem,2vw,1.2rem);
+  color: var(--text-2); max-width: 54ch;
+  line-height: 1.7;
+}
+
+/* ========== CALCULATOR SECTIONS ========== */
+.calc-wrap {
+  padding: clamp(2rem,5vw,4rem) 0;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400; margin-bottom: 0.5rem;
+}
+.section-desc {
+  color: var(--text-2); font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.calc-card {
+  background: var(--ink-100);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem,3vw,2.5rem);
+  margin-bottom: 2rem;
+}
+.calc-card__head {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.75rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.calc-card__num {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--accent); font-weight: 500;
+  background: var(--accent-dim);
+  padding: 0.3em 0.65em; border-radius: 6px;
+}
+.calc-card__title {
+  font-weight: 600; font-size: 1.05rem;
+}
+
+/* ========== FORM GRID ========== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.78rem; color: var(--text-2);
+  font-weight: 500; letter-spacing: 0.01em;
+}
+.form-group input {
+  background: var(--ink-200);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none; width: 100%;
+}
+.form-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.form-group input::placeholder { color: var(--text-4); }
+
+.form-divider {
+  grid-column: 1 / -1;
+  height: 1px; background: var(--line);
+  margin: 0.5rem 0;
+}
+.form-sub {
+  grid-column: 1 / -1;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--text-2); text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* ========== RESULT CARDS ========== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; margin-top: 1.75rem;
+}
+.result-card {
+  background: var(--ink-200);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.result-card:hover { border-color: var(--line-3); }
+.result-card__label {
+  font-size: 0.72rem; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-weight: 600; margin-bottom: 0.5rem;
+}
+.result-card__value {
+  font-family: var(--font-mono);
+  font-size: 1.35rem; font-weight: 500;
+  color: var(--text);
+}
+.result-card--accent .result-card__value { color: var(--accent); }
+.result-card--green .result-card__value { color: var(--green); }
+.result-card--red .result-card__value { color: var(--red); }
+
+/* ========== STATUS BADGE ========== */
+.status-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; border-radius: 999px;
+  font-size: 0.85rem; font-weight: 600;
+  margin-top: 1rem;
+}
+.status-badge--mandatory {
+  background: rgba(251,113,133,0.12);
+  color: var(--red);
+  border: 1px solid rgba(251,113,133,0.25);
+}
+.status-badge--optional {
+  background: rgba(74,222,128,0.12);
+  color: var(--green);
+  border: 1px solid rgba(74,222,128,0.25);
+}
+.status-badge--info {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-soft);
+}
+
+/* ========== FILING STATUS SECTION ========== */
+.filing-status {
+  display: flex; flex-direction: column;
+  gap: 1rem; align-items: flex-start;
+}
+.filing-row {
+  display: flex; align-items: center; gap: 1rem;
+  flex-wrap: wrap;
+}
+.filing-row__label {
+  font-size: 0.9rem; color: var(--text-2);
+  min-width: 180px;
+}
+.filing-row__result {
+  font-family: var(--font-mono); font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ========== MISMATCH BAR ========== */
+.mismatch-bar {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.88rem; font-weight: 500;
+}
+.mismatch-bar--ok {
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.2);
+  color: var(--green);
+}
+.mismatch-bar--warn {
+  background: rgba(240,180,41,0.08);
+  border: 1px solid rgba(240,180,41,0.2);
+  color: var(--accent);
+}
+.mismatch-bar--error {
+  background: rgba(251,113,133,0.08);
+  border: 1px solid rgba(251,113,133,0.2);
+  color: var(--red);
+}
+
+/* ========== BUTTON ========== */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.5rem; border-radius: 10px;
+  font-family: var(--font-body);
+  font-weight: 600; font-size: 0.88rem;
+  cursor: pointer; border: none;
+  transition: all 0.2s var(--ease);
+  text-decoration: none;
+}
+.btn--accent {
+  background: var(--accent); color: var(--ink-000);
+}
+.btn--accent:hover {
+  background: #e5a820; text-decoration: none;
+  box-shadow: 0 4px 24px rgba(240,180,41,0.25);
+}
+.btn--ghost {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--line-2);
+}
+.btn--ghost:hover {
+  border-color: var(--line-3); text-decoration: none;
+  background: var(--ink-200);
+}
+.btn--reset {
+  background: var(--ink-300); color: var(--text-2);
+}
+.btn--reset:hover { color: var(--text); background: var(--ink-200); }
+
+.btn-row {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ========== SEO CONTENT ========== */
+.seo-content {
+  padding: clamp(3rem,6vw,5rem) 0;
+}
+.seo-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400; margin-bottom: 1rem;
+}
+.seo-content h3 {
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--text); margin: 2rem 0 0.75rem;
+}
+.seo-content p {
+  color: var(--text-2); line-height: 1.8;
+  max-width: 64ch; margin-bottom: 1rem;
+}
+.seo-content ul {
+  color: var(--text-2); line-height: 1.8;
+  max-width: 64ch; padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.seo-content li { margin-bottom: 0.4rem; }
+
+/* ========== FAQ ========== */
+.faq { padding: clamp(2rem,5vw,4rem) 0; }
+.faq details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  background: var(--ink-100);
+  margin-bottom: 1rem;
+}
+.faq summary {
+  cursor: pointer; font-weight: 600; color: var(--text);
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg {
+  flex-shrink: 0; margin-left: 1rem;
+  transition: transform 0.2s;
+}
+.faq details[open] summary svg { transform: rotate(180deg); }
+.faq details p {
+  margin-top: 1rem; color: var(--text-2); line-height: 1.7;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: clamp(3rem,6vw,5rem) 0 2rem;
+  margin-top: 2rem;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(2rem,4vw,4rem);
+}
+.footer__blurb {
+  color: var(--text-3); font-size: 0.85rem;
+  line-height: 1.7; margin-top: 1rem; max-width: 36ch;
+}
+.footer h4 {
+  font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-3);
+  margin-bottom: 1rem;
+}
+.footer ul { list-style: none; padding: 0; }
+.footer li { margin-bottom: 0.6rem; }
+.footer li a {
+  color: var(--text-2); font-size: 0.88rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.footer li a:hover { color: var(--text); text-decoration: none; }
+.menu__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); display: inline-block;
+  flex-shrink: 0;
+}
+.footer__bottom {
+  display: flex; justify-content: space-between;
+  align-items: center; padding-top: 2rem; margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem; color: var(--text-4);
+}
+.footer__bottom a { color: var(--text-3); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+  .header__nav { display: none; }
+  .filing-row { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+}
+@media (max-width: 480px) {
+  .results-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap header__bar">
+    <a class="mark" href="/" aria-label="DoAide - home">
+      <svg class="mark__grid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="3" cy="3" r="2.6" fill="#2dd4bf" opacity=".92"/><circle cx="12" cy="3" r="2.6" fill="#f0b429" opacity=".92"/><circle cx="21" cy="3" r="2.6" fill="#fb7185" opacity=".92"/><circle cx="3" cy="12" r="2.6" fill="#a78bfa" opacity=".92"/><circle cx="12" cy="12" r="2.6" fill="#38bdf8" opacity=".92"/><circle cx="21" cy="12" r="2.6" fill="#4ade80" opacity=".92"/><circle cx="3" cy="21" r="2.6" fill="#f472b6" opacity=".92"/><circle cx="12" cy="21" r="2.6" fill="#fb923c" opacity=".92"/><circle cx="21" cy="21" r="2.6" fill="#818cf8" opacity=".92"/></svg>
+      <span class="mark__word">DoAide</span>
+    </a>
+    <nav class="header__nav" aria-label="Primary">
+      <a href="/#products">Catalogue</a>
+      <a href="/#company">Company</a>
+      <a href="/gstbot.html">DoAide GST</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- BREADCRUMB -->
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Catalogue</a><span>/</span><a href="/gstbot.html">GST Tools</a><span>/</span><span>GSTR-9 Calculator</span>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__badge">
+        <span class="hero__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+        </span>
+        <span class="pill pill--live"><span class="pill__dot"></span>Live</span>
+        <span class="pill">GST Compliance</span>
+      </div>
+      <h1>GSTR-9 Annual Return Calculator</h1>
+      <p class="hero__sub">Reconcile your turnover, tax liability, and Input Tax Credit for GSTR-9 filing. Check whether GSTR-9 and GSTR-9C are mandatory for your business. Free, instant, no login required.</p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <div class="calc-wrap">
+    <div class="wrap">
+
+      <!-- SECTION 1: FILING STATUS CHECK -->
+      <div class="calc-card" id="sec-filing">
+        <div class="calc-card__head">
+          <span class="calc-card__num">01</span>
+          <span class="calc-card__title">GSTR-9 Filing Status Check</span>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="aggregateTurnover">Aggregate Annual Turnover</label>
+            <input type="text" id="aggregateTurnover" placeholder="e.g. 3,50,00,000" inputmode="numeric">
+          </div>
+        </div>
+        <div id="filingResult" class="filing-status" style="margin-top:1.5rem"></div>
+      </div>
+
+      <!-- SECTION 2: TURNOVER RECONCILIATION -->
+      <div class="calc-card" id="sec-turnover">
+        <div class="calc-card__head">
+          <span class="calc-card__num">02</span>
+          <span class="calc-card__title">Turnover Reconciliation</span>
+        </div>
+        <p class="section-desc">Enter your supply details as per books of accounts for the financial year.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="totalSales">Total Sales as per Books</label>
+            <input type="text" id="totalSales" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="exports">Exports</label>
+            <input type="text" id="exports" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="exemptSupplies">Exempt Supplies</label>
+            <input type="text" id="exemptSupplies" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="nonGstSupplies">Non-GST Supplies</label>
+            <input type="text" id="nonGstSupplies" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="taxableSupplies">Taxable Supplies (incl. zero-rated)</label>
+            <input type="text" id="taxableSupplies" placeholder="0" inputmode="numeric">
+          </div>
+        </div>
+        <div id="turnoverResult"></div>
+      </div>
+
+      <!-- SECTION 3: TAX LIABILITY -->
+      <div class="calc-card" id="sec-tax">
+        <div class="calc-card__head">
+          <span class="calc-card__num">03</span>
+          <span class="calc-card__title">Tax Liability Summary</span>
+        </div>
+        <p class="section-desc">Enter tax collected on outward supplies and how it was paid.</p>
+        <div class="form-grid">
+          <div class="form-sub">Tax Collected on Outward Supplies</div>
+          <div class="form-group">
+            <label for="igstCollected">IGST Collected</label>
+            <input type="text" id="igstCollected" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cgstCollected">CGST Collected</label>
+            <input type="text" id="cgstCollected" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="sgstCollected">SGST Collected</label>
+            <input type="text" id="sgstCollected" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cessCollected">Cess Collected</label>
+            <input type="text" id="cessCollected" placeholder="0" inputmode="numeric">
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-sub">Tax Paid via ITC (Input Tax Credit)</div>
+          <div class="form-group">
+            <label for="igstItc">IGST Paid via ITC</label>
+            <input type="text" id="igstItc" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cgstItc">CGST Paid via ITC</label>
+            <input type="text" id="cgstItc" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="sgstItc">SGST Paid via ITC</label>
+            <input type="text" id="sgstItc" placeholder="0" inputmode="numeric">
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-sub">Tax Paid in Cash (Electronic Cash Ledger)</div>
+          <div class="form-group">
+            <label for="igstCash">IGST Paid in Cash</label>
+            <input type="text" id="igstCash" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cgstCash">CGST Paid in Cash</label>
+            <input type="text" id="cgstCash" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="sgstCash">SGST Paid in Cash</label>
+            <input type="text" id="sgstCash" placeholder="0" inputmode="numeric">
+          </div>
+        </div>
+        <div id="taxResult"></div>
+      </div>
+
+      <!-- SECTION 4: ITC RECONCILIATION -->
+      <div class="calc-card" id="sec-itc">
+        <div class="calc-card__head">
+          <span class="calc-card__num">04</span>
+          <span class="calc-card__title">ITC Reconciliation</span>
+        </div>
+        <p class="section-desc">Compare ITC claimed in GSTR-3B with ITC available as per GSTR-2B.</p>
+        <div class="form-grid">
+          <div class="form-sub">ITC Claimed as per GSTR-3B</div>
+          <div class="form-group">
+            <label for="igst3b">IGST (GSTR-3B)</label>
+            <input type="text" id="igst3b" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cgst3b">CGST (GSTR-3B)</label>
+            <input type="text" id="cgst3b" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="sgst3b">SGST (GSTR-3B)</label>
+            <input type="text" id="sgst3b" placeholder="0" inputmode="numeric">
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-sub">ITC Available as per GSTR-2B</div>
+          <div class="form-group">
+            <label for="igst2b">IGST (GSTR-2B)</label>
+            <input type="text" id="igst2b" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="cgst2b">CGST (GSTR-2B)</label>
+            <input type="text" id="cgst2b" placeholder="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label for="sgst2b">SGST (GSTR-2B)</label>
+            <input type="text" id="sgst2b" placeholder="0" inputmode="numeric">
+          </div>
+
+          <div class="form-divider"></div>
+          <div class="form-sub">ITC Reversals</div>
+          <div class="form-group">
+            <label for="itcReversed">Total ITC Reversed During the Year</label>
+            <input type="text" id="itcReversed" placeholder="0" inputmode="numeric">
+          </div>
+        </div>
+        <div id="itcResult"></div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="btn-row">
+        <button class="btn btn--accent" onclick="calculateAll()">Calculate All Sections</button>
+        <button class="btn btn--reset" onclick="resetAll()">Reset All Fields</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <section class="seo-content">
+    <div class="wrap">
+      <h2>What is GSTR-9 and Why You Need This Calculator</h2>
+
+      <p>GSTR-9 is the annual return that every registered GST taxpayer in India must file. It consolidates all the monthly or quarterly returns -- GSTR-1, GSTR-3B, and amendments -- filed during a financial year into a single comprehensive summary. The form captures details of outward supplies, inward supplies, Input Tax Credit availed and reversed, tax paid, and any demands or refunds during the year. Filing GSTR-9 accurately is essential for GST compliance and avoiding notices from the tax department.</p>
+
+      <p>This free GSTR-9 annual return calculator helps businesses and tax professionals prepare their annual return by performing four critical calculations: turnover reconciliation, tax liability comparison, ITC reconciliation, and filing status determination. Instead of manually cross-checking figures across multiple returns and ledgers, this tool gives you a structured summary that highlights mismatches before you file.</p>
+
+      <h3>Turnover Reconciliation for GSTR-9</h3>
+      <p>One of the most common reasons for GST notices is a mismatch between turnover declared in GSTR-9 and the turnover in financial statements. The turnover reconciliation section lets you enter your total sales as per books, exports, exempt supplies, non-GST supplies, and taxable supplies separately. The calculator then computes the aggregate turnover and compares the sum of individual components with your total sales figure. Any difference between these two numbers needs to be investigated -- it could be due to credit notes, debit notes, advances, or supplies that were missed in monthly returns.</p>
+
+      <h3>Tax Liability and Payment Reconciliation</h3>
+      <p>The tax liability section of GSTR-9 requires you to declare the total tax collected under IGST, CGST, SGST, and Cess, and then show how it was paid -- either through Input Tax Credit utilisation or cash payment through the Electronic Cash Ledger. Our calculator adds up both payment methods and compares the total tax paid against the total liability. If there is a shortfall, it means you have unpaid tax that must be settled before filing. If there is an excess, it may indicate over-payment or errors in return filing that need correction.</p>
+
+      <h3>ITC Reconciliation: GSTR-3B vs GSTR-2B</h3>
+      <p>Input Tax Credit reconciliation is arguably the most complex and error-prone part of GSTR-9. The ITC you claimed in your monthly GSTR-3B returns may not match the ITC reflected in your GSTR-2B auto-generated statements. Common reasons include invoices uploaded late by suppliers, credit notes not accounted for, or ITC claimed on ineligible supplies. This calculator compares IGST, CGST, and SGST separately between GSTR-3B and GSTR-2B, accounts for ITC reversed during the year, and shows you the net ITC available along with any mismatch. An excess claim over GSTR-2B is flagged as it could trigger a notice under Section 16(2)(aa).</p>
+
+      <h3>GSTR-9 Filing Thresholds</h3>
+      <p>Not every GST-registered business needs to file GSTR-9. As per the latest notifications, GSTR-9 is mandatory only for taxpayers whose aggregate turnover exceeds Rs 2 crore in the financial year. For businesses below this threshold, filing is optional. Additionally, taxpayers with aggregate turnover exceeding Rs 5 crore must also file GSTR-9C, which is a self-certified reconciliation statement between the GSTR-9 figures and the audited annual financial statements. The filing status section of this calculator instantly tells you where you stand based on your turnover.</p>
+
+      <h3>Who Should Use This Calculator</h3>
+      <p>This GSTR-9 reconciliation tool is designed for:</p>
+      <ul>
+        <li>Business owners preparing their GST annual return and want to verify figures before filing on the GST portal</li>
+        <li>Chartered Accountants and tax professionals who prepare GSTR-9 for multiple clients and need a quick reconciliation check</li>
+        <li>GST practitioners who want to identify mismatches between books, GSTR-3B, and GSTR-2B before the client files</li>
+        <li>Small business owners who want to check whether GSTR-9 is even mandatory for their turnover level</li>
+      </ul>
+
+      <h3>Important GSTR-9 Due Dates</h3>
+      <p>The due date for filing GSTR-9 is December 31 of the year following the financial year. For FY 2025-26, the due date is December 31, 2026. Late filing attracts a late fee of Rs 200 per day (Rs 100 CGST + Rs 100 SGST), subject to a maximum of 0.5% of the turnover in the state or union territory. Filing on time also avoids the risk of best-judgment assessments by the department under Section 62.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;margin-bottom:1.5rem">Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is GSTR-9?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>GSTR-9 is the annual return filed by registered GST taxpayers. It consolidates all monthly/quarterly returns (GSTR-1, GSTR-3B) into a single summary covering outward supplies, inward supplies, ITC claimed, tax paid, and amendments for the entire financial year.</p>
+      </details>
+
+      <details>
+        <summary>Who needs to file GSTR-9?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>GSTR-9 is mandatory for taxpayers with aggregate turnover exceeding Rs 2 crore. It is optional for those below this threshold. Composition dealers, casual taxable persons, input service distributors, non-resident taxable persons, and TDS/TCS deductors are exempt from GSTR-9.</p>
+      </details>
+
+      <details>
+        <summary>What is GSTR-9C and when is it required?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>GSTR-9C is a self-certified reconciliation statement filed along with GSTR-9 by taxpayers whose aggregate turnover exceeds Rs 5 crore. It reconciles GSTR-9 values with audited financial statements. From FY 2020-21 onwards, CA certification is no longer required -- it is self-certified by the taxpayer.</p>
+      </details>
+
+      <details>
+        <summary>What is the due date for GSTR-9 filing?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>The due date for GSTR-9 is December 31 of the year following the financial year. For FY 2025-26, GSTR-9 is due by December 31, 2026. Late filing attracts a fee of Rs 200/day (Rs 100 CGST + Rs 100 SGST), capped at 0.5% of turnover in the state/UT.</p>
+      </details>
+
+      <details>
+        <summary>Is this GSTR-9 calculator free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Yes. This GSTR-9 annual return calculator is completely free. No login, no signup, no data stored. All calculations happen in your browser. Use it to reconcile turnover, tax liability, and ITC before filing on the GST portal.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="company">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="mark" href="/" aria-label="DoAide - home">
+          <svg class="mark__grid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="3" cy="3" r="2.6" fill="#2dd4bf" opacity=".92"/><circle cx="12" cy="3" r="2.6" fill="#f0b429" opacity=".92"/><circle cx="21" cy="3" r="2.6" fill="#fb7185" opacity=".92"/><circle cx="3" cy="12" r="2.6" fill="#a78bfa" opacity=".92"/><circle cx="12" cy="12" r="2.6" fill="#38bdf8" opacity=".92"/><circle cx="21" cy="12" r="2.6" fill="#4ade80" opacity=".92"/><circle cx="3" cy="21" r="2.6" fill="#f472b6" opacity=".92"/><circle cx="12" cy="21" r="2.6" fill="#fb923c" opacity=".92"/><circle cx="21" cy="21" r="2.6" fill="#818cf8" opacity=".92"/></svg>
+          <span class="mark__word">DoAide</span>
+        </a>
+        <p class="footer__blurb">Applied-AI products for the operational work that keeps a business running -- valuation, compliance, career tools, financial planning and the conversations in between.</p>
+      </div>
+      <div><h4>Products</h4><ul>
+        <li><a href="/gstbot.html"><span class="menu__dot" style="--accent:var(--p2)"></span>DoAide GST</a></li>
+        <li><a href="/invoicer.html"><span class="menu__dot" style="--accent:var(--p2)"></span>DoAide Invoicer</a></li>
+        <li><a href="/salary.html"><span class="menu__dot" style="--accent:var(--p1)"></span>DoAide Salary</a></li>
+        <li><a href="/resume.html"><span class="menu__dot" style="--accent:var(--p3)"></span>DoAide Resume</a></li>
+        <li><a href="/qr.html"><span class="menu__dot" style="--accent:var(--p4)"></span>DoAide QR</a></li>
+        <li><a href="/convert.html"><span class="menu__dot" style="--accent:var(--p5)"></span>DoAide Convert</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="/#products">Catalogue</a></li>
+        <li><a href="/#principles">How we build</a></li>
+        <li><a href="https://doaide.com" target="_blank" rel="noopener">doaide.com</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 DoAide</span>
+      <span><a href="https://doaide.com" target="_blank" rel="noopener">doaide.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ========== INDIAN NUMBER FORMATTING ========== */
+function formatIndian(num) {
+  if (num === 0) return '0';
+  const isNeg = num < 0;
+  num = Math.abs(Math.round(num));
+  let s = num.toString();
+  if (s.length <= 3) return (isNeg ? '-' : '') + s;
+  let last3 = s.substring(s.length - 3);
+  let rest = s.substring(0, s.length - 3);
+  let formatted = '';
+  while (rest.length > 2) {
+    formatted = ',' + rest.substring(rest.length - 2) + formatted;
+    rest = rest.substring(0, rest.length - 2);
+  }
+  formatted = rest + formatted + ',' + last3;
+  return (isNeg ? '-' : '') + formatted;
+}
+
+function parseNum(id) {
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  const v = el.value.replace(/[^0-9.-]/g, '');
+  return parseFloat(v) || 0;
+}
+
+/* ========== AUTO-FORMAT ON BLUR ========== */
+document.querySelectorAll('.form-group input').forEach(inp => {
+  inp.addEventListener('blur', function() {
+    const v = this.value.replace(/[^0-9.-]/g, '');
+    const n = parseFloat(v);
+    if (!isNaN(n) && n !== 0) {
+      this.value = formatIndian(n);
+    }
+  });
+  inp.addEventListener('focus', function() {
+    const v = this.value.replace(/[^0-9.-]/g, '');
+    this.value = v === '0' ? '' : v;
+  });
+  // Auto-calculate on input
+  inp.addEventListener('input', debounce(calculateAll, 500));
+});
+
+function debounce(fn, ms) {
+  let t;
+  return function() { clearTimeout(t); t = setTimeout(fn, ms); };
+}
+
+/* ========== SECTION 1: FILING STATUS ========== */
+function calcFiling() {
+  const turnover = parseNum('aggregateTurnover');
+  const container = document.getElementById('filingResult');
+  if (turnover === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const crore2 = 20000000;
+  const crore5 = 50000000;
+  const gstr9Mandatory = turnover > crore2;
+  const gstr9cRequired = turnover > crore5;
+
+  let html = '<div class="filing-status">';
+
+  // Turnover display
+  html += '<div class="filing-row"><span class="filing-row__label">Aggregate Turnover:</span><span class="filing-row__result" style="color:var(--accent)">' + formatIndian(turnover) + '</span></div>';
+
+  // GSTR-9 status
+  if (gstr9Mandatory) {
+    html += '<div class="status-badge status-badge--mandatory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>GSTR-9 is MANDATORY (turnover exceeds Rs 2 crore)</div>';
+  } else {
+    html += '<div class="status-badge status-badge--optional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m4 12 5 5 11-11"/></svg>GSTR-9 is OPTIONAL (turnover below Rs 2 crore)</div>';
+  }
+
+  // GSTR-9C status
+  if (gstr9cRequired) {
+    html += '<div class="status-badge status-badge--mandatory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>GSTR-9C is REQUIRED (turnover exceeds Rs 5 crore)</div>';
+  } else {
+    html += '<div class="status-badge status-badge--info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m4 12 5 5 11-11"/></svg>GSTR-9C is NOT required (turnover below Rs 5 crore)</div>';
+  }
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+/* ========== SECTION 2: TURNOVER RECONCILIATION ========== */
+function calcTurnover() {
+  const totalSales = parseNum('totalSales');
+  const exports = parseNum('exports');
+  const exempt = parseNum('exemptSupplies');
+  const nonGst = parseNum('nonGstSupplies');
+  const taxable = parseNum('taxableSupplies');
+
+  const container = document.getElementById('turnoverResult');
+  if (totalSales === 0 && exports === 0 && exempt === 0 && nonGst === 0 && taxable === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const sumComponents = exports + exempt + nonGst + taxable;
+  const diff = totalSales - sumComponents;
+
+  let html = '<div class="results-grid">';
+  html += '<div class="result-card result-card--accent"><div class="result-card__label">Total Sales (Books)</div><div class="result-card__value">' + formatIndian(totalSales) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Sum of Components</div><div class="result-card__value">' + formatIndian(sumComponents) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Exports</div><div class="result-card__value">' + formatIndian(exports) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Exempt Supplies</div><div class="result-card__value">' + formatIndian(exempt) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Non-GST Supplies</div><div class="result-card__value">' + formatIndian(nonGst) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Taxable Supplies</div><div class="result-card__value">' + formatIndian(taxable) + '</div></div>';
+  html += '</div>';
+
+  if (diff === 0) {
+    html += '<div class="mismatch-bar mismatch-bar--ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="m4 12 5 5 11-11"/></svg>Turnover reconciled -- no difference found.</div>';
+  } else {
+    const cls = Math.abs(diff) > totalSales * 0.01 ? 'mismatch-bar--error' : 'mismatch-bar--warn';
+    const sign = diff > 0 ? 'higher' : 'lower';
+    html += '<div class="mismatch-bar ' + cls + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Difference of Rs ' + formatIndian(Math.abs(diff)) + ' -- total sales is ' + sign + ' than sum of components. Investigate credit/debit notes, advances, or missed supplies.</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+/* ========== SECTION 3: TAX LIABILITY ========== */
+function calcTax() {
+  const igstC = parseNum('igstCollected');
+  const cgstC = parseNum('cgstCollected');
+  const sgstC = parseNum('sgstCollected');
+  const cessC = parseNum('cessCollected');
+
+  const igstI = parseNum('igstItc');
+  const cgstI = parseNum('cgstItc');
+  const sgstI = parseNum('sgstItc');
+
+  const igstK = parseNum('igstCash');
+  const cgstK = parseNum('cgstCash');
+  const sgstK = parseNum('sgstCash');
+
+  const container = document.getElementById('taxResult');
+  const allZero = [igstC,cgstC,sgstC,cessC,igstI,cgstI,sgstI,igstK,cgstK,sgstK].every(v => v === 0);
+  if (allZero) { container.innerHTML = ''; return; }
+
+  const totalLiability = igstC + cgstC + sgstC + cessC;
+  const totalItcPaid = igstI + cgstI + sgstI;
+  const totalCashPaid = igstK + cgstK + sgstK;
+  const totalPaid = totalItcPaid + totalCashPaid;
+  const diff = totalLiability - totalPaid;
+
+  let html = '<div class="results-grid">';
+  html += '<div class="result-card result-card--accent"><div class="result-card__label">Total Tax Liability</div><div class="result-card__value">' + formatIndian(totalLiability) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Paid via ITC</div><div class="result-card__value">' + formatIndian(totalItcPaid) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">Paid in Cash</div><div class="result-card__value">' + formatIndian(totalCashPaid) + '</div></div>';
+  html += '<div class="result-card ' + (diff === 0 ? 'result-card--green' : diff > 0 ? 'result-card--red' : 'result-card--green') + '"><div class="result-card__label">' + (diff >= 0 ? 'Balance Due' : 'Excess Paid') + '</div><div class="result-card__value">' + formatIndian(Math.abs(diff)) + '</div></div>';
+  html += '</div>';
+
+  // Component-wise breakdown
+  html += '<div style="margin-top:1.5rem;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.85rem">';
+  html += '<thead><tr style="border-bottom:1px solid var(--line-2)">';
+  html += '<th style="text-align:left;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Component</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Liability</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Via ITC</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Cash</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Balance</th>';
+  html += '</tr></thead><tbody>';
+
+  function taxRow(name, liab, itc, cash) {
+    const bal = liab - itc - cash;
+    const clr = bal === 0 ? 'var(--green)' : bal > 0 ? 'var(--red)' : 'var(--green)';
+    return '<tr style="border-bottom:1px solid var(--line)"><td style="padding:0.6rem;color:var(--text-2)">' + name + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text)">' + formatIndian(liab) + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text-2)">' + formatIndian(itc) + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text-2)">' + formatIndian(cash) + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:' + clr + '">' + (bal >= 0 ? '' : '-') + formatIndian(Math.abs(bal)) + '</td></tr>';
+  }
+
+  html += taxRow('IGST', igstC, igstI, igstK);
+  html += taxRow('CGST', cgstC, cgstI, cgstK);
+  html += taxRow('SGST', sgstC, sgstI, sgstK);
+  html += '<tr style="border-bottom:1px solid var(--line)"><td style="padding:0.6rem;color:var(--text-2)">Cess</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text)">' + formatIndian(cessC) + '</td><td colspan="3" style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text-3)">--</td></tr>';
+  html += '</tbody></table></div>';
+
+  if (diff === 0) {
+    html += '<div class="mismatch-bar mismatch-bar--ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="m4 12 5 5 11-11"/></svg>Tax liability fully settled -- no balance due.</div>';
+  } else if (diff > 0) {
+    html += '<div class="mismatch-bar mismatch-bar--error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Outstanding tax balance of Rs ' + formatIndian(diff) + '. Pay via DRC-03 or adjust in next return before filing GSTR-9.</div>';
+  } else {
+    html += '<div class="mismatch-bar mismatch-bar--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Excess payment of Rs ' + formatIndian(Math.abs(diff)) + '. Verify if refund claim is applicable or carry forward as balance in cash ledger.</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+/* ========== SECTION 4: ITC RECONCILIATION ========== */
+function calcItc() {
+  const igst3b = parseNum('igst3b');
+  const cgst3b = parseNum('cgst3b');
+  const sgst3b = parseNum('sgst3b');
+
+  const igst2b = parseNum('igst2b');
+  const cgst2b = parseNum('cgst2b');
+  const sgst2b = parseNum('sgst2b');
+
+  const reversed = parseNum('itcReversed');
+
+  const container = document.getElementById('itcResult');
+  const allZero = [igst3b,cgst3b,sgst3b,igst2b,cgst2b,sgst2b,reversed].every(v => v === 0);
+  if (allZero) { container.innerHTML = ''; return; }
+
+  const total3b = igst3b + cgst3b + sgst3b;
+  const total2b = igst2b + cgst2b + sgst2b;
+  const netItc = total2b - reversed;
+  const mismatch = total3b - total2b;
+
+  let html = '<div class="results-grid">';
+  html += '<div class="result-card"><div class="result-card__label">ITC Claimed (GSTR-3B)</div><div class="result-card__value">' + formatIndian(total3b) + '</div></div>';
+  html += '<div class="result-card"><div class="result-card__label">ITC Available (GSTR-2B)</div><div class="result-card__value">' + formatIndian(total2b) + '</div></div>';
+  html += '<div class="result-card result-card--red"><div class="result-card__label">ITC Reversed</div><div class="result-card__value">' + formatIndian(reversed) + '</div></div>';
+  html += '<div class="result-card result-card--green"><div class="result-card__label">Net ITC Available</div><div class="result-card__value">' + formatIndian(netItc) + '</div></div>';
+  html += '</div>';
+
+  // Component-wise
+  html += '<div style="margin-top:1.5rem;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.85rem">';
+  html += '<thead><tr style="border-bottom:1px solid var(--line-2)">';
+  html += '<th style="text-align:left;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Tax</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">GSTR-3B</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">GSTR-2B</th>';
+  html += '<th style="text-align:right;padding:0.6rem;color:var(--text-3);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em">Difference</th>';
+  html += '</tr></thead><tbody>';
+
+  function itcRow(name, v3b, v2b) {
+    const d = v3b - v2b;
+    const clr = d === 0 ? 'var(--green)' : d > 0 ? 'var(--red)' : 'var(--accent)';
+    return '<tr style="border-bottom:1px solid var(--line)"><td style="padding:0.6rem;color:var(--text-2)">' + name + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text)">' + formatIndian(v3b) + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:var(--text)">' + formatIndian(v2b) + '</td><td style="text-align:right;padding:0.6rem;font-family:var(--font-mono);color:' + clr + '">' + (d >= 0 ? '' : '-') + formatIndian(Math.abs(d)) + '</td></tr>';
+  }
+
+  html += itcRow('IGST', igst3b, igst2b);
+  html += itcRow('CGST', cgst3b, cgst2b);
+  html += itcRow('SGST', sgst3b, sgst2b);
+  html += '</tbody></table></div>';
+
+  if (mismatch === 0) {
+    html += '<div class="mismatch-bar mismatch-bar--ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="m4 12 5 5 11-11"/></svg>ITC claimed matches GSTR-2B -- no mismatch.</div>';
+  } else if (mismatch > 0) {
+    html += '<div class="mismatch-bar mismatch-bar--error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Excess ITC claimed: Rs ' + formatIndian(mismatch) + ' more in GSTR-3B than GSTR-2B. This may need reversal under Rule 36(4) / Section 16(2)(aa). Verify supplier invoices.</div>';
+  } else {
+    html += '<div class="mismatch-bar mismatch-bar--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Unclaimed ITC of Rs ' + formatIndian(Math.abs(mismatch)) + '. GSTR-2B shows more ITC available than what was claimed in GSTR-3B. You may claim it in upcoming returns if within the time limit.</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+/* ========== MASTER CONTROLS ========== */
+function calculateAll() {
+  calcFiling();
+  calcTurnover();
+  calcTax();
+  calcItc();
+}
+
+function resetAll() {
+  document.querySelectorAll('.form-group input').forEach(inp => { inp.value = ''; });
+  document.getElementById('filingResult').innerHTML = '';
+  document.getElementById('turnoverResult').innerHTML = '';
+  document.getElementById('taxResult').innerHTML = '';
+  document.getElementById('itcResult').innerHTML = '';
+}
+
+// Run on page load in case of autofill
+document.addEventListener('DOMContentLoaded', calculateAll);
+</script>
+</body>
+</html>

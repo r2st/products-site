@@ -3,7 +3,7 @@
 
 const ICONS = {
   n409: '<path d="M3 20h18M6 20V10m5 10V4m5 16v-7"/><path d="m6 8 5-4 5 5 4-4"/>',
-  herald: '<path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/><path d="M10.5 13.5 21 3"/>',
+  pulse: '<path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/><path d="M10.5 13.5 21 3"/>',
   gstbot: '<path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17l-3-2-3 2-3-2-3 2Z"/><path d="M9 8h6M9 12h6"/>',
   talentping: '<circle cx="12" cy="9" r="3.2"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0"/><path d="M3.5 6.5a9 9 0 0 1 3-3M20.5 6.5a9 9 0 0 0-3-3"/>',
   documedic: '<path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M6 3H4.5M14 3h1.5"/><path d="M10 12v3a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="12" r="2"/>',
@@ -68,7 +68,7 @@ const PRODUCTS = [
 
   /* ------------------------------------------------------------------ 02 */
   {
-    slug: 'herald',
+    slug: 'pulse',
     num: '02',
     name: 'DoAide Pulse',
     accent: '--p2',
@@ -76,7 +76,7 @@ const PRODUCTS = [
     url: 'https://pulse.doaide.com',
     status: 'live',
     category: 'Outreach & communications',
-    icon: ICONS.herald,
+    icon: ICONS.pulse,
     one: 'AI outreach that writes, schedules and sends campaigns — and holds itself to a quality bar before anything leaves.',
     tagline: 'Campaigns that run themselves, without sounding like they did.',
     lede:
