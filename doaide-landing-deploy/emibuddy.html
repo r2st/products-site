@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free EMI & SIP Calculator India — 9 Financial Calculators | EMIBuddy by DoAide</title>
+<meta name="description" content="Free EMI, SIP, lumpsum, FD, PPF, NPS, loan comparison, prepayment & affordability calculators. Bank-specific rates for SBI, HDFC, ICICI & more. No login needed.">
+<meta name="keywords" content="EMI calculator, SIP calculator, loan calculator India, home loan EMI calculator, FD calculator, PPF calculator, NPS calculator, lumpsum calculator, loan comparison, prepayment calculator, affordability calculator, bank EMI rates India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://emi.doaide.com/">
+<meta property="og:title" content="Free EMI & SIP Calculator India — 9 Calculators | EMIBuddy">
+<meta property="og:description" content="9 free financial calculators: EMI, SIP, lumpsum, FD, PPF, NPS, loan comparison, prepayment, affordability. Bank-specific rates. No login.">
+<meta property="og:url" content="https://emi.doaide.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DoAide">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free EMI & SIP Calculator India — 9 Calculators | EMIBuddy">
+<meta name="twitter:description" content="9 free financial calculators: EMI, SIP, lumpsum, FD, PPF, NPS, loan comparison, prepayment, affordability. No login needed.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EMIBuddy — Free EMI & SIP Calculators",
+  "description": "Free EMI, SIP, lumpsum, FD, PPF, NPS, loan comparison, prepayment and affordability calculators with bank-specific rates for India.",
+  "url": "https://emi.doaide.com/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "author": { "@type": "Organization", "name": "DoAide", "url": "https://doaide.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is EMI and how is it calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EMI (Equated Monthly Instalment) is a fixed monthly payment to repay a loan. It is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is the principal, r is the monthly interest rate, and n is the number of months. EMIBuddy does this calculation instantly for any loan amount." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between SIP and lumpsum investment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SIP (Systematic Investment Plan) involves investing a fixed amount regularly (usually monthly), while lumpsum is a one-time investment. SIP benefits from rupee cost averaging — you buy more units when markets are low and fewer when high. Lumpsum can give higher returns if invested at the right time, but carries more timing risk." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does loan prepayment save money?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prepayment reduces your outstanding principal, which means you pay less interest over the loan tenure. Even a small prepayment early in the loan can save lakhs in interest. EMIBuddy's prepayment calculator shows you exactly how much you save with different prepayment amounts and timings." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the current FD interest rate in India?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FD rates vary by bank and tenure. As of 2026, major banks offer 6.5–7.5% for general citizens and 7–8% for senior citizens on 1-3 year deposits. Small finance banks offer up to 8.5%. EMIBuddy shows bank-specific FD rates for accurate calculations." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much home loan can I afford?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Banks typically approve loans where EMI does not exceed 40-50% of your monthly income. The affordability calculator considers your income, existing EMIs, down payment, and interest rate to tell you the maximum loan amount and property value you can afford." }
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0b;--surface:#131316;--surface2:#1a1a1f;--border:#2a2a30;--text:#e4e4e7;--text2:#a1a1aa;--accent:#38bdf8;--accent2:#7dd3fc;--green:#22c55e;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--border);padding:16px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent2)}
+nav a{color:var(--text2);font-size:.875rem;margin-left:20px}
+nav a:hover{color:var(--text)}
+.hero{text-align:center;padding:48px 0 32px}
+.hero h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:1.05rem;max-width:650px;margin:0 auto 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;background:var(--accent);color:#050507;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--accent2);text-decoration:none}
+.calcs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:48px 0}
+@media(max-width:768px){.calcs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.calcs-grid{grid-template-columns:1fr}}
+.calc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color .2s}
+.calc-card:hover{border-color:var(--accent)}
+.calc-card h3{font-size:1rem;margin-bottom:6px;color:var(--accent2)}
+.calc-card p{color:var(--text2);font-size:.85rem}
+.calc-icon{font-size:1.5rem;margin-bottom:10px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 0 48px}
+@media(max-width:768px){.features{grid-template-columns:1fr}}
+.feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.feature h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent2)}
+.feature p{color:var(--text2);font-size:.9rem}
+.feature-icon{font-size:1.75rem;margin-bottom:12px}
+.content-section{padding:48px 0}
+.content-section h2{font-size:1.5rem;font-weight:700;margin-bottom:16px}
+.content-section h3{font-size:1.15rem;font-weight:600;margin:24px 0 10px;color:var(--accent2)}
+.content-section p{color:var(--text2);margin-bottom:12px}
+.content-section ul{color:var(--text2);margin:0 0 16px 20px}
+.content-section ul li{margin-bottom:6px;font-size:.9rem}
+.slab-table{width:100%;border-collapse:collapse;margin:16px 0 24px}
+.slab-table th,.slab-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:.875rem}
+.slab-table th{color:var(--text2);font-weight:600;background:var(--surface2)}
+.slab-table td{color:var(--text)}
+.slab-table tr:hover td{background:rgba(56,189,248,.05)}
+.faq{padding:32px 0 48px}
+.faq h2{font-size:1.5rem;font-weight:700;margin-bottom:20px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:1.2rem;color:var(--text2);transition:transform .2s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:0 20px 16px;color:var(--text2);font-size:.9rem;display:none}
+.faq-item.open .faq-a{display:block}
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--text2);font-size:.8rem}
+footer a{color:var(--text2)}
+</style>
+<script defer src="https://analytics.doaide.com/script.js" data-website-id="emi-doaide-com"></script>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<div class="logo">Do<span>Aide</span> EMIBuddy</div>
+<nav>
+<a href="https://doaide.com">Home</a>
+<a href="https://salary.doaide.com">Salary Calculator</a>
+<a href="https://fincalc.doaide.com">FinCalc</a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+<h1>Free EMI, SIP & Loan Calculators — 9 Tools</h1>
+<p>Calculate EMI, SIP returns, FD maturity, PPF, NPS, compare loans, plan prepayments, and check affordability. Bank-specific rates for SBI, HDFC, ICICI & more. No login needed.</p>
+<a class="btn" href="https://emi.doaide.com" target="_blank" rel="noopener">Open EMIBuddy — Free →</a>
+</section>
+
+<section>
+<h2 style="font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">All 9 Calculators</h2>
+<div class="calcs-grid">
+<div class="calc-card">
+<div class="calc-icon">🏦</div>
+<h3>EMI Calculator</h3>
+<p>Calculate monthly EMI for home loan, car loan, or personal loan with amortization schedule.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">📈</div>
+<h3>SIP Calculator</h3>
+<p>See how much your monthly SIP grows over time with the power of compounding.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">💰</div>
+<h3>Lumpsum Calculator</h3>
+<p>Calculate returns on a one-time investment in mutual funds or equity over any period.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">⚖️</div>
+<h3>Loan Comparison</h3>
+<p>Compare loan offers from multiple banks side-by-side — rates, EMI, and total cost.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">💸</div>
+<h3>Prepayment Calculator</h3>
+<p>See how much you save by making prepayments. Reduce tenure or EMI — your choice.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">🏧</div>
+<h3>FD Calculator</h3>
+<p>Calculate fixed deposit maturity amount with quarterly compounding. Bank-specific rates.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">🏛️</div>
+<h3>PPF Calculator</h3>
+<p>Project your Public Provident Fund corpus with yearly deposits over 15+ years.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">👴</div>
+<h3>NPS Calculator</h3>
+<p>Estimate your National Pension System corpus and monthly pension at retirement.</p>
+</div>
+<div class="calc-card">
+<div class="calc-icon">🏠</div>
+<h3>Affordability Calculator</h3>
+<p>Find out the maximum home loan and property value you can afford based on your income.</p>
+</div>
+</div>
+</section>
+
+<section class="features">
+<div class="feature">
+<div class="feature-icon">🏦</div>
+<h3>Bank-Specific Rates</h3>
+<p>Pre-loaded interest rates from SBI, HDFC, ICICI, Axis, Kotak, PNB, and 20+ banks. Always up-to-date so your calculations are accurate.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">📊</div>
+<h3>Visual Charts</h3>
+<p>Interactive pie charts and bar graphs showing principal vs interest breakdown, month-by-month amortization, and investment growth curves.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">🔒</div>
+<h3>No Login Required</h3>
+<p>All 9 calculators work instantly without signup. Your data stays in your browser — nothing is stored on our servers.</p>
+</div>
+</section>
+
+<section class="content-section">
+<h2>Understanding EMI, SIP & Financial Planning</h2>
+
+<h3>How EMI Works</h3>
+<p>EMI (Equated Monthly Instalment) is the fixed amount you pay every month to repay a loan. Each EMI consists of two parts — principal repayment and interest. In the early months, a larger portion goes toward interest. As the loan progresses, more goes toward principal. The formula is: EMI = P × r × (1+r)^n / ((1+r)^n - 1).</p>
+
+<h3>Current Home Loan Rates (2026)</h3>
+<table class="slab-table">
+<thead><tr><th>Bank</th><th>Rate (p.a.)</th><th>EMI per ₹1L (20 yrs)</th></tr></thead>
+<tbody>
+<tr><td>SBI</td><td>8.50%</td><td>₹868</td></tr>
+<tr><td>HDFC</td><td>8.75%</td><td>₹886</td></tr>
+<tr><td>ICICI</td><td>8.75%</td><td>₹886</td></tr>
+<tr><td>Axis</td><td>8.75%</td><td>₹886</td></tr>
+<tr><td>Kotak</td><td>8.70%</td><td>₹882</td></tr>
+<tr><td>PNB</td><td>8.45%</td><td>₹864</td></tr>
+</tbody>
+</table>
+
+<h3>SIP vs Lumpsum</h3>
+<p>SIP (Systematic Investment Plan) lets you invest a fixed amount monthly in mutual funds. It benefits from rupee cost averaging — you automatically buy more units when markets dip. Lumpsum investment can yield higher returns if timed well, but carries concentration risk. For most investors, SIP is the safer, more disciplined approach.</p>
+
+<h3>Power of Prepayment</h3>
+<p>Making even small prepayments on your home or car loan can save you lakhs. For example, on a ₹50 lakh home loan at 8.5% for 20 years, a one-time prepayment of ₹5 lakh in the 3rd year can save over ₹8 lakh in interest and reduce your tenure by 2+ years. EMIBuddy's prepayment calculator shows the exact impact.</p>
+
+<h3>PPF & NPS for Long-Term Savings</h3>
+<p>PPF (Public Provident Fund) offers tax-free returns at 7.1% with a 15-year lock-in — ideal for conservative, long-term savings with Section 80C benefits. NPS (National Pension System) offers market-linked returns with an additional ₹50,000 deduction under Section 80CCD(1B). Both are excellent retirement planning tools.</p>
+</section>
+
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is EMI and how is it calculated?</div>
+<div class="faq-a">EMI (Equated Monthly Instalment) is a fixed monthly payment to repay a loan. It's calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is the principal, r is the monthly interest rate, and n is the number of months. EMIBuddy handles this calculation instantly for any loan amount and tenure.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is the difference between SIP and lumpsum investment?</div>
+<div class="faq-a">SIP involves investing a fixed amount regularly (usually monthly), while lumpsum is a one-time investment. SIP benefits from rupee cost averaging — you buy more units when markets are low and fewer when high. Lumpsum can give higher returns if invested at the right time, but carries more timing risk. For most people, SIP is the safer choice.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How does loan prepayment save money?</div>
+<div class="faq-a">Prepayment reduces your outstanding principal, which means you pay less interest over the loan tenure. Even a small prepayment early in the loan can save lakhs in interest. You can choose to reduce your EMI amount or reduce your loan tenure — reducing tenure saves more on total interest.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">What is the current FD interest rate in India?</div>
+<div class="faq-a">FD rates vary by bank and tenure. As of 2026, major banks offer 6.5–7.5% for general citizens and 7–8% for senior citizens on 1-3 year deposits. Small finance banks may offer up to 8.5%. EMIBuddy shows bank-specific FD rates for accurate maturity calculations.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">How much home loan can I afford?</div>
+<div class="faq-a">Banks typically approve loans where your total EMI (including existing loans) does not exceed 40-50% of your monthly income. The affordability calculator considers your income, existing EMIs, available down payment, and current interest rates to calculate the maximum loan amount and property value you can comfortably afford.</div>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('open')">
+<div class="faq-q">Are the bank rates in EMIBuddy accurate?</div>
+<div class="faq-a">Yes, we regularly update interest rates from all major Indian banks. However, actual rates may vary based on your credit score, loan amount, employment type, and relationship with the bank. Always confirm the final rate with your bank before making decisions.</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>© 2026 <a href="https://doaide.com">DoAide</a> — Free tools to simplify your work. <a href="https://salary.doaide.com">Salary Calculator</a> · <a href="https://fincalc.doaide.com">FinCalc</a></p>
+</div>
+</footer>
+</body>
+</html>
