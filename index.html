@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DoAide — 40+ AI-Powered Tools for Indian Businesses</title>
-<meta name="description" content="DoAide is a suite of 40+ AI-powered business tools for Indian businesses — GST filing, tax calculators, invoicing, payroll, contracts, resume builder, insurance tools, and more. Free to start.">
-<meta name="keywords" content="AI business tools India, GST calculator, salary calculator, invoice generator, payroll software, contract management, resume builder, insurance toolkit, compliance management, business tools suite">
+<title>DoAide — 40+ Free AI Tools for Business, Finance, HR, Legal & Productivity</title>
+<meta name="description" content="DoAide is a suite of 40+ AI-powered business tools — GST filing, tax calculators, invoicing, payroll, contracts, resume builder, 409A valuations, pitch decks, and more. Free to start.">
+<meta name="keywords" content="AI business tools, GST calculator, salary calculator, invoice generator, payroll software, contract management, resume builder, 409A valuation, compliance management, business tools suite, pitch deck builder">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -15,15 +15,15 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DoAide">
-<meta property="og:title" content="DoAide — 40+ AI-Powered Tools for Indian Businesses">
-<meta property="og:description" content="AI-powered tools for GST, tax, invoicing, contracts, payroll, resume building, insurance, and more. Free to start, no login required.">
+<meta property="og:title" content="DoAide — 40+ Free AI Tools for Business">
+<meta property="og:description" content="AI-powered tools for GST, tax, invoicing, contracts, payroll, resume building, 409A valuations, pitch decks, and more. Free to start, no login required.">
 <meta property="og:url" content="https://doaide.com/">
 <meta property="og:locale" content="en_IN">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DoAide — 40+ AI-Powered Tools for Indian Businesses">
-<meta name="twitter:description" content="AI-powered tools for GST, tax, invoicing, contracts, payroll, resume building, insurance, and more. Free to start.">
+<meta name="twitter:title" content="DoAide — 40+ Free AI Tools for Business">
+<meta name="twitter:description" content="AI-powered tools for GST, tax, invoicing, contracts, payroll, resume building, 409A valuations, and more. Free to start.">
 
 <!-- JSON-LD: Organization -->
 <script type="application/ld+json">
@@ -451,8 +451,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   <div class="wrap">
     <div class="rv">
       <div class="hero__badge"><span></span> 40+ AI-Powered Products Live</div>
-      <h1>AI-Powered Tools for Indian Businesses</h1>
-      <p class="hero__sub">From GST filing to payroll, contracts to resumes, insurance tools to pitch decks — everything your business needs. Most tools are free, no login required.</p>
+      <h1 id="hero-title">AI-Powered Tools for Indian Businesses</h1>
+      <p class="hero__sub" id="hero-sub">From GST filing to payroll, contracts to resumes, insurance tools to pitch decks — everything your business needs. Most tools are free, no login required.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#products">Browse All Products <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m5-5-5 5-5-5"/></svg></a>
         <a class="btn btn--secondary" href="#categories">Browse by Category</a>
@@ -643,24 +643,25 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     { id: "productivity", name: "Productivity", icon: "\u{26A1}", color: "var(--cat-productivity)" }
   ];
 
+  // geo: "in" = India-specific, "us" = US-specific, omitted = global
   var PRODUCTS = [
     // Tax & Compliance
-    { name: "GSTIndia", desc: "AI-powered GST compliance. Auto-file returns, reconcile invoices, track ITC, penalty alerts.", url: "https://gst.doaide.com", cat: "tax", free: true },
-    { name: "TaxFile", desc: "Income tax filing assistant. Old vs new regime calculator, ITR form selector, 80C planner.", url: "https://tax.doaide.com", cat: "tax", free: true },
-    { name: "CompliancePilot", desc: "Never miss a compliance deadline. Filing calendar, penalty alerts for GST, TDS, ROC.", url: "https://comply.doaide.com", cat: "tax", free: false },
-    { name: "DPDP", desc: "Digital Personal Data Protection compliance. Privacy policy generator, consent management, audit trails.", url: "https://dpdp.doaide.com", cat: "tax", free: false },
+    { name: "GSTIndia", desc: "AI-powered GST compliance. Auto-file returns, reconcile invoices, track ITC, penalty alerts.", url: "https://gst.doaide.com", cat: "tax", free: true, geo: "in" },
+    { name: "TaxFile", desc: "Income tax filing assistant. Old vs new regime calculator, ITR form selector, 80C planner.", url: "https://tax.doaide.com", cat: "tax", free: true, geo: "in" },
+    { name: "CompliancePilot", desc: "Never miss a compliance deadline. Filing calendar, penalty alerts for GST, TDS, ROC.", url: "https://comply.doaide.com", cat: "tax", free: false, geo: "in" },
+    { name: "DPDP", desc: "Digital Personal Data Protection compliance. Privacy policy generator, consent management, audit trails.", url: "https://dpdp.doaide.com", cat: "tax", free: false, geo: "in" },
 
     // Business Tools
     { name: "Contracts", desc: "AI contract management. Draft, review, negotiate, and sign contracts with risk analysis.", url: "https://contracts.doaide.com", cat: "business", free: false },
-    { name: "Invoicer", desc: "Professional GST-compliant invoices. Create, track payments, send reminders, export PDF.", url: "https://invoicer.doaide.com", cat: "business", free: true },
+    { name: "Invoicer", desc: "Professional GST-compliant invoices. Create, track payments, send reminders, export PDF.", url: "https://invoicer.doaide.com", cat: "business", free: true, geo: "in" },
     { name: "BizName", desc: "AI business name generator. Brandable names with domain checks and social handle availability.", url: "https://bizname.doaide.com", cat: "business", free: true },
     { name: "Inventory", desc: "Track stock levels, automate reordering, manage suppliers, optimize warehouse operations.", url: "https://inventory.doaide.com", cat: "business", free: false },
     { name: "Proposals", desc: "Generate winning business proposals, RFP responses, and client pitches with AI.", url: "https://proposals.doaide.com", cat: "business", free: false },
 
     // HR & Payroll
-    { name: "Payroll", desc: "Automated salary processing for India. Tax calculations, compliance, payslip generation.", url: "https://payroll.doaide.com", cat: "hr", free: false },
-    { name: "SalaryDecode", desc: "Calculate take-home pay. Compare old vs new tax regime, optimize HRA, full CTC breakdown.", url: "https://salary.doaide.com", cat: "hr", free: true },
-    { name: "PaySlipMaker", desc: "Generate professional salary slips instantly. Customizable templates, bulk generation, PDF export.", url: "https://payslip.doaide.com", cat: "hr", free: true },
+    { name: "Payroll", desc: "Automated salary processing for India. Tax calculations, compliance, payslip generation.", url: "https://payroll.doaide.com", cat: "hr", free: false, geo: "in" },
+    { name: "SalaryDecode", desc: "Calculate take-home pay. Compare old vs new tax regime, optimize HRA, full CTC breakdown.", url: "https://salary.doaide.com", cat: "hr", free: true, geo: "in" },
+    { name: "PaySlipMaker", desc: "Generate professional salary slips instantly. Customizable templates, bulk generation, PDF export.", url: "https://payslip.doaide.com", cat: "hr", free: true, geo: "in" },
 
     // Sales & Outreach
     { name: "Prospect", desc: "AI-powered sales CRM with Autopilot cold email agent. Find leads, enrich contacts, automate outreach.", url: "https://prospect.doaide.com", cat: "sales", free: false },
@@ -670,7 +671,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     // Documents
     { name: "Docs", desc: "50+ business document templates. Offer letters, experience letters, NOCs — fill and download.", url: "https://docs.doaide.com", cat: "documents", free: true },
     { name: "Resume", desc: "ATS-optimized AI resume builder. Professional templates, AI bullet points, cover letters.", url: "https://resume.doaide.com", cat: "documents", free: true },
-    { name: "RentBanao", desc: "Generate rent agreements and rent receipts instantly. Legally compliant Indian formats.", url: "https://rentbanao.doaide.com", cat: "documents", free: true },
+    { name: "RentBanao", desc: "Generate rent agreements and rent receipts instantly. Legally compliant Indian formats.", url: "https://rentbanao.doaide.com", cat: "documents", free: true, geo: "in" },
     { name: "Certificate", desc: "Design and generate professional certificates. Bulk generation, custom templates, QR verification.", url: "https://certificate.doaide.com", cat: "documents", free: true },
     { name: "PDF", desc: "Complete PDF toolkit. Merge, split, compress, convert, watermark, and secure PDF files.", url: "https://pdf.doaide.com", cat: "documents", free: true },
     { name: "Legal", desc: "AI legal document generator. NDAs, MOUs, partnership deeds, and compliance documents.", url: "https://legal.doaide.com", cat: "documents", free: false },
@@ -678,11 +679,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     // Publishing & Content
     { name: "Pulse", desc: "AI newsletter platform. Curated content, smart writing, subscriber management, analytics.", url: "https://pulse.doaide.com", cat: "publishing", free: false },
     { name: "Meme", desc: "AI meme generator. Trending templates, custom text, bulk creation for social media.", url: "https://meme.doaide.com", cat: "publishing", free: true },
-    { name: "Shayari", desc: "AI-powered Hindi/Urdu poetry generator. Ghazals, shayari, and poems for every occasion.", url: "https://shayari.doaide.com", cat: "publishing", free: true },
+    { name: "Shayari", desc: "AI-powered Hindi/Urdu poetry generator. Ghazals, shayari, and poems for every occasion.", url: "https://shayari.doaide.com", cat: "publishing", free: true, geo: "in" },
     { name: "Write", desc: "AI writing assistant. Blog posts, social media content, emails, and marketing copy.", url: "https://write.doaide.com", cat: "publishing", free: false },
 
     // Insurance
-    { name: "InsureKit", desc: "LIC agent toolkit. Premium calculator, plan comparison, commission tracker, receipt generator.", url: "https://insure.doaide.com", cat: "insurance", free: true },
+    { name: "InsureKit", desc: "LIC agent toolkit. Premium calculator, plan comparison, commission tracker, receipt generator.", url: "https://insure.doaide.com", cat: "insurance", free: true, geo: "in" },
 
     // Developer Tools
     { name: "Cortex", desc: "AI knowledge management. Knowledge graphs, smart recall, auto-learning, team sharing.", url: "https://cortex.doaide.com", cat: "devtools", free: false },
@@ -690,10 +691,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     { name: "Desk", desc: "Unified inbox for all customer conversations. Email, chat, social — one dashboard.", url: "https://desk.doaide.com", cat: "devtools", free: false },
 
     // Financial
-    { name: "409A", desc: "409A valuations simplified. AI-powered reports, cap table integration, IRS compliance.", url: "https://n409.doaide.com", cat: "financial", free: false },
-    { name: "EMIBuddy", desc: "EMI calculator and loan comparison. Home, car, personal loans with amortization schedules.", url: "https://emibuddy.doaide.com", cat: "financial", free: true },
+    { name: "409A", desc: "409A valuations simplified. AI-powered reports, cap table integration, IRS compliance.", url: "https://n409.doaide.com", cat: "financial", free: false, geo: "us" },
+    { name: "EMIBuddy", desc: "EMI calculator and loan comparison. Home, car, personal loans with amortization schedules.", url: "https://emibuddy.doaide.com", cat: "financial", free: true, geo: "in" },
     { name: "Trade", desc: "AI trading assistant. Market signals, portfolio tracking, risk management, automated alerts.", url: "https://trade.doaide.com", cat: "financial", free: false },
-    { name: "FinCalc", desc: "Complete financial calculator suite. EMI, SIP, FD/RD, loan comparison, retirement planning.", url: "https://fincalc.doaide.com", cat: "financial", free: true },
+    { name: "FinCalc", desc: "Complete financial calculator suite. EMI, SIP, FD/RD, loan comparison, retirement planning.", url: "https://fincalc.doaide.com", cat: "financial", free: true, geo: "in" },
 
     // Design
     { name: "Colors", desc: "Color palette generator and explorer. Brand colors, accessibility checker, export for dev.", url: "https://colors.doaide.com", cat: "design", free: true },
@@ -709,6 +710,44 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     { name: "QR", desc: "Custom branded QR codes. Logo embed, batch generation, scan analytics, dynamic QR.", url: "https://qr.doaide.com", cat: "productivity", free: true },
     { name: "Convert", desc: "Universal file converter. PDF, images, documents, audio, video — convert anything.", url: "https://convert.doaide.com", cat: "productivity", free: true }
   ];
+
+  // ===== GEO-TARGETING: reorder products by visitor country =====
+  (function() {
+    var match = document.cookie.match(/(?:^|;\s*)cf_country=([A-Z]{2})/);
+    var country = match ? match[1] : null;
+    if (!country) return;
+
+    // Priority for category ordering based on country
+    var CAT_ORDER = {
+      IN: ["tax","insurance","hr","business","documents","financial","sales","publishing","devtools","design","productivity"],
+      US: ["financial","business","documents","sales","design","devtools","productivity","publishing","hr","insurance","tax"]
+    };
+
+    var catOrder = CAT_ORDER[country];
+    if (!catOrder) return;
+
+    // Reorder categories
+    CATEGORIES.sort(function(a, b) {
+      return catOrder.indexOf(a.id) - catOrder.indexOf(b.id);
+    });
+
+    // Within each category, sort: local products first, then global, then foreign
+    PRODUCTS.sort(function(a, b) {
+      var catDiff = catOrder.indexOf(a.cat) - catOrder.indexOf(b.cat);
+      if (catDiff !== 0) return catDiff;
+      var aScore = !a.geo ? 1 : (a.geo === country.toLowerCase() ? 0 : 2);
+      var bScore = !b.geo ? 1 : (b.geo === country.toLowerCase() ? 0 : 2);
+      return aScore - bScore;
+    });
+
+    // Adapt hero text for non-India visitors
+    if (country !== "IN") {
+      var heroTitle = document.getElementById("hero-title");
+      var heroSub = document.getElementById("hero-sub");
+      if (heroTitle) heroTitle.textContent = "AI-Powered Tools for Modern Business";
+      if (heroSub) heroSub.textContent = "From contracts to resumes, pitch decks to invoicing — 40+ AI tools for every business need. Most tools are free, no login required.";
+    }
+  })();
 
   // ===== DOM REFS =====
   var grid = document.getElementById("products-grid");
