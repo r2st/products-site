@@ -194,6 +194,20 @@
     calc();
   });
 
+  /* ---- Theme toggle ---- */
+  safe(function () {
+    var btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      var meta = document.getElementById("meta-theme-color");
+      if (meta) meta.setAttribute("content", next === "light" ? "#ffffff" : "#1A1A1D");
+      try { localStorage.setItem("doaide-theme", next); } catch (e) {}
+    });
+  });
+
   /* ---- Smooth scroll for anchor links ---- */
   safe(function () {
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
