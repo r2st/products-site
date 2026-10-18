@@ -15,7 +15,7 @@
 set -euo pipefail
 
 HOST="root@89.167.8.178"
-KEY="/Users/dev/projects/Products/GoSumo/keys/hetzner_deploy_ed25519"
+KEY="/Users/dev/projects/keys/hetzner_deploy_ed25519"
 REMOTE_ROOT="/opt/products-site"
 
 # One connection, reused for every ssh/rsync call below — a bare ssh per

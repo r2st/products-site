@@ -435,6 +435,11 @@ function getNgrams(text,n){
   return ngrams;
 }
 
+function escapeHTML(value){
+  const text=document.createElement('span');
+  text.textContent=String(value);
+  return text.innerHTML;
+}
 function displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,sectionResults,formatChecks,jdTitle){
   document.getElementById('results').classList.add('active');
 
@@ -463,8 +468,8 @@ function displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,s
   // Keywords
   document.getElementById('kw-summary').textContent=`${foundKw.length} of ${foundKw.length+missingKw.length} keywords found in your resume (${kwScore}% match rate)`;
   document.getElementById('keyword-tags').innerHTML=
-    foundKw.map(k=>`<span class="kw-tag kw-found">✓ ${k}</span>`).join('')+
-    missingKw.map(k=>`<span class="kw-tag kw-missing">✗ ${k}</span>`).join('');
+    foundKw.map(k=>`<span class="kw-tag kw-found">✓ ${escapeHTML(k)}</span>`).join('')+
+    missingKw.map(k=>`<span class="kw-tag kw-missing">✗ ${escapeHTML(k)}</span>`).join('');
 
   // Sections
   document.getElementById('section-checks').innerHTML=sectionResults.map(s=>`
@@ -476,11 +481,11 @@ function displayResults(overall,kwScore,secPct,fmtPct,relPct,foundKw,missingKw,s
   // Suggestions
   const suggestions=[];
   if(missingKw.length>0){
-    const top5=missingKw.slice(0,5).join(', ');
+    const top5=escapeHTML(missingKw.slice(0,5).join(', '));
     suggestions.push({icon:'🔑',text:`<strong>Add missing keywords:</strong> Include these terms naturally in your resume: ${top5}`});
   }
   if(jdTitle&&!document.getElementById('resume').value.toLowerCase().includes(jdTitle.toLowerCase())){
-    suggestions.push({icon:'💼',text:`<strong>Match the job title:</strong> Include "${jdTitle}" in your resume summary or experience section.`});
+    suggestions.push({icon:'💼',text:`<strong>Match the job title:</strong> Include "${escapeHTML(jdTitle)}" in your resume summary or experience section.`});
   }
   formatChecks.filter(c=>!c.pass).forEach(c=>{
     suggestions.push({icon:'📝',text:c.msg});

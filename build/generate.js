@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const { PRODUCTS } = require('./products');
+const PRODUCT_ROUTES = require('./product-routing');
 
 const OUT = path.join(__dirname, '..');
 const SITE = 'https://products.aiknol.com';
@@ -29,6 +30,14 @@ const TICK = icon('<path d="m4 12 5 5 11-11"/>', 16);
 const CHEV = icon('<path d="m6 9 6 6 6-6"/>', 13);
 
 const LIVE = PRODUCTS.filter((p) => p.status === 'live');
+
+function productHref(p) {
+  return PRODUCT_ROUTES[p.slug] || p.overviewUrl || `${p.slug}.html`;
+}
+
+function hrefAttrs(href) {
+  return `href="${esc(href)}"${/^https?:\/\//.test(href) ? ' target="_blank" rel="noopener"' : ''}`;
+}
 
 /* The mark: one dot per product, laid out 3×3, coloured by the spectrum. */
 function markSvg() {
@@ -73,7 +82,7 @@ function head({ title, description, canonical, accent }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="styles.css">
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>${
     accent ? `\n<style>:root{--accent:var(${accent})}</style>` : ''
   }`;
@@ -82,14 +91,14 @@ function head({ title, description, canonical, accent }) {
 function header(current) {
   const items = PRODUCTS.map(
     (p) =>
-      `<a class="menu__item" href="/${p.slug}.html" style="--accent:var(${p.accent})"><span class="menu__dot"></span>${esc(
+      `<a class="menu__item" ${hrefAttrs(productHref(p))} style="--accent:var(${p.accent})"><span class="menu__dot"></span>${esc(
         p.name
       )}${p.status === 'soon' ? '<span class="menu__soon">Soon</span>' : ''}</a>`
   ).join('\n        ');
 
   return `<header class="header">
   <div class="wrap header__bar">
-    <a class="mark" href="/" aria-label="${COMPANY} — home">
+    <a class="mark" href="index.html" aria-label="${COMPANY} — home">
       ${markSvg()}
       <span class="mark__word">Apprend <span>Technologies</span></span>
     </a>
@@ -107,8 +116,8 @@ function header(current) {
         ${items}
         </div>
       </div>
-      <a class="nav__link" href="/#products"${current === 'index' ? ' aria-current="page"' : ''}>Catalogue</a>
-      <a class="nav__link" href="/#company">Company</a>
+      <a class="nav__link" href="index.html#products"${current === 'index' ? ' aria-current="page"' : ''}>Catalogue</a>
+      <a class="nav__link" href="index.html#company">Company</a>
       <a class="nav__cta" href="https://aiknol.com" target="_blank" rel="noopener">aiknol.com ${ARROW_UR}</a>
     </nav>
   </div>
@@ -120,7 +129,7 @@ function footer() {
     arr
       .map(
         (p) =>
-          `<li><a href="/${p.slug}.html"><span class="menu__dot" style="--accent:var(${p.accent})"></span>${esc(
+          `<li><a ${hrefAttrs(productHref(p))}><span class="menu__dot" style="--accent:var(${p.accent})"></span>${esc(
             p.name
           )}</a></li>`
       )
@@ -130,7 +139,7 @@ function footer() {
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="mark" href="/" aria-label="${COMPANY} — home">
+        <a class="mark" href="index.html" aria-label="${COMPANY} — home">
           ${markSvg()}
           <span class="mark__word">Apprend <span>Technologies</span></span>
         </a>
@@ -158,8 +167,8 @@ function footer() {
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="/#products">Catalogue</a></li>
-          <li><a href="/#principles">How we build</a></li>
+          <li><a href="index.html#products">Catalogue</a></li>
+          <li><a href="index.html#principles">How we build</a></li>
           <li><a href="https://aiknol.com" target="_blank" rel="noopener">aiknol.com ${ARROW_UR}</a></li>
         </ul>
       </div>
@@ -179,7 +188,7 @@ const shell = (inner) =>
 <div class="grain" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 ${inner}
-<script src="/main.js" defer></script>`;
+<script src="main.js" defer></script>`;
 
 /* -------------------------------------------------------------------------- */
 /* screenshot placeholder                                                      */
@@ -237,13 +246,13 @@ function card(p) {
       </ul>
       <div class="card__foot">
         ${visit}
-        <a class="card__link" href="/${p.slug}.html">Overview ${ARROW_R}</a>
+        <a class="card__link" ${hrefAttrs(productHref(p))}>Overview ${ARROW_R}</a>
       </div>
     </article>`;
 }
 
 function manifestRow(p) {
-  return `<a class="manifest__row" href="/${p.slug}.html" style="--accent:var(${p.accent})">
+  return `<a class="manifest__row" ${hrefAttrs(productHref(p))} style="--accent:var(${p.accent})">
         <span class="manifest__n">${p.num}</span>
         <span class="manifest__name">${esc(p.name)} <em>${esc(p.category)}</em></span>
         <span class="manifest__arrow">${ARROW_R}</span>
@@ -453,7 +462,7 @@ ${shell(`${header(p.slug)}
 
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="/">Catalogue</a><span>/</span><span>${p.num}</span><span>/</span><span>${esc(p.name)}</span>
+      <a href="index.html">Catalogue</a><span>/</span><span>${p.num}</span><span>/</span><span>${esc(p.name)}</span>
     </nav>
   </div>
 
@@ -566,7 +575,7 @@ ${shell(`${header(p.slug)}
         }</p>
         <div class="band__actions">
           ${primary}
-          <a class="btn btn--ghost" href="/#products">All ${PRODUCTS.length} products ${ARROW_R}</a>
+          <a class="btn btn--ghost" href="index.html#products">All ${PRODUCTS.length} products ${ARROW_R}</a>
         </div>
       </div>
     </div>
@@ -575,11 +584,11 @@ ${shell(`${header(p.slug)}
   <section class="section section--tight">
     <div class="wrap">
       <nav class="pn" aria-label="Product navigation">
-        <a class="pn__item" href="/${prev.slug}.html" style="--accent:var(${prev.accent})">
+        <a class="pn__item" ${hrefAttrs(productHref(prev))} style="--accent:var(${prev.accent})">
           <span class="pn__k">${ARROW_L} Previous</span>
           <span class="pn__v"><span class="menu__dot"></span>${esc(prev.name)}</span>
         </a>
-        <a class="pn__item pn__item--next" href="/${next.slug}.html" style="--accent:var(${next.accent})">
+        <a class="pn__item pn__item--next" ${hrefAttrs(productHref(next))} style="--accent:var(${next.accent})">
           <span class="pn__k">Next ${ARROW_R}</span>
           <span class="pn__v">${esc(next.name)}<span class="menu__dot"></span></span>
         </a>
@@ -590,6 +599,26 @@ ${shell(`${header(p.slug)}
 </main>
 
 ${footer()}`)}
+</body>
+</html>
+`;
+}
+
+function redirectPage(p) {
+  const target = PRODUCT_ROUTES[p.slug] || p.overviewUrl || p.url;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(p.name)} — Redirect</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="${esc(target)}">
+<meta http-equiv="refresh" content="0; url=${esc(target)}">
+<script>window.location.replace(${JSON.stringify(target)});</script>
+</head>
+<body>
+<p>Redirecting to <a href="${esc(target)}">${esc(p.name)}</a>.</p>
 </body>
 </html>
 `;
@@ -606,10 +635,15 @@ function write(name, contents) {
 
 console.log('Generating products.aiknol.com …');
 write('index.html', indexPage());
-PRODUCTS.forEach((p, i) => write(`${p.slug}.html`, productPage(p, i)));
+PRODUCTS.forEach((p, i) => write(`${p.slug}.html`, PRODUCT_ROUTES[p.slug] || p.redirectOverview ? redirectPage(p) : productPage(p, i)));
+Object.entries(PRODUCT_ROUTES).forEach(([slug, url]) => {
+  if (!PRODUCTS.some((p) => p.slug === slug)) {
+    write(`${slug}.html`, redirectPage({ slug, name: `DoAide ${slug}`, url }));
+  }
+});
 
 /* sitemap + robots, so the catalogue is indexable */
-const urls = ['/', ...PRODUCTS.map((p) => `/${p.slug}.html`)]
+const urls = ['/', ...PRODUCTS.filter((p) => !p.redirectOverview && !PRODUCT_ROUTES[p.slug]).map((p) => `/${p.slug}.html`)]
   .map((u) => `  <url><loc>${SITE}${u}</loc><changefreq>weekly</changefreq></url>`)
   .join('\n');
 write(

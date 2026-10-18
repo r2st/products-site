@@ -13,14 +13,50 @@
     var nav = document.getElementById("site-nav");
     if (!burger || !nav) return;
     burger.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
+      var open = nav.classList.toggle("is-open");
       burger.setAttribute("aria-expanded", String(open));
     });
     nav.addEventListener("click", function (e) {
       if (e.target.closest("a")) {
-        nav.classList.remove("open");
+        nav.classList.remove("is-open");
         burger.setAttribute("aria-expanded", "false");
       }
+    });
+  });
+
+  /* ---- Product navigation disclosure ---- */
+  safe(function () {
+    var button = document.querySelector("[data-menu-btn]");
+    var panel = document.querySelector("[data-menu-panel]");
+    if (!button || !panel) return;
+    function close() {
+      panel.classList.remove("is-open");
+      button.setAttribute("aria-expanded", "false");
+    }
+    button.addEventListener("click", function () {
+      var open = panel.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", function (event) {
+      if (!button.contains(event.target) && !panel.contains(event.target)) close();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      var wasOpen = panel.classList.contains("is-open");
+      close();
+      if (wasOpen) button.focus();
+      else {
+        var nav = document.getElementById("site-nav");
+        var burger = document.querySelector(".burger");
+        if (nav && burger && nav.classList.contains("is-open")) {
+          nav.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
+          burger.focus();
+        }
+      }
+    });
+    panel.addEventListener("click", function (event) {
+      if (event.target.closest("a")) close();
     });
   });
 

@@ -74,6 +74,8 @@ const PRODUCTS = [
     accent: '--p2',
     hex: '#f0b429',
     url: 'https://pulse.doaide.com',
+    overviewUrl: 'https://pulse.doaide.com/',
+    redirectOverview: true,
     status: 'live',
     category: 'Outreach & communications',
     icon: ICONS.pulse,

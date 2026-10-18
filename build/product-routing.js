@@ -1,0 +1,17 @@
+module.exports = {
+  '409a': 'https://409.doaide.com/',
+  realty: 'https://realty.doaide.com/',
+  med: 'https://med.doaide.com/',
+  autoapply: 'https://job.doaide.com/',
+  trade: 'https://trade.doaide.com/',
+  cortex: 'https://cortex.doaide.com/',
+  pulse: 'https://pulse.doaide.com/',
+  fincalc: 'https://calc.doaide.com/',
+  convert: 'https://tools.doaide.com/',
+  dpdp: 'https://dpdp.doaide.com/',
+  payslipmaker: 'https://payslip.doaide.com/',
+  rentbanao: 'https://rentbanao.doaide.com/',
+  pdf: 'https://pdf.doaide.com/',
+  legal: 'https://legal.doaide.com/',
+  emibuddy: 'https://emibuddy.doaide.com/',
+};

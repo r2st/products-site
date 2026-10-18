@@ -469,8 +469,8 @@ a:hover { color: var(--accent-hover); }
   <div class="header-inner">
     <a href="https://doaide.com" class="logo">Do<span>Aide</span></a>
     <nav class="header-nav">
-      <a href="/gst.html">GST Tools</a>
-      <a href="/itc-calculator.html" class="active">ITC Calculator</a>
+      <a href="gst.html">GST Tools</a>
+      <a href="itc-calculator.html" class="active">ITC Calculator</a>
       <a href="https://doaide.com">Home</a>
     </nav>
   </div>
@@ -820,28 +820,25 @@ a:hover { color: var(--accent-hover); }
     </div>
     <div class="footer-col">
       <h4>GST Tools</h4>
-      <a href="/gst.html">All GST Tools</a>
-      <a href="/gst-calculator.html">GST Calculator</a>
-      <a href="/gst-invoice-generator.html">Invoice Generator</a>
-      <a href="/hsn-code-finder.html">HSN Code Finder</a>
-      <a href="/gst-due-dates.html">GST Due Dates</a>
-      <a href="/gst-penalty-calculator.html">Penalty Calculator</a>
-      <a href="/gstr-9-calculator.html">GSTR-9 Calculator</a>
-      <a href="/gst-composition-calculator.html">Composition Scheme</a>
-      <a href="/gstbot.html">GST Bot</a>
+      <a href="gst.html">All GST Tools</a>
+      <a href="gst-calculator.html">GST Calculator</a>
+      <a href="gst-invoice-generator.html">Invoice Generator</a>
+      <a href="hsn-code-finder.html">HSN Code Finder</a>
+      <a href="gst-due-dates.html">GST Due Dates</a>
+      <a href="gst-penalty-calculator.html">Penalty Calculator</a>
+      <a href="gstr-9-calculator.html">GSTR-9 Calculator</a>
+      <a href="gst-composition-calculator.html">Composition Scheme</a>
+      <a href="gstbot.html">GST Bot</a>
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
-      <a href="/gst-guide.html">GST Guide</a>
-      <a href="/section-17-5.html">Section 17(5) Guide</a>
-      <a href="/rule-42-43.html">Rule 42/43 Guide</a>
+      <a href="blog-gst-return-filing-guide.html">GST Guide</a>
+      <a href="blog-itc-rules-guide.html">ITC Eligibility and Reversal Guide</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="https://doaide.com">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy Policy</a>
+      <a href="index.html#company">About</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -871,9 +868,24 @@ function pct(n) {
 function val(id) {
   return parseFloat(document.getElementById(id).value) || 0;
 }
+function validAmounts(ids, resultsId) {
+  document.getElementById(resultsId).style.display = 'none';
+  ids.forEach(id => document.getElementById(id).setCustomValidity(''));
+  for (const id of ids) {
+    const input = document.getElementById(id);
+    const value = Number(input.value);
+    if (!Number.isFinite(value) || value < 0) {
+      input.setCustomValidity('Enter a finite, non-negative amount.');
+      input.reportValidity();
+      return false;
+    }
+  }
+  return true;
+}
 
 // --- Tab 1: ITC Eligibility ---
 function calculateEligibility() {
+  if (!validAmounts(['totalInputTax','outputTax','blockedCredit','reversalAmount','previousCarryForward'], 'eligibilityResults')) return;
   const totalInput = val('totalInputTax');
   const output = val('outputTax');
   const blocked = val('blockedCredit');
@@ -911,7 +923,7 @@ function resetEligibility() {
 
 // --- Tab 2: Blocked Credits ---
 function toggleCheck(li, e) {
-  if (e.target.tagName === 'INPUT' && e.target.type === 'number') return;
+  if (e.target.tagName === 'INPUT') return;
   const cb = li.querySelector('input[type="checkbox"]');
   cb.checked = !cb.checked;
   li.classList.toggle('checked', cb.checked);
@@ -943,12 +955,20 @@ function updateBlockedTotal() {
 
 // --- Tab 3: ITC Reversal ---
 function calculateReversal() {
+  if (!validAmounts(['totalITCPeriod','exclusivelyTaxable','exclusivelyExempt','taxableTurnover','exemptTurnover','totalTurnover'], 'reversalResults')) return;
   const totalITC = val('totalITCPeriod');
   const exclTaxable = val('exclusivelyTaxable');
   const exclExempt = val('exclusivelyExempt');
   const taxableTurnover = val('taxableTurnover');
   const exemptTurnover = val('exemptTurnover');
   const totalTurnover = val('totalTurnover');
+  if (exclTaxable + exclExempt > totalITC || exemptTurnover > totalTurnover || taxableTurnover > totalTurnover ||
+      (exemptTurnover > 0 && totalTurnover === 0)) {
+    const input = document.getElementById('totalITCPeriod');
+    input.setCustomValidity('Exclusive credits cannot exceed total ITC, and turnover components cannot exceed total turnover.');
+    input.reportValidity();
+    return;
+  }
 
   const commonCredit = Math.max(0, totalITC - exclTaxable - exclExempt);
 

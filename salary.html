@@ -340,6 +340,11 @@ footer a{color:var(--text2)}
 function fmt(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
 
 function calculate(){
+  document.getElementById('results').classList.remove('active');
+  const fields=['ctc','rent','deductions80c','deductions80d','other-deductions'].map(id=>document.getElementById(id));
+  fields.forEach(input=>input.setCustomValidity(''));
+  const invalid=fields.find(input=>!Number.isFinite(Number(input.value))||Number(input.value)<0||Number(input.value)>Number.MAX_SAFE_INTEGER);
+  if(invalid){invalid.setCustomValidity('Enter a finite, non-negative amount.');invalid.reportValidity();return;}
   const ctc=parseFloat(document.getElementById('ctc').value);
   if(!ctc||ctc<=0){alert('Please enter a valid CTC amount.');return}
 
