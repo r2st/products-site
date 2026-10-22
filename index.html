@@ -388,6 +388,18 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .rv { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
 .rv.visible { opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce) { .rv { opacity:1; transform:none; } }
+
+/* ---- Touch targets: 48px minimum on touch devices ---- */
+@media (pointer: coarse) {
+  .theme-toggle { width:48px; height:48px; }
+  .burger { min-width:48px; min-height:48px; justify-content:center; align-items:center; }
+  .btn, .nav__cta { min-height:48px; }
+  .cat-pill { min-height:48px; display:inline-flex; align-items:center; }
+  .search-input { min-height:48px; }
+  .mobile-nav a { min-height:48px; display:flex; align-items:center; }
+  .footer__col a { padding:.625rem 0; }
+  .nav a { padding:.75rem 0; }
+}
 </style>
 <script defer src="https://analytics.doaide.com/script.js" data-website-id="6c0ad6e7-42ba-446e-8d82-85aab4589d1c"></script>
 </head>
