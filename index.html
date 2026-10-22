@@ -389,6 +389,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .rv.visible { opacity:1; transform:none; }
 @media (prefers-reduced-motion: reduce) { .rv { opacity:1; transform:none; } }
 
+/* ---- Performance: skip layout/paint of below-fold sections until near view ---- */
+#principles, #faq, .footer { content-visibility:auto; contain-intrinsic-size:auto 600px; }
+
 /* ---- Touch targets: 48px minimum on touch devices ---- */
 @media (pointer: coarse) {
   .theme-toggle { width:48px; height:48px; }
