@@ -14,29 +14,17 @@ async function main() {
       await page.setViewportSize({ width, height: 900 });
       const response = await page.goto(base, { waitUntil: 'networkidle' });
       assert.equal(response.status(), 200);
-      assert.equal(await page.locator('.suite-card').count(), 10);
-      assert.equal(await page.locator('#products-grid > a').count(), 46);
-      assert.equal(await page.locator('#search-input').getAttribute('aria-label'), 'Search tools');
-      const question = page.locator('.faq-item__q').first();
-      await question.click();
-      assert.equal(await question.getAttribute('aria-expanded'), 'true');
-      await question.click();
-      assert.equal(await question.getAttribute('aria-expanded'), 'false');
+      assert.equal(await page.locator('#products .product').count(), 4);
+      assert.equal(await page.locator('#free-tools .tool').count(), 3);
+      for (const host of ['gst', 'einvoice', 'tax', 'comply', 'emi', 'khata']) {
+        assert(await page.locator(`a[href="https://${host}.doaide.com/"]`).count() > 0, `missing ${host} link`);
+      }
+      assert.match(await page.locator('#pricing').innerText(), /499/);
+      const question = page.locator('.faq details').first();
+      await question.locator('summary').click();
+      assert(await question.evaluate(el => el.open));
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Horizontal overflow');
       await page.screenshot({ path: `/tmp/doaide-${width}.png`, fullPage: true });
-      await page.locator('#search-input').fill('GST');
-      await page.waitForFunction(() => document.querySelectorAll('#products-grid > a').length < 46);
-      assert(await page.locator('#products-grid > a').count() > 0);
-      assert(await page.locator('#products-grid > a').count() < 46);
-      await page.locator('#search-input').fill('no-such-tool-xyz');
-      await page.locator('#no-results').waitFor({ state: 'visible' });
-      await page.locator('#search-input').fill('');
-      await page.waitForFunction(() => document.querySelectorAll('#products-grid > a').length === 46);
-      await page.locator('[data-cat="financial"]').click();
-      assert(await page.locator('#products-grid > a').count() > 0);
-      assert(await page.locator('#products-grid > a').count() < 46);
-      await page.locator('[data-cat="all"]').click();
-      assert.equal(await page.locator('#products-grid > a').count(), 46);
     }
     fs.writeFileSync('/tmp/doaide-rendered-links.json', JSON.stringify(await page.locator('a[href]').evaluateAll(links => [...new Set(links.map(a => a.href))]), null, 2));
     assert.deepEqual(errors, [], 'Browser JavaScript errors');
@@ -76,7 +64,7 @@ async function main() {
       await page.goto(`${base}/${slug}.html`, { waitUntil: 'domcontentloaded' });
       await page.waitForURL(url => url.hostname === new URL(destination).hostname);
     }
-    console.log('PASS: desktop/mobile layout, 46 tools, search, filters, accessible FAQs, four tool workflows, fifteen redirects, no JS errors');
+    console.log('PASS: desktop/mobile layout, 4 suite products, more tools, accessible FAQs, four tool workflows, fifteen redirects, no JS errors');
   } finally {
     await browser.close();
   }
